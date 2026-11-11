@@ -1,0 +1,4292 @@
+<!DOCTYPE html>
+<html lang="en" data-ui-lang="en" data-en-title="TextMatchCut — Newspaper Text Match Cut Video Generator (Free 1080p Studio)" data-zh-title="文字对切 — 免费报刊剪报高亮快切视频生成器" data-hant-title="文字對切 — 免費報刊剪報高亮快切影片產生器">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TextMatchCut — Newspaper Text Match Cut Video Generator (Free 1080p Studio)</title>
+  <meta name="description" content="Create crisp 1080p newspaper text match cut animations right in your browser. Pin a highlighted focal word across 50+ English, Simplified Chinese, and Traditional Chinese editorial layouts with speed ramps, foley SFX, zero watermark, and zero uploads.">
+  <link rel="stylesheet" href="./fonts-7cf0992c.css">
+  <script>
+    (function () {
+      try {
+        var rawQ = new URLSearchParams(window.location.search).get("lang");
+        var q = rawQ === "hant" || rawQ === "zh-TW" || rawQ === "zh-HK" || rawQ === "zh-Hant" || rawQ === "tw"
+          ? "hant"
+          : (rawQ === "zh" || rawQ === "zh-CN" ? "zh" : (rawQ === "en" ? "en" : ""));
+        var saved = q || window.localStorage.getItem("tmc_ui_lang");
+        if (saved === "zh" || saved === "hant" || saved === "en") {
+          document.documentElement.dataset.uiLang = saved;
+          document.documentElement.lang = saved === "hant" ? "zh-Hant" : (saved === "zh" ? "zh-CN" : "en");
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "TextMatchCut Studio",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Any (Web Browser)",
+        "isAccessibleForFree": true,
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "100% client-side 1080p newspaper text match cut video generator supporting English, Simplified Chinese, and Traditional Chinese editorial styles, vector-sharp zoom, speed ramps up to 30 CPS, custom copy, local font loading, and watermark-free MP4/WebM export."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is TextMatchCut Studio completely free and watermark-free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. TextMatchCut Studio runs 100% free in your browser with no signup, no credit card, no rewarded ad wall, and zero watermarks on any exported 1080p video."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is a text match cut (newspaper clipping highlight effect)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A text match cut locks your chosen focal word or short phrase at the exact visual center of the frame with a fluorescent marker or box highlight while diverse newspaper headlines, columns, pull-quotes, and market tables rapidly cut around it."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does the studio keep zoomed headlines tack-sharp at 1080p?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Instead of bitmap-upscaling a low-resolution canvas, the rendering engine applies camera zoom transforms before rasterizing vector glyphs at native 1080p and protects the entire keyword plateau from radial lens-blur bleed."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I render 144+ cuts, speed ramps, and high-CPS sequences?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. You can configure durations from 2 to 12 seconds and cut rates up to 30 CPS in constant or speed-ramp modes (linear, ease-in, ease-out), supporting up to 360 distinct cuts and automatic 60fps high-speed encoding above 15 CPS."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are my keywords, pasted scripts, or uploaded fonts ever sent to a server?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Never. Typesetting, halftone art, radial depth-of-field, WebAudio sound synthesis, and MediaRecorder video encoding execute 100% locally in your browser RAM. Nothing you type or upload leaves your device."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use exported MP4 and WebM clips in commercial projects?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Exported animations are royalty-free for personal and commercial use without attribution. Built-in web fonts use SIL OFL 1.1 and Apache 2.0 open-source licenses; for uploaded custom fonts or third-party text, confirm you hold appropriate commercial rights."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do custom body copy and local font uploads work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Open Advanced Settings to paste up to 4,000 characters of your own script so sentences containing your focal word are highlighted first, and optionally fill surrounding background columns. You can also load local .ttf, .otf, .woff, or .woff2 font files directly into browser memory."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which aspect ratio should I choose for TikTok, Reels, Shorts, YouTube, or Bilibili?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Select 9:16 (1080x1920) for TikTok, Instagram Reels, YouTube Shorts, and Douyin; 1:1 (1080x1080) for square social feeds and picture-in-picture callouts; and 16:9 (1920x1080) for YouTube, Bilibili, documentaries, and widescreen presentations."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are the newspaper mastheads, headlines, and market tickers real news reports?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Every generated masthead, headline, pull-quote, market ticker, scoreline, and halftone graphic is a procedural typographic simulation using fictionalized placeholder copy, unaffiliated with any real publisher and strictly not for fabricating deceptive news screenshots."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --paper: #f6f2e9;
+      --panel: #fbf8f1;
+      --surface: #ffffff;
+      --ink: #141210;
+      --muted: #665f54;
+      --line: #dfd7c8;
+      --line-strong: #c8beac;
+      --track: #ebe4d7;
+      --hl: #ffe600;
+      --ph-bg: #fff8bf;
+      --ph-line: #dbc84b;
+      --stage-bg: #181613;
+      --stage-bar: #221f1b;
+      --stage-line: #343029;
+      --stage-ink: #f2ede3;
+      --stage-muted: #9e9689;
+      --err-bg: #fcf1ef;
+      --err-line: #e4b7b0;
+      --err: #9e2a20;
+      --r-panel: 12px;
+      --r-ctrl: 8px;
+      --font-sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", sans-serif;
+      --font-serif: "Playfair Display", Georgia, "Times New Roman", "Noto Serif SC", serif;
+    }
+
+    html[data-ui-lang="zh"] {
+      --font-sans: "Noto Sans SC", Inter, "PingFang SC", "Microsoft YaHei", sans-serif;
+      --font-serif: "Noto Serif SC", "Playfair Display", SimSun, "Songti SC", serif;
+    }
+
+    html[data-ui-lang="hant"] {
+      --font-sans: "Noto Sans TC", Inter, "PingFang TC", "Microsoft JhengHei", sans-serif;
+      --font-serif: "Noto Serif TC", "Playfair Display", PMingLiU, "Songti TC", serif;
+    }
+
+    html[data-ui-lang="en"] .lang-zh,
+    html[data-ui-lang="en"] .lang-hant,
+    html:not([data-ui-lang]) .lang-zh,
+    html:not([data-ui-lang]) .lang-hant { display: none !important; }
+    html[data-ui-lang="zh"] .lang-en,
+    html[data-ui-lang="zh"] .lang-hant { display: none !important; }
+    html[data-ui-lang="hant"] .lang-en,
+    html[data-ui-lang="hant"] .lang-zh { display: none !important; }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    [id] {
+      scroll-margin-top: 64px;
+    }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      background: var(--paper);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      line-height: 20px;
+      font-weight: 400;
+    }
+
+    /* Sticky Top Navigation */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 90;
+      height: 52px;
+      background: rgba(246, 242, 233, 0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      max-width: 1180px;
+      height: 100%;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .nav-brand-group {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .nav-back-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border: 1px solid var(--line);
+      border-radius: var(--r-ctrl);
+      background: var(--surface);
+      color: var(--ink);
+      text-decoration: none;
+      flex-shrink: 0;
+      transition: background-color 0.14s ease, border-color 0.14s ease;
+    }
+
+    .nav-back-btn:hover {
+      background: var(--track);
+      border-color: var(--line-strong);
+    }
+
+    .brand-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0;
+      color: var(--ink);
+      text-decoration: none;
+      font-family: var(--font-serif);
+      font-size: 19px;
+      line-height: 24px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .brand-cut {
+      display: inline-flex;
+      align-items: center;
+      margin-left: 6px;
+      padding-left: 7px;
+      border-left: 1.5px solid var(--ink);
+      background: linear-gradient(transparent 62%, var(--hl) 62%, var(--hl) 92%, transparent 92%);
+    }
+
+    .nav-links {
+      display: inline-flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      line-height: 20px;
+      font-weight: 500;
+      white-space: nowrap;
+      transition: color 0.14s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.on {
+      color: var(--ink);
+    }
+
+    .nav-links a.on {
+      background: linear-gradient(transparent 66%, var(--hl) 66%, var(--hl) 94%, transparent 94%);
+    }
+
+    .nav-right {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    /* Compact Editorial Hero + Above-the-Fold 2-Col Studio */
+    .studio-section {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 14px 24px 36px;
+    }
+
+    .studio-hero {
+      margin-bottom: 12px;
+    }
+
+    .hero-h1 {
+      margin: 0;
+      font-family: var(--font-serif);
+      font-size: clamp(24px, 2.8vw, 34px);
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+
+    html[data-ui-lang="zh"] .hero-h1,
+    html[data-ui-lang="hant"] .hero-h1 {
+      letter-spacing: -0.01em;
+      line-height: 1.32;
+    }
+
+    .hl-mark {
+      background: linear-gradient(transparent 58%, var(--hl) 58%, var(--hl) 92%, transparent 92%);
+      padding: 0 3px;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
+
+    .studio-grid {
+      display: grid;
+      grid-template-columns: 348px minmax(0, 1fr);
+      gap: 22px;
+      align-items: start;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--r-panel);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: 0 2px 10px rgba(20, 18, 16, 0.04);
+    }
+
+    .panel-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .panel-title {
+      margin: 0;
+      font-family: var(--font-serif);
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+      color: var(--ink);
+    }
+
+    .ctrl {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .field-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      min-height: 20px;
+    }
+
+    label,
+    .field-label {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 20px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .num {
+      font-variant-numeric: tabular-nums;
+      text-align: right;
+      white-space: nowrap;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 20px;
+      font-weight: 400;
+    }
+
+    .ico {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    .ico svg {
+      width: 16px;
+      height: 16px;
+      display: block;
+    }
+
+    /* Keyword Hero Input */
+    .kw-box {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      height: 40px;
+      padding: 0 5px 0 12px;
+      background: var(--surface);
+      border: 1px solid var(--line-strong);
+      border-radius: var(--r-ctrl);
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .kw-box:focus-within {
+      border-color: var(--ink);
+      box-shadow: inset 0 0 0 1px var(--ink);
+    }
+
+    #keyword {
+      flex: 1;
+      min-width: 0;
+      height: 100%;
+      padding: 0;
+      border: 0;
+      outline: none;
+      background: transparent;
+      color: var(--ink);
+      font-family: inherit;
+      font-size: 15px;
+      line-height: 22px;
+      font-weight: 500;
+    }
+
+    #keyword::placeholder {
+      color: #968e80;
+      font-weight: 400;
+      font-size: 13px;
+    }
+
+    .kw-actions {
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+      flex-shrink: 0;
+    }
+
+    .kw-icon-btn,
+    .kw-rand-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      height: 28px;
+      border: 0;
+      border-radius: 6px;
+      background: transparent;
+      color: var(--muted);
+      font-family: inherit;
+      font-size: 12px;
+      line-height: 20px;
+      font-weight: 500;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: background-color 0.12s ease, color 0.12s ease;
+    }
+
+    .kw-icon-btn {
+      width: 28px;
+      padding: 0;
+    }
+
+    .kw-rand-btn {
+      padding: 0 8px;
+      background: var(--track);
+      color: var(--ink);
+    }
+
+    .kw-icon-btn:hover {
+      background: var(--track);
+      color: var(--ink);
+    }
+
+    .kw-rand-btn:hover {
+      background: #dfd6c4;
+    }
+
+    /* Segmented Controls */
+    .seg {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px;
+      gap: 2px;
+      background: var(--track);
+      border: 1px solid var(--line);
+      border-radius: var(--r-ctrl);
+    }
+
+    .seg-full {
+      display: flex;
+      width: 100%;
+    }
+
+    .seg button {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      height: 28px;
+      padding: 0 10px;
+      border: 0;
+      border-radius: 6px;
+      background: transparent;
+      color: var(--muted);
+      font-family: inherit;
+      font-size: 13px;
+      line-height: 20px;
+      font-weight: 500;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: background-color 0.14s ease, color 0.14s ease, box-shadow 0.14s ease;
+    }
+
+    .seg button:hover:not(.on) {
+      color: var(--ink);
+    }
+
+    .seg button.on {
+      background: var(--surface);
+      color: var(--ink);
+      box-shadow: 0 1px 2px rgba(20, 18, 16, 0.1), 0 0 0 1px rgba(20, 18, 16, 0.06);
+    }
+
+    .seg-sm button {
+      height: 26px;
+      padding: 0 8px;
+      font-size: 12px;
+    }
+
+    /* Highlight Row */
+    .hl-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .swatches {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .swatch {
+      width: 24px;
+      height: 24px;
+      padding: 0;
+      border-radius: 50%;
+      border: 1.5px solid rgba(20, 18, 16, 0.18);
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: transform 0.12s ease, border-color 0.12s ease, box-shadow 0.12s ease;
+    }
+
+    .swatch:hover {
+      transform: scale(1.06);
+    }
+
+    .swatch.on {
+      border: 2px solid var(--ink);
+      box-shadow: inset 0 0 0 2px var(--panel);
+    }
+
+    /* Split Primary Export CTA + Format Popover */
+    .cta-split {
+      position: relative;
+      display: flex;
+      align-items: stretch;
+      width: 100%;
+      height: 42px;
+    }
+
+    .cta {
+      flex: 1;
+      min-width: 0;
+      height: 42px;
+      padding: 0 16px;
+      border: 1px solid var(--ink);
+      border-right: 0;
+      border-radius: var(--r-ctrl) 0 0 var(--r-ctrl);
+      background: var(--ink);
+      color: var(--panel);
+      font-family: inherit;
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: background-color 0.14s ease, opacity 0.14s ease;
+    }
+
+    .cta:hover:not(:disabled) {
+      background: #2b2722;
+    }
+
+    .cta:disabled,
+    .cta-fmt:disabled {
+      opacity: 0.55;
+      cursor: default;
+    }
+
+    .cta-fmt {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      height: 42px;
+      padding: 0 11px 0 12px;
+      border: 1px solid var(--ink);
+      border-left: 1px solid rgba(251, 248, 241, 0.22);
+      border-radius: 0 var(--r-ctrl) var(--r-ctrl) 0;
+      background: #24211c;
+      color: var(--panel);
+      font-family: inherit;
+      font-size: 13px;
+      line-height: 20px;
+      font-weight: 700;
+      white-space: nowrap;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: background-color 0.14s ease, opacity 0.14s ease;
+    }
+
+    .cta-fmt:hover:not(:disabled),
+    .cta-fmt[aria-expanded="true"] {
+      background: #332e27;
+    }
+
+    .cta-fmt .chevron {
+      opacity: 0.86;
+      transition: transform 0.16s ease;
+    }
+
+    .cta-fmt[aria-expanded="true"] .chevron {
+      transform: rotate(180deg);
+    }
+
+    .fmt-menu {
+      position: absolute;
+      top: calc(100% + 6px);
+      right: 0;
+      z-index: 50;
+      min-width: 156px;
+      width: max-content;
+      padding: 4px;
+      border-radius: var(--r-ctrl);
+      border: 1px solid var(--line-strong);
+      background: var(--surface);
+      box-shadow: 0 10px 26px rgba(20, 18, 16, 0.16);
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .fmt-opt {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      width: 100%;
+      height: 36px;
+      padding: 0 10px;
+      border: 0;
+      border-radius: 6px;
+      background: transparent;
+      color: var(--ink);
+      font-family: inherit;
+      font-size: 13px;
+      line-height: 20px;
+      font-weight: 400;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: background-color 0.12s ease;
+    }
+
+    .fmt-opt:hover {
+      background: var(--track);
+    }
+
+    .fmt-opt.on {
+      background: #f3ede0;
+      font-weight: 500;
+    }
+
+    .fmt-opt .fmt-check {
+      opacity: 0;
+      color: var(--ink);
+    }
+
+    .fmt-opt.on .fmt-check {
+      opacity: 1;
+    }
+
+    .err {
+      margin: 0;
+      padding: 8px 10px;
+      border-radius: var(--r-ctrl);
+      border: 1px solid var(--err-line);
+      background: var(--err-bg);
+      color: var(--err);
+      font-size: 13px;
+      line-height: 22px;
+    }
+
+    /* Instant Crisp Hover Tooltips */
+    [data-tip] {
+      position: relative;
+    }
+
+    [data-tip]::after {
+      content: attr(data-tip);
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%) translateY(3px);
+      padding: 5px 9px;
+      border-radius: 6px;
+      background: #141210;
+      border: 1px solid #3d372f;
+      color: #fbf8f1;
+      font-family: var(--font-sans);
+      font-size: 12px;
+      line-height: 18px;
+      font-weight: 500;
+      white-space: nowrap;
+      pointer-events: none;
+      opacity: 0;
+      visibility: hidden;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.28);
+      z-index: 70;
+      transition: opacity 0.12s ease, transform 0.12s ease, visibility 0.12s ease;
+    }
+
+    [data-tip][data-tip-pos="left"]::after {
+      left: 0;
+      transform: translateY(3px);
+    }
+
+    [data-tip][data-tip-pos="right"]::after {
+      left: auto;
+      right: 0;
+      transform: translateY(3px);
+    }
+
+    [data-tip]:hover::after,
+    [data-tip]:focus-visible::after {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    [data-tip][data-tip-pos="left"]:hover::after,
+    [data-tip][data-tip-pos="left"]:focus-visible::after,
+    [data-tip][data-tip-pos="right"]:hover::after,
+    [data-tip][data-tip-pos="right"]:focus-visible::after {
+      transform: translateY(0);
+    }
+
+    .site-nav [data-tip]::after {
+      bottom: auto;
+      top: calc(100% + 6px);
+    }
+
+    .cta-fmt[aria-expanded="true"][data-tip]::after {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    /* Collapsible Detailed Settings (Progressive 3-Stage Architecture) */
+    .more-wrap {
+      border-top: 1px solid var(--line);
+      padding-top: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .more-toggle {
+      width: 100%;
+      height: 34px;
+      padding: 0 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      border: 1px solid transparent;
+      border-radius: var(--r-ctrl);
+      background: transparent;
+      color: var(--muted);
+      font-family: inherit;
+      font-size: 13px;
+      line-height: 20px;
+      font-weight: 500;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: background-color 0.14s ease, color 0.14s ease, border-color 0.14s ease;
+    }
+
+    .more-toggle:hover {
+      background: var(--track);
+      color: var(--ink);
+    }
+
+    .more-toggle[aria-expanded="true"] {
+      background: var(--track);
+      border-color: var(--line);
+      color: var(--ink);
+    }
+
+    .chevron {
+      transform-origin: 50% 50%;
+      transition: transform 0.16s ease;
+    }
+
+    .more-toggle[aria-expanded="true"] .chevron,
+    .more-toggle.on .chevron {
+      transform: rotate(180deg);
+    }
+
+    .more-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .sub-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 12px;
+      border-radius: 10px;
+      background: #f5efe4;
+      border: 1px solid #e4dccd;
+    }
+
+    .group-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #e4dccd;
+    }
+
+    .group-head-left {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .group-step {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 18px;
+      padding: 0 5px;
+      border-radius: 6px;
+      background: #e6dfd1;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 18px;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .group-title {
+      font-size: 13px;
+      line-height: 20px;
+      font-weight: 700;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+
+    .speed-right {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .speed-num {
+      min-width: 22px;
+    }
+
+    .ramp-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px;
+      border-radius: var(--r-ctrl);
+      background: var(--panel);
+      border: 1px solid var(--line);
+    }
+
+    /* Custom Range Sliders */
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 22px;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(var(--line-strong), var(--line-strong)) 0 50% / 100% 4px no-repeat;
+      cursor: pointer;
+    }
+
+    input[type="range"]::-webkit-slider-runnable-track {
+      height: 16px;
+      background: transparent;
+      border: 0;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--surface);
+      border: 2px solid var(--ink);
+      box-shadow: 0 1px 2px rgba(20, 18, 16, 0.15);
+      transition: background-color 0.12s ease, transform 0.12s ease;
+    }
+
+    input[type="range"]:hover::-webkit-slider-thumb {
+      background: var(--hl);
+    }
+
+    input[type="range"]:active::-webkit-slider-thumb {
+      background: var(--ink);
+      transform: scale(1.06);
+    }
+
+    input[type="range"]::-moz-range-track {
+      height: 4px;
+      border-radius: 999px;
+      background: var(--line-strong);
+      border: 0;
+    }
+
+    input[type="range"]::-moz-range-thumb {
+      width: 16px;
+      height: 16px;
+      box-sizing: border-box;
+      border-radius: 50%;
+      background: var(--surface);
+      border: 2px solid var(--ink);
+      box-shadow: 0 1px 2px rgba(20, 18, 16, 0.15);
+    }
+
+    input[type="range"]:hover::-moz-range-thumb {
+      background: var(--hl);
+    }
+
+    /* Selects & Secondary Buttons */
+    .field-inline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    select {
+      -webkit-appearance: none;
+      appearance: none;
+      height: 36px;
+      padding: 0 32px 0 10px;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--r-ctrl);
+      background-color: var(--surface);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none' stroke='%23665f54' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 9px center;
+      background-size: 16px 16px;
+      color: var(--ink);
+      font-family: inherit;
+      font-size: 13px;
+      line-height: 20px;
+      font-weight: 400;
+      cursor: pointer;
+      transition: border-color 0.14s ease;
+    }
+
+    .field-inline select {
+      min-width: 132px;
+      max-width: 188px;
+    }
+
+    select:hover {
+      border-color: var(--ink);
+    }
+
+    select:disabled {
+      opacity: 0.55;
+      cursor: default;
+    }
+
+    option {
+      font-size: 13px;
+      background: var(--surface);
+      color: var(--ink);
+    }
+
+    .font-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .font-row select {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .sub-btn {
+      height: 36px;
+      padding: 0 12px;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--r-ctrl);
+      background: var(--surface);
+      color: var(--ink);
+      font-family: inherit;
+      font-size: 13px;
+      line-height: 20px;
+      font-weight: 500;
+      white-space: nowrap;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: background-color 0.14s ease, border-color 0.14s ease;
+    }
+
+    .sub-btn:hover {
+      background: var(--track);
+      border-color: var(--ink);
+    }
+
+    /* Aligned Full-Row Pill Switches */
+    .switch-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 28px;
+      margin: 0;
+      color: var(--ink);
+      font-size: 13px;
+      line-height: 20px;
+      font-weight: 400;
+      white-space: nowrap;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .switch-row span {
+      color: var(--ink);
+    }
+
+    .switch-row input[type="checkbox"] {
+      -webkit-appearance: none;
+      appearance: none;
+      margin: 0;
+      width: 34px;
+      height: 20px;
+      border-radius: 999px;
+      border: 1px solid #c5bba9;
+      background-color: #ded6c7;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6.5' fill='%23ffffff'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: 15px 15px;
+      background-position: 2px center;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: background-color 0.15s ease, border-color 0.15s ease, background-position 0.15s ease;
+    }
+
+    .switch-row input[type="checkbox"]:hover {
+      border-color: var(--ink);
+    }
+
+    .switch-row input[type="checkbox"]:checked {
+      background-color: var(--ink);
+      border-color: var(--ink);
+      background-position: 15px center;
+    }
+
+    /* Custom Copy Textarea & Badge */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      height: 20px;
+      padding: 0 7px;
+      border-radius: 6px;
+      background: var(--hl);
+      color: var(--ink);
+      font-size: 12px;
+      line-height: 20px;
+      font-weight: 500;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 74px;
+      padding: 8px 10px;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--r-ctrl);
+      background: var(--surface);
+      color: var(--ink);
+      font-family: inherit;
+      font-size: 13px;
+      line-height: 22px;
+      resize: vertical;
+      transition: border-color 0.14s ease;
+    }
+
+    textarea::placeholder {
+      color: #968e80;
+    }
+
+    textarea:focus {
+      outline: none;
+      border-color: var(--ink);
+      box-shadow: inset 0 0 0 1px var(--ink);
+    }
+
+    /* Focus Rings (Inset Safe) */
+    button:focus-visible,
+    select:focus-visible,
+    input[type="range"]:focus-visible,
+    input[type="checkbox"]:focus-visible,
+    summary:focus-visible,
+    a:focus-visible {
+      outline: 2px solid var(--ink);
+      outline-offset: -2px;
+    }
+
+    .stage button:focus-visible,
+    .stage a:focus-visible,
+    .final-cta button:focus-visible {
+      outline: 2px solid var(--hl);
+      outline-offset: -2px;
+    }
+
+    /* Right Stage & Media Player Island */
+    .stage {
+      position: sticky;
+      top: 68px;
+      min-height: 500px;
+      height: clamp(500px, calc(100dvh - 210px), 660px);
+      padding: 16px;
+      background: var(--stage-bg);
+      border: 1px solid #2b2721;
+      border-radius: var(--r-panel);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: 0 8px 28px rgba(20, 18, 16, 0.14);
+    }
+
+    .stage-frame {
+      flex: 1;
+      min-height: 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #stageCanvas,
+    #preview {
+      display: block;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 4px;
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.46), 0 2px 8px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(255, 255, 255, 0.06);
+    }
+
+    #stageCanvas {
+      background: var(--paper);
+      cursor: pointer;
+    }
+
+    #preview {
+      background: #12100e;
+    }
+
+    .stage-dock {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 10px 14px 12px;
+      border-radius: 12px;
+      border: 1px solid #353029;
+      background: var(--stage-bar);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.34);
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      flex-shrink: 0;
+    }
+
+    .dock-timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .dock-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      min-height: 18px;
+    }
+
+    .progress {
+      color: #cdc5b5;
+      font-size: 12px;
+      line-height: 18px;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .dock-time {
+      color: #8f8779;
+      font-size: 12px;
+      line-height: 18px;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .dock-track {
+      position: relative;
+      width: 100%;
+      height: 5px;
+      border-radius: 999px;
+      background: #332e27;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .dock-fill {
+      height: 100%;
+      width: 0%;
+      border-radius: 999px;
+      background: var(--hl);
+      transition: background-color 0.15s ease;
+    }
+
+    .dock-track.is-baking .dock-fill {
+      background: #e6dcc8;
+    }
+
+    .dock-track.is-exporting .dock-fill {
+      background: var(--hl);
+    }
+
+    .dock-controls {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dock-left {
+      justify-self: start;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .dock-center {
+      justify-self: center;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .dock-right {
+      justify-self: end;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .stage-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      height: 34px;
+      padding: 0 12px;
+      border-radius: var(--r-ctrl);
+      border: 1px solid var(--stage-line);
+      background: #2a2621;
+      color: var(--stage-ink);
+      font-family: inherit;
+      font-size: 13px;
+      line-height: 20px;
+      font-weight: 500;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: background-color 0.14s ease, border-color 0.14s ease, color 0.14s ease;
+    }
+
+    .stage-btn:hover {
+      background: #353029;
+      border-color: #4f483e;
+      color: #ffffff;
+    }
+
+    /* Prominent Center Transport Play/Pause Button */
+    #playPauseBtn {
+      height: 36px;
+      min-width: 94px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border-color: #f2ede3;
+      background: #f2ede3;
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    #playPauseBtn:hover {
+      background: #ffffff;
+      border-color: #ffffff;
+      color: var(--ink);
+    }
+
+    #playPauseBtn.is-playing .ico-play {
+      display: none;
+    }
+
+    #playPauseBtn:not(.is-playing) .ico-pause {
+      display: none;
+    }
+
+    #playPauseBtn.is-playing {
+      background: var(--hl);
+      border-color: var(--hl);
+      color: var(--ink);
+    }
+
+    #playPauseBtn.is-playing:hover {
+      background: #ffef5a;
+      border-color: #ffef5a;
+    }
+
+    /* Distinct Live Preview Toggle State (Left Slot) */
+    #livePreviewToggle {
+      gap: 6px;
+      background: #1b1815;
+      border-color: #322e28;
+      color: var(--stage-muted);
+    }
+
+    #livePreviewToggle:hover {
+      border-color: #494238;
+      color: var(--stage-ink);
+    }
+
+    #livePreviewToggle .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: 1.5px solid #787166;
+      background: transparent;
+      flex-shrink: 0;
+      transition: background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    #livePreviewToggle.on {
+      background: rgba(255, 230, 0, 0.12);
+      border-color: rgba(255, 230, 0, 0.44);
+      color: #fff8d6;
+    }
+
+    #livePreviewToggle.on:hover {
+      background: rgba(255, 230, 0, 0.18);
+      border-color: rgba(255, 230, 0, 0.62);
+    }
+
+    #livePreviewToggle.on .dot {
+      border-color: var(--hl);
+      background: var(--hl);
+      box-shadow: 0 0 0 3px rgba(255, 230, 0, 0.2);
+    }
+
+    .dl {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 34px;
+      padding: 0 12px;
+      border-radius: var(--r-ctrl);
+      background: var(--hl);
+      color: var(--ink);
+      font-size: 13px;
+      line-height: 20px;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background-color 0.14s ease;
+    }
+
+    .dl:hover {
+      background: #ffef5a;
+    }
+
+    /* Editorial Landing Sections */
+    .page-section {
+      border-top: 1px solid var(--line);
+      padding: 56px 24px;
+    }
+
+    .page-section-alt {
+      background: var(--panel);
+    }
+
+    .section-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .sec-head {
+      max-width: 720px;
+      margin-bottom: 28px;
+    }
+
+    .sec-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      height: 22px;
+      padding: 0 8px;
+      margin-bottom: 8px;
+      border-radius: 6px;
+      background: var(--track);
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 20px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    html[data-ui-lang="zh"] .sec-eyebrow,
+    html[data-ui-lang="hant"] .sec-eyebrow {
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .sec-h2 {
+      margin: 0;
+      font-family: var(--font-serif);
+      font-size: clamp(22px, 2.5vw, 30px);
+      line-height: 1.24;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+
+    html[data-ui-lang="zh"] .sec-h2,
+    html[data-ui-lang="hant"] .sec-h2 {
+      line-height: 1.36;
+      letter-spacing: -0.01em;
+    }
+
+    /* Interactive Examples Grid & Live Newspaper Canvases */
+    .examples-grid,
+    .steps-grid,
+    .use-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .example-card,
+    .step-card,
+    .use-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--r-panel);
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 14px;
+      box-shadow: 0 2px 10px rgba(20, 18, 16, 0.03);
+    }
+
+    .example-card {
+      transition: border-color 0.16s ease, box-shadow 0.16s ease;
+    }
+
+    .example-card:hover {
+      border-color: var(--line-strong);
+    }
+
+    .clip-viewport {
+      position: relative;
+      padding: 0;
+      aspect-ratio: 16 / 10;
+      border-radius: 8px;
+      background: var(--stage-bg);
+      border: 1px solid #2b2721;
+      overflow: hidden;
+    }
+
+    .example-canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: var(--paper);
+      cursor: pointer;
+    }
+
+    .card-meta-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .meta-chip {
+      display: inline-flex;
+      align-items: center;
+      height: 22px;
+      padding: 0 8px;
+      border-radius: 6px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 20px;
+      font-weight: 500;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .card-title {
+      margin: 0 0 6px;
+      font-family: var(--font-serif);
+      font-size: 17px;
+      line-height: 26px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+
+    .card-desc,
+    .step-desc,
+    .use-desc {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 24px;
+    }
+
+    .card-action-btn {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      width: 100%;
+      height: 38px;
+      padding: 0 14px;
+      border: 1px solid var(--ink);
+      border-radius: var(--r-ctrl);
+      background: var(--panel);
+      color: var(--ink);
+      font-family: inherit;
+      font-size: 13px;
+      line-height: 20px;
+      font-weight: 700;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: background-color 0.14s ease, color 0.14s ease;
+    }
+
+    .card-action-btn:hover,
+    .card-action-btn.on,
+    .card-action-btn.is-active {
+      background: var(--ink);
+      color: var(--panel);
+    }
+
+    /* How It Works Step Cards */
+    .step-num {
+      display: inline-block;
+      font-family: var(--font-serif);
+      font-size: 32px;
+      line-height: 36px;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      color: var(--ink);
+      background: linear-gradient(transparent 64%, var(--hl) 64%, var(--hl) 92%, transparent 92%);
+      padding: 0 3px;
+      align-self: flex-start;
+    }
+
+    /* Short-Form & Documentary Ratio Cards */
+    .use-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .ratio-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      height: 26px;
+      padding: 0 10px;
+      border-radius: 6px;
+      background: var(--ink);
+      color: var(--panel);
+      font-size: 12px;
+      line-height: 20px;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .ratio-res {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 20px;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .use-platforms {
+      margin: 0 0 6px;
+      color: var(--ink);
+      font-size: 12px;
+      line-height: 20px;
+      font-weight: 600;
+    }
+
+    html[data-ui-lang="zh"] .use-platforms,
+    html[data-ui-lang="hant"] .use-platforms {
+      font-weight: 500;
+    }
+
+    /* Comparison Table (Equal 16px Left & Right Outer Padding per §3.1) */
+    .compare-wrap {
+      border: 1px solid var(--line);
+      border-radius: var(--r-panel);
+      background: var(--surface);
+      overflow-x: auto;
+      box-shadow: 0 2px 10px rgba(20, 18, 16, 0.03);
+    }
+
+    .compare-table {
+      width: 100%;
+      min-width: 680px;
+      border-collapse: collapse;
+      border-spacing: 0;
+      font-size: 13px;
+      line-height: 20px;
+    }
+
+    .compare-table th,
+    .compare-table td {
+      padding: 13px 16px;
+      text-align: left;
+      vertical-align: middle;
+      white-space: nowrap;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .compare-table th:first-child,
+    .compare-table td:first-child {
+      padding-left: 16px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .compare-table th:last-child,
+    .compare-table td:last-child {
+      padding-right: 16px;
+    }
+
+    .compare-table tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .compare-table thead th {
+      background: var(--panel);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 20px;
+      font-weight: 500;
+    }
+
+    .compare-table thead th.col-us {
+      background: #faf3c0;
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .compare-table tbody td.col-us {
+      background: #fffdf2;
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    /* FAQ Accordion */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 880px;
+    }
+
+    .faq-item {
+      border: 1px solid var(--line);
+      border-radius: var(--r-panel);
+      background: var(--surface);
+      overflow: hidden;
+      transition: border-color 0.22s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .faq-item:hover {
+      border-color: var(--line-strong);
+    }
+
+    .faq-item.is-open,
+    .faq-item[open]:not(.is-closing) {
+      border-color: var(--line-strong);
+      box-shadow: 0 6px 18px rgba(20, 18, 16, 0.06);
+    }
+
+    .faq-item summary {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 18px;
+      cursor: pointer;
+      color: var(--ink);
+      font-family: var(--font-serif);
+      font-size: 16px;
+      line-height: 26px;
+      font-weight: 700;
+      user-select: none;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-sign {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      color: var(--ink);
+      flex-shrink: 0;
+      transition: background-color 0.2s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .faq-sign svg {
+      width: 14px;
+      height: 14px;
+      display: block;
+    }
+
+    .faq-sign .faq-line-v {
+      transform-box: view-box;
+      transform-origin: 8px 8px;
+      transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.18s ease;
+    }
+
+    .faq-item.is-open .faq-sign,
+    .faq-item[open]:not(.is-closing) .faq-sign {
+      background: var(--hl);
+      border-color: var(--ink);
+    }
+
+    .faq-item.is-open .faq-sign .faq-line-v,
+    .faq-item[open]:not(.is-closing) .faq-sign .faq-line-v {
+      transform: rotate(90deg);
+      opacity: 0;
+    }
+
+    .faq-body {
+      overflow: hidden;
+      padding: 14px 18px 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 24px;
+      transition: border-color 0.18s ease;
+    }
+
+    .faq-item.is-closing .faq-body {
+      border-top-color: transparent;
+    }
+
+    .faq-body p {
+      margin: 0;
+    }
+
+    /* Dark Editorial Final CTA */
+    .final-cta {
+      background: var(--stage-bg);
+      color: var(--stage-ink);
+      border-top: 3px double #3c362e;
+      padding: 56px 24px;
+      text-align: center;
+    }
+
+    .final-cta-inner {
+      max-width: 820px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .final-cta-h2 {
+      margin: 0;
+      font-family: var(--font-serif);
+      font-size: clamp(24px, 2.8vw, 32px);
+      line-height: 1.32;
+      font-weight: 700;
+      color: var(--stage-ink);
+    }
+
+    html[data-ui-lang="zh"] .final-cta-h2,
+    html[data-ui-lang="hant"] .final-cta-h2 {
+      line-height: 1.42;
+    }
+
+    .cta-match-box {
+      position: relative;
+      z-index: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 5.8em;
+      min-width: 5.8em;
+      height: 1.2em;
+      padding: 0 0.2em;
+      margin: 0 0.06em;
+      vertical-align: -0.21em;
+      color: var(--ink);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    html[data-ui-lang="zh"] .cta-match-box,
+    html[data-ui-lang="hant"] .cta-match-box {
+      width: 4.7em;
+      min-width: 4.7em;
+      vertical-align: -0.22em;
+    }
+
+    .cta-match-box::before {
+      content: "";
+      position: absolute;
+      inset: 0.04em -0.05em;
+      border-radius: 3px;
+      background: var(--hl);
+      box-shadow: 0 2px 0 rgba(0, 0, 0, 0.28);
+      transform: skewX(-6deg) rotate(var(--cta-tilt, -0.6deg));
+      z-index: -1;
+      transition: transform 0.08s ease;
+    }
+
+    .cta-match-word {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+
+    .final-cta-sub {
+      margin: 0;
+      color: var(--stage-muted);
+      font-size: 14px;
+      line-height: 24px;
+    }
+
+    .final-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 44px;
+      padding: 0 22px;
+      margin-top: 4px;
+      border: 1px solid var(--hl);
+      border-radius: var(--r-ctrl);
+      background: var(--hl);
+      color: var(--ink);
+      font-family: inherit;
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 700;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: background-color 0.14s ease, transform 0.14s ease;
+    }
+
+    .final-cta-btn:hover {
+      background: #ffef5a;
+      transform: translateY(-1px);
+    }
+
+    /* Multi-Column Editorial Footer */
+    .site-footer {
+      background: #efe9dc;
+      border-top: 1px solid var(--line-strong);
+      padding: 40px 24px;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1.1fr;
+      gap: 28px;
+    }
+
+    .footer-brand-desc {
+      margin: 10px 0 0;
+      max-width: 340px;
+      font-size: 13px;
+      line-height: 22px;
+      color: var(--muted);
+    }
+
+    .footer-col-title {
+      margin: 0 0 10px;
+      color: var(--ink);
+      font-size: 13px;
+      line-height: 20px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .footer-links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      line-height: 20px;
+      white-space: nowrap;
+      transition: color 0.14s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--ink);
+      text-decoration: underline;
+    }
+
+    /* Unified Legal Supplement View (#legalView) */
+    .legal-view .legal-shell {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 28px 24px 64px;
+    }
+
+    .legal-view .doc-masthead {
+      border-top: 3px double var(--ink);
+      border-bottom: 1px solid var(--line-strong);
+      padding: 22px 0 24px;
+      margin-bottom: 24px;
+    }
+
+    .legal-view .legal-eyebrow {
+      margin: 0 0 8px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 20px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    html[data-ui-lang="zh"] .legal-view .legal-eyebrow,
+    html[data-ui-lang="hant"] .legal-view .legal-eyebrow {
+      letter-spacing: 0.02em;
+    }
+
+    .legal-view .doc-masthead h1 {
+      margin: 0 0 12px;
+      font-family: var(--font-serif);
+      font-size: 32px;
+      line-height: 1.24;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+    }
+
+    html[data-ui-lang="zh"] .legal-view .doc-masthead h1,
+    html[data-ui-lang="hant"] .legal-view .doc-masthead h1 {
+      font-size: 30px;
+      line-height: 1.35;
+    }
+
+    .legal-view .masthead-lead {
+      margin: 0 0 16px;
+      max-width: 780px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 24px;
+    }
+
+    .legal-view .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    .legal-view .meta-facts {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 16px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 22px;
+    }
+
+    .legal-view .trust-pills {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .legal-view .trust-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      height: 28px;
+      padding: 0 10px;
+      border-radius: 6px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--ink);
+      font-size: 12px;
+      line-height: 20px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .legal-view .legal-badge {
+      display: inline-flex;
+      align-items: center;
+      height: 22px;
+      padding: 0 8px;
+      border-radius: 6px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 20px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .legal-view .ph-token {
+      display: inline-block;
+      padding: 0 6px;
+      border-radius: 4px;
+      border: 1px solid var(--ph-line);
+      background: var(--ph-bg);
+      color: var(--ink);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      line-height: 20px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .legal-view code.inline-code {
+      display: inline-block;
+      padding: 0 5px;
+      border-radius: 4px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--ink);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      line-height: 20px;
+      white-space: nowrap;
+    }
+
+    .legal-view .ph-callout {
+      background: var(--panel);
+      border: 1px solid var(--line-strong);
+      border-left: 4px solid var(--ink);
+      border-radius: var(--r-panel);
+      padding: 20px 24px;
+      margin-bottom: 28px;
+      box-shadow: 0 2px 10px rgba(20, 18, 16, 0.03);
+    }
+
+    .legal-view .ph-callout-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .legal-view .ph-callout-title {
+      margin: 0;
+      font-family: var(--font-serif);
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 700;
+    }
+
+    .legal-view .ph-callout-desc {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 22px;
+    }
+
+    .legal-view .ph-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 16px;
+    }
+
+    .legal-view .ph-item {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--r-ctrl);
+      padding: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+    }
+
+    .legal-view .ph-item-desc {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 22px;
+    }
+
+    .legal-view .legal-layout {
+      display: grid;
+      grid-template-columns: 236px minmax(0, 1fr);
+      gap: 28px;
+      align-items: start;
+    }
+
+    .legal-view .toc-rail {
+      position: sticky;
+      top: 68px;
+    }
+
+    .legal-view .toc-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--r-panel);
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .legal-view .toc-heading {
+      margin: 0 0 6px;
+      padding: 0 10px 8px;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 20px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .legal-view .toc-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      height: 36px;
+      padding: 0 10px;
+      border-radius: 6px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      line-height: 20px;
+      font-weight: 500;
+      white-space: nowrap;
+      transition: background-color 0.14s ease, color 0.14s ease;
+    }
+
+    .legal-view .toc-link:hover {
+      background: var(--track);
+      color: var(--ink);
+    }
+
+    .legal-view .toc-link.is-active {
+      background: var(--surface);
+      color: var(--ink);
+      box-shadow: inset 0 0 0 1px var(--line-strong);
+    }
+
+    .legal-view .toc-num {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 20px;
+      font-variant-numeric: tabular-nums;
+      flex-shrink: 0;
+    }
+
+    .legal-view .legal-main {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      min-width: 0;
+    }
+
+    .legal-view .legal-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--r-panel);
+      padding: 28px 32px;
+      box-shadow: 0 2px 10px rgba(20, 18, 16, 0.03);
+    }
+
+    .legal-view .legal-sec-head {
+      padding-bottom: 14px;
+      margin-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .legal-view .sec-kicker {
+      display: inline-block;
+      margin-bottom: 6px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 20px;
+      font-weight: 500;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .legal-view .legal-card h2 {
+      margin: 0 0 6px;
+      font-family: var(--font-serif);
+      font-size: 24px;
+      line-height: 1.3;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    html[data-ui-lang="zh"] .legal-view .legal-card h2,
+    html[data-ui-lang="hant"] .legal-view .legal-card h2 {
+      font-size: 22px;
+      line-height: 1.4;
+    }
+
+    .legal-view .sec-meta {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 22px;
+    }
+
+    .legal-view .legal-card h3 {
+      margin: 22px 0 8px;
+      font-size: 15px;
+      line-height: 24px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .legal-view .legal-card h3:first-of-type {
+      margin-top: 4px;
+    }
+
+    .legal-view .legal-card p {
+      margin: 0 0 12px;
+      font-size: 14px;
+      line-height: 24px;
+      color: var(--ink);
+    }
+
+    .legal-view .legal-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .legal-view .legal-list {
+      margin: 0 0 14px;
+      padding-left: 20px;
+    }
+
+    .legal-view .legal-list li {
+      margin-bottom: 8px;
+      font-size: 14px;
+      line-height: 24px;
+    }
+
+    .legal-view .legal-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .legal-view .legal-note {
+      margin-top: 14px;
+      padding: 12px 16px;
+      border-radius: var(--r-ctrl);
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 22px;
+    }
+
+    .legal-view .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      margin: 12px 0 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--r-panel);
+      background: var(--surface);
+    }
+
+    .legal-view .legal-table {
+      width: 100%;
+      min-width: 640px;
+      border-collapse: collapse;
+      font-size: 13px;
+      line-height: 20px;
+    }
+
+    .legal-view .legal-table th,
+    .legal-view .legal-table td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    .legal-view .legal-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .legal-view .legal-table th {
+      background: var(--panel);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 20px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .legal-view .legal-table .col-fixed {
+      white-space: nowrap;
+    }
+
+    .legal-view .legal-table .col-main {
+      width: 100%;
+      min-width: 220px;
+      line-height: 22px;
+    }
+
+    .legal-view .legal-table th:last-child,
+    .legal-view .legal-table td:last-child {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    /* Responsive Mobile & Narrow WebView */
+    @media (max-width: 920px) {
+      .examples-grid,
+      .steps-grid,
+      .use-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .legal-view .legal-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+      }
+
+      .legal-view .toc-rail {
+        position: static;
+      }
+
+      .legal-view .toc-card {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .legal-view .toc-heading {
+        width: 100%;
+        margin-bottom: 2px;
+      }
+
+      .legal-view .ph-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .legal-view .legal-card {
+        padding: 22px 20px;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .nav-inner {
+        padding: 0 12px;
+        gap: 6px;
+      }
+
+      .nav-brand-group {
+        gap: 6px;
+      }
+
+      .brand-logo {
+        font-size: 16px;
+        line-height: 22px;
+      }
+
+      .brand-cut {
+        margin-left: 4px;
+        padding-left: 5px;
+      }
+
+      .nav-links .nav-hide-sm {
+        display: none;
+      }
+
+      .nav-links {
+        gap: 8px;
+      }
+
+      .site-nav .seg-sm button {
+        padding: 0 6px;
+      }
+
+      .studio-section {
+        padding: 10px 12px 24px;
+      }
+
+      .studio-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+      }
+
+      .stage {
+        order: -1;
+        position: static;
+        height: auto;
+        min-height: 44dvh;
+        padding: 12px;
+        gap: 10px;
+      }
+
+      .stage-frame {
+        height: 34dvh;
+        min-height: 200px;
+      }
+
+      #stageCanvas,
+      #preview {
+        max-height: 34dvh;
+      }
+
+      .panel {
+        padding: 16px;
+      }
+
+      .stage-dock {
+        padding: 9px 10px 10px;
+      }
+
+      .stage-btn {
+        padding: 0 9px;
+      }
+
+      #playPauseBtn {
+        min-width: 80px;
+        padding: 0 12px;
+      }
+
+      .dock-controls:has(#downloadBtn:not([hidden])) {
+        grid-template-columns: auto auto 1fr;
+        gap: 6px;
+      }
+
+      .dock-right {
+        gap: 6px;
+      }
+
+      .dl {
+        padding: 0 8px;
+        font-size: 12px;
+      }
+
+      .page-section,
+      .final-cta {
+        padding: 36px 12px;
+      }
+
+      .site-footer {
+        padding: 32px 12px 24px;
+      }
+
+      .footer-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+      }
+
+      .legal-view .legal-shell {
+        padding: 20px 12px 48px;
+      }
+
+      .legal-view .doc-masthead h1,
+      html[data-ui-lang="zh"] .legal-view .doc-masthead h1,
+      html[data-ui-lang="hant"] .legal-view .doc-masthead h1 {
+        font-size: 24px;
+      }
+
+      .legal-view .ph-callout {
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-nav">
+    <div class="nav-inner">
+      <div class="nav-brand-group">
+        <a id="legalBackBtn" class="nav-back-btn" href="#studio" hidden aria-label="Back" data-en-label="Back" data-zh-label="返回" data-hant-label="返回" data-tip="Back" data-en-tip="Back" data-zh-tip="返回" data-hant-tip="返回" data-tip-pos="left"><span class="ico" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3.5L5.5 8L10 12.5"/><path d="M6 8H13"/></svg></span></a>
+        <a class="brand-logo" href="#studio">
+          <span class="lang-en">TextMatch<span class="brand-cut">Cut</span></span>
+          <span class="lang-zh">文字<span class="brand-cut">对切</span></span>
+          <span class="lang-hant">文字<span class="brand-cut">對切</span></span>
+        </a>
+      </div>
+
+      <nav class="nav-links" aria-label="Primary navigation" data-en-label="Primary navigation" data-zh-label="主导航" data-hant-label="主導覽">
+        <a href="#studio" data-en-text="Studio" data-zh-text="工作台" data-hant-text="工作台">Studio</a>
+        <a href="#examples" class="nav-hide-sm" data-en-text="Examples" data-zh-text="示例" data-hant-text="範例">Examples</a>
+        <a href="#how" class="nav-hide-sm" data-en-text="How It Works" data-zh-text="流程" data-hant-text="流程">How It Works</a>
+        <a href="#use-cases" class="nav-hide-sm" data-en-text="Presets" data-zh-text="画幅" data-hant-text="畫幅">Presets</a>
+        <a href="#faq" class="nav-hide-sm" data-en-text="FAQ" data-zh-text="问答" data-hant-text="問答">FAQ</a>
+        <a href="#legal" id="navLegalLink" data-en-text="Legal" data-zh-text="条款" data-hant-text="條款">Legal</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="seg seg-sm" id="uiLangBtns" role="group" aria-label="Interface language" data-en-label="Interface language" data-zh-label="界面语言" data-hant-label="介面語言">
+          <button type="button" data-ui-lang="en" class="on">EN</button>
+          <button type="button" data-ui-lang="zh">简体</button>
+          <button type="button" data-ui-lang="hant">繁體</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="mainView">
+    <section id="studio" class="studio-section">
+      <div class="studio-hero">
+        <h1 class="hero-h1">
+          <span class="lang-en">Highlight a word. Get a <span class="hl-mark">match cut</span>.</span>
+          <span class="lang-zh">锁定一个词，生成<span class="hl-mark">报刊快切</span>动画</span>
+          <span class="lang-hant">鎖定一個詞，生成<span class="hl-mark">報刊快切</span>動畫</span>
+        </h1>
+      </div>
+
+      <div class="studio-grid">
+        <section class="panel" aria-label="Control panel" data-en-label="Control panel" data-zh-label="控制面板" data-hant-label="控制面板">
+          <header class="panel-head">
+            <h2 class="panel-title" data-en-text="Clip Studio" data-zh-text="剪报工作台" data-hant-text="剪報工作台">Clip Studio</h2>
+            <div class="seg seg-sm" id="localeBtns" role="group" aria-label="Newspaper language" data-en-label="Newspaper language" data-zh-label="报刊语言" data-hant-label="報刊語言">
+              <button type="button" data-locale="en" class="on">EN</button>
+              <button type="button" data-locale="zh">简体</button>
+              <button type="button" data-locale="hant">繁體</button>
+            </div>
+          </header>
+
+          <div class="ctrl">
+            <div class="field-head">
+              <label for="keyword" data-en-text="Focal Word" data-zh-text="焦点词" data-hant-text="焦點詞">Focal Word</label>
+              <span id="charCount" class="num">11 / 23</span>
+            </div>
+            <div class="kw-box">
+              <input id="keyword" type="text" maxlength="23" value="Open Source" autocomplete="off" placeholder="Type a focal word (/ to focus)" data-en-placeholder="Type a focal word (/ to focus)" data-zh-placeholder="输入焦点词（按 / 聚焦）" data-hant-placeholder="輸入焦點詞（按 / 聚焦）">
+              <div class="kw-actions">
+                <button type="button" id="clearKwBtn" class="kw-icon-btn" aria-label="Clear" data-en-label="Clear" data-zh-label="清空" data-hant-label="清空" data-tip="Clear input" data-en-tip="Clear input" data-zh-tip="清空输入" data-hant-tip="清空輸入">
+                  <span class="ico" aria-hidden="true">
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+                      <path d="M4.5 4.5l7 7M11.5 4.5l-7 7"/>
+                    </svg>
+                  </span>
+                </button>
+                <button type="button" id="randomKwBtn" class="kw-rand-btn" aria-label="Random word" data-en-label="Random word" data-zh-label="随机词" data-hant-label="隨機詞" data-tip="Try a random focal word" data-en-tip="Try a random focal word" data-zh-tip="随机换一个焦点词" data-hant-tip="隨機換一個焦點詞" data-tip-pos="right">
+                  <span class="ico" aria-hidden="true">
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M2.5 5h2.6c1.5 0 2.3 1.2 3.3 3s1.8 3 3.3 3h1.8"/>
+                      <path d="M11.8 9.2L13.6 11l-1.8 1.8"/>
+                      <path d="M2.5 11h2.6c.9 0 1.6-.4 2.1-1.2M10.2 6.2c.6-.8 1.3-1.2 2.2-1.2h1.2"/>
+                      <path d="M11.8 3.2L13.6 5l-1.8 1.8"/>
+                    </svg>
+                  </span>
+                  <span data-en-text="Random" data-zh-text="随机" data-hant-text="隨機">Random</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="ctrl">
+            <div class="field-head">
+              <span class="field-label" data-en-text="Aspect Ratio" data-zh-text="画幅" data-hant-text="畫幅">Aspect Ratio</span>
+            </div>
+            <div class="seg seg-full" id="ratios" role="group" aria-label="Aspect ratio" data-en-label="Aspect ratio" data-zh-label="画幅" data-hant-label="畫幅">
+              <button type="button" data-ratio="9:16">
+                <span class="ico" aria-hidden="true">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4">
+                    <rect x="4.5" y="1.8" width="7" height="12.4" rx="1.2"/>
+                  </svg>
+                </span>
+                <span>9:16</span>
+              </button>
+              <button type="button" data-ratio="1:1" class="on">
+                <span class="ico" aria-hidden="true">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4">
+                    <rect x="2.5" y="2.5" width="11" height="11" rx="1.2"/>
+                  </svg>
+                </span>
+                <span>1:1</span>
+              </button>
+              <button type="button" data-ratio="16:9">
+                <span class="ico" aria-hidden="true">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4">
+                    <rect x="1.8" y="4.5" width="12.4" height="7" rx="1.2"/>
+                  </svg>
+                </span>
+                <span>16:9</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="ctrl">
+            <div class="field-head">
+              <span class="field-label" data-en-text="Highlight" data-zh-text="高亮" data-hant-text="高亮">Highlight</span>
+            </div>
+            <div class="hl-row">
+              <div class="swatches" id="hlColors" role="group" aria-label="Highlight color" data-en-label="Highlight color" data-zh-label="高亮颜色" data-hant-label="高亮顏色">
+                <button type="button" class="swatch on" data-hl="#ffe72e" style="background:#ffe72e" aria-label="Marker Yellow" data-en-label="Marker Yellow" data-zh-label="荧光黄" data-hant-label="螢光黃"></button>
+                <button type="button" class="swatch" data-hl="#ff9eb5" style="background:#ff9eb5" aria-label="Sakura Pink" data-en-label="Sakura Pink" data-zh-label="樱花粉" data-hant-label="櫻花粉"></button>
+                <button type="button" class="swatch" data-hl="#9ee6b8" style="background:#9ee6b8" aria-label="Mint Green" data-en-label="Mint Green" data-zh-label="薄荷绿" data-hant-label="薄荷綠"></button>
+                <button type="button" class="swatch" data-hl="#9cc8ff" style="background:#9cc8ff" aria-label="Sky Blue" data-en-label="Sky Blue" data-zh-label="晴空蓝" data-hant-label="晴空藍"></button>
+                <button type="button" class="swatch" data-hl="#ffad66" style="background:#ffad66" aria-label="Warm Amber" data-en-label="Warm Amber" data-zh-label="暖杏橙" data-hant-label="暖杏橙"></button>
+              </div>
+              <div class="seg seg-sm" id="hlStyleBtns" role="group" aria-label="Highlight style" data-en-label="Highlight style" data-zh-label="高亮样式" data-hant-label="高亮樣式">
+                <button type="button" data-hl-style="marker" class="on" data-en-text="Marker" data-zh-text="马克笔" data-hant-text="馬克筆">Marker</button>
+                <button type="button" data-hl-style="box" data-en-text="Box" data-zh-text="方框" data-hant-text="方框">Box</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="field-inline">
+            <label for="audioSelect" data-en-text="Sound FX" data-zh-text="音效" data-hant-text="音效">Sound FX</label>
+            <select id="audioSelect">
+              <option value="paper" data-en-text="Paper Shuffle" data-zh-text="翻纸" data-hant-text="翻紙">Paper Shuffle</option>
+              <option value="shutter" data-en-text="Camera Shutter" data-zh-text="快门" data-hant-text="快門">Camera Shutter</option>
+              <option value="film" data-en-text="Film Advance" data-zh-text="过片" data-hant-text="過片">Film Advance</option>
+              <option value="polaroid" data-en-text="Polaroid" data-zh-text="拍立得" data-hant-text="拍立得">Polaroid</option>
+              <option value="flash" data-en-text="Flash Pop" data-zh-text="闪光" data-hant-text="閃光">Flash Pop</option>
+              <option value="none" data-en-text="Mute" data-zh-text="无声" data-hant-text="無聲">Mute</option>
+            </select>
+          </div>
+
+          <div class="cta-split" id="exportSplit">
+            <button class="cta" id="generateBtn" type="button" data-en-text="Export Video" data-zh-text="导出视频" data-hant-text="匯出影片">Export Video</button>
+            <button class="cta-fmt" id="formatBtn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="formatMenu" aria-label="Export format" data-en-label="Export format" data-zh-label="导出格式" data-hant-label="匯出格式" data-tip="Choose export video format" data-en-tip="Choose export video format" data-zh-tip="选择导出视频格式" data-hant-tip="選擇匯出影片格式" data-tip-pos="right">
+              <span id="formatBtnLabel">MP4</span>
+              <span class="ico" aria-hidden="true">
+                <svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4.5 6.2L8 9.8l3.5-3.6"/>
+                </svg>
+              </span>
+            </button>
+            <div class="fmt-menu" id="formatMenu" role="listbox" aria-label="Export format" data-en-label="Export format" data-zh-label="导出格式" data-hant-label="匯出格式" hidden></div>
+            <select id="formatSelect" hidden aria-hidden="true" tabindex="-1"></select>
+          </div>
+          <p class="err" id="error" hidden></p>
+
+          <div class="more-wrap">
+            <button type="button" id="moreToggle" class="more-toggle" aria-expanded="false" aria-controls="morePanel">
+              <span data-en-text="Advanced Settings" data-zh-text="详细设置" data-hant-text="詳細設定">Advanced Settings</span>
+              <span class="ico" aria-hidden="true">
+                <svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 6l4 4 4-4"/>
+                </svg>
+              </span>
+            </button>
+
+            <div id="morePanel" class="more-panel" hidden>
+              <div class="sub-group">
+                <div class="group-head">
+                  <div class="group-head-left">
+                    <span class="group-step">01</span>
+                    <span class="group-title" data-en-text="Cut Pacing" data-zh-text="剪辑节奏" data-hant-text="剪輯節奏">Cut Pacing</span>
+                  </div>
+                </div>
+
+                <div class="ctrl">
+                  <div class="field-head">
+                    <label for="durRange" data-en-text="Duration" data-zh-text="时长" data-hant-text="時長">Duration</label>
+                    <span id="durVal" class="num">4s</span>
+                  </div>
+                  <input id="durRange" type="range" min="2" max="12" value="4">
+                </div>
+
+                <div class="ctrl">
+                  <div class="field-head">
+                    <label for="cpsRange"><span id="cpsLabel" data-en-text="Cuts / sec" data-zh-text="刀速" data-hant-text="刀速">Cuts / sec</span></label>
+                    <div class="speed-right">
+                      <div class="seg seg-sm" id="speedModeBtns" role="group" aria-label="Speed mode" data-en-label="Speed mode" data-zh-label="刀速模式" data-hant-label="刀速模式">
+                        <button type="button" data-speed-mode="const" class="on" data-en-text="Constant" data-zh-text="匀速" data-hant-text="勻速">Constant</button>
+                        <button type="button" data-speed-mode="ramp" data-en-text="Ramp" data-zh-text="变速" data-hant-text="變速">Ramp</button>
+                      </div>
+                      <span id="cpsVal" class="num speed-num">12</span>
+                    </div>
+                  </div>
+                  <input id="cpsRange" type="range" min="2" max="30" value="12">
+                </div>
+
+                <div id="rampGroup" class="ramp-group" hidden>
+                  <div class="ctrl">
+                    <div class="field-head">
+                      <label for="cps2Range" data-en-text="End cuts / sec" data-zh-text="结束刀速" data-hant-text="結束刀速">End cuts / sec</label>
+                      <span id="cps2Val" class="num">18</span>
+                    </div>
+                    <input id="cps2Range" type="range" min="2" max="30" value="18">
+                  </div>
+
+                  <div class="ctrl">
+                    <div class="field-head">
+                      <span class="field-label" data-en-text="Speed Curve" data-zh-text="变速曲线" data-hant-text="變速曲線">Speed Curve</span>
+                    </div>
+                    <div class="seg seg-full" id="curveBtns" role="group" aria-label="Speed curve" data-en-label="Speed curve" data-zh-label="变速曲线" data-hant-label="變速曲線">
+                      <button type="button" data-curve="lin" class="on" data-en-text="Linear" data-zh-text="线性" data-hant-text="線性">Linear</button>
+                      <button type="button" data-curve="in" data-en-text="Ease In" data-zh-text="渐快" data-hant-text="漸快">Ease In</button>
+                      <button type="button" data-curve="out" data-en-text="Ease Out" data-zh-text="渐慢" data-hant-text="漸慢">Ease Out</button>
+                    </div>
+                  </div>
+                </div>
+
+                <label class="switch-row" for="holdLast">
+                  <span data-en-text="Hold final cut 1s" data-zh-text="结尾定格 1 秒" data-hant-text="結尾定格 1 秒">Hold final cut 1s</span>
+                  <input id="holdLast" type="checkbox">
+                </label>
+              </div>
+
+              <div class="sub-group">
+                <div class="group-head">
+                  <div class="group-head-left">
+                    <span class="group-step">02</span>
+                    <span class="group-title" data-en-text="Optics & Grain" data-zh-text="镜头质感" data-hant-text="鏡頭質感">Optics &amp; Grain</span>
+                  </div>
+                </div>
+
+                <div class="ctrl">
+                  <div class="field-head">
+                    <label for="zoomRange" data-en-text="Camera zoom" data-zh-text="画面缩放" data-hant-text="畫面縮放">Camera zoom</label>
+                    <span id="zoomVal" class="num">1.5×</span>
+                  </div>
+                  <input id="zoomRange" type="range" min="8" max="40" value="15">
+                </div>
+
+                <div class="ctrl">
+                  <div class="field-head">
+                    <label for="blurRange" data-en-text="Edge lens blur" data-zh-text="边缘模糊" data-hant-text="邊緣模糊">Edge lens blur</label>
+                    <span id="blurVal" class="num">1.0×</span>
+                  </div>
+                  <input id="blurRange" type="range" min="0" max="20" value="10">
+                </div>
+
+                <label class="switch-row" for="vignetteCheck">
+                  <span data-en-text="Lens vignette" data-zh-text="镜头暗角" data-hant-text="鏡頭暗角">Lens vignette</span>
+                  <input id="vignetteCheck" type="checkbox" checked>
+                </label>
+              </div>
+
+              <div class="sub-group">
+                <div class="group-head">
+                  <div class="group-head-left">
+                    <span class="group-step">03</span>
+                    <span class="group-title" data-en-text="Fonts & Copy" data-zh-text="字体与正文" data-hant-text="字體與內文">Fonts &amp; Copy</span>
+                  </div>
+                  <span id="customBadge" class="badge num" hidden></span>
+                </div>
+
+                <div class="ctrl">
+                  <div class="field-head">
+                    <label for="fontSelect" data-en-text="Newspaper font" data-zh-text="报刊字体" data-hant-text="報刊字體">Newspaper font</label>
+                  </div>
+                  <div class="font-row">
+                    <select id="fontSelect"></select>
+                    <button type="button" id="fontFileBtn" class="sub-btn" data-tip="Loaded in browser RAM only, confirm license for commercial use" data-en-tip="Loaded in browser RAM only, confirm license for commercial use" data-zh-tip="仅在浏览器内存中加载，商用请确认字体授权" data-hant-tip="僅在瀏覽器記憶體中載入，商用請確認字體授權" data-tip-pos="right" data-en-text="Upload" data-zh-text="上传" data-hant-text="上傳">Upload</button>
+                    <input id="fontFile" type="file" accept=".ttf,.otf,.woff,.woff2" hidden>
+                  </div>
+                </div>
+
+                <div class="ctrl">
+                  <div class="field-head">
+                    <label for="customText" data-en-text="Custom script" data-zh-text="自定义正文" data-hant-text="自訂內文">Custom script</label>
+                  </div>
+                  <textarea id="customText" maxlength="4000" placeholder="Paste your article or script. Sentences containing the focal word are highlighted first." data-en-placeholder="Paste your article or script. Sentences containing the focal word are highlighted first." data-zh-placeholder="粘贴正文，含焦点词的句子优先高亮" data-hant-placeholder="貼上內文，含焦點詞的句子優先高亮"></textarea>
+                </div>
+
+                <label class="switch-row" for="mixCustomBg">
+                  <span data-en-text="Fill background columns too" data-zh-text="背景也用这段正文" data-hant-text="背景也用這段內文">Fill background columns too</span>
+                  <input id="mixCustomBg" type="checkbox">
+                </label>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="stage" aria-label="Canvas preview" data-en-label="Canvas preview" data-zh-label="画布预览" data-hant-label="畫布預覽">
+          <div class="stage-frame">
+            <canvas id="stageCanvas" width="1080" height="1080"></canvas>
+            <video id="preview" controls playsinline hidden></video>
+          </div>
+
+          <div class="stage-dock" role="region" aria-label="Playback controls" data-en-label="Playback controls" data-zh-label="播放控制栏" data-hant-label="播放控制列">
+            <div class="dock-timeline">
+              <div class="dock-meta">
+                <span class="progress num" id="progress">Ready</span>
+                <span class="dock-time num" id="timeReadout">0.0 / 4.0s</span>
+              </div>
+              <div class="dock-track" id="stageProgressTrack" aria-hidden="true">
+                <div class="dock-fill" id="stageProgressFill"></div>
+              </div>
+            </div>
+
+            <div class="dock-controls">
+              <div class="dock-left">
+                <button type="button" id="livePreviewToggle" class="stage-btn on" aria-pressed="true" data-tip="Auto-loop preview on edit" data-en-tip="Auto-loop preview on edit" data-zh-tip="开启后自动循环播放预览" data-hant-tip="開啟後自動循環播放預覽" data-tip-pos="left">
+                  <span class="dot" aria-hidden="true"></span>
+                  <span data-en-text="Live" data-zh-text="实时预览" data-hant-text="即時預覽">Live</span>
+                </button>
+              </div>
+
+              <div class="dock-center">
+                <button type="button" id="playPauseBtn" class="stage-btn" data-tip="Play or pause preview" data-en-tip="Play or pause preview" data-zh-tip="播放或暂停画面预览" data-hant-tip="播放或暫停畫面預覽">
+                  <span class="ico" aria-hidden="true">
+                    <svg class="ico-play" viewBox="0 0 16 16" fill="currentColor">
+                      <path d="M4.5 3.2a.7.7 0 0 1 1.06-.6l7.6 4.8a.7.7 0 0 1 0 1.2l-7.6 4.8a.7.7 0 0 1-1.06-.6V3.2z"/>
+                    </svg>
+                    <svg class="ico-pause" viewBox="0 0 16 16" fill="currentColor">
+                      <rect x="4" y="3" width="3" height="10" rx="0.8"/>
+                      <rect x="9" y="3" width="3" height="10" rx="0.8"/>
+                    </svg>
+                  </span>
+                  <span id="playPauseLabel">Play</span>
+                </button>
+              </div>
+
+              <div class="dock-right">
+                <button type="button" id="rerollBtn" class="stage-btn" data-tip="Shuffle newspapers and headlines" data-en-tip="Shuffle newspapers and headlines" data-zh-tip="随机更换整套报刊与配文" data-hant-tip="隨機更換整套報刊與配文" data-tip-pos="right">
+                  <span class="ico" aria-hidden="true">
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M13.2 8a5.2 5.2 0 1 1-1.3-3.45"/>
+                      <path d="M13.4 2.6v2.5h-2.5"/>
+                    </svg>
+                  </span>
+                  <span data-en-text="Reroll" data-zh-text="换一批" data-hant-text="換一批">Reroll</span>
+                </button>
+                <a class="dl" id="downloadBtn" download="text-match-cut.mp4" hidden>Download MP4</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- c) Interactive Examples -->
+    <section id="examples" class="page-section page-section-alt">
+      <div class="section-inner">
+        <header class="sec-head">
+          <span class="sec-eyebrow">
+            <span class="lang-en">SEE IT IN MOTION</span>
+            <span class="lang-zh">精选预设示例</span>
+            <span class="lang-hant">精選預設範例</span>
+          </span>
+          <h2 class="sec-h2">
+            <span class="lang-en">Three prompts. Three editorial moods.</span>
+            <span class="lang-zh">三组真实题材，一键载入工作台实时预览</span>
+            <span class="lang-hant">三組真實題材，一鍵載入工作台即時預覽</span>
+          </h2>
+        </header>
+
+        <div class="examples-grid">
+          <article class="example-card">
+            <div class="clip-viewport" aria-hidden="true">
+              <canvas class="example-canvas" width="560" height="350"
+                data-example-canvas="0"
+                data-ex-en="Open Source"
+                data-ex-zh="人工智能"
+                data-ex-hant="人工智慧"
+                data-ex-hl="#ffe72e"
+                data-ex-style="marker"
+                data-ex-mode="const"
+                data-ex-cps="10"></canvas>
+            </div>
+
+            <div class="card-meta-chips">
+              <span class="meta-chip">1:1</span>
+              <span class="meta-chip"><span class="lang-en">12 CPS</span><span class="lang-zh">12 刀/秒</span><span class="lang-hant">12 刀/秒</span></span>
+              <span class="meta-chip">#FFE72E</span>
+            </div>
+
+            <div>
+              <h3 class="card-title">
+                <span class="lang-en">Open Source · Classic Marker</span>
+                <span class="lang-zh">人工智能 · 经典荧光黄马克笔</span>
+                <span class="lang-hant">人工智慧 · 經典螢光黃馬克筆</span>
+              </h3>
+              <p class="card-desc">
+                <span class="lang-en">Crisp broadsheet serifs paired with slanted yellow marker ink at steady 12 cuts per second for tech explainers.</span>
+                <span class="lang-zh">经典综合大报衬线体搭配倾斜荧光黄马克笔，以每秒 12 刀稳健节拍呈现科技深度选题。</span>
+                <span class="lang-hant">經典綜合大報明體搭配傾斜螢光黃馬克筆，以每秒 12 刀穩健節拍呈現科技深度選題。</span>
+              </p>
+            </div>
+
+            <button type="button" class="card-action-btn"
+              data-try-prompt="Open Source"
+              data-try-en="Open Source"
+              data-try-zh="人工智能"
+              data-try-hant="人工智慧"
+              data-try-ratio="1:1"
+              data-try-hl="#ffe72e"
+              data-try-style="marker"
+              data-try-mode="const"
+              data-try-cps="12"
+              data-en-text="Load in Studio"
+              data-zh-text="载入同款参数"
+              data-hant-text="載入同款參數">Load in Studio</button>
+          </article>
+
+          <article class="example-card">
+            <div class="clip-viewport" aria-hidden="true">
+              <canvas class="example-canvas" width="560" height="350"
+                data-example-canvas="1"
+                data-ex-en="RATE CUTS"
+                data-ex-zh="降息周期"
+                data-ex-hant="降息週期"
+                data-ex-hl="#ff9eb5"
+                data-ex-style="marker"
+                data-ex-mode="ramp"
+                data-ex-cps="8"
+                data-ex-cps2="22"></canvas>
+            </div>
+
+            <div class="card-meta-chips">
+              <span class="meta-chip">9:16</span>
+              <span class="meta-chip"><span class="lang-en">14→26 Ramp</span><span class="lang-zh">14→26 变速</span><span class="lang-hant">14→26 變速</span></span>
+              <span class="meta-chip">#FF9EB5</span>
+            </div>
+
+            <div>
+              <h3 class="card-title">
+                <span class="lang-en">RATE CUTS · Accelerating Ramp</span>
+                <span class="lang-zh">降息周期 · 竖屏渐快变速冲刺</span>
+                <span class="lang-hant">降息週期 · 直式漸快變速衝刺</span>
+              </h3>
+              <p class="card-desc">
+                <span class="lang-en">Vertical 9:16 financial daily layout accelerating from 14 to 26 CPS at 60fps with sakura-pink highlight ink.</span>
+                <span class="lang-zh">9:16 竖屏财经版面配樱花粉高亮，刀速由 14 渐快冲刺至 26 CPS 并自动开启 60 帧高刷渲染。</span>
+                <span class="lang-hant">9:16 直式財經版面配櫻花粉高亮，刀速由 14 漸快衝刺至 26 CPS 並自動開啟 60 幀高流暢度渲染。</span>
+              </p>
+            </div>
+
+            <button type="button" class="card-action-btn"
+              data-try-prompt="RATE CUTS"
+              data-try-en="RATE CUTS"
+              data-try-zh="降息周期"
+              data-try-hant="降息週期"
+              data-try-ratio="9:16"
+              data-try-hl="#ff9eb5"
+              data-try-style="marker"
+              data-try-mode="ramp"
+              data-try-cps="14"
+              data-try-cps2="26"
+              data-en-text="Load in Studio"
+              data-zh-text="载入同款参数"
+              data-hant-text="載入同款參數">Load in Studio</button>
+          </article>
+
+          <article class="example-card">
+            <div class="clip-viewport" aria-hidden="true">
+              <canvas class="example-canvas" width="560" height="350"
+                data-example-canvas="2"
+                data-ex-en="Rare Earths"
+                data-ex-zh="深空探测"
+                data-ex-hant="深空探測"
+                data-ex-hl="#9ee6b8"
+                data-ex-style="box"
+                data-ex-mode="const"
+                data-ex-cps="12"></canvas>
+            </div>
+
+            <div class="card-meta-chips">
+              <span class="meta-chip">16:9</span>
+              <span class="meta-chip"><span class="lang-en">15 CPS</span><span class="lang-zh">15 刀/秒</span><span class="lang-hant">15 刀/秒</span></span>
+              <span class="meta-chip"><span class="lang-en">#9EE6B8 Box</span><span class="lang-zh">薄荷绿方框</span><span class="lang-hant">薄荷綠方框</span></span>
+            </div>
+
+            <div>
+              <h3 class="card-title">
+                <span class="lang-en">Rare Earths · Documentary Box</span>
+                <span class="lang-zh">深空探测 · 纪录片宽画幅方框</span>
+                <span class="lang-hant">深空探測 · 紀錄片寬畫幅方框</span>
+              </h3>
+              <p class="card-desc">
+                <span class="lang-en">Widescreen 16:9 investigative spread with crisp geometric callout framing around the focal term at 15 CPS.</span>
+                <span class="lang-zh">16:9 宽银幕调查报道版式，采用几何薄荷绿方框精准框定核心术语，适合长视频章节导视。</span>
+                <span class="lang-hant">16:9 寬銀幕調查報導版式，採用幾何薄荷綠方框精準框定核心術語，適合長影片章節導視。</span>
+              </p>
+            </div>
+
+            <button type="button" class="card-action-btn"
+              data-try-prompt="Rare Earths"
+              data-try-en="Rare Earths"
+              data-try-zh="深空探测"
+              data-try-hant="深空探測"
+              data-try-ratio="16:9"
+              data-try-hl="#9ee6b8"
+              data-try-style="box"
+              data-try-mode="const"
+              data-try-cps="15"
+              data-en-text="Load in Studio"
+              data-zh-text="载入同款参数"
+              data-hant-text="載入同款參數">Load in Studio</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- d) How It Works -->
+    <section id="how" class="page-section">
+      <div class="section-inner">
+        <header class="sec-head">
+          <span class="sec-eyebrow">
+            <span class="lang-en">HOW IT WORKS</span>
+            <span class="lang-zh">工作流程</span>
+            <span class="lang-hant">工作流程</span>
+          </span>
+          <h2 class="sec-h2">
+            <span class="lang-en">Three steps. Under thirty seconds.</span>
+            <span class="lang-zh">三步操作，三十秒内完成剪报快切镜头</span>
+            <span class="lang-hant">三步操作，三十秒內完成剪報快切鏡頭</span>
+          </h2>
+        </header>
+
+        <div class="steps-grid">
+          <article class="step-card">
+            <span class="step-num">01</span>
+            <div>
+              <h3 class="card-title">
+                <span class="lang-en">Type a focal word or script</span>
+                <span class="lang-zh">输入焦点词或粘贴文稿</span>
+                <span class="lang-hant">輸入焦點詞或貼上文稿</span>
+              </h3>
+              <p class="step-desc">
+                <span class="lang-en">Enter any keyword up to 23 characters (press / anywhere to focus), or paste up to 4,000 characters of your own script so matching sentences highlight first.</span>
+                <span class="lang-zh">输入最多 23 个字符的核心词（任意位置按 / 键快速聚焦），或粘贴最多 4,000 字的自有文稿让含词原句优先出镜。</span>
+                <span class="lang-hant">輸入最多 23 個字元的核心詞（任意位置按 / 鍵快速聚焦），或貼上最多 4,000 字的自有文稿讓含詞原句優先出鏡。</span>
+              </p>
+            </div>
+          </article>
+
+          <article class="step-card">
+            <span class="step-num">02</span>
+            <div>
+              <h3 class="card-title">
+                <span class="lang-en">Shape pacing, optics &amp; sound</span>
+                <span class="lang-zh">设定切刀曲线、景深与音效</span>
+                <span class="lang-hant">設定切刀曲線、景深與音效</span>
+              </h3>
+              <p class="step-desc">
+                <span class="lang-en">Choose English, Simplified Chinese, or Traditional Chinese publications, marker or box framing, constant or speed-ramped cuts up to 30 CPS, optical edge blur, and cut-synced foley SFX.</span>
+                <span class="lang-zh">切换繁简英报刊池、马克笔或方框样式，自由配置最高 30 CPS 的匀速或变速曲线、边缘景深虚化及自动卡点拟真音效。</span>
+                <span class="lang-hant">切換繁簡英報刊池、馬克筆或方框樣式，自由配置最高 30 CPS 的勻速或變速曲線、邊緣景深虛化及自動卡點擬真音效。</span>
+              </p>
+            </div>
+          </article>
+
+          <article class="step-card">
+            <span class="step-num">03</span>
+            <div>
+              <h3 class="card-title">
+                <span class="lang-en">Export 1080p with zero watermark</span>
+                <span class="lang-zh">零水印直出 1080P 高清成片</span>
+                <span class="lang-hant">零浮水印直出 1080P 高清成片</span>
+              </h3>
+              <p class="step-desc">
+                <span class="lang-en">Encode crisp 1080p MP4 (H.264) or WebM directly inside browser RAM. No login, no ad wall, and your text or uploaded fonts never touch a server.</span>
+                <span class="lang-zh">在浏览器本地内存中直出 8 Mbps 高码率 1080P MP4 或 WebM 文件，免注册、无广告墙、无水印，文稿与字体零上传。</span>
+                <span class="lang-hant">在瀏覽器本機記憶體中直出 8 Mbps 高位元率 1080P MP4 或 WebM 影片，免註冊、無廣告牆、零浮水印，文稿與字體零上傳。</span>
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- e) Short-Form & Documentary Feeds -->
+    <section id="use-cases" class="page-section page-section-alt">
+      <div class="section-inner">
+        <header class="sec-head">
+          <span class="sec-eyebrow">
+            <span class="lang-en">ASPECT RATIO PRESETS</span>
+            <span class="lang-zh">全平台画幅预设</span>
+            <span class="lang-hant">全平台畫幅預設</span>
+          </span>
+          <h2 class="sec-h2">
+            <span class="lang-en">Built for short-form hooks and documentary timelines.</span>
+            <span class="lang-zh">从竖屏黄金前三秒到横屏深度纪录片</span>
+            <span class="lang-hant">從直式黃金前三秒到橫向深度紀錄片</span>
+          </h2>
+        </header>
+
+        <div class="use-grid">
+          <article class="use-card">
+            <div>
+              <div class="use-top">
+                <span class="ratio-pill">9:16</span>
+                <span class="ratio-res">1080 × 1920</span>
+              </div>
+            </div>
+            <div>
+              <p class="use-platforms">
+                <span class="lang-en">TikTok · Instagram Reels · YouTube Shorts</span>
+                <span class="lang-zh">抖音 · 小红书 · 视频号 · TikTok</span>
+                <span class="lang-hant">Instagram Reels · Shorts · TikTok · 小紅書</span>
+              </p>
+              <h3 class="card-title">
+                <span class="lang-en">Vertical Short-Form Hooks</span>
+                <span class="lang-zh">竖屏短视频开篇抓手</span>
+                <span class="lang-hant">直式短影音開場抓手</span>
+              </h3>
+              <p class="use-desc">
+                <span class="lang-en">Centers your keyword right in the vertical safe zone above platform captions to stop scrolling in the opening beat.</span>
+                <span class="lang-zh">将荧光焦点词锁定在竖屏安全视觉区，避开底部字幕遮挡，在开篇第一拍瞬间抓住观众视线。</span>
+                <span class="lang-hant">將螢光焦點詞鎖定在直式安全視覺區，避開底部字幕遮擋，在開場第一拍瞬間抓住觀眾視線。</span>
+              </p>
+            </div>
+            <button type="button" class="card-action-btn" data-use-ratio="9:16" data-en-text="Use 9:16 Preset" data-zh-text="启用 9:16 竖屏预设" data-hant-text="啟用 9:16 直式預設">Use 9:16 Preset</button>
+          </article>
+
+          <article class="use-card">
+            <div>
+              <div class="use-top">
+                <span class="ratio-pill">1:1</span>
+                <span class="ratio-res">1080 × 1080</span>
+              </div>
+            </div>
+            <div>
+              <p class="use-platforms">
+                <span class="lang-en">X · LinkedIn · Podcast Clips · PiP Callouts</span>
+                <span class="lang-zh">播客切片 · 社媒方屏 · 解说画中画</span>
+                <span class="lang-hant">Podcast 切片 · 社群方屏 · 解說子母畫面</span>
+              </p>
+              <h3 class="card-title">
+                <span class="lang-en">Square Feeds &amp; Floating Overlays</span>
+                <span class="lang-zh">方屏信息流与悬浮资料卡</span>
+                <span class="lang-hant">方屏動態流與懸浮資料卡</span>
+              </h3>
+              <p class="use-desc">
+                <span class="lang-en">Balanced broadsheet framing that works standalone in social feeds or scaled down as a crisp picture-in-picture insert.</span>
+                <span class="lang-zh">兼顾报头与多栏正文的均衡构图，既适合方屏动态直发，也可缩放在口播画面一侧充当证据卡片。</span>
+                <span class="lang-hant">兼顧報頭與多欄內文的均衡構圖，既適合方屏貼文直發，也可縮放在口播畫面一側充當佐證卡片。</span>
+              </p>
+            </div>
+            <button type="button" class="card-action-btn" data-use-ratio="1:1" data-en-text="Use 1:1 Preset" data-zh-text="启用 1:1 方屏预设" data-hant-text="啟用 1:1 方屏預設">Use 1:1 Preset</button>
+          </article>
+
+          <article class="use-card">
+            <div>
+              <div class="use-top">
+                <span class="ratio-pill">16:9</span>
+                <span class="ratio-res">1920 × 1080</span>
+              </div>
+            </div>
+            <div>
+              <p class="use-platforms">
+                <span class="lang-en">YouTube · Bilibili · Documentaries · Keynotes</span>
+                <span class="lang-zh">B 站长视频 · YouTube · 纪录片 · 发布会</span>
+                <span class="lang-hant">YouTube · B 站長片 · 紀錄片 · 發表會</span>
+              </p>
+              <h3 class="card-title">
+                <span class="lang-en">Widescreen Essays &amp; Chapters</span>
+                <span class="lang-zh">商业深度视频与章节转场</span>
+                <span class="lang-hant">商業深度影片與章節轉場</span>
+              </h3>
+              <p class="use-desc">
+                <span class="lang-en">Full cinema spread showcasing multi-column typography, market tickers, halftone art, and optional 1-second final hold.</span>
+                <span class="lang-zh">完整呈现多栏大报、行情表与网点插画细节，配合结尾定格 1 秒轻松衔接解说词重音。</span>
+                <span class="lang-hant">完整呈現多欄大報、行情表與網點插畫細節，配合結尾定格 1 秒輕鬆銜接旁白解說重音。</span>
+              </p>
+            </div>
+            <button type="button" class="card-action-btn" data-use-ratio="16:9" data-en-text="Use 16:9 Preset" data-zh-text="启用 16:9 横屏预设" data-hant-text="啟用 16:9 橫向預設">Use 16:9 Preset</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- f) Comparison Table -->
+    <section id="compare" class="page-section">
+      <div class="section-inner">
+        <header class="sec-head">
+          <span class="sec-eyebrow">
+            <span class="lang-en">WORKFLOW COMPARISON</span>
+            <span class="lang-zh">方案对比</span>
+            <span class="lang-hant">方案對比</span>
+          </span>
+          <h2 class="sec-h2">
+            <span class="lang-en">The fastest, sharpest path to a match cut.</span>
+            <span class="lang-zh">告别广告门槛与繁琐手 K 关键帧</span>
+            <span class="lang-hant">告別廣告門檻與繁瑣手 K 關鍵影格</span>
+          </h2>
+        </header>
+
+        <div class="compare-wrap">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th scope="col"><span class="lang-en">Capability</span><span class="lang-zh">对比维度</span><span class="lang-hant">對比維度</span></th>
+                <th scope="col" class="col-us"><span class="lang-en">TextMatchCut Studio</span><span class="lang-zh">本工作台</span><span class="lang-hant">本工作台</span></th>
+                <th scope="col"><span class="lang-en">Ad-Gated Web Tools</span><span class="lang-zh">广告墙网页工具</span><span class="lang-hant">廣告牆網頁工具</span></th>
+                <th scope="col"><span class="lang-en">Manual NLE Keyframing</span><span class="lang-zh">剪辑软件手 K 关键帧</span><span class="lang-hant">剪輯軟體手 K 關鍵影格</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="lang-en">Export Cost &amp; Watermark</span><span class="lang-zh">导出费用与水印</span><span class="lang-hant">匯出費用與浮水印</span></td>
+                <td class="col-us"><span class="lang-en">100% free, zero watermark</span><span class="lang-zh">完全免费，零水印</span><span class="lang-hant">完全免費，零浮水印</span></td>
+                <td><span class="lang-en">Rewarded video ad wall</span><span class="lang-zh">每次导出需看激励广告</span><span class="lang-hant">每次匯出需看激勵廣告</span></td>
+                <td><span class="lang-en">Paid NLE subscription</span><span class="lang-zh">需付费软件订阅</span><span class="lang-hant">需付費軟體訂閱</span></td>
+              </tr>
+              <tr>
+                <td><span class="lang-en">Account &amp; Privacy</span><span class="lang-zh">账号与隐私安全</span><span class="lang-hant">帳號與隱私安全</span></td>
+                <td class="col-us"><span class="lang-en">No login, 100% browser RAM</span><span class="lang-zh">免登录，100% 本地内存</span><span class="lang-hant">免登入，100% 本機記憶體</span></td>
+                <td><span class="lang-en">Ad trackers &amp; consent gates</span><span class="lang-zh">含广告追踪 Cookie</span><span class="lang-hant">含廣告追蹤 Cookie</span></td>
+                <td><span class="lang-en">Local project files</span><span class="lang-zh">本地工程文件</span><span class="lang-hant">本機專案檔案</span></td>
+              </tr>
+              <tr>
+                <td><span class="lang-en">Zoom Clarity &amp; Cut Cap</span><span class="lang-zh">放大清晰度与刀数上限</span><span class="lang-hant">放大清晰度與刀數上限</span></td>
+                <td class="col-us"><span class="lang-en">1080p vector zoom, up to 360 cuts</span><span class="lang-zh">1080P 矢量缩放，最高 360 刀</span><span class="lang-hant">1080P 向量縮放，最高 360 刀</span></td>
+                <td><span class="lang-en">Bitmap upscale, 60-cut cap</span><span class="lang-zh">位图放大易糊，60 刀封顶</span><span class="lang-hant">點陣圖放大易糊，60 刀封頂</span></td>
+                <td><span class="lang-en">Manual vector precomps</span><span class="lang-zh">需逐层手动建预合成</span><span class="lang-hant">需逐層手動建立預合成</span></td>
+              </tr>
+              <tr>
+                <td><span class="lang-en">Editorial Templates</span><span class="lang-zh">多语版式与自定义文稿</span><span class="lang-hant">多語版式與自訂文稿</span></td>
+                <td class="col-us"><span class="lang-en">50+ EN, SC &amp; TC styles + custom script</span><span class="lang-zh">50+ 繁简英版式，支持贴文稿</span><span class="lang-hant">50+ 繁簡英版式，支援貼上文稿</span></td>
+                <td><span class="lang-en">English-only preset clippings</span><span class="lang-zh">仅英文固定模板</span><span class="lang-hant">僅英文固定範本</span></td>
+                <td><span class="lang-en">Design every page manually</span><span class="lang-zh">需从零排版数十张报纸</span><span class="lang-hant">需從零排版數十張報紙</span></td>
+              </tr>
+              <tr>
+                <td><span class="lang-en">Fonts &amp; Speed Ramps</span><span class="lang-zh">本地字体与变速切刀</span><span class="lang-hant">本機字體與變速切刀</span></td>
+                <td class="col-us"><span class="lang-en">Local font upload + ease curves</span><span class="lang-zh">支持本地传字体与变速曲线</span><span class="lang-hant">支援載入本機字體與變速曲線</span></td>
+                <td><span class="lang-en">Fixed fonts, constant CPS only</span><span class="lang-zh">固定字体，仅匀速切刀</span><span class="lang-hant">固定字體，僅勻速切刀</span></td>
+                <td><span class="lang-en">Manual speed graph &amp; SFX</span><span class="lang-zh">手动拉速度曲线并对音效</span><span class="lang-hant">手動拉速度曲線並對齊音效</span></td>
+              </tr>
+              <tr>
+                <td><span class="lang-en">Time to First 1080p Clip</span><span class="lang-zh">首条 1080P 成片耗时</span><span class="lang-hant">首支 1080P 成片耗時</span></td>
+                <td class="col-us"><span class="lang-en">Under 15 seconds</span><span class="lang-zh">15 秒以内</span><span class="lang-hant">15 秒以內</span></td>
+                <td><span class="lang-en">45 to 90 seconds (with ads)</span><span class="lang-zh">45 至 90 秒（含广告等待）</span><span class="lang-hant">45 至 90 秒（含廣告等待）</span></td>
+                <td><span class="lang-en">30 to 60 minutes</span><span class="lang-zh">30 至 60 分钟</span><span class="lang-hant">30 至 60 分鐘</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- g) FAQ Accordion -->
+    <section id="faq" class="page-section page-section-alt">
+      <div class="section-inner">
+        <header class="sec-head">
+          <span class="sec-eyebrow">
+            <span class="lang-en">FREQUENTLY ASKED QUESTIONS</span>
+            <span class="lang-zh">常见问题解答</span>
+            <span class="lang-hant">常見問題解答</span>
+          </span>
+          <h2 class="sec-h2">
+            <span class="lang-en">Everything about sharpness, privacy, and licensing.</span>
+            <span class="lang-zh">关于清晰度、本地隐私与商用授权的完整说明</span>
+            <span class="lang-hant">關於清晰度、本機隱私與商用授權的完整說明</span>
+          </h2>
+        </header>
+
+        <div class="faq-list">
+          <details class="faq-item is-open" open>
+            <summary>
+              <span>
+                <span class="lang-en">Is TextMatchCut Studio completely free and watermark-free?</span>
+                <span class="lang-zh">这款文字对切工具完全免费且无水印吗？</span>
+                <span class="lang-hant">這款文字對切工具完全免費且無浮水印嗎？</span>
+              </span>
+              <span class="faq-sign" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line class="faq-line-h" x1="3.5" y1="8" x2="12.5" y2="8"/><line class="faq-line-v" x1="8" y1="3.5" x2="8" y2="12.5"/></svg></span>
+            </summary>
+            <div class="faq-body">
+              <p>
+                <span class="lang-en">Yes. TextMatchCut Studio runs 100% free inside your browser—no account signup, no credit card, no rewarded video ad gate, and zero watermarks on any exported 1080p clip.</span>
+                <span class="lang-zh">是的。打开浏览器即可免费生成并导出 1080P 全高清视频，无需注册账号、无需观看激励广告，所有导出成片均不带任何水印。</span>
+                <span class="lang-hant">是的。打開瀏覽器即可免費生成並匯出 1080P 全高清影片，無需註冊帳號、無需觀看激勵廣告，所有匯出成片均不帶任何浮水印。</span>
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>
+                <span class="lang-en">What is a text match cut (newspaper clipping highlight effect)?</span>
+                <span class="lang-zh">什么是文字对切（报刊剪报高亮快切）动效？</span>
+                <span class="lang-hant">什麼是文字對切（報刊剪報高亮快切）動態效果？</span>
+              </span>
+              <span class="faq-sign" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line class="faq-line-h" x1="3.5" y1="8" x2="12.5" y2="8"/><line class="faq-line-v" x1="8" y1="3.5" x2="8" y2="12.5"/></svg></span>
+            </summary>
+            <div class="faq-body">
+              <p>
+                <span class="lang-en">A text match cut is an editorial motion-graphics technique popularized by investigative documentaries and high-retention explainers: your chosen focal word stays pinned at the exact center of the frame with a marker or box highlight while diverse newspaper headlines, columns, pull-quotes, and market tables cut rapidly around it.</span>
+                <span class="lang-zh">文字对切（Text Match Cut）是商业深度解说、纪录片与高赞短视频中极具冲击力的视觉重音手法：将核心关键词配合荧光马克笔或方框锁定在画面正中央，同时周围的报纸头版、多栏正文、人物引语与行情表以高密度节奏快速切换。</span>
+                <span class="lang-hant">文字對切（Text Match Cut）是商業深度解說、紀錄片與高留存短影音中極具視覺張力的重音手法：將核心關鍵詞配合螢光馬克筆或方框鎖定在畫面正中央，同時周圍的報紙頭版、多欄內文、人物引語與行情表以高密度節奏快速切換。</span>
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>
+                <span class="lang-en">How does the studio keep zoomed headlines tack-sharp at 1080p?</span>
+                <span class="lang-zh">画面放大后如何保持 1080P 矢量级文字清晰度？</span>
+                <span class="lang-hant">畫面放大後如何保持 1080P 向量級文字銳利度？</span>
+              </span>
+              <span class="faq-sign" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line class="faq-line-h" x1="3.5" y1="8" x2="12.5" y2="8"/><line class="faq-line-v" x1="8" y1="3.5" x2="8" y2="12.5"/></svg></span>
+            </summary>
+            <div class="faq-body">
+              <p>
+                <span class="lang-en">Instead of rasterizing text first and bitmap-upscaling the image, our engine applies camera zoom transforms on a native 1080p canvas before vector-rasterizing every glyph, and maintains a full-alpha sharp plateau across the entire focal phrase so radial lens blur never bleeds into the keyword.</span>
+                <span class="lang-zh">不同于将低清画布事后拉伸放大的做法，本引擎在原生 1080P 画布上先施加镜头缩放矩阵再直接矢量栅格化全部字形，并在中心关键词区域建立完整清晰保护平台，彻底消除边缘景深模糊向中心文字渗色发虚的问题。</span>
+                <span class="lang-hant">不同於將低解析度畫布事後拉伸放大的做法，本引擎在原生 1080P 畫布上先施加鏡頭縮放矩陣再直接向量柵格化全部字形，並在中心關鍵詞區域建立完整清晰保護平台，徹底消除邊緣景深模糊向中心文字暈染發虛的問題。</span>
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>
+                <span class="lang-en">Can I render 144+ cuts, speed ramps, and 60fps high-speed sequences?</span>
+                <span class="lang-zh">支持超过 144 刀的高密度快切、变速曲线与 60 帧导出吗？</span>
+                <span class="lang-hant">支援超過 144 刀的高密度快切、變速曲線與 60 幀匯出嗎？</span>
+              </span>
+              <span class="faq-sign" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line class="faq-line-h" x1="3.5" y1="8" x2="12.5" y2="8"/><line class="faq-line-v" x1="8" y1="3.5" x2="8" y2="12.5"/></svg></span>
+            </summary>
+            <div class="faq-body">
+              <p>
+                <span class="lang-en">Yes. Combine durations from 2 to 12 seconds with cut rates up to 30 CPS in constant or speed-ramp mode (linear, ease-in, ease-out)—supporting up to 360 unique newspaper cuts per clip and automatically engaging 60fps encoding when peak speed exceeds 15 CPS.</span>
+                <span class="lang-zh">完全支持。您可设置 2 至 12 秒时长与最高 30 CPS 的切刀速度，支持匀速或变速曲线（线性、渐快、渐慢），单段最高可生成 360 刀独立版面，并在高速切刀时自动启用 60 FPS 高帧率编码。</span>
+                <span class="lang-hant">完全支援。您可設定 2 至 12 秒時長與最高 30 CPS 的切刀速度，支援勻速或變速曲線（線性、漸快、漸慢），單支影片最高可生成 360 刀獨立版面，並在高速切刀時自動啟用 60 FPS 高影格率編碼。</span>
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>
+                <span class="lang-en">Are my keywords, pasted scripts, or uploaded fonts ever sent to a server?</span>
+                <span class="lang-zh">我输入的关键词、粘贴的文稿或上传的字体会传到服务器吗？</span>
+                <span class="lang-hant">我輸入的關鍵詞、貼上的文稿或上傳的字體會傳送到伺服器嗎？</span>
+              </span>
+              <span class="faq-sign" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line class="faq-line-h" x1="3.5" y1="8" x2="12.5" y2="8"/><line class="faq-line-v" x1="8" y1="3.5" x2="8" y2="12.5"/></svg></span>
+            </summary>
+            <div class="faq-body">
+              <p>
+                <span class="lang-en">Never. Typesetting, halftone dot illustrations, optical depth-of-field, WebAudio sound synthesis, and MediaRecorder encoding happen 100% inside your local browser RAM. Unreleased scripts, custom fonts, and exported videos never leave your device.</span>
+                <span class="lang-zh">绝不会。从版面排版、半色调网点绘制、光学景深合成、WebAudio 音效生成到 MediaRecorder 视频编码，全流程 100% 在您的浏览器本地内存中完成，任何输入文本、本地字体或成片均不会离开您的设备。</span>
+                <span class="lang-hant">絕不會。從版面排版、半色調網點繪製、光學景深合成、WebAudio 音效生成到 MediaRecorder 影片編碼，全流程 100% 在您的瀏覽器本機記憶體中完成，任何輸入文字、本機字體或匯出影片均不會離開您的裝置。</span>
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>
+                <span class="lang-en">Can I use exported MP4 and WebM clips in commercial videos and client work?</span>
+                <span class="lang-zh">导出的视频可以用于商业项目、品牌投放或自媒体变现吗？</span>
+                <span class="lang-hant">匯出的影片可以用於商業專案、品牌投放或頻道營利嗎？</span>
+              </span>
+              <span class="faq-sign" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line class="faq-line-h" x1="3.5" y1="8" x2="12.5" y2="8"/><line class="faq-line-v" x1="8" y1="3.5" x2="8" y2="12.5"/></svg></span>
+            </summary>
+            <div class="faq-body">
+              <p>
+                <span class="lang-en">Yes. Exported clips are royalty-free worldwide for monetized channels, client deliverables, documentaries, and campaigns with no attribution required. Built-in web fonts carry commercial-friendly SIL OFL 1.1 and Apache 2.0 licenses; when uploading custom fonts or custom text, ensure you hold commercial rights for those assets.</span>
+                <span class="lang-zh">可以。您对导出的 MP4 或 WebM 成片享有免费全球商用权，无需署名或支付版税。随包内置的网页字体均采用开源可商用协议（SIL OFL 1.1 与 Apache 2.0）；若您选用系统字体、上传本地字体或粘贴第三方文本，请自行确认已具备相应的商用授权。</span>
+                <span class="lang-hant">可以。您對匯出的 MP4 或 WebM 成片享有免費全球商用權，無需署名或支付權利金。隨包內建的網頁字體均採用開源可商用授權（SIL OFL 1.1 與 Apache 2.0）；若您選用系統字體、載入本機字體或貼上第三方文本，請自行確認已具備相應的商用授權。</span>
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>
+                <span class="lang-en">How do custom body copy and local font uploads work?</span>
+                <span class="lang-zh">如何使用自定义正文，以及加载本地字体文件？</span>
+                <span class="lang-hant">如何使用自訂內文，以及載入本機字體檔案？</span>
+              </span>
+              <span class="faq-sign" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line class="faq-line-h" x1="3.5" y1="8" x2="12.5" y2="8"/><line class="faq-line-v" x1="8" y1="3.5" x2="8" y2="12.5"/></svg></span>
+            </summary>
+            <div class="faq-body">
+              <p>
+                <span class="lang-en">Expand Advanced Settings and scroll to Fonts &amp; Copy. Paste up to 4,000 characters of your script—sentences containing your focal word are automatically prioritized for highlights, and you can toggle filling surrounding columns too. Click Upload to load any local .ttf, .otf, .woff, or .woff2 font directly into browser memory.</span>
+                <span class="lang-zh">展开面板下方的“详细设置”，在“字体与正文”分组中粘贴最多 4,000 字的文稿，含焦点词的句子会自动优先高亮展示，也可勾选让背景栏同步铺满该文稿；点击“上传”即可在浏览器内存中直接加载本地 .ttf、.otf、.woff 或 .woff2 字体文件。</span>
+                <span class="lang-hant">展開面板下方的「詳細設定」，在「字體與內文」分組中貼上最多 4,000 字的文稿，含焦點詞的句子會自動優先高亮顯示，也可勾選讓背景欄同步鋪滿該文稿；點擊「上傳」即可在瀏覽器記憶體中直接載入本機 .ttf、.otf、.woff 或 .woff2 字體檔案。</span>
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>
+                <span class="lang-en">Which aspect ratio should I pick for TikTok, Reels, Shorts, YouTube, or Bilibili?</span>
+                <span class="lang-zh">抖音、小红书、B 站、TikTok、YouTube 分别适合什么画幅？</span>
+                <span class="lang-hant">Instagram Reels、Shorts、TikTok、YouTube、B 站分別適合什麼畫幅？</span>
+              </span>
+              <span class="faq-sign" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line class="faq-line-h" x1="3.5" y1="8" x2="12.5" y2="8"/><line class="faq-line-v" x1="8" y1="3.5" x2="8" y2="12.5"/></svg></span>
+            </summary>
+            <div class="faq-body">
+              <p>
+                <span class="lang-en">Pick 9:16 (1080 × 1920) for TikTok, Instagram Reels, YouTube Shorts, and Douyin; 1:1 (1080 × 1080) for square social feeds, podcast snippets, or picture-in-picture overlays; and 16:9 (1920 × 1080) for YouTube, Bilibili, documentaries, and keynote screens.</span>
+                <span class="lang-zh">9:16（1080 × 1920 竖屏）适合抖音、小红书、视频号、TikTok、Reels 与 Shorts；1:1（1080 × 1080 方屏）适合图文动态、播客切片或画中画卡片叠加；16:9（1920 × 1080 横屏）适合 B 站长视频、YouTube、纪录片与大屏演示。</span>
+                <span class="lang-hant">9:16（1080 × 1920 直式）適合 Instagram Reels、YouTube Shorts、TikTok 與小紅書；1:1（1080 × 1080 方屏）適合社群貼文、Podcast 切片或子母畫面卡片疊加；16:9（1920 × 1080 橫向）適合 YouTube、B 站長影片、紀錄片與簡報投影。</span>
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>
+                <span class="lang-en">Are the newspaper mastheads, headlines, and market tickers real news reports?</span>
+                <span class="lang-zh">画面中的报头名称、新闻标题与行情数据是真实新闻报道吗？</span>
+                <span class="lang-hant">畫面中的報頭名稱、新聞標題與行情數據是真實新聞報導嗎？</span>
+              </span>
+              <span class="faq-sign" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line class="faq-line-h" x1="3.5" y1="8" x2="12.5" y2="8"/><line class="faq-line-v" x1="8" y1="3.5" x2="8" y2="12.5"/></svg></span>
+            </summary>
+            <div class="faq-body">
+              <p>
+                <span class="lang-en">No. All generated newspaper mastheads, headlines, pull-quotes, market tickers, sports scorelines, classified notices, and halftone illustrations are procedural typographic simulations built with fictionalized placeholder copy. They are unaffiliated with any real publication and must never be used to fabricate deceptive news screenshots.</span>
+                <span class="lang-zh">不是。工具生成的所有报头、标题、引语、行情表格、比分、分类信息与网点插画均为程序化排版艺术模拟与虚构示例文本，与任何现实媒体机构无关联或背书关系，严禁用于伪造真实新闻截图或传播不实信息。</span>
+                <span class="lang-hant">不是。工具生成的所有報頭、標題、引語、行情表格、比分、分類資訊與網點插畫均為程式化排版藝術模擬與虛構範例文本，與任何現實媒體機構無關聯或背書關係，嚴禁用於偽造真實新聞截圖或散播不實資訊。</span>
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- h) Dark Editorial Final CTA -->
+    <section class="final-cta">
+      <div class="final-cta-inner">
+        <h2 class="final-cta-h2">
+          <span class="lang-en">Highlight a word. <span class="cta-match-box"><span class="cta-match-word" data-cta-word="en">Match cut</span></span> in 1080p.</span>
+          <span class="lang-zh">输入核心词，<span class="cta-match-box"><span class="cta-match-word" data-cta-word="zh">锚定高亮</span></span>，即刻直出 1080P 成片</span>
+          <span class="lang-hant">輸入核心詞，<span class="cta-match-box"><span class="cta-match-word" data-cta-word="hant">錨定高亮</span></span>，即刻直出 1080P 成片</span>
+        </h2>
+        <p class="final-cta-sub">
+          <span class="lang-en">No signup · Zero watermark · 100% local in your browser</span>
+          <span class="lang-zh">免登录 · 零水印 · 100% 浏览器本地渲染</span>
+          <span class="lang-hant">免登入 · 零浮水印 · 100% 瀏覽器本機渲染</span>
+        </p>
+        <button type="button" class="final-cta-btn" data-scroll-studio data-en-text="Back to Studio" data-zh-text="回到工作台立即创作" data-hant-text="回到工作台立即創作">Back to Studio</button>
+      </div>
+    </section>
+  </main>
+
+  <main id="legalView" class="legal-view" hidden>
+    <div class="legal-shell">
+      <section class="doc-masthead" aria-labelledby="docTitle">
+        <p class="legal-eyebrow">
+          <span class="lang-en">Broadsheet Legal Supplement · Privacy, Terms &amp; Editorial Disclaimers</span>
+          <span class="lang-zh">法律与合规说明 · 隐私政策、使用条款与模拟版面声明</span>
+          <span class="lang-hant">法律與合規說明 · 隱私政策、使用條款與模擬版面聲明</span>
+        </p>
+        <h1 id="docTitle">
+          <span class="lang-en">Legal, Privacy &amp; <span class="hl-mark">Editorial Terms</span></span>
+          <span class="lang-zh">隐私政策、使用条款与<span class="hl-mark">版面声明</span></span>
+          <span class="lang-hant">隱私政策、使用條款與<span class="hl-mark">版面聲明</span></span>
+        </h1>
+        <p class="masthead-lead">
+          <span class="lang-en">This page documents the 100% in-browser architecture, royalty-free commercial export terms, open-source and custom font licensing rules, local storage behavior, and synthetic newspaper simulation disclaimers governing <span class="ph-token">[PRODUCT_BRAND_NAME]</span>.</span>
+          <span class="lang-zh">本页详细说明 <span class="ph-token">[PRODUCT_BRAND_NAME]</span> 的 100% 浏览器本地渲染隐私架构、导出视频商业使用授权、开源与自定义字体合规规范、本地存储机制，以及程序化模拟报刊版面的免责边界。</span>
+          <span class="lang-hant">本頁詳細說明 <span class="ph-token">[PRODUCT_BRAND_NAME]</span> 的 100% 瀏覽器本機渲染隱私架構、匯出影片商業使用授權、開源與自訂字體合規規範、本機儲存機制，以及程式化模擬報刊版面的免責邊界。</span>
+        </p>
+        <div class="meta-row">
+          <div class="meta-facts">
+            <span>
+              <span class="lang-en">Operator: <span class="ph-token">[COMPANY_OR_OPERATOR_NAME]</span></span>
+              <span class="lang-zh">运营主体：<span class="ph-token">[COMPANY_OR_OPERATOR_NAME]</span></span>
+              <span class="lang-hant">營運主體：<span class="ph-token">[COMPANY_OR_OPERATOR_NAME]</span></span>
+            </span>
+            <span>
+              <span class="lang-en">Effective Date: <span class="ph-token">[EFFECTIVE_DATE]</span></span>
+              <span class="lang-zh">生效日期：<span class="ph-token">[EFFECTIVE_DATE]</span></span>
+              <span class="lang-hant">生效日期：<span class="ph-token">[EFFECTIVE_DATE]</span></span>
+            </span>
+          </div>
+          <div class="trust-pills">
+            <span class="trust-pill">
+              <span class="ico" aria-hidden="true">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="3" width="12" height="9" rx="1.5"/>
+                  <path d="M5.5 14H10.5"/>
+                </svg>
+              </span>
+              <span class="lang-en">100% In-Browser RAM</span>
+              <span class="lang-zh">100% 浏览器本地内存运行</span>
+              <span class="lang-hant">100% 瀏覽器本機記憶體執行</span>
+            </span>
+            <span class="trust-pill">
+              <span class="ico" aria-hidden="true">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M8 2L3 4.2V7.8C3 11 5.1 13.4 8 14.2C10.9 13.4 13 11 13 7.8V4.2L8 2Z"/>
+                  <path d="M6 8.2L7.4 9.6L10.2 6.6"/>
+                </svg>
+              </span>
+              <span class="lang-en">Zero Cloud Upload</span>
+              <span class="lang-zh">零云端素材上传</span>
+              <span class="lang-hant">零雲端素材上傳</span>
+            </span>
+            <span class="trust-pill">
+              <span class="ico" aria-hidden="true">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 12.5L8 3.5L12 12.5"/>
+                  <path d="M5.4 9.5H10.6"/>
+                </svg>
+              </span>
+              <span class="lang-en">Self-Hosted Open Fonts</span>
+              <span class="lang-zh">同源内置开源字体</span>
+              <span class="lang-hant">同源內建開源字體</span>
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <section id="placeholders" class="ph-callout" aria-labelledby="phHeading">
+        <div class="ph-callout-head">
+          <h2 id="phHeading" class="ph-callout-title">
+            <span class="lang-en">Operator Placeholders Summary (Pre-Launch Configuration)</span>
+            <span class="lang-zh">上线前运营方待填字段索引</span>
+            <span class="lang-hant">上線前營運方待填欄位索引</span>
+          </h2>
+          <span class="legal-badge">
+            <span class="lang-en">8 Searchable Fields</span>
+            <span class="lang-zh">共 8 项待替换字段</span>
+            <span class="lang-hant">共 8 項待替換欄位</span>
+          </span>
+        </div>
+        <p class="ph-callout-desc">
+          <span class="lang-en">Before publishing to production, replace the 8 bracketed tokens below across this file. Every occurrence in the clauses below uses the same monospace highlight chip so nothing is overlooked during deployment review.</span>
+          <span class="lang-zh">正式发布或部署至生产环境前，请在本文中全局检索并替换下方 8 个方括号占位符。正文中所有对应字段均采用相同的高亮等宽标签标出，便于上线前逐项核验。</span>
+          <span class="lang-hant">正式發佈或部署至正式環境前，請在本文中全域搜尋並替換下方 8 個方括號佔位符。內文中所有對應欄位均採用相同的高亮等寬標籤標出，便於上線前逐項核驗。</span>
+        </p>
+        <div class="ph-grid">
+          <div class="ph-item">
+            <span class="ph-token">[PRODUCT_BRAND_NAME]</span>
+            <p class="ph-item-desc">
+              <span class="lang-en">Product or studio display name (for example, TextMatchCut)</span>
+              <span class="lang-zh">产品展示名称（如 TextMatchCut 或 文字对切）</span>
+              <span class="lang-hant">產品顯示名稱（如 TextMatchCut 或 文字對切）</span>
+            </p>
+          </div>
+          <div class="ph-item">
+            <span class="ph-token">[COMPANY_OR_OPERATOR_NAME]</span>
+            <p class="ph-item-desc">
+              <span class="lang-en">Legal entity, studio, or independent operator name</span>
+              <span class="lang-zh">运营主体名称（公司全称、工作室或独立开发者）</span>
+              <span class="lang-hant">營運主體名稱（公司全稱、工作室或獨立開發者）</span>
+            </p>
+          </div>
+          <div class="ph-item">
+            <span class="ph-token">[WEBSITE_DOMAIN]</span>
+            <p class="ph-item-desc">
+              <span class="lang-en">Canonical website domain or creator platform page URL</span>
+              <span class="lang-zh">正式站点域名或创作者平台托管页面地址</span>
+              <span class="lang-hant">正式網站網域或創作者平台託管頁面網址</span>
+            </p>
+          </div>
+          <div class="ph-item">
+            <span class="ph-token">[CONTACT_EMAIL]</span>
+            <p class="ph-item-desc">
+              <span class="lang-en">Support, privacy rights, and IP or legal notice email</span>
+              <span class="lang-zh">用户支持、隐私权利请求与知识产权联系邮箱</span>
+              <span class="lang-hant">使用者支援、隱私權利請求與智慧財產權聯絡信箱</span>
+            </p>
+          </div>
+          <div class="ph-item">
+            <span class="ph-token">[BUSINESS_ADDRESS]</span>
+            <p class="ph-item-desc">
+              <span class="lang-en">Registered office or correspondence address for legal notices</span>
+              <span class="lang-zh">运营主体注册地址或法律文书通信地址</span>
+              <span class="lang-hant">營運主體登記地址或法律文書通訊地址</span>
+            </p>
+          </div>
+          <div class="ph-item">
+            <span class="ph-token">[GOVERNING_LAW_JURISDICTION]</span>
+            <p class="ph-item-desc">
+              <span class="lang-en">Governing law and competent courts or arbitration seat</span>
+              <span class="lang-zh">适用法律司法辖区及有管辖权的法院或仲裁地</span>
+              <span class="lang-hant">準據法司法管轄區及具管轄權之法院或仲裁地</span>
+            </p>
+          </div>
+          <div class="ph-item">
+            <span class="ph-token">[EFFECTIVE_DATE]</span>
+            <p class="ph-item-desc">
+              <span class="lang-en">Effective and last-updated ISO date (for example, 2026-11-11)</span>
+              <span class="lang-zh">本文件生效及最近更新日期（例如 2026-11-11）</span>
+              <span class="lang-hant">本文件生效及最近更新日期（例如 2026-11-11）</span>
+            </p>
+          </div>
+          <div class="ph-item">
+            <span class="ph-token">[HOSTING_CDN_PROVIDERS]</span>
+            <p class="ph-item-desc">
+              <span class="lang-en">Static hosting, CDN, or container platform providers</span>
+              <span class="lang-zh">静态托管服务商、CDN 分发网络或宿主平台基础设施名称</span>
+              <span class="lang-hant">靜態託管服務商、CDN 分發網路或宿主平台基礎設施名稱</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="legal-layout">
+        <aside class="toc-rail">
+          <nav class="toc-card" aria-label="Table of contents" data-en-label="Table of contents" data-zh-label="条款目录" data-hant-label="條款目錄">
+            <p class="toc-heading">
+              <span class="lang-en">Contents</span>
+              <span class="lang-zh">条款目录</span>
+              <span class="lang-hant">條款目錄</span>
+            </p>
+            <a href="#placeholders" class="toc-link is-active" data-toc-link="placeholders">
+              <span class="toc-num">00</span>
+              <span class="lang-en">Operator Fields</span>
+              <span class="lang-zh">待填字段索引</span>
+              <span class="lang-hant">待填欄位索引</span>
+            </a>
+            <a href="#privacy" class="toc-link" data-toc-link="privacy">
+              <span class="toc-num">01</span>
+              <span class="lang-en">Privacy Policy</span>
+              <span class="lang-zh">隐私政策</span>
+              <span class="lang-hant">隱私政策</span>
+            </a>
+            <a href="#terms" class="toc-link" data-toc-link="terms">
+              <span class="toc-num">02</span>
+              <span class="lang-en">Terms of Use</span>
+              <span class="lang-zh">使用条款</span>
+              <span class="lang-hant">使用條款</span>
+            </a>
+            <a href="#cookies" class="toc-link" data-toc-link="cookies">
+              <span class="toc-num">03</span>
+              <span class="lang-en">Cookies &amp; Storage</span>
+              <span class="lang-zh">Cookie 与本地存储</span>
+              <span class="lang-hant">Cookie 與本機儲存</span>
+            </a>
+            <a href="#disclaimer" class="toc-link" data-toc-link="disclaimer">
+              <span class="toc-num">04</span>
+              <span class="lang-en">Editorial &amp; Fonts</span>
+              <span class="lang-zh">模拟版面与字体声明</span>
+              <span class="lang-hant">模擬版面與字體聲明</span>
+            </a>
+          </nav>
+        </aside>
+
+        <div class="legal-main">
+          <!-- 01. PRIVACY POLICY -->
+          <article id="privacy" class="legal-card" aria-labelledby="privacyTitle">
+            <div class="legal-sec-head">
+              <span class="sec-kicker">
+                <span class="lang-en">Section 01 · Privacy</span>
+                <span class="lang-zh">第 01 节 · 隐私保护</span>
+                <span class="lang-hant">第 01 節 · 隱私保護</span>
+              </span>
+              <h2 id="privacyTitle">
+                <span class="lang-en">Privacy Policy</span>
+                <span class="lang-zh">隐私政策</span>
+                <span class="lang-hant">隱私政策</span>
+              </h2>
+              <p class="sec-meta">
+                <span class="lang-en">Service: <span class="ph-token">[PRODUCT_BRAND_NAME]</span> · Effective Date: <span class="ph-token">[EFFECTIVE_DATE]</span></span>
+                <span class="lang-zh">适用服务：<span class="ph-token">[PRODUCT_BRAND_NAME]</span> · 生效日期：<span class="ph-token">[EFFECTIVE_DATE]</span></span>
+                <span class="lang-hant">適用服務：<span class="ph-token">[PRODUCT_BRAND_NAME]</span> · 生效日期：<span class="ph-token">[EFFECTIVE_DATE]</span></span>
+              </p>
+            </div>
+
+            <h3>
+              <span class="lang-en">1.1 Overview &amp; Operator Identity</span>
+              <span class="lang-zh">1.1 概述与运营主体</span>
+              <span class="lang-hant">1.1 概述與營運主體</span>
+            </h3>
+            <p>
+              <span class="lang-en">This Privacy Policy explains how <span class="ph-token">[COMPANY_OR_OPERATOR_NAME]</span> ("we", "us", or "our", with correspondence address at <span class="ph-token">[BUSINESS_ADDRESS]</span>) handles information when you visit or use <span class="ph-token">[PRODUCT_BRAND_NAME]</span> at <span class="ph-token">[WEBSITE_DOMAIN]</span> (the "Service"). Generating animations with <span class="ph-token">[PRODUCT_BRAND_NAME]</span> requires <strong>no account registration, no login, no ad-gate interaction, and no cloud upload</strong>.</span>
+              <span class="lang-zh">本隐私政策说明 <span class="ph-token">[COMPANY_OR_OPERATOR_NAME]</span>（通信地址：<span class="ph-token">[BUSINESS_ADDRESS]</span>，以下简称“我们”）在您访问和使用 <span class="ph-token">[WEBSITE_DOMAIN]</span> 上的 <span class="ph-token">[PRODUCT_BRAND_NAME]</span> 服务（以下简称“本服务”）时如何处理相关信息。使用 <span class="ph-token">[PRODUCT_BRAND_NAME]</span> 生成视频<strong>无需注册账号、无需登录、无激励广告门禁，亦无需向云端上传任何创作素材</strong>。</span>
+              <span class="lang-hant">本隱私政策說明 <span class="ph-token">[COMPANY_OR_OPERATOR_NAME]</span>（通訊地址：<span class="ph-token">[BUSINESS_ADDRESS]</span>，以下簡稱「我們」）在您造訪與使用 <span class="ph-token">[WEBSITE_DOMAIN]</span> 上的 <span class="ph-token">[PRODUCT_BRAND_NAME]</span> 服務（以下簡稱「本服務」）時如何處理相關資訊。使用 <span class="ph-token">[PRODUCT_BRAND_NAME]</span> 生成影片<strong>無需註冊帳號、無需登入、無激勵廣告門禁，亦無需向雲端上傳任何創作素材</strong>。</span>
+            </p>
+
+            <h3>
+              <span class="lang-en">1.2 100% Local In-Browser Processing (Data That Never Leaves Your Device)</span>
+              <span class="lang-zh">1.2 100% 浏览器本地处理（永不离开您设备的数据）</span>
+              <span class="lang-hant">1.2 100% 瀏覽器本機處理（永不離開您裝置的資料）</span>
+            </h3>
+            <p>
+              <span class="lang-en">All editorial typesetting, radial depth-of-field blur, procedural sound synthesis, and video encoding execute <strong>entirely inside your local browser memory</strong> via standard Web APIs (<code class="inline-code">HTML5 Canvas</code>, <code class="inline-code">Web Audio API</code>, <code class="inline-code">FontFace</code>, and <code class="inline-code">MediaRecorder</code>):</span>
+              <span class="lang-zh">本服务的所有报刊排版、景深模糊、程序化音效合成与视频编码均通过标准浏览器接口（<code class="inline-code">HTML5 Canvas</code>、<code class="inline-code">Web Audio API</code>、<code class="inline-code">FontFace</code> 与 <code class="inline-code">MediaRecorder</code>）<strong>100% 在您的设备本地浏览器内存中执行</strong>：</span>
+              <span class="lang-hant">本服務的所有報刊排版、景深模糊、程式化音效合成與影片編碼均透過標準瀏覽器介面（<code class="inline-code">HTML5 Canvas</code>、<code class="inline-code">Web Audio API</code>、<code class="inline-code">FontFace</code> 與 <code class="inline-code">MediaRecorder</code>）<strong>100% 在您的裝置本機瀏覽器記憶體中執行</strong>：</span>
+            </p>
+            <ul class="legal-list">
+              <li>
+                <span class="lang-en"><strong>Focal Keywords &amp; Custom Scripts:</strong> Every keyword, phrase, or custom body passage (up to 4,000 characters) you type or paste stays exclusively inside volatile browser RAM on your device.</span>
+                <span class="lang-zh"><strong>焦点关键词与自定义文稿：</strong>您输入或粘贴的任何词语、短句及最多 4,000 字的自定义正文仅驻留于本机浏览器会话内存，绝不外发。</span>
+                <span class="lang-hant"><strong>焦點關鍵詞與自訂文稿：</strong>您輸入或貼上的任何詞語、短句及最多 4,000 字的自訂內文僅駐留於本機瀏覽器工作階段記憶體，絕不外傳。</span>
+              </li>
+              <li>
+                <span class="lang-en"><strong>Uploaded Custom Font Files:</strong> Any local font file (<code class="inline-code">.ttf</code>, <code class="inline-code">.otf</code>, <code class="inline-code">.woff</code>, <code class="inline-code">.woff2</code>) selected from your device is read directly into a local <code class="inline-code">ArrayBuffer</code> and <code class="inline-code">FontFace</code> instance for canvas rasterization and is released immediately when you close or reload the tab.</span>
+                <span class="lang-zh"><strong>本地加载的自定义字体：</strong>您从设备选取的字体文件（<code class="inline-code">.ttf</code>、<code class="inline-code">.otf</code>、<code class="inline-code">.woff</code>、<code class="inline-code">.woff2</code>）仅在本地内存中解析为 <code class="inline-code">ArrayBuffer</code> 与 <code class="inline-code">FontFace</code> 对象用于画布渲染，关闭或刷新标签页后即刻释放。</span>
+                <span class="lang-hant"><strong>本機載入的自訂字體：</strong>您從裝置選取的字體檔案（<code class="inline-code">.ttf</code>、<code class="inline-code">.otf</code>、<code class="inline-code">.woff</code>、<code class="inline-code">.woff2</code>）僅在本機記憶體中解析為 <code class="inline-code">ArrayBuffer</code> 與 <code class="inline-code">FontFace</code> 物件用於畫布渲染，關閉或重新整理分頁後即刻釋放。</span>
+              </li>
+              <li>
+                <span class="lang-en"><strong>Preview Frames &amp; Exported Videos:</strong> Rendered frames and downloadable <code class="inline-code">.mp4</code> or <code class="inline-code">.webm</code> video blobs are encoded on your own hardware. We <strong>never transmit, receive, store, inspect, or train AI models on</strong> your text inputs, custom fonts, or exported videos.</span>
+                <span class="lang-zh"><strong>预览画面与导出视频：</strong>所有预览帧及可下载的 <code class="inline-code">.mp4</code> 或 <code class="inline-code">.webm</code> 视频均在您的终端硬件上本地编码生成。我们<strong>绝不上传、接收、存储、审阅您的文本、字体文件或导出成片，亦绝不将其用于任何 AI 模型训练</strong>。</span>
+                <span class="lang-hant"><strong>預覽畫面與匯出影片：</strong>所有預覽影格及可下載的 <code class="inline-code">.mp4</code> 或 <code class="inline-code">.webm</code> 影片均在您的終端硬體上本機編碼生成。我們<strong>絕不上傳、接收、儲存、審閱您的文字、字體檔案或匯出成片，亦絕不將其用於任何 AI 模型訓練</strong>。</span>
+              </li>
+            </ul>
+
+            <h3>
+              <span class="lang-en">1.3 Self-Hosted Fonts &amp; Standard Static Hosting Logs</span>
+              <span class="lang-zh">1.3 同源内置字体与静态托管基础日志</span>
+              <span class="lang-hant">1.3 同源內建字體與靜態託管基礎紀錄</span>
+            </h3>
+            <p>
+              <span class="lang-en">All bundled open-source web fonts (<code class="inline-code">./fonts.css</code> and <code class="inline-code">./fonts/</code>) and editorial layout templates (<code class="inline-code">./copy.json</code>) are self-hosted on the same static origin as the Service. Your browser makes <strong>zero requests to Google Fonts or external font CDNs</strong>, eliminating third-party IP leakage during typography rendering. When your browser fetches the static application files, our static hosting or platform infrastructure (<span class="ph-token">[HOSTING_CDN_PROVIDERS]</span>) processes routine transient HTTP metadata (IP address, <code class="inline-code">User-Agent</code>, request timestamp, and static asset path) strictly for content delivery, DDoS protection, and security diagnostics.</span>
+              <span class="lang-zh">本服务随包内置的开源网页字体（<code class="inline-code">./fonts.css</code> 与 <code class="inline-code">./fonts/</code>）及版式文案库（<code class="inline-code">./copy.json</code>）均由同源静态目录直接分发，<strong>零外部 Google Fonts 或第三方字体 CDN 请求</strong>，从根源上避免第三方字体接口记录您的访问 IP。与常规静态网页一致，承载本服务的静态托管或平台基础设施（<span class="ph-token">[HOSTING_CDN_PROVIDERS]</span>）在响应静态文件请求时会自动处理基础 HTTP 元数据（如 IP 地址、浏览器标识、请求时间与静态资源路径），仅用于内容分发、DDoS 防护与安全排障。</span>
+              <span class="lang-hant">本服務隨包內建的開源網頁字體（<code class="inline-code">./fonts.css</code> 與 <code class="inline-code">./fonts/</code>）及版式文案庫（<code class="inline-code">./copy.json</code>）均由同源靜態目錄直接分發，<strong>零外部 Google Fonts 或第三方字體 CDN 請求</strong>，從根源上避免第三方字體介面紀錄您的連線 IP。與一般靜態網頁一致，承載本服務的靜態託管或平台基礎設施（<span class="ph-token">[HOSTING_CDN_PROVIDERS]</span>）在回應靜態檔案請求時會自動處理基礎 HTTP 中繼資料（如 IP 位址、瀏覽器識別碼、請求時間與靜態資源路徑），僅用於內容分發、DDoS 防護與安全診斷。</span>
+            </p>
+
+            <h3>
+              <span class="lang-en">1.4 Rights, Children's Privacy &amp; Contact</span>
+              <span class="lang-zh">1.4 您的隐私权利、未成年人保护与联系方式</span>
+              <span class="lang-hant">1.4 您的隱私權利、未成年人保護與聯絡方式</span>
+            </h3>
+            <p>
+              <span class="lang-en">Because we operate no user accounts and store no user-generated content, we hold no personal profile linked to you. Depending on your jurisdiction (including GDPR, UK GDPR, CCPA/CPRA, and PIPL), you may exercise applicable statutory data protection inquiries by contacting us. The Service is not directed to children under 13 (or the minimum digital consent age in <span class="ph-token">[GOVERNING_LAW_JURISDICTION]</span>). For privacy inquiries, email <span class="ph-token">[CONTACT_EMAIL]</span> or write to <span class="ph-token">[BUSINESS_ADDRESS]</span> (we respond within 30 days).</span>
+              <span class="lang-zh">由于本服务不设账号体系且不存储任何用户创作内容，我们不持有与您关联的个人档案。根据您所在司法辖区适用的数据保护法规（包括但不限于《个人信息保护法》、GDPR、UK GDPR 及 CCPA/CPRA），您可随时就隐私相关事项向我们提出查询或权利请求。本服务不面向未满 13 周岁（或 <span class="ph-token">[GOVERNING_LAW_JURISDICTION]</span> 法定最低数字同意年龄）的未成年人收集个人信息。隐私问询请发送邮件至 <span class="ph-token">[CONTACT_EMAIL]</span> 或致函 <span class="ph-token">[BUSINESS_ADDRESS]</span>（我们将在 30 日内回复）。</span>
+              <span class="lang-hant">由於本服務不設帳號體系且不儲存任何使用者創作內容，我們不持有與您關聯的個人檔案。依據您所在司法管轄區適用的資料保護法規（包括但不限於個人資料保護相關法規、GDPR、UK GDPR 及 CCPA/CPRA），您可隨時就隱私相關事項向我們提出查詢或權利請求。本服務不面向未滿 13 歲（或 <span class="ph-token">[GOVERNING_LAW_JURISDICTION]</span> 法定最低數位同意年齡）之未成年人蒐集個人資料。隱私洽詢請寄信至 <span class="ph-token">[CONTACT_EMAIL]</span> 或致函 <span class="ph-token">[BUSINESS_ADDRESS]</span>（我們將於 30 日內回覆）。</span>
+            </p>
+          </article>
+
+          <!-- 02. TERMS OF USE -->
+          <article id="terms" class="legal-card" aria-labelledby="termsTitle">
+            <div class="legal-sec-head">
+              <span class="sec-kicker">
+                <span class="lang-en">Section 02 · Terms</span>
+                <span class="lang-zh">第 02 节 · 服务协议</span>
+                <span class="lang-hant">第 02 節 · 服務條款</span>
+              </span>
+              <h2 id="termsTitle">
+                <span class="lang-en">Terms of Use</span>
+                <span class="lang-zh">使用条款</span>
+                <span class="lang-hant">使用條款</span>
+              </h2>
+              <p class="sec-meta">
+                <span class="lang-en">Service: <span class="ph-token">[PRODUCT_BRAND_NAME]</span> · Governing Law: <span class="ph-token">[GOVERNING_LAW_JURISDICTION]</span></span>
+                <span class="lang-zh">适用服务：<span class="ph-token">[PRODUCT_BRAND_NAME]</span> · 管辖法律：<span class="ph-token">[GOVERNING_LAW_JURISDICTION]</span></span>
+                <span class="lang-hant">適用服務：<span class="ph-token">[PRODUCT_BRAND_NAME]</span> · 準據法：<span class="ph-token">[GOVERNING_LAW_JURISDICTION]</span></span>
+              </p>
+            </div>
+
+            <h3>
+              <span class="lang-en">2.1 Acceptance &amp; Service Scope</span>
+              <span class="lang-zh">2.1 条款接受与服务范围</span>
+              <span class="lang-hant">2.1 條款接受與服務範圍</span>
+            </h3>
+            <p>
+              <span class="lang-en">These Terms of Use govern your access to and use of <span class="ph-token">[PRODUCT_BRAND_NAME]</span> (<span class="ph-token">[WEBSITE_DOMAIN]</span>), operated by <span class="ph-token">[COMPANY_OR_OPERATOR_NAME]</span>, effective as of <span class="ph-token">[EFFECTIVE_DATE]</span>. <span class="ph-token">[PRODUCT_BRAND_NAME]</span> is a client-side motion-graphics studio that generates rapid "text match cut" editorial highlight sequences directly in your browser. We may improve, modify, or discontinue features at any time without prior notice.</span>
+              <span class="lang-zh">本使用条款适用于您对 <span class="ph-token">[COMPANY_OR_OPERATOR_NAME]</span> 运营的 <span class="ph-token">[PRODUCT_BRAND_NAME]</span>（<span class="ph-token">[WEBSITE_DOMAIN]</span>）的访问与使用，自 <span class="ph-token">[EFFECTIVE_DATE]</span> 起生效。<span class="ph-token">[PRODUCT_BRAND_NAME]</span> 是一款运行于浏览器本地的动态图形生成工具，用于制作“文字对切”（报刊剪报中心词高亮快切）视频动画。我们保留随时更新、优化或调整部分及全部功能的权利。</span>
+              <span class="lang-hant">本使用條款適用於您對 <span class="ph-token">[COMPANY_OR_OPERATOR_NAME]</span> 營運之 <span class="ph-token">[PRODUCT_BRAND_NAME]</span>（<span class="ph-token">[WEBSITE_DOMAIN]</span>）的造訪與使用，自 <span class="ph-token">[EFFECTIVE_DATE]</span> 起生效。<span class="ph-token">[PRODUCT_BRAND_NAME]</span> 是一款執行於瀏覽器本機的動態圖形產生工具，用於製作「文字對切」（報刊剪報中心詞高亮快切）影片動畫。我們保留隨時更新、最佳化或調整部分及全部功能的權利。</span>
+            </p>
+
+            <h3>
+              <span class="lang-en">2.2 Export Ownership &amp; Worldwide Commercial Use Rights</span>
+              <span class="lang-zh">2.2 导出视频权属与全球商业使用授权</span>
+              <span class="lang-hant">2.2 匯出影片權屬與全球商業使用授權</span>
+            </h3>
+            <p>
+              <span class="lang-en">We claim <strong>no copyright or ownership</strong> over the video clips (<code class="inline-code">.mp4</code> or <code class="inline-code">.webm</code>) you render with <span class="ph-token">[PRODUCT_BRAND_NAME]</span>. Subject to your compliance with Section 2.3 (Font &amp; Input IP), Section 2.4 (Acceptable Use), and Section 04 (Editorial Simulation Disclaimer), you are free to use exported animations <strong>worldwide, royalty-free, for both personal and commercial projects</strong>—including YouTube, Bilibili, TikTok, Douyin, Instagram Reels, Shorts, Xiaohongshu, client deliverables, documentaries, broadcast packages, and paid sponsorships—with <strong>zero watermarks and no attribution required</strong>.</span>
+              <span class="lang-zh">我们对您使用 <span class="ph-token">[PRODUCT_BRAND_NAME]</span> 渲染并导出的视频片段（<code class="inline-code">.mp4</code> 或 <code class="inline-code">.webm</code>）<strong>不主张任何著作权或所有权</strong>。在您遵守本条款第 2.3 条（字体与输入素材合规）、第 2.4 条（合规使用承诺）及第 04 节（模拟版面声明）的前提下，您可将导出动画<strong>在全球范围内免版税用于个人创作及商业项目</strong>——包括但不限于 B 站、抖音、小红书、视频号、YouTube、TikTok、Instagram Reels、Shorts、商业客户交付、纪录片包装与品牌广告投放——<strong>全程无水印且无需署名</strong>。</span>
+              <span class="lang-hant">我們對您使用 <span class="ph-token">[PRODUCT_BRAND_NAME]</span> 渲染並匯出的影片片段（<code class="inline-code">.mp4</code> 或 <code class="inline-code">.webm</code>）<strong>不主張任何著作權或所有權</strong>。在您遵守本條款第 2.3 條（字體與輸入素材合規）、第 2.4 條（合規使用承諾）及第 04 節（模擬版面聲明）的前提下，您可將匯出動畫<strong>在全球範圍內免權利金用於個人創作及商業專案</strong>——包括但不限於 YouTube、Instagram Reels、Shorts、TikTok、小紅書、B 站、商業客戶交付、紀錄片包裝與品牌廣告投放——<strong>全程零浮水印且無需署名</strong>。</span>
+            </p>
+
+            <h3>
+              <span class="lang-en">2.3 Bundled Open-Source Font Clearance &amp; User IP Warranty</span>
+              <span class="lang-zh">2.3 内置开源字体合规说明与用户素材知识产权保证</span>
+              <span class="lang-hant">2.3 內建開源字體合規說明與使用者素材智慧財產權保證</span>
+            </h3>
+            <ul class="legal-list">
+              <li>
+                <span class="lang-en"><strong>Bundled Open-Source Fonts:</strong> All typefaces bundled directly with <span class="ph-token">[PRODUCT_BRAND_NAME]</span>—specifically <em>Noto Sans SC</em>, <em>Noto Serif SC</em>, <em>Noto Sans TC</em>, <em>Noto Serif TC</em>, <em>Playfair Display</em>, <em>Inter</em>, <em>Libre Baskerville</em>, <em>Newsreader</em>, and <em>Oswald</em> licensed under the <strong>SIL Open Font License 1.1</strong>, and the <em>Roboto</em> family licensed under the <strong>Apache License 2.0</strong>—permit commercial video rasterization and public distribution without imposing open-source license obligations on your exported video files.</span>
+                <span class="lang-zh"><strong>内置开源字体合规：</strong><span class="ph-token">[PRODUCT_BRAND_NAME]</span> 随包内置的全部网页字体——包括遵循 <strong>SIL Open Font License 1.1</strong> 协议的思源黑体（<em>Noto Sans SC</em> / <em>Noto Sans TC</em>）、思源宋体（<em>Noto Serif SC</em> / <em>Noto Serif TC</em>）、<em>Playfair Display</em>、<em>Inter</em>、<em>Libre Baskerville</em>、<em>Newsreader</em>、<em>Oswald</em>，以及遵循 <strong>Apache License 2.0</strong> 协议的 <em>Roboto</em> 字族——均允许商业视频栅格化渲染与公开发行，且不会对您导出的视频成片附加任何开源传染义务。</span>
+                <span class="lang-hant"><strong>內建開源字體合規：</strong><span class="ph-token">[PRODUCT_BRAND_NAME]</span> 隨包內建的全部網頁字體——包括遵循 <strong>SIL Open Font License 1.1</strong> 授權的思源黑體（<em>Noto Sans TC</em> / <em>Noto Sans SC</em>）、思源宋體（<em>Noto Serif TC</em> / <em>Noto Serif SC</em>）、<em>Playfair Display</em>、<em>Inter</em>、<em>Libre Baskerville</em>、<em>Newsreader</em>、<em>Oswald</em>，以及遵循 <strong>Apache License 2.0</strong> 授權的 <em>Roboto</em> 字族——均允許商業影片柵格化渲染與公開發行，且不會對您匯出的影片成片附加任何開源傳染義務。</span>
+              </li>
+              <li>
+                <span class="lang-en"><strong>Uploaded &amp; Operating-System Fonts:</strong> When you load a local font file (<code class="inline-code">.ttf</code>, <code class="inline-code">.otf</code>, <code class="inline-code">.woff</code>, <code class="inline-code">.woff2</code>) or select an operating-system font, <strong>you represent and warrant that you hold all required licenses and commercial embedding or broadcast permissions</strong> from the respective font rightsholder for your intended distribution.</span>
+                <span class="lang-zh"><strong>用户上传及系统自带字体保证：</strong>若您加载本地自定义字体文件（<code class="inline-code">.ttf</code>、<code class="inline-code">.otf</code>、<code class="inline-code">.woff</code>、<code class="inline-code">.woff2</code>）或调用操作系统本地字体进行渲染，<strong>您声明并保证已就预期发布场景（尤其是商业推广、影视商用或客户交付）取得相应字体权利人的合法授权</strong>，并独立承担全部字体合规责任。</span>
+                <span class="lang-hant"><strong>使用者載入及系統內建字體保證：</strong>若您載入本機自訂字體檔案（<code class="inline-code">.ttf</code>、<code class="inline-code">.otf</code>、<code class="inline-code">.woff</code>、<code class="inline-code">.woff2</code>）或呼叫作業系統本機字體進行渲染，<strong>您聲明並保證已就預期發佈場景（尤其是商業推廣、影視商用或客戶交付）取得相應字體權利人的合法授權</strong>，並獨立承擔全部字體合規責任。</span>
+              </li>
+              <li>
+                <span class="lang-en"><strong>User Keywords &amp; Custom Copy:</strong> You warrant that any keyword, script, or article text you enter does not infringe third-party copyrights, trademarks, privacy or publicity rights, or confidentiality obligations.</span>
+                <span class="lang-zh"><strong>用户输入文本保证：</strong>您声明并保证所输入的焦点关键词及粘贴的自定义正文不侵犯任何第三方的著作权、商标权、名誉权、肖像及姓名权或商业秘密。</span>
+                <span class="lang-hant"><strong>使用者輸入文字保證：</strong>您聲明並保證所輸入的焦點關鍵詞及貼上的自訂內文不侵害任何第三方的著作權、商標權、名譽權、肖像及姓名權或營業秘密。</span>
+              </li>
+            </ul>
+
+            <h3>
+              <span class="lang-en">2.4 Acceptable Use &amp; Anti-Disinformation Rules</span>
+              <span class="lang-zh">2.4 合规使用与反虚假信息规范</span>
+              <span class="lang-hant">2.4 合規使用與反虛假資訊規範</span>
+            </h3>
+            <p>
+              <span class="lang-en">Because editorial match-cut layouts are intentionally styled after print newspapers and financial wire sheets, you agree <strong>never</strong> to use <span class="ph-token">[PRODUCT_BRAND_NAME]</span> to:</span>
+              <span class="lang-zh">鉴于报刊剪报快切画面具有高度拟真的新闻印刷质感，您明确承诺<strong>绝不利用 <span class="ph-token">[PRODUCT_BRAND_NAME]</span> 从事下列行为</strong>：</span>
+              <span class="lang-hant">鑑於報刊剪報快切畫面具有高度擬真的新聞印刷質感，您明確承諾<strong>絕不利用 <span class="ph-token">[PRODUCT_BRAND_NAME]</span> 從事下列行為</strong>：</span>
+            </p>
+            <ul class="legal-list">
+              <li>
+                <span class="lang-en">Fabricate screenshots, fake news clippings, or misattributed pull-quotes designed to deceive viewers into believing a real publication reported an event or a real person or organization made a statement they did not make;</span>
+                <span class="lang-zh">伪造新闻报道截图、虚假快讯或嫁接人物引语，蓄意误导公众认为某家真实媒体发布了特定报道，或捏造他人及机构未曾发表的言论（造谣传谣、伪造新闻）；</span>
+                <span class="lang-hant">偽造新聞報導截圖、虛假快訊或移花接木人物引語，蓄意誤導公眾認為某家真實媒體發佈了特定報導，或捏造他人及機構未曾發表的言論（造謠傳謠、偽造新聞）；</span>
+              </li>
+              <li>
+                <span class="lang-en">Generate unlawful, defamatory, fraudulent, harassing, hate-speech, or market-manipulative content (including deceptive stock, commodity, or macroeconomic bulletins);</span>
+                <span class="lang-zh">制作违反法律法规、诽谤侵权、欺诈误导、仇恨骚扰或扰乱金融证券市场秩序的内容（包括伪造股价行情、宏观政策通报或研报截图）；</span>
+                <span class="lang-hant">製作違反法律法規、誹謗侵權、詐欺誤導、仇恨騷擾或擾亂金融證券市場秩序的內容（包括偽造股價行情、總體經濟政策通報或研究報告截圖）；</span>
+              </li>
+              <li>
+                <span class="lang-en">Impersonate any press organization, public institution, enterprise, or individual; or disrupt, scrape, or abuse the static infrastructure of <span class="ph-token">[WEBSITE_DOMAIN]</span>.</span>
+                <span class="lang-zh">冒充任何新闻出版机构、公共部门、企事业单位或个人，或对 <span class="ph-token">[WEBSITE_DOMAIN]</span> 的静态基础设施实施恶意抓取、攻击或干扰。</span>
+                <span class="lang-hant">冒充任何新聞出版機構、公共部門、企業機構或個人，或對 <span class="ph-token">[WEBSITE_DOMAIN]</span> 的靜態基礎設施實施惡意爬取、攻擊或干擾。</span>
+              </li>
+            </ul>
+
+            <h3>
+              <span class="lang-en">2.5 Service Intellectual Property, "AS IS" Warranty Disclaimer &amp; Liability Cap</span>
+              <span class="lang-zh">2.5 服务知识产权、“按现状”免责声明、责任上限与准据法</span>
+              <span class="lang-hant">2.5 服務智慧財產權、「依現狀」免責聲明、責任上限與準據法</span>
+            </h3>
+            <p>
+              <span class="lang-en">The <span class="ph-token">[PRODUCT_BRAND_NAME]</span> codebase, layout engine, audio synthesis routines, interface design, and curated multilingual datasets remain the intellectual property of <span class="ph-token">[COMPANY_OR_OPERATOR_NAME]</span> and its licensors. THE SERVICE IS PROVIDED FREE OF CHARGE ON AN <strong>"AS IS" AND "AS AVAILABLE"</strong> BASIS WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED. Video container availability (<code class="inline-code">MP4 H.264</code> versus <code class="inline-code">WebM VP9/VP8</code>) and frame rendering speed depend on your device hardware and browser capabilities.</span>
+              <span class="lang-zh"><span class="ph-token">[PRODUCT_BRAND_NAME]</span> 的软件源码、排版渲染引擎、音效合成算法、界面设计及多语种模板库知识产权归 <span class="ph-token">[COMPANY_OR_OPERATOR_NAME]</span> 及其许可方所有。本服务按<strong>“现状”（"AS IS"）与“现有”（"AS AVAILABLE"）</strong>基础免费提供，不附带任何明示或暗示的适销性、特定用途适用性或不间断运行担保。视频封装格式支持（<code class="inline-code">MP4 H.264</code> 或 <code class="inline-code">WebM VP9/VP8</code>）及渲染速度取决于您的终端硬件与浏览器内核能力。</span>
+              <span class="lang-hant"><span class="ph-token">[PRODUCT_BRAND_NAME]</span> 的軟體原始碼、排版算繪引擎、音效合成演算法、介面設計及多語系範本庫之智慧財產權歸 <span class="ph-token">[COMPANY_OR_OPERATOR_NAME]</span> 及其授權方所有。本服務依<strong>「現狀」（"AS IS"）與「現有」（"AS AVAILABLE"）</strong>基礎免費提供，不附帶任何明示或默示之適售性、特定用途適用性或不中斷運作擔保。影片封裝格式支援（<code class="inline-code">MP4 H.264</code> 或 <code class="inline-code">WebM VP9/VP8</code>）及算繪速度取決於您的裝置硬體與瀏覽器核心能力。</span>
+            </p>
+            <p>
+              <span class="lang-en">TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, <span class="ph-token">[COMPANY_OR_OPERATOR_NAME]</span> SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR FOR ANY THIRD-PARTY CLAIMS ARISING FROM YOUR INPUTS, UPLOADED FONTS, OR PUBLISHED VIDEOS; OUR AGGREGATE LIABILITY SHALL NOT EXCEED USD 50.00 (OR THE AMOUNT YOU PAID FOR THE SERVICE, WHICH IS ZERO). Nothing in these Terms excludes mandatory consumer rights that cannot be waived by law. These Terms are governed by the laws of <span class="ph-token">[GOVERNING_LAW_JURISDICTION]</span>. Legal notices: <span class="ph-token">[CONTACT_EMAIL]</span> · <span class="ph-token">[BUSINESS_ADDRESS]</span>.</span>
+              <span class="lang-zh">在适用法律允许的最大范围内，<span class="ph-token">[COMPANY_OR_OPERATOR_NAME]</span> 不对任何间接、附带、特殊、衍生或惩罚性损失承担责任，亦不对因您的输入文本、上传字体或导出视频的使用所引发的任何第三方索赔承担责任；若依法存在不可免除的赔偿责任，我们的累计赔偿总额上限不超过 50 美元（USD 50.00）或您为使用本服务实际支付的费用（即 0 元），法律法规明确规定不可豁免的强制性消费者权益除外。本条款受 <span class="ph-token">[GOVERNING_LAW_JURISDICTION]</span> 法律管辖。法律联系渠道：<span class="ph-token">[CONTACT_EMAIL]</span> · <span class="ph-token">[BUSINESS_ADDRESS]</span>。</span>
+              <span class="lang-hant">在適用法律允許的最大範圍內，<span class="ph-token">[COMPANY_OR_OPERATOR_NAME]</span> 不對任何間接、附帶、特殊、衍生或懲罰性損害承擔責任，亦不對因您的輸入文字、上傳字體或匯出影片之使用所引發的任何第三方索賠承擔責任；若依法存在不可免除之賠償責任，我們的累計賠償總額上限不超過 50 美元（USD 50.00）或您為使用本服務實際支付之費用（即 0 元），法律法規明確規定不可拋棄之強制性消費者權益除外。本條款受 <span class="ph-token">[GOVERNING_LAW_JURISDICTION]</span> 法律管轄。法律聯絡管道：<span class="ph-token">[CONTACT_EMAIL]</span> · <span class="ph-token">[BUSINESS_ADDRESS]</span>。</span>
+            </p>
+          </article>
+          <!-- 03. COOKIES & LOCAL STORAGE NOTICE -->
+          <article id="cookies" class="legal-card" aria-labelledby="cookiesTitle">
+            <div class="legal-sec-head">
+              <span class="sec-kicker">
+                <span class="lang-en">Section 03 · Local Storage</span>
+                <span class="lang-zh">第 03 节 · 存储透明说明</span>
+                <span class="lang-hant">第 03 節 · 本機儲存說明</span>
+              </span>
+              <h2 id="cookiesTitle">
+                <span class="lang-en">Cookies &amp; Local Storage Notice</span>
+                <span class="lang-zh">Cookie 与本地存储说明</span>
+                <span class="lang-hant">Cookie 與本機儲存說明</span>
+              </h2>
+              <p class="sec-meta">
+                <span class="lang-en">Zero Advertising Trackers · Works 100% With Storage Blocked</span>
+                <span class="lang-zh">零广告追踪器 · 禁用浏览器存储仍可 100% 正常生成导出</span>
+                <span class="lang-hant">零廣告追蹤器 · 停用瀏覽器儲存仍可 100% 正常生成與匯出</span>
+              </p>
+            </div>
+
+            <p>
+              <span class="lang-en"><span class="ph-token">[PRODUCT_BRAND_NAME]</span> sets <strong>zero advertising cookies, zero rewarded-ad tracking identifiers, and zero cross-site behavioral pixels</strong>. We use a single optional first-party <code class="inline-code">localStorage</code> key on your own browser solely to remember your preferred UI language:</span>
+              <span class="lang-zh"><span class="ph-token">[PRODUCT_BRAND_NAME]</span> <strong>不写入任何广告追踪 Cookie、激励视频门禁标识或跨站行为画像脚本</strong>。我们仅在您的本地浏览器中使用单个可选的第一方 <code class="inline-code">localStorage</code> 键名以记住界面语言偏好：</span>
+              <span class="lang-hant"><span class="ph-token">[PRODUCT_BRAND_NAME]</span> <strong>不寫入任何廣告追蹤 Cookie、激勵影片門檻標識或跨站行為剖析腳本</strong>。我們僅在您的本機瀏覽器中使用單一選用的第一方 <code class="inline-code">localStorage</code> 鍵名以記住介面語言偏好：</span>
+            </p>
+
+            <div class="table-wrap">
+              <table class="legal-table">
+                <thead>
+                  <tr>
+                    <th scope="col" class="col-fixed">
+                      <span class="lang-en">Key / Mechanism</span>
+                      <span class="lang-zh">键名与机制</span>
+                      <span class="lang-hant">鍵名與機制</span>
+                    </th>
+                    <th scope="col" class="col-fixed">
+                      <span class="lang-en">Storage Type</span>
+                      <span class="lang-zh">存储类型</span>
+                      <span class="lang-hant">儲存類型</span>
+                    </th>
+                    <th scope="col" class="col-main">
+                      <span class="lang-en">Purpose</span>
+                      <span class="lang-zh">用途说明</span>
+                      <span class="lang-hant">用途說明</span>
+                    </th>
+                    <th scope="col">
+                      <span class="lang-en">Retention</span>
+                      <span class="lang-zh">保留期限</span>
+                      <span class="lang-hant">保留期限</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="col-fixed"><code class="inline-code">tmc_ui_lang</code></td>
+                    <td class="col-fixed">
+                      <span class="lang-en">First-party <code class="inline-code">localStorage</code></span>
+                      <span class="lang-zh">第一方 <code class="inline-code">localStorage</code></span>
+                      <span class="lang-hant">第一方 <code class="inline-code">localStorage</code></span>
+                    </td>
+                    <td class="col-main">
+                      <span class="lang-en">Remembers your chosen UI language (<code class="inline-code">en</code>, <code class="inline-code">zh</code>, or <code class="inline-code">hant</code>) across studio and legal views on your device</span>
+                      <span class="lang-zh">在您本机记住界面显示语言偏好（<code class="inline-code">en</code>、<code class="inline-code">zh</code> 或 <code class="inline-code">hant</code>），实现工作台与条款视图语言同步</span>
+                      <span class="lang-hant">在您本機記住介面顯示語言偏好（<code class="inline-code">en</code>、<code class="inline-code">zh</code> 或 <code class="inline-code">hant</code>），實現工作台與條款視圖語言同步</span>
+                    </td>
+                    <td>
+                      <span class="lang-en">Until cleared</span>
+                      <span class="lang-zh">直至手动清除</span>
+                      <span class="lang-hant">直至手動清除</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="col-fixed"><code class="inline-code">FontFace</code> / <code class="inline-code">Blob</code></td>
+                    <td class="col-fixed">
+                      <span class="lang-en">Browser RAM (Volatile)</span>
+                      <span class="lang-zh">浏览器瞬态内存</span>
+                      <span class="lang-hant">瀏覽器暫態記憶體</span>
+                    </td>
+                    <td class="col-main">
+                      <span class="lang-en">Holds uploaded custom fonts and encoded <code class="inline-code">.mp4</code> / <code class="inline-code">.webm</code> video buffers during the active tab session</span>
+                      <span class="lang-zh">仅在当前标签页活动期间于内存中暂存本地上传字体及导出的 <code class="inline-code">.mp4</code> / <code class="inline-code">.webm</code> 视频缓冲</span>
+                      <span class="lang-hant">僅在目前分頁開啟期間於記憶體中暫存本機上傳字體及匯出的 <code class="inline-code">.mp4</code> / <code class="inline-code">.webm</code> 影片緩衝</span>
+                    </td>
+                    <td>
+                      <span class="lang-en">Tab close</span>
+                      <span class="lang-zh">关闭页面即释放</span>
+                      <span class="lang-hant">關閉分頁即釋放</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="col-fixed">
+                      <span class="lang-en">Ad / Tracking Cookies</span>
+                      <span class="lang-zh">广告与画像 Cookie</span>
+                      <span class="lang-hant">廣告與剖析 Cookie</span>
+                    </td>
+                    <td class="col-fixed">
+                      <span class="lang-en">None</span>
+                      <span class="lang-zh">无</span>
+                      <span class="lang-hant">無</span>
+                    </td>
+                    <td class="col-main">
+                      <span class="lang-en">Zero third-party ad networks, consent-wall trackers, or cross-domain profiling scripts are loaded</span>
+                      <span class="lang-zh">不加载任何第三方广告联盟、激励广告墙或跨站追踪分析脚本</span>
+                      <span class="lang-hant">不載入任何第三方廣告聯播網、激勵廣告牆或跨站追蹤分析腳本</span>
+                    </td>
+                    <td>
+                      <span class="lang-en">0 s · Never set</span>
+                      <span class="lang-zh">0 秒 · 从不写入</span>
+                      <span class="lang-hant">0 秒 · 從不寫入</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="legal-note">
+              <span class="lang-en"><strong>Storage-Blocked Compatibility:</strong> Every rendering, preview, font-loading, and video download feature in <span class="ph-token">[PRODUCT_BRAND_NAME]</span> operates with 100% functionality even if you disable all cookies and <code class="inline-code">localStorage</code> in strict browser privacy settings or private browsing windows. You can also pass <code class="inline-code">?lang=en</code>, <code class="inline-code">?lang=zh</code>, or <code class="inline-code">?lang=hant</code> directly in the URL.</span>
+              <span class="lang-zh"><strong>禁用存储完全可用：</strong>即使您在浏览器严格隐私模式或无痕窗口中彻底禁用所有 Cookie 与 <code class="inline-code">localStorage</code>，<span class="ph-token">[PRODUCT_BRAND_NAME]</span> 的预览、自定义字体加载与高清视频导出功能仍可 100% 正常工作；您也可通过网址参数 <code class="inline-code">?lang=en</code>、<code class="inline-code">?lang=zh</code> 或 <code class="inline-code">?lang=hant</code> 直接指定界面语言。</span>
+              <span class="lang-hant"><strong>停用儲存完全可用：</strong>即使您在瀏覽器嚴格隱私模式或無痕視窗中徹底停用所有 Cookie 與 <code class="inline-code">localStorage</code>，<span class="ph-token">[PRODUCT_BRAND_NAME]</span> 的預覽、自訂字體載入與高畫質影片匯出功能仍可 100% 正常運作；您也可透過網址參數 <code class="inline-code">?lang=en</code>、<code class="inline-code">?lang=zh</code> 或 <code class="inline-code">?lang=hant</code> 直接指定介面語言。</span>
+            </div>
+          </article>
+
+          <!-- 04. EDITORIAL SIMULATION & FONT DISCLAIMER -->
+          <article id="disclaimer" class="legal-card" aria-labelledby="disclaimerTitle">
+            <div class="legal-sec-head">
+              <span class="sec-kicker">
+                <span class="lang-en">Section 04 · Simulation &amp; Typography</span>
+                <span class="lang-zh">第 04 节 · 模拟版面与字体声明</span>
+                <span class="lang-hant">第 04 節 · 模擬版面與字體聲明</span>
+              </span>
+              <h2 id="disclaimerTitle">
+                <span class="lang-en">Editorial Simulation &amp; Font Disclaimer</span>
+                <span class="lang-zh">模拟报刊版面与字体声明</span>
+                <span class="lang-hant">模擬報刊版面與字體聲明</span>
+              </h2>
+              <p class="sec-meta">
+                <span class="lang-en">Procedural Motion-Design Props · Non-Affiliation · Open-Source Font Inventory</span>
+                <span class="lang-zh">程序化视觉道具说明 · 无真实媒体关联 · 同源开源字体清单</span>
+                <span class="lang-hant">程式化視覺道具說明 · 無真實媒體關聯 · 同源開源字體清單</span>
+              </p>
+            </div>
+
+            <h3>
+              <span class="lang-en">4.1 Procedural Typographic Simulations &amp; Fictionalized Copy</span>
+              <span class="lang-zh">4.1 程序化排版模拟与虚构示例文案说明</span>
+              <span class="lang-hant">4.1 程式化排版模擬與虛構範例內文說明</span>
+            </h3>
+            <p>
+              <span class="lang-en">All newspaper mastheads, broadsheet and financial pink-sheet color palettes, section kickers, edition folios, headlines, subhead decks, correspondent bylines, pull-quotes, market index tickers, sports scorelines, weather bulletins, classified notices, and procedural halftone dot illustrations rendered by <span class="ph-token">[PRODUCT_BRAND_NAME]</span> are <strong>computer-generated typographic simulations and 100% fictionalized sample copy</strong> created strictly as visual motion-design props for video editing. None of the built-in copy constitutes factual journalism, breaking news reporting, real-time market quotes, or financial investment advice.</span>
+              <span class="lang-zh"><span class="ph-token">[PRODUCT_BRAND_NAME]</span> 生成并渲染的所有报纸报头、综合大报与财经粉报配色、栏目导读、刊期版号、新闻标题、副标题、记者署名、核心引语、金融指数行情表、体育赛事比分、天气简报、分类广告及程序化半色调网点插画，均为<strong>计算机程序化生成的排版视觉模拟与 100% 虚构示例文本</strong>，仅作为视频剪辑与动态视觉包装的创意道具。内置文案库中的一切内容均不构成真实新闻报道、实时市场行情或任何投资建议。</span>
+              <span class="lang-hant"><span class="ph-token">[PRODUCT_BRAND_NAME]</span> 生成並算繪的所有報紙報頭、綜合大報與財經粉報配色、專欄導讀、刊期版號、新聞標題、副標題、記者署名、核心引語、金融指數行情表、體育賽事比分、分類啟事及程式化半色調網點插畫，均為<strong>電腦程式化生成的排版視覺模擬與 100% 虛構範例文字</strong>，僅作為影片剪輯與動態視覺包裝的創意道具。內建文案庫中的一切內容均不構成真實新聞報導、即時市場行情或任何投資建議。</span>
+            </p>
+
+            <h3>
+              <span class="lang-en">4.2 Non-Affiliation &amp; Editorial Archetype Notice</span>
+              <span class="lang-zh">4.2 无真实媒体关联与背书声明</span>
+              <span class="lang-hant">4.2 無真實媒體關聯與背書聲明</span>
+            </h3>
+            <p>
+              <span class="lang-en">Neither <span class="ph-token">[PRODUCT_BRAND_NAME]</span> nor <span class="ph-token">[COMPANY_OR_OPERATOR_NAME]</span> is affiliated with, associated with, authorized by, endorsed by, or sponsored by any real-world newspaper, financial daily, magazine, wire agency, broadcaster, or publishing house. Built-in layout presets reference classic print editorial archetypes solely for stylistic demonstration; all third-party publication names or trademarks remain the property of their respective owners. Before publishing commercial or public edits, creators should review rendered frames (or supply custom copy in the Studio) to ensure the surrounding context never implies endorsement or reporting by any real press organization.</span>
+              <span class="lang-zh"><span class="ph-token">[PRODUCT_BRAND_NAME]</span> 与 <span class="ph-token">[COMPANY_OR_OPERATOR_NAME]</span> <strong>与任何现实世界的新闻报刊、财经日报、杂志、通讯社、广播电视机构或出版集团均无隶属、合作、授权、赞助或背书关系</strong>。预设版式仅对经典纸媒视觉范式作排版风格演示，相关第三方名称或标识权益归各自权利人所有。创作者在将成片用于商业投放或公开传播前，应审视画面语境（或使用工作台的“自定义正文”功能替换为自有台词），确保受众不会误认为真实媒体报道或官方背书。</span>
+              <span class="lang-hant"><span class="ph-token">[PRODUCT_BRAND_NAME]</span> 與 <span class="ph-token">[COMPANY_OR_OPERATOR_NAME]</span> <strong>與任何現實世界的新聞報刊、財經日報、雜誌、通訊社、廣播電視機構或出版集團均無隸屬、合作、授權、贊助或背書關係</strong>。預設版式僅對經典紙媒視覺範式作排版風格展示，相關第三方名稱或標識權益歸各自權利人所有。創作者在將成片用於商業投放或公開傳播前，應審視畫面語境（或使用工作台的「自訂內文」功能替換為自有台詞），確保受眾不會誤認為真實媒體報導或官方背書。</span>
+            </p>
+
+            <h3>
+              <span class="lang-en">4.3 Strict Prohibition on Deceptive News Screenshots</span>
+              <span class="lang-zh">4.3 严禁伪造新闻截图与传播不实信息</span>
+              <span class="lang-hant">4.3 嚴禁偽造新聞截圖與散播不實資訊</span>
+            </h3>
+            <p>
+              <span class="lang-en">As set forth in Section 2.4 of the Terms of Use, exported frames or animations must <strong>never</strong> be cropped, shared, or presented as authentic news screenshots, official public notices, or factual statements attributed to real individuals, companies, or institutions.</span>
+              <span class="lang-zh">依据本页使用条款第 2.4 条之规定，严禁将本工具导出的单帧画面或视频片段裁剪、包装或冒充为真实新闻报道截图、官方通告，或将其虚构为现实个人、企业及机构的真实言论进行传播。</span>
+              <span class="lang-hant">依據本頁使用條款第 2.4 條之規定，嚴禁將本工具匯出的單格畫面或影片片段裁切、包裝或冒充為真實新聞報導截圖、官方通告，或將其虛構為現實個人、企業及機構的真實言論進行散播。</span>
+            </p>
+
+            <h3>
+              <span class="lang-en">4.4 Bundled Self-Hosted Open-Source Font Inventory</span>
+              <span class="lang-zh">4.4 同源内置开源字体清单与授权协议</span>
+              <span class="lang-hant">4.4 同源內建開源字體清單與授權條款</span>
+            </h3>
+            <div class="table-wrap">
+              <table class="legal-table">
+                <thead>
+                  <tr>
+                    <th scope="col" class="col-fixed">
+                      <span class="lang-en">Typeface Family</span>
+                      <span class="lang-zh">字体家族</span>
+                      <span class="lang-hant">字體家族</span>
+                    </th>
+                    <th scope="col" class="col-fixed">
+                      <span class="lang-en">License</span>
+                      <span class="lang-zh">开源协议</span>
+                      <span class="lang-hant">開源授權</span>
+                    </th>
+                    <th scope="col" class="col-main">
+                      <span class="lang-en">Editorial Role &amp; Commercial Clearance</span>
+                      <span class="lang-zh">排版用途与商业渲染说明</span>
+                      <span class="lang-hant">排版用途與商業匯出說明</span>
+                    </th>
+                    <th scope="col">
+                      <span class="lang-en">Delivery</span>
+                      <span class="lang-zh">加载方式</span>
+                      <span class="lang-hant">載入方式</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="col-fixed">Noto Sans SC / Noto Serif SC</td>
+                    <td class="col-fixed">SIL OFL 1.1</td>
+                    <td class="col-main">
+                      <span class="lang-en">Simplified Chinese UI, broadsheet headlines, and multi-column body copy; cleared for commercial video export</span>
+                      <span class="lang-zh">简体中文界面、报刊标题与多栏正文排版，允许商业视频栅格化导出</span>
+                      <span class="lang-hant">簡體中文介面、報刊標題與多欄內文排版，允許商業影片點陣化匯出</span>
+                    </td>
+                    <td>
+                      <span class="lang-en">Local ./fonts/</span>
+                      <span class="lang-zh">同源 ./fonts/</span>
+                      <span class="lang-hant">同源 ./fonts/</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="col-fixed">Noto Sans TC / Noto Serif TC</td>
+                    <td class="col-fixed">SIL OFL 1.1</td>
+                    <td class="col-main">
+                      <span class="lang-en">Traditional Chinese UI, broadsheet headlines, and multi-column body copy; cleared for commercial video export</span>
+                      <span class="lang-zh">繁体中文界面、报刊标题与多栏正文排版，允许商业视频栅格化导出</span>
+                      <span class="lang-hant">繁體中文介面、報刊標題與多欄內文排版，允許商業影片點陣化匯出</span>
+                    </td>
+                    <td>
+                      <span class="lang-en">Local ./fonts/</span>
+                      <span class="lang-zh">同源 ./fonts/</span>
+                      <span class="lang-hant">同源 ./fonts/</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="col-fixed">Playfair Display / Libre Baskerville / Newsreader</td>
+                    <td class="col-fixed">SIL OFL 1.1</td>
+                    <td class="col-main">
+                      <span class="lang-en">English broadsheet mastheads, editorial serif headlines, pull-quotes, and book-grade columns; cleared for commercial video export</span>
+                      <span class="lang-zh">英文报头、衬线主标题、核心引语与书刊正文排版，允许商业视频栅格化导出</span>
+                      <span class="lang-hant">英文報頭、襯線主標題、核心引語與書刊內文排版，允許商業影片點陣化匯出</span>
+                    </td>
+                    <td>
+                      <span class="lang-en">Local ./fonts/</span>
+                      <span class="lang-zh">同源 ./fonts/</span>
+                      <span class="lang-hant">同源 ./fonts/</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="col-fixed">Inter / Oswald</td>
+                    <td class="col-fixed">SIL OFL 1.1</td>
+                    <td class="col-main">
+                      <span class="lang-en">English UI controls, condensed tabloid banners, kickers, and financial data tables; cleared for commercial video export</span>
+                      <span class="lang-zh">英文界面控件、紧凑型大字标题、栏目导读与行情数据表，允许商业视频栅格化导出</span>
+                      <span class="lang-hant">英文介面控制項、緊湊型大字標題、專欄導讀與行情資料表，允許商業影片點陣化匯出</span>
+                    </td>
+                    <td>
+                      <span class="lang-en">Local ./fonts/</span>
+                      <span class="lang-zh">同源 ./fonts/</span>
+                      <span class="lang-hant">同源 ./fonts/</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="col-fixed">Roboto Family</td>
+                    <td class="col-fixed">Apache 2.0</td>
+                    <td class="col-main">
+                      <span class="lang-en">Wire bulletins, condensed tickers, and crisp neo-grotesque headlines; cleared for commercial video export</span>
+                      <span class="lang-zh">电讯快报、紧凑指数表与现代无衬线标题排版，允许商业视频栅格化导出</span>
+                      <span class="lang-hant">電訊快報、緊湊指數表與現代無襯線標題排版，允許商業影片點陣化匯出</span>
+                    </td>
+                    <td>
+                      <span class="lang-en">Local ./fonts/</span>
+                      <span class="lang-zh">同源 ./fonts/</span>
+                      <span class="lang-hant">同源 ./fonts/</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <a class="brand-logo" href="#studio">
+            <span class="lang-en">TextMatch<span class="brand-cut">Cut</span></span>
+            <span class="lang-zh">文字<span class="brand-cut">对切</span></span>
+            <span class="lang-hant">文字<span class="brand-cut">對切</span></span>
+          </a>
+          <p class="footer-brand-desc">
+            <span class="lang-en">100% client-side broadsheet text match cut studio for editors, journalists, and creators. Built on HTML5 Canvas, WebAudio, and open-source typography.</span>
+            <span class="lang-zh">面向视频创作者与深度解说作者的纯前端报刊文字对切工作台，基于本地画布、程序化音效与开源可商用字体构建。</span>
+            <span class="lang-hant">專為影片創作者與深度解說作者打造的純前端報刊文字對切工作台，基於本機畫布、程式化音效與開源可商用字體建構。</span>
+          </p>
+        </div>
+
+        <div>
+          <h3 class="footer-col-title">
+            <span class="lang-en">Studio</span>
+            <span class="lang-zh">工作台</span>
+            <span class="lang-hant">工作台</span>
+          </h3>
+          <ul class="footer-links">
+            <li><a href="#studio" data-en-text="Clip Generator" data-zh-text="在线生成器" data-hant-text="線上產生器">Clip Generator</a></li>
+            <li><a href="#examples" data-en-text="Interactive Examples" data-zh-text="精选预设示例" data-hant-text="精選預設範例">Interactive Examples</a></li>
+            <li><a href="#use-cases" data-en-text="Aspect Ratio Presets" data-zh-text="画幅与平台预设" data-hant-text="畫幅與平台預設">Aspect Ratio Presets</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-col-title">
+            <span class="lang-en">Guide</span>
+            <span class="lang-zh">指南</span>
+            <span class="lang-hant">指南</span>
+          </h3>
+          <ul class="footer-links">
+            <li><a href="#how" data-en-text="How It Works" data-zh-text="三步流程" data-hant-text="三步流程">How It Works</a></li>
+            <li><a href="#compare" data-en-text="Workflow Comparison" data-zh-text="方案对比" data-hant-text="方案對比">Workflow Comparison</a></li>
+            <li><a href="#faq" data-en-text="FAQ" data-zh-text="常见问题" data-hant-text="常見問題">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-col-title">
+            <span class="lang-en">Legal &amp; Notices</span>
+            <span class="lang-zh">法律与合规声明</span>
+            <span class="lang-hant">法律與合規聲明</span>
+          </h3>
+          <ul class="footer-links">
+            <li><a href="#privacy" data-en-text="Privacy Policy" data-zh-text="隐私政策" data-hant-text="隱私權政策">Privacy Policy</a></li>
+            <li><a href="#terms" data-en-text="Terms of Use" data-zh-text="使用条款" data-hant-text="使用條款">Terms of Use</a></li>
+            <li><a href="#cookies" data-en-text="Cookies &amp; Local Storage" data-zh-text="Cookie 与本地存储" data-hant-text="Cookie 與本機儲存">Cookies &amp; Local Storage</a></li>
+            <li><a href="#disclaimer" data-en-text="Editorial &amp; Font Disclaimer" data-zh-text="模拟版面与字体声明" data-hant-text="模擬版面與字體聲明">Editorial &amp; Font Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./app-2b9fc05a.js"></script>
+</body>
+</html>

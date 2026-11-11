@@ -1,0 +1,2322 @@
+{
+  "zh": {
+    "publications": [
+      {
+        "id": "cbn-daily",
+        "name": "第一财经日报",
+        "sub": "CHINA BUSINESS NEWS · 产经与资本早报",
+        "sectionKickers": [
+          "市场观察",
+          "公司深读",
+          "全球市场",
+          "智造前沿"
+        ],
+        "kind": "finance"
+      },
+      {
+        "id": "21jingji",
+        "name": "21世纪经济报道",
+        "sub": "21ST CENTURY BUSINESS HERALD",
+        "sectionKickers": [
+          "产业一线",
+          "硬科技周刊",
+          "资本脉动",
+          "智库研报"
+        ],
+        "kind": "finance"
+      },
+      {
+        "id": "caixin-weekly",
+        "name": "财新周刊",
+        "sub": "CAIXIN WEEKLY · 商业与经济深度",
+        "sectionKickers": [
+          "封面报道",
+          "商业科技",
+          "产业纵深",
+          "能源转型"
+        ],
+        "kind": "weekly"
+      },
+      {
+        "id": "nbd-press",
+        "name": "每日经济新闻",
+        "sub": "NATIONAL BUSINESS DAILY",
+        "sectionKickers": [
+          "公司调查",
+          "行情速递",
+          "汽车新势力",
+          "消费趋势"
+        ],
+        "kind": "business"
+      },
+      {
+        "id": "stcn-times",
+        "name": "证券时报",
+        "sub": "SECURITIES TIMES · 资本市场专刊",
+        "sectionKickers": [
+          "行情看板",
+          "机构视点",
+          "科创观察",
+          "基金周刊"
+        ],
+        "kind": "finance"
+      },
+      {
+        "id": "eeo-observer",
+        "name": "经济观察报",
+        "sub": "THE ECONOMIC OBSERVER",
+        "sectionKickers": [
+          "商业评论",
+          "公司研究院",
+          "大消费",
+          "出行工业"
+        ],
+        "kind": "business"
+      },
+      {
+        "id": "bjnews",
+        "name": "新京报",
+        "sub": "THE BEIJING NEWS · 城市与时代记录",
+        "sectionKickers": [
+          "城市商业",
+          "新知探索",
+          "文化客厅",
+          "深度聚焦"
+        ],
+        "kind": "metro"
+      },
+      {
+        "id": "infzm",
+        "name": "南方周末",
+        "sub": "SOUTHERN WEEKLY · 深度特稿",
+        "sectionKickers": [
+          "特稿专版",
+          "科技之魅",
+          "商业策",
+          "文化副刊"
+        ],
+        "kind": "weekly"
+      },
+      {
+        "id": "thepaper-special",
+        "name": "澎湃特刊",
+        "sub": "THE PAPER · 城市与产业增刊",
+        "sectionKickers": [
+          "未来科技",
+          "城市漫步",
+          "产业坐标",
+          "轨道生活"
+        ],
+        "kind": "metro"
+      },
+      {
+        "id": "jiemian-news",
+        "name": "界面新闻",
+        "sub": "JIEMIAN DISPATCH · 商业快讯",
+        "sectionKickers": [
+          "快讯直击",
+          "科技早报",
+          "新消费",
+          "制造前线"
+        ],
+        "kind": "wire"
+      },
+      {
+        "id": "dskb-metro",
+        "name": "都市快报",
+        "sub": "METRO EXPRESS · 长三角晨刊",
+        "sectionKickers": [
+          "城事速递",
+          "数字生活",
+          "街区新店",
+          "文体看台"
+        ],
+        "kind": "metro"
+      },
+      {
+        "id": "xmwb-evening",
+        "name": "新民晚报",
+        "sub": "XINMIN EVENING NEWS · 夜光杯",
+        "sectionKickers": [
+          "夜光杯",
+          "浦江商业",
+          "街区温度",
+          "晚间博览"
+        ],
+        "kind": "evening"
+      },
+      {
+        "id": "qjwb-evening",
+        "name": "钱江晚报",
+        "sub": "QIANJIANG EVENING NEWS",
+        "sectionKickers": [
+          "之江潮声",
+          "生活实验室",
+          "杭城现场",
+          "周末悦读"
+        ],
+        "kind": "evening"
+      },
+      {
+        "id": "cdsb-daily",
+        "name": "成都商报",
+        "sub": "CHENGDU ECONOMIC DAILY · 西南商业",
+        "sectionKickers": [
+          "西南产经",
+          "城市样本",
+          "新商业",
+          "消费地理"
+        ],
+        "kind": "business"
+      },
+      {
+        "id": "sanlian-life",
+        "name": "三联生活周刊",
+        "sub": "SANLIAN LIFEWEEK · 生活与新知",
+        "sectionKickers": [
+          "封面故事",
+          "城市生活",
+          "书评艺文",
+          "时代现场"
+        ],
+        "kind": "culture"
+      },
+      {
+        "id": "stdaily-ind",
+        "name": "科技日报·产业周刊",
+        "sub": "TECH & INDUSTRY WEEKLY",
+        "sectionKickers": [
+          "算力底座",
+          "半导体前沿",
+          "具身智能",
+          "开源生态"
+        ],
+        "kind": "tech"
+      },
+      {
+        "id": "cpcw-weekly",
+        "name": "电脑报",
+        "sub": "COMPUTER NEWSPAPER · 硬件与极客",
+        "sectionKickers": [
+          "硬件评测",
+          "端侧模型",
+          "开源工具",
+          "桌面工程"
+        ],
+        "kind": "tech"
+      },
+      {
+        "id": "geek-frontier",
+        "name": "极客前沿",
+        "sub": "GEEK FRONTIER · 开发者与系统月刊",
+        "sectionKickers": [
+          "架构解码",
+          "模型基准",
+          "机器人工程",
+          "产品拆解"
+        ],
+        "kind": "tech"
+      },
+      {
+        "id": "titan-sports",
+        "name": "体坛周报",
+        "sub": "TITAN SPORTS · 赛事与竞技专刊",
+        "sectionKickers": [
+          "焦点战报",
+          "数据看台",
+          "欧陆赛场",
+          "赛季纵览"
+        ],
+        "kind": "sports"
+      },
+      {
+        "id": "football-weekly",
+        "name": "足球周刊",
+        "sub": "FOOTBALL WEEKLY · 绿茵战术板",
+        "sectionKickers": [
+          "全场比分",
+          "战术复盘",
+          "联赛积分",
+          "青训视野"
+        ],
+        "kind": "sports"
+      },
+      {
+        "id": "businessweek-zh",
+        "name": "商业周刊中文版",
+        "sub": "BUSINESSWEEK EDITION · 全球商业",
+        "sectionKickers": [
+          "全球市场",
+          "公司战略",
+          "绿色能源",
+          "科技领袖"
+        ],
+        "kind": "weekly"
+      },
+      {
+        "id": "science-world",
+        "name": "科学世界",
+        "sub": "NEWTON SCIENCE · 自然与探索",
+        "sectionKickers": [
+          "深空探测",
+          "前沿物理",
+          "生命科学",
+          "材料突破"
+        ],
+        "kind": "science"
+      },
+      {
+        "id": "huanqiu-sci",
+        "name": "环球科学",
+        "sub": "SCIENTIFIC FRONTIERS · 科研简报",
+        "sectionKickers": [
+          "实验室连线",
+          "论文速递",
+          "天文观测",
+          "计算科学"
+        ],
+        "kind": "science"
+      },
+      {
+        "id": "ganghang-biz",
+        "name": "港航商报",
+        "sub": "PORT & SHIPPING GAZETTE · 航运商贸",
+        "sectionKickers": [
+          "航运指数",
+          "跨境物流",
+          "集装箱快讯",
+          "供求信息"
+        ],
+        "kind": "classified"
+      },
+      {
+        "id": "cinema-arts",
+        "name": "看电影·艺文志",
+        "sub": "CINEMA & ARTS REVIEW",
+        "sectionKickers": [
+          "院线观察",
+          "影展手记",
+          "展览现场",
+          "出版风向"
+        ],
+        "kind": "culture"
+      },
+      {
+        "id": "xinzhi-digest",
+        "name": "新知文摘报",
+        "sub": "READER'S DIGEST · 每周精编文萃",
+        "sectionKickers": [
+          "每周精粹",
+          "书摘专栏",
+          "趋势拾遗",
+          "观点集锦"
+        ],
+        "kind": "digest"
+      },
+      {
+        "id": "cailian-wire",
+        "name": "财讯电报早参",
+        "sub": "MARKET WIRE · 7×24 产经快讯",
+        "sectionKickers": [
+          "电报直达",
+          "盘前速览",
+          "行业快讯",
+          "海外连线"
+        ],
+        "kind": "wire"
+      },
+      {
+        "id": "metro-classified",
+        "name": "申城生活便民报",
+        "sub": "METRO CLASSIFIEDS · 同城分类指南",
+        "sectionKickers": [
+          "分类信息",
+          "职场招聘",
+          "空间租售",
+          "设备转让"
+        ],
+        "kind": "classified"
+      }
+    ],
+    "paperNames": [
+      "第一财经日报",
+      "21世纪经济报道",
+      "财新周刊",
+      "每日经济新闻",
+      "证券时报",
+      "经济观察报",
+      "新京报",
+      "南方周末",
+      "澎湃特刊",
+      "界面新闻",
+      "都市快报",
+      "新民晚报",
+      "钱江晚报",
+      "成都商报",
+      "三联生活周刊",
+      "科技日报·产业周刊",
+      "电脑报",
+      "极客前沿",
+      "体坛周报",
+      "足球周刊",
+      "商业周刊中文版",
+      "科学世界",
+      "环球科学",
+      "港航商报",
+      "看电影·艺文志",
+      "新知文摘报",
+      "财讯电报早参",
+      "申城生活便民报"
+    ],
+    "headlineWithKeyword": [
+      "算力成本一年再降四成，{K}迈入规模化商用拐点",
+      "长三角智造产线密集升级，{K}成为今年资本开支核心词",
+      "端侧推理芯片出货量创新高，{K}装进轻薄终端",
+      "开源社区周度报告出炉：{K}相关仓库星标破十万",
+      "从实验室走向工厂车间，{K}开启千台级实景交付",
+      "多家头部券商研报聚焦{K}，产业链订单排至下季度",
+      "早盘科技与制造板块领涨，{K}概念成交额突破百亿",
+      "新一代高密度电池量产装车，{K}改写长续航标准",
+      "国际消费电子展现场直击：{K}展区排起百米长队",
+      "春季院线与流媒体双线回暖，{K}题材纪录片口碑领跑",
+      "城市轨道交通引入智慧调度，{K}让通勤换乘提速三成",
+      "商业航天发射工位排期紧凑，{K}载荷顺利进入预定轨道",
+      "全球半导体设备投资回升，{K}带动先进封装产能满载",
+      "青年消费调研报告发布：{K}跻身年度十大生活方式热词",
+      "长篇特稿：当{K}成为基础设施，工程师们在重构什么",
+      "人形机器人关节模组减重两成，{K}方案获多家车企定点",
+      "开源权重模型迎来密集迭代，{K}推理延迟压至毫秒级",
+      "周末书店与独立播客热议{K}，三本新书同周加印",
+      "跨海高铁与城际快线贯通，{K}重塑双城一小时生活圈",
+      "数据中心绿电直供比例提升，{K}集群能耗比再创纪录",
+      "年度工业设计大奖揭晓，围绕{K}的模块化方案摘得金奖",
+      "港股科技指数午后拉升，{K}上下游龙头集体走强",
+      "欧洲与亚太实验室联合发布论文，{K}关键指标刷新纪录",
+      "新茶饮与精品零售逆势拓店，{K}联名系列首日售罄",
+      "顶级联赛引入高精度追踪系统，{K}改写赛场战术分析",
+      "独立开发者大会圆桌纪实：{K}让三人团队做出全球产品",
+      "智能眼镜与穿戴设备迎来更新潮，{K}成为全天候交互入口",
+      "长三角港口集装箱吞吐提速，{K}数字化平台缩短通关周期",
+      "财报季透视：十二家上市公司在致股东信中重点提及{K}",
+      "高帧率数字修复重映升温，{K}特别展映场次一票难求",
+      "合成生物与新材料中试线投产，{K}单吨生产成本减半",
+      "自动驾驶城配小车驶入园区，{K}打通夜间物流最后一公里",
+      "晶圆代工厂上调全年营收指引，{K}芯片流片需求旺盛",
+      "建筑与城市更新特辑：老厂房改造为{K}创新工坊",
+      "全球开发者工具链大洗牌，围绕{K}的插件生态迅速成型",
+      "超导与量子计算实验新进展：{K}相干时间实现数量级跃升",
+      "户外运动与轻量化装备热销，{K}面料登上春夏订货榜首",
+      "音频工作站与数字影像软件大更新，{K}工作流节省半数工时",
+      "高校工程赛场涌现新锐方案，{K}原型机完成百公里耐力测试",
+      "年终商业人物访谈：在{K}浪潮里寻找长期主义护城河"
+    ],
+    "headlineNoKeyword": [
+      "全球晶圆厂成熟制程稼动率回升至八成以上",
+      "固态电池半固态量产车型开启首批全国交付",
+      "长三角城际铁路公交化运营，单日客流刷新纪录",
+      "开源多模态模型参数效率翻倍，笔记本即可本地运行",
+      "商业火箭可回收一子级完成海上平台精准着陆",
+      "消费电子换机周期缩短，折叠屏与智能眼镜出货齐增",
+      "港口自动化泊位夜间满负荷运转，外贸航线加密",
+      "国际金价高位震荡，制造业套期保值需求升温",
+      "暑期与周末文博展馆热度延续，夜间延时开放成常态",
+      "具身智能灵巧手传感器成本下探至千元区间",
+      "绿电交易规模同比翻番，智算中心签约长期风电协议",
+      "精品咖啡与社区烘焙下沉二三线城市核心街区",
+      "院线周末票房重回高位，科幻与动画新作贡献过半",
+      "钠离子储能电站在西北风光基地实现并网运行",
+      "国产工业软件完成大型船舶三维协同设计验证",
+      "低空物流航线在珠三角跨城医药配送中常态化试飞",
+      "开源操作系统桌面端装机量突破五百万台节点",
+      "全球集装箱运价指数温和回升，亚欧航线舱位紧俏",
+      "高带宽存储芯片产能预订至明年下半年",
+      "独立游戏工作室凭百人以下团队登顶全球热销榜",
+      "天文台巡天望远镜公布首批高分辨率深空星云图像",
+      "城市绿道与滨水骑行网络贯通，周末骑行人次大增",
+      "碳化硅功率器件上车提速，电驱系统效率突破九成",
+      "实体书店转型复合文化空间，沙龙与策展收入占比过半",
+      "跨境电商柔性供应链将新品打样周期压缩至五天",
+      "欧洲杯与亚洲联赛数据复盘：高强度跑动距离再创新高",
+      "新型钙钛矿叠层光伏组件实验室转换效率再破纪录",
+      "智能家居Matter协议互联设备品类突破三百种",
+      "百年老字号联合青年设计师推出限定铁盒系列",
+      "海底光缆新建干线完工，跨洋数据传输延迟降低一成",
+      "医疗影像辅助筛查系统进入基层体检中心日常流程",
+      "高性能碳纤维复合材料在民用航空结构件中扩大应用",
+      "交响乐团户外草坪音乐会吸引逾两万名观众到场",
+      "服务器液冷机柜渗透率超过四成，风液混冷成主流过渡",
+      "新能源汽车充电网络覆盖全部高速公路服务区节点",
+      "现代农业无人植保机单日作业面积突破千亩大关",
+      "二手循环市集走进商业综合体，年轻群体成交易主力",
+      "高分辨电子显微镜捕捉到催化剂表面原子级重构过程",
+      "长途夜行卧铺动车组增开周末旅游专列班次",
+      "全球主要股指季末再平衡，高股息与硬科技板块获增配"
+    ],
+    "pullquotesWithKeyword": [
+      "“真正改变行业水位线的不是概念热词，而是{K}把边际成本砍掉一半的那一刻。”",
+      "“过去三年我们在实验室验证原理，今年所有人都在问{K}能不能在产线上跑满七千小时。”",
+      "“当{K}像水电一样接入日常工作流，小团队第一次拥有了与巨头同台竞技的杠杆。”",
+      "“翻开本季度的供应链排产表，几乎每一条新增产线背后都能看到{K}的影子。”",
+      "“决定胜负的从来不是单点炫技，而是{K}在真实场景里千百次枯燥却稳定的交付。”",
+      "“从硅谷到长三角，工程师们在白板上反复推演的头号命题依然是{K}。”",
+      "“市场曾以为这只是一阵短暂的风口，直到{K}开始改写每一家公司的资产负债表。”",
+      "“谁能先把{K}的工程良率拉上九成，谁就握住了下一个五年的定价权。”",
+      "“年轻人愿意为{K}买单，本质上是在为更轻盈、更确定的生活体验投票。”",
+      "“这一轮技术浪潮最迷人的地方，在于{K}把原本高不可攀的门槛变成了开源积木。”",
+      "“没有喧嚣的发布会，{K}就这样悄无声息地渗透进了每一座城市的毛细血管。”",
+      "“站在 2026 年的节点回望，{K}正是连接硬件底座与消费终端的那枚关键齿轮。”",
+      "“资本市场用真金白银给出了答案：围绕{K}的长期研发投入正在兑现为复利。”",
+      "“如果把产业升级比作一场马拉松，{K}才刚刚跑出体育场的第一道弯。”",
+      "“我们在三十家工厂蹲点调研后发现，{K}带来的效率跃迁远比纸面测算更直观。”",
+      "“当同行还在争论路线优劣时，围绕{K}的标准化接口已经成为事实上的行业公约。”",
+      "“每一次基础设施换代都会诞生新的叙事语言，这一次聚光灯落在了{K}身上。”",
+      "“好的工具不会喧宾夺主，{K}最好的状态就是让你忘记技术本身的存在。”",
+      "“从一张草图到十万件量产样品，{K}把硬件迭代的时钟拨快了整整一倍。”",
+      "“无论是深夜亮灯的研发中心还是清晨繁忙的码头，{K}都在重新定义效率的边界。”",
+      "“真正耐看的商业故事，往往始于一群人对{K}最朴素的工程执念。”",
+      "“当潮水退去，留在沙滩上的正是那些把{K}做深、做透的长期主义者。”"
+    ],
+    "decks": [
+      "记者走访珠三角与长三角十余家核心供应商，还原产能爬坡背后的工程细节。",
+      "随着推理算力与硬件模组成本同步下探，商业化落地的账本第一次算过了盈亏平衡点。",
+      "多家机构在最新季度策略报告中上调全年出货预期，上下游排产热度延续至年末。",
+      "从开源社区的深夜提交记录到工厂车间的质检流水线，一场静水流深的效率革命正在发生。",
+      "受访工程师坦言，比参数规模更重要的是低延迟、高可靠与全天候连续运行能力。",
+      "最新披露的财报数据显示，研发投入占营收比重超过一成的企业正率先收获订单红利。",
+      "硬件轻量化与交互自然化双线并进，新一代终端产品开始摆脱“尝鲜玩具”标签。",
+      "在激烈的存量竞争中，供应链响应速度与跨学科协同能力成为拉开差距的胜负手。",
+      "多位一线创业者在圆桌对谈中提到，真实用户的复购率比首日热度更能检验产品成色。",
+      "长三角一小时产业生态圈内，从芯片封装、精密模具到整机组装可在同日完成闭环。",
+      "业内分析指出，行业正从早期拼参数阶段转入拼能耗比、拼生态完整度的下半场。",
+      "周末客流与线上订阅数据双双回暖，高品质内容与线下体验依然具备强劲韧性。",
+      "联合实验团队历时十八个月攻克材料界面难题，相关成果已发表于国际权威期刊。",
+      "随着标准化接口逐步统一，中小开发者接入底层能力的开发周期从数月缩短至数天。",
+      "港股与科创市场交投活跃，硬科技与高现金流制造板块成为长期资金配置重心。",
+      "观察人士认为，这一轮产品迭代不再追求大而全，而是精准切入高频刚需细分场景。",
+      "从设计手稿到量产定型经历四十余次模具微调，细节打磨决定了最终握持与交互质感。",
+      "绿色电力直供与液冷散热方案普及，让大型计算集群的单位算力碳排显著下降。",
+      "跨城轨道与智慧枢纽无缝衔接，正在悄然改写都市圈年轻人的居住与办公半径。",
+      "多位资深策展人与出版人表示，兼具审美质感与思想深度的作品正在赢得新世代读者。",
+      "行业白皮书显示，未来两年复合增长率有望保持在两成以上，海外市场贡献新增量。",
+      "在喧嚣的舆论场之外，一批专注细分赛道的隐形冠军企业已悄然完成全球化布局。"
+    ],
+    "bylines": [
+      "本报记者 周启明 发自上海",
+      "特约撰稿 林岸 / 编辑 方晚晴",
+      "产经调查组 陈南 吴晓",
+      "本报驻深圳记者 赵衡",
+      "商业科技部 沈渡",
+      "本报记者 马远山 摄影 吴石",
+      "资本市场组 梁小冬",
+      "资深主笔 郑汀 发自杭州",
+      "特派记者 钱桥 发自慕尼黑",
+      "硬科技周刊 顾言 / 数据 许知远",
+      "本报评论员 陆清河",
+      "新消费实验室 苏敏 何小满",
+      "本报夜班编辑 孙北",
+      "硅谷连线特约记者 程诺",
+      "制造业一线课题组 唐骏",
+      "文化副刊主编 叶知秋",
+      "数据新闻组 宋子文 制图 林夏",
+      "体育专题记者 韩牧",
+      "科学编辑部 严复礼",
+      "港股与海外市场组 温庭筠",
+      "城市生活周刊 秦桑",
+      "本报记者 谢东林 发自苏州"
+    ],
+    "sentences": [
+      "本报讯 多家供应链企业本周确认，三季度核心零部件订单饱满，产线稼动率维持在九成以上。",
+      "记者在苏州工业园区的洁净车间看到，自动导引运输车正沿着磁轨将晶圆盒送往下一道检测工序。",
+      "随着端侧量化压缩技术成熟，百亿参数规模的行业模型已可在普通工作站上流畅运行。",
+      "多位受访基金经理表示，今年调研重点已从宏大叙事转向企业真实的自由现金流与交付良率。",
+      "在深圳南山的一间硬件实验室里，五台机械臂正在进行连续七十二小时的抓取寿命疲劳测试。",
+      "最新发布的行业白皮书指出，算力基础设施正从集中式超算中心向边缘节点与终端设备协同演进。",
+      "得益于高能量密度电芯与碳化硅电驱普及，今年新上市车型的冬季续航达成率普遍提升一成五。",
+      "上海虹桥枢纽早高峰客流数据显示，跨城通勤旅客平均换乘步行时间较去年缩短了四分钟。",
+      "开源社区过去三十天新增合并请求超过四千次，来自亚太时区的代码贡献占比首次突破四成。",
+      "独立书店店长向记者展示后台补货单，科普、建筑美学与技术史类图书连续三个月领跑畅销榜。",
+      "多家云服务商于本月初再次下调推理接口计费标准，中小企业调用频次在两周内翻了一番。",
+      "宁波舟山港自动化码头夜间灯火通明，远控桥吊每小时集装箱自然箱装卸效率再创新高。",
+      "受消费电子备货旺季带动，柔性OLED面板与微型光学模组出货量连续两个季度环比回升。",
+      "研究团队通过冷冻电镜与计算模拟结合，将新型工业酶的筛选周期从两年缩短至六周。",
+      "在成都高新区的数字文创园区，二十人规模的动画团队正借助实时渲染管线制作院线级短片。",
+      "多家商业银行科技金融专营团队透露，针对专精特新制造企业的中长期设备更新信贷需求旺盛。",
+      "液冷服务器机柜在新一代智算中心的渗透率快速攀升，单机柜功率密度突破四十千瓦。",
+      "周末的滨江骑行道与城市公园草坪人流如织，轻量化折叠自行车与露营装备销量稳步增长。",
+      "国际光学工程学会最新一期期刊刊登了联合团队在超表面平面透镜领域的实验进展。",
+      "院线经理介绍，配备激光巨幕与全景声系统的影厅上座率明显高于普通影厅，观众更看重视听质感。",
+      "跨境物流跟踪平台数据显示，依托海外前置仓网络，欧洲主要城市包裹妥投时效已压缩至七十二小时。",
+      "多位精密模具厂负责人提到，高精度五轴联动加工中心的交付周期正在逐步缩短，本土配套率显著提高。",
+      "在杭州未来科技城的路演现场，十余个具身智能与工业视觉项目吸引了三十多家产业资本驻足交流。",
+      "随着光伏与大型储能配储成本持续下降，西北多个工业园区实现了白天全绿电闭环生产。",
+      "音频硬件厂商今年密集推出开放式耳夹耳机，佩戴舒适度与定向传声技术成为竞争焦点。",
+      "证券研究机构统计显示，研发人员占比超过三成的科创企业上半年海外营收增速尤为亮眼。",
+      "老旧纺织厂房经建筑师微更新改造后，保留了锯齿形采光天窗，引入设计工作室与精品烘焙工坊。",
+      "低轨宽带实验卫星组网测试顺利完成，远洋科考船与偏远营地实现了高清视频实时回传。",
+      "在慕尼黑与东京的工业展会上，中国供应链企业在激光雷达、伺服电机与储能逆变器展区备受关注。",
+      "多位桌面软件开发者坦言，清晰的买断制或轻量订阅定价更容易赢得专业创作者的长期信任。",
+      "高速磁浮与新一代动车组空气动力学仿真实验取得突破，隧道交会压力波大幅衰减。",
+      "博物馆文创团队将馆藏青铜纹样与现代日用器皿结合，春季新品上线三天即宣告售罄。",
+      "半导体封装测试厂二期厂房本月封顶，预计投产后每月可新增三万片晶圆级先进封装产能。",
+      "城市夜经济观察报告显示，夜间美术馆、社区小剧场与二十四小时自习空间正成为年轻人的新去处。",
+      "多家车企在本季度OTA升级中推送了端到端城区辅助驾驶功能，复杂环岛通行成功率明显提升。",
+      "国际航运经纪人指出，绿色甲醇双燃料集装箱船订单占比已接近新建船总吨位的四成。",
+      "在广州琶洲的供应链展会上，支持小批量快反生产的数码印花与自动裁床设备咨询热度最高。",
+      "天文学家利用地面阵列射电望远镜捕捉到一例罕见的周期性快速射电暴偏振信号。",
+      "高校工程训练中心向本科生全天候开放激光切割与三维打印工坊，多个学生团队作品已进入众筹量产。",
+      "连锁商超推进自有品牌商品升级，配料表简化与产地直采生鲜带动单店坪效重回正增长。",
+      "开源数据库与向量检索引擎迎来版本更新，单节点亿级数据毫秒级召回成为标准配置。",
+      "在联赛关键战役中，教练组依托穿戴式心率与跑动热区数据精准调配下半场轮换阵容。",
+      "多家新材料初创公司把中试基地设在化工园区周边，大幅缩短了从克级样品到吨级量产的距离。",
+      "出版界人士观察到，图文并茂的深度非虚构作品与小开本口袋书在通勤读者群中格外受欢迎。",
+      "智能电网虚拟电厂聚合了园区充电桩与楼宇空调负荷，在午后用电高峰平稳完成了削峰响应。",
+      "国产高帧率工业相机在锂电极片表面微米级瑕疵检测中实现零漏检，替代了进口方案。",
+      "春季马拉松与越野跑赛事报名火爆，碳板跑鞋与运动手表带动国产运动品牌毛利率稳步上行。",
+      "多位受访架构师认为，混合云与本地私有化部署并存仍是大型制造集团未来五年的主流选择。",
+      "咖啡豆烘焙工厂引入光学色度分选仪，确保每一批次拼配豆的风味曲线保持高度一致。",
+      "在威尼斯与釜山等国际影展市场单元，华语青年导演的中小成本类型片收获了多国发行商询价。",
+      "工业无人机搭载激光甲烷遥测仪开展管线日常巡检，单机每日巡查里程相当于人工徒步十倍。",
+      "二手数码质检平台引入自动化屏幕老化与电池健康度检测流水线，交易纠纷率下降逾三成。",
+      "合成孔径雷达商业小卫星穿云透雾传回高分辨地面影像，为远洋航道冰情监测提供实时数据。",
+      "多位资深工业设计师强调，物理按键与触觉旋钮正在车载与桌面设备上迎来理性回归。",
+      "长三角多家精密轴承企业联合高校建立摩擦学实验室，高速主轴轴承寿命突破两万小时。",
+      "周末农夫市集将生态农场时令蔬果直接搬进写字楼中庭，扫码即可溯源采摘时间与地块编号。",
+      "全球半导体行业协会月度数据显示，亚太地区芯片销售额连续八个月实现同比正增长。",
+      "新一代电子墨水彩色阅读器刷新率显著提升，手写批注延迟已接近真实纸笔书写体验。",
+      "在百年火车站改造而成的当代艺术馆里，声学装置展吸引了大批建筑与音乐爱好者专程打卡。",
+      "多家生物医药研发外包机构公布中期业绩，多肽与寡核苷酸合成产能利用率保持高位运行。",
+      "无人值守智慧微电网在海岛科考站投运，台风季依然保持连续百日零断电记录。",
+      "随着端侧语音合成自然度大幅跨越，有声书与多语种播客出海制作周期缩短至原来的五分之一。",
+      "受访供应链总监总结道，过去比拼的是单一环节最低价，如今比拼的是全链路确定性与工程韧性。",
+      "截至周五收盘，沪深两市硬科技与先进制造ETF合计净流入规模再创本季度单周新高。"
+    ],
+    "briefs": [
+      "【算力】三大区域智算中心完成高速光网直连，跨区训练延迟压至 2 毫秒以内",
+      "【芯片】先进封装 CoWoS 与 HBM 产线排期饱满，设备商上调全年交付指引",
+      "【出行】新一代 800V 高压平台车型占比突破三成，超充桩十分钟补能三百公里",
+      "【开源】轻量级端侧推理框架发布 2.0 正式版，移动端内存占用减少 35%",
+      "【航运】上海港单月集装箱吞吐量稳居榜首，绿色甲醇加注业务常态化运行",
+      "【航天】商业遥感星座完成一箭八星发射，重访周期缩短至四小时",
+      "【院线】周末全国电影票房突破 4.6 亿元，IMAX 与激光厅贡献率超两成",
+      "【绿电】西北风光大基地配套新型共享储能电站并网，调峰容量达百万千瓦",
+      "【机器人】工业人形机器人进入汽车总装线实训，双臂协同分拣节拍再度提速",
+      "【消费】运动户外与智能穿戴领跑双季零售增速，轻量化钛合金单品热销",
+      "【科研】超冷原子量子模拟实验取得新突破，成果登上国际物理学顶刊封面",
+      "【轨交】大湾区跨城地铁实现一码互通，周末跨市客流环比增长 18%",
+      "【面板】双层串联 OLED 屏幕向笔记本电脑渗透，峰值亮度与续航同步跃升",
+      "【医药】AI 辅助分子动力学筛选平台将候选化合物发现周期缩短近半",
+      "【出版】春季图书订货会非虚构与科普绘本表现抢眼，数字有声版权同步授出",
+      "【制造】五轴数控机床本土化率持续提升，航空结构件精密加工订单充沛",
+      "【低空】跨海岛屿生鲜无人机航线开通，海产出水至餐桌最快仅需两小时",
+      "【设计】模块化可拆卸消费电子设计回潮，用户自助更换电池仅需三分钟",
+      "【通信】万兆光网与 Wi-Fi 7 在智慧园区普及，工业相机无线回传零丢包",
+      "【农业】温室植物工厂借助光谱智能调控，生菜与草莓单位面积产量翻倍",
+      "【游戏】国产买断制独立作品海外销量破两百万份，多语种本地化获好评",
+      "【金融】制造业设备更新专项再投资热度攀升，高技术制造中长期贷款稳增"
+    ],
+    "classifieds": [
+      "招聘 嵌入式系统工程师 熟悉RTOS与电机控制 张江科学城 双休五险一金",
+      "出租 创意园挑高LOFT工作室 180平 采光极佳 近地铁9号线 押一付三",
+      "转让 九五成新索尼全画幅微单机身及24-70镜头 快门数低 当面验机",
+      "寻合作 工业设计工作室承接消费电子外观结构打样 小批量CNC快反",
+      "招租 滨江文化街区临街转角铺位 85平 适合精品咖啡或独立书店",
+      "求购 二手高精度示波器与逻辑分析仪 功能正常即可 高校实验室自用",
+      "招聘 科技财经采编记者 两年以上产业报道经验 擅长半导体与智能制造",
+      "转让 烘焙工坊全套进口层炉与醒发箱 保养良好 市区可协助搬运",
+      "出租 临港标准无尘研发车间 600平 配货梯与三相工业电 随时入驻",
+      "课程 周末胶片暗房冲印与银盐放大工作坊 小班教学 含药水与相纸",
+      "招聘 开源社区技术文档工程师 中英双语流利 支持远程弹性办公",
+      "转让 实木升降办公桌六张及人体工学椅 团队扩租搬迁 打包从优",
+      "求租 城西近软件园两室一厅 整洁安静 长租一年起 随时看房",
+      "服务 专业黑胶唱机调校与老旧磁带数字化转录 留存珍贵声音档案",
+      "招聘 赛事数据分析实习生 熟悉Python与可视化 周末可出勤优先",
+      "转让 露营天幕与铝合金折叠桌椅全套 仅用两次 城南自提",
+      "征稿 城市建筑与工业遗产摄影专题展 面向独立摄影师公开征集作品",
+      "出租 播客录音棚按小时预约 配备广播级动圈麦与声学吸音舱"
+    ],
+    "tickers": [
+      [
+        "上证综指",
+        "3386.42",
+        "+0.68%"
+      ],
+      [
+        "深证成指",
+        "10842.15",
+        "+1.12%"
+      ],
+      [
+        "创业板指",
+        "2246.80",
+        "+1.54%"
+      ],
+      [
+        "科创50",
+        "1092.36",
+        "+2.08%"
+      ],
+      [
+        "恒生科技",
+        "4826.50",
+        "+1.85%"
+      ],
+      [
+        "沪深300",
+        "4018.90",
+        "+0.74%"
+      ],
+      [
+        "半导体ETF",
+        "1.482",
+        "+2.63%"
+      ],
+      [
+        "智算中心指数",
+        "1845.20",
+        "+1.96%"
+      ],
+      [
+        "机器人指数",
+        "1562.40",
+        "+2.31%"
+      ],
+      [
+        "绿色电力",
+        "1128.65",
+        "+0.45%"
+      ],
+      [
+        "离岸汇率",
+        "7.1180",
+        "-0.14%"
+      ],
+      [
+        "沪金主力",
+        "628.50",
+        "+0.52%"
+      ],
+      [
+        "沪铜主力",
+        "76840",
+        "+0.89%"
+      ],
+      [
+        "碳酸锂主连",
+        "78400",
+        "-0.65%"
+      ],
+      [
+        "集运欧线",
+        "2640.0",
+        "+1.42%"
+      ],
+      [
+        "布伦特原油",
+        "74.35",
+        "-0.38%"
+      ],
+      [
+        "十年国债活跃",
+        "2.045%",
+        "-0.01"
+      ],
+      [
+        "中证红利",
+        "5612.30",
+        "+0.33%"
+      ]
+    ],
+    "sports": [
+      "中超焦点 上海主场 3-1 逆转取胜 全场",
+      "欧冠八强 首回合 2-2 补时绝平 战报",
+      "CBA季后 辽宁客场 104-98 加时险胜",
+      "WTT大满贯 女单决赛 4-2 卫冕夺冠",
+      "英超第30轮 北伦敦德比 2-1 全场结束",
+      "F1上海站 正赛 56圈 进站策略制胜",
+      "世界泳联 男子100自 46秒80 刷新赛会纪录",
+      "城市马拉松 男子组 2:07:41 破赛会纪录",
+      "网球大师赛 男单八强 7-6 / 6-4 直落两盘",
+      "羽毛球全英 混双决赛 21-18 / 21-16 夺魁",
+      "西甲夜场 皇马主场 2-0 领跑积分榜",
+      "高校联赛 机甲大师对抗赛 3-1 晋级四强",
+      "亚冠精英 东亚区半决赛 2-1 挺进决赛",
+      "排球超级联赛 总决赛第三场 3-2 捧杯",
+      "斯诺克巡回赛 决赛 10-7 轰出三杆破百"
+    ],
+    "weather": [],
+    "captions": [
+      "图为长三角智能工厂无尘车间内，工程师正在校准晶圆光学检测设备。本报记者 吴石 摄",
+      "周末傍晚的苏州河畔书市人头攒动，读者在独立出版展位前翻阅新书。",
+      "在昨日开幕的消费电子展现场，参观者佩戴轻量化双目智能眼镜体验实时字幕交互。",
+      "宁波舟山港穿山港区灯火通明，自动化桥吊正在装卸发往欧洲航线的远洋集装箱轮。",
+      "测试团队在西北戈壁试验场记录新一代叠层光伏组件在强风沙环境下的发电曲线。",
+      "上海虹桥综合交通枢纽早高峰秩序井然，跨城通勤乘客刷码快速通过换乘闸机。",
+      "青年研发团队在机器人实验室调试双臂协同抓取算法，桌面摆满多代关节模组样品。",
+      "改造后的百年工业老厂房变身当代艺术与设计中心，锯齿形天窗引入柔和自然光。",
+      "国家速滑馆与城市绿道周末迎来骑行热潮，图为市民清晨沿滨水绿道结伴骑行。",
+      "商业运载火箭在沿海发射工位完成垂直转运，技术人员做最后阶段气密性核验。",
+      "在深圳硬件创客空间，三位独立开发者展示仅名片大小的本地多模态推理开发板。",
+      "春季电影展映单元映后交流现场，主创团队与影迷探讨高帧率数字修复幕后细节。",
+      "自动化立体冷链仓库内，穿梭机器人正按订单波次将生鲜包裹送往分拣滑道。",
+      "高山天文观测站穹顶在夜色中缓缓开启，巡天望远镜对准猎户座深空天区曝光。",
+      "液冷智算中心机房走廊内，冷却液循环管路实时显示进出水温度与PUE能耗指标。"
+    ]
+  },
+  "en": {
+    "publications": [
+      {
+        "id": "nytimes",
+        "name": "The New York Times",
+        "sub": "LATE EDITION · NATIONAL, BUSINESS & SCIENCE",
+        "sectionKickers": [
+          "TECHNOLOGY",
+          "BUSINESS DAY",
+          "SCIENCE TIMES",
+          "ARTS & LEISURE"
+        ],
+        "kind": "broadsheet"
+      },
+      {
+        "id": "ft-global",
+        "name": "Financial Times",
+        "sub": "GLOBAL ECONOMY, MARKETS & COMPANIES",
+        "sectionKickers": [
+          "COMPANIES & MARKETS",
+          "LEX COLUMN",
+          "BIG READ",
+          "CAPITAL MARKETS"
+        ],
+        "kind": "ft_pink"
+      },
+      {
+        "id": "guardian-intl",
+        "name": "The Guardian",
+        "sub": "INTERNATIONAL EDITION · JOURNALISM & IDEAS",
+        "sectionKickers": [
+          "LONG READ",
+          "TECHNOLOGY",
+          "CULTURE",
+          "CLIMATE & ENERGY"
+        ],
+        "kind": "guardian"
+      },
+      {
+        "id": "wsj-eastern",
+        "name": "The Wall Street Journal",
+        "sub": "WHAT'S NEWS · MARKETS, TECH & INDUSTRY",
+        "sectionKickers": [
+          "WHAT'S NEWS",
+          "HEARD ON THE STREET",
+          "CIO JOURNAL",
+          "AUTOS & INDUSTRY"
+        ],
+        "kind": "wsj"
+      },
+      {
+        "id": "washpost",
+        "name": "The Washington Post",
+        "sub": "MORNING EDITION · ECONOMY & INNOVATION",
+        "sectionKickers": [
+          "ECONOMY",
+          "FUTURE OF WORK",
+          "SPACE & SCIENCE",
+          "STYLE"
+        ],
+        "kind": "broadsheet"
+      },
+      {
+        "id": "economist-wkly",
+        "name": "The Economist",
+        "sub": "WEEKLY EDITION · FINANCE, SCIENCE & BRIEFING",
+        "sectionKickers": [
+          "LEADERS",
+          "BRIEFING",
+          "SCHUMPETER",
+          "SCIENCE & TECHNOLOGY"
+        ],
+        "kind": "economist"
+      },
+      {
+        "id": "businessweek",
+        "name": "Bloomberg Businessweek",
+        "sub": "GLOBAL DEALMAKING, CHIPS & GREEN POWER",
+        "sectionKickers": [
+          "THE BIG TAKE",
+          "HYPERDRIVE",
+          "GREEN",
+          "MARKETS"
+        ],
+        "kind": "wsj"
+      },
+      {
+        "id": "wired-mag",
+        "name": "WIRED",
+        "sub": "COMPUTE, OPEN SYSTEMS & DIGITAL CULTURE",
+        "sectionKickers": [
+          "GEAR",
+          "FRONTIERS",
+          "BACKCHANNEL",
+          "SCIENCE"
+        ],
+        "kind": "tech"
+      },
+      {
+        "id": "mit-tech-rev",
+        "name": "MIT Technology Review",
+        "sub": "CAMBRIDGE · ARTIFICIAL INTELLIGENCE & COMPUTING",
+        "sectionKickers": [
+          "10 BREAKTHROUGHS",
+          "COMPUTING",
+          "BIOTECH",
+          "CLIMATE TECH"
+        ],
+        "kind": "tech"
+      },
+      {
+        "id": "nature-brief",
+        "name": "Nature Briefing",
+        "sub": "INTERNATIONAL WEEKLY JOURNAL OF SCIENCE",
+        "sectionKickers": [
+          "RESEARCH HIGHLIGHT",
+          "NEWS & VIEWS",
+          "QUANTUM PHYSICS",
+          "MATERIALS"
+        ],
+        "kind": "science"
+      },
+      {
+        "id": "latimes",
+        "name": "Los Angeles Times",
+        "sub": "CALIFORNIA, ENTERTAINMENT & PACIFIC RIM TRADE",
+        "sectionKickers": [
+          "COMPANY TOWN",
+          "PACIFIC RIM",
+          "CALIFORNIA",
+          "DESIGN"
+        ],
+        "kind": "broadsheet"
+      },
+      {
+        "id": "the-times-uk",
+        "name": "The Times",
+        "sub": "LONDON · ESTABLISHED 1785 · CITY & WORLD",
+        "sectionKickers": [
+          "CITY & FINANCE",
+          "LEADING ARTICLES",
+          "REGISTER",
+          "BOOKS"
+        ],
+        "kind": "broadsheet"
+      },
+      {
+        "id": "nikkei-asia",
+        "name": "Nikkei Asia",
+        "sub": "ASIA SEMICONDUCTORS, SUPPLY CHAINS & MARKETS",
+        "sectionKickers": [
+          "TECH ASIA",
+          "SUPPLY CHAINS",
+          "AUTOS",
+          "MARKET SPOTLIGHT"
+        ],
+        "kind": "ft_pink"
+      },
+      {
+        "id": "barrons-weekly",
+        "name": "Barron's",
+        "sub": "THE DOW JONES BUSINESS AND FINANCIAL WEEKLY",
+        "sectionKickers": [
+          "UP & DOWN WALL STREET",
+          "TECH TRADER",
+          "STREETWISE",
+          "FUNDS"
+        ],
+        "kind": "ft_pink"
+      },
+      {
+        "id": "the-atlantic",
+        "name": "The Atlantic",
+        "sub": "IDEAS, TECHNOLOGY, BOOKS & MODERN LIFE",
+        "sectionKickers": [
+          "IDEAS",
+          "TECHNOLOGY",
+          "CULTURE",
+          "BOOKS"
+        ],
+        "kind": "culture"
+      },
+      {
+        "id": "reuters-dispatch",
+        "name": "Reuters Dispatch",
+        "sub": "GLOBAL MARKETS, COMMODITIES & TECH WIRE",
+        "sectionKickers": [
+          "MARKETS WIRE",
+          "BREAKINGVIEWS",
+          "ENERGY",
+          "SEMICONDUCTORS"
+        ],
+        "kind": "wire"
+      },
+      {
+        "id": "ap-newswire",
+        "name": "AP Newswire",
+        "sub": "ASSOCIATED PRESS · CONTINUOUS GLOBAL BULLETIN",
+        "sectionKickers": [
+          "NEWSWIRE",
+          "SCI-TECH",
+          "TRANSIT",
+          "BUSINESS"
+        ],
+        "kind": "wire"
+      },
+      {
+        "id": "the-verge",
+        "name": "The Verge",
+        "sub": "HARDWARE, CONSUMER TECH & CREATOR TOOLS",
+        "sectionKickers": [
+          "REVIEWS",
+          "DECODER",
+          "AI & SILICON",
+          "DESIGN"
+        ],
+        "kind": "tech"
+      },
+      {
+        "id": "new-scientist",
+        "name": "New Scientist",
+        "sub": "SPACE, FUSION, ROBOTICS & EARTH SYSTEMS",
+        "sectionKickers": [
+          "SPACE",
+          "PHYSICS",
+          "EARTH",
+          "ROBOTICS"
+        ],
+        "kind": "science"
+      },
+      {
+        "id": "the-athletic",
+        "name": "The Athletic",
+        "sub": "MATCHWEEK TACTICS, ANALYTICS & CHAMPIONSHIP DESK",
+        "sectionKickers": [
+          "MATCHDAY",
+          "TACTICAL BOARD",
+          "FRONT OFFICE",
+          "SCORES"
+        ],
+        "kind": "sports"
+      },
+      {
+        "id": "variety-daily",
+        "name": "Variety",
+        "sub": "GLOBAL BOX OFFICE, FESTIVALS & STREAMING",
+        "sectionKickers": [
+          "BOX OFFICE",
+          "ARTISANS",
+          "FESTIVALS",
+          "STREAMING"
+        ],
+        "kind": "culture"
+      },
+      {
+        "id": "chicago-tribune",
+        "name": "Chicago Tribune",
+        "sub": "MIDWEST INDUSTRY, ARCHITECTURE & RAIL",
+        "sectionKickers": [
+          "METRO",
+          "ARCHITECTURE",
+          "TRANSPORTATION",
+          "COMMERCE"
+        ],
+        "kind": "broadsheet"
+      },
+      {
+        "id": "evening-standard",
+        "name": "Evening Standard",
+        "sub": "CITY FINAL · LONDON COMMUTER & TECH EDITION",
+        "sectionKickers": [
+          "CITY SPY",
+          "WEST END",
+          "COMMUTER",
+          "HEADLINES"
+        ],
+        "kind": "tabloid"
+      },
+      {
+        "id": "city-classifieds",
+        "name": "Metro Exchange Gazette",
+        "sub": "STUDIOS, ENGINEERING ROLES & EQUIPMENT LISTINGS",
+        "sectionKickers": [
+          "CLASSIFIEDS",
+          "STUDIOS",
+          "POSITIONS OPEN",
+          "EXCHANGE"
+        ],
+        "kind": "classified"
+      },
+      {
+        "id": "met-almanac",
+        "name": "Met Maritime & Sky Almanac",
+        "sub": "REGIONAL SYNOPTIC CHARTS, SHIPPING & AVIATION",
+        "sectionKickers": [
+          "FORECAST",
+          "MARINE OUTLOOK",
+          "JET STREAM",
+          "ALMANAC"
+        ],
+        "kind": "weather"
+      }
+    ],
+    "paperNames": [
+      "The New York Times",
+      "Financial Times",
+      "The Guardian",
+      "The Wall Street Journal",
+      "The Washington Post",
+      "The Economist",
+      "Bloomberg Businessweek",
+      "WIRED",
+      "MIT Technology Review",
+      "Nature Briefing",
+      "Los Angeles Times",
+      "The Times",
+      "Nikkei Asia",
+      "Barron's",
+      "The Atlantic",
+      "Reuters Dispatch",
+      "AP Newswire",
+      "The Verge",
+      "New Scientist",
+      "The Athletic",
+      "Variety",
+      "Chicago Tribune",
+      "Evening Standard",
+      "Metro Exchange Gazette",
+      "Met Maritime & Sky Almanac"
+    ],
+    "headlineWithKeyword": [
+      "Inference costs plunge 60% as {K} reshapes enterprise software budgets",
+      "Chipmakers race to expand advanced packaging capacity around {K}",
+      "Inside the quiet engineering sprint turning {K} into everyday infrastructure",
+      "Open-source developers rally behind {K} as local workstations rival cloud clusters",
+      "Wall Street rewrites capex forecasts after {K} dominates quarterly earnings calls",
+      "From Munich to Shenzhen, factory floors test {K} at commercial scale",
+      "Why {K} became the most contested bottleneck in next-generation computing",
+      "Solid-state battery breakthroughs give {K} a decisive range advantage",
+      "Small studios are using {K} to ship ambitious films on indie budgets",
+      "European rail operators deploy {K} to trim cross-border turnaround times",
+      "Venture funding rebounds as {K} startups prove unit economics ahead of schedule",
+      "At CES and Computex, hardware designers build sleek new form factors for {K}",
+      "Sovereign wealth funds and pension giants tilt infrastructure portfolios toward {K}",
+      "How {K} moved from academic preprints to production pipelines in eighteen months",
+      "Asian foundries report booked-out wafer lines driven by {K} demand",
+      "Grid operators pair utility-scale batteries with {K} to balance clean power",
+      "The new industrial playbook: fewer buzzwords, tighter tolerances, and {K}",
+      "Championship analysts credit {K} for a quiet revolution in matchday tactics",
+      "Independent publishers see surge in print subscriptions covering {K}",
+      "Orbital launch manifest fills up as {K} payloads ride reusable boosters",
+      "Why consumer brands are redesigning flagship stores around {K}",
+      "A three-person lab in Zurich just set a new efficiency benchmark for {K}",
+      "CFOs scrutinize return on compute while doubling long-term bets on {K}",
+      "Urban planners turn former rail yards into testbeds for {K}",
+      "Robotics teams pair tactile sensors with {K} on 24-hour assembly lines",
+      "Box office surprise: documentary on {K} sells out IMAX midnight screenings",
+      "Open-weight releases accelerate {K} adoption across universities and clinics",
+      "Semiconductor toolmakers raise full-year guidance on resilient {K} orders",
+      "In Tokyo and Seoul, commuter electronics get a second wind from {K}",
+      "Cleanroom dispatches: what 10,000 hours of stress-testing revealed about {K}",
+      "Architects embrace mass timber and {K} to slash building embodied carbon",
+      "Audio engineers praise {K} for restoring studio dynamics without latency",
+      "Port authorities credit {K} for cutting container dwell times by a third",
+      "The Big Read: how {K} redrew the map of global supply chains in 2026",
+      "From garage prototype to Nasdaq bell, the improbable rise of {K}",
+      "Materials scientists unlock room-temperature stability in {K} compounds",
+      "Why {K} is persuading seasoned skeptics across traditional manufacturing",
+      "Global equity desks track {K} suppliers as bellwethers for industrial recovery",
+      "Next-gen smart glasses bet on {K} to replace the pocket screen",
+      "Long-haul aviation tests {K} routing to shave fuel burn across the Atlantic"
+    ],
+    "headlineNoKeyword": [
+      "Foundries lift full-year wafer utilization targets as edge silicon orders rebound",
+      "Utility-scale battery storage surpasses gas peakers during California evening ramp",
+      "Open-weight multimodal models run offline on thin-and-light laptops at 60 tokens per second",
+      "High-speed night trains add sleeper carriages across twelve European corridors",
+      "Reusable heavy booster completes fifth precision landing on offshore recovery barge",
+      "Global box office posts strongest spring weekend in four years on sci-fi tentpoles",
+      "Liquid-cooled server racks become standard specification for new data halls",
+      "Automakers standardize 800-volt architectures to bring ten-minute fast charging mainstream",
+      "Independent bookstores report ten-year high in hardcover nonfiction sales",
+      "Container shipping lines add methanol-ready vessels on Asia-to-Rotterdam routes",
+      "Perovskite-silicon tandem solar cells clear 34% efficiency in outdoor field trials",
+      "Humanoid robots begin pilot shifts sorting totes inside regional logistics hubs",
+      "Sovereign bond yields steady as inflation cools across major industrial economies",
+      "Subsea fiber route links Osaka, Singapore, and Marseille with record-low latency",
+      "Quantum error-correction experiment demonstrates logical qubits below threshold",
+      "Tactile physical dials make a welcome comeback in electric vehicle cabins",
+      "Astronomy consortium releases deepest wide-field infrared atlas of the southern sky",
+      "Specialty coffee roasters invest in optical bean sorters as harvest quality climbs",
+      "Cross-laminated timber towers win city approval for mid-rise transit districts",
+      "Compact nuclear and geothermal agreements anchor round-the-clock clean power deals",
+      "Vinyl and hi-res lossless downloads outpace forecasts among twenty-something listeners",
+      "Semiconductor lithography supplier ships next-generation high-NA optics ahead of schedule",
+      "Precision fermentation startups halve production costs for industrial enzymes",
+      "European football clubs adopt optical limb-tracking to prevent hamstring fatigue",
+      "E-ink color tablets narrow the gap with paper notebooks for technical sketching",
+      "Port of Los Angeles automated rail transfer hits record twenty-four-hour throughput",
+      "Biotech contract manufacturers expand peptide synthesis capacity across three continents",
+      "Indie game studios top global steam charts with tight ten-person production teams",
+      "Smart eyewear makers trim frame weight below forty grams with magnesium alloys",
+      "Regional grid operators deploy dynamic line rating to unlock hidden transmission capacity",
+      "Restored 70mm film prints draw packed houses at repertory cinemas worldwide",
+      "Silicon carbide inverters boost drivetrain efficiency across commercial delivery fleets",
+      "Open-source CAD and PCB tools gain momentum among hardware startups",
+      "Autonomous ocean gliders map deep-water currents across the North Atlantic",
+      "Global equity indices broaden as industrial automation joins mega-cap tech rally",
+      "Micro-LED wristwatch displays double outdoor readability while extending battery life",
+      "Urban bike-share networks log record commuter trips after protected lane expansions",
+      "Cryo-EM imaging captures catalytic surface reconstruction at atomic resolution",
+      "Modular repairable laptops earn top marks from enterprise IT procurement teams",
+      "Cargo airships and electric regional aircraft begin certified island freight trials"
+    ],
+    "pullquotesWithKeyword": [
+      "“The real inflection point arrived when {K} cut unit costs in half without sacrificing reliability.”",
+      "“Walk any cleanroom floor from Hsinchu to Dresden this quarter and every engineer is talking about {K}.”",
+      "“When {K} fades into dependable infrastructure, five-person teams suddenly gain the leverage of giants.”",
+      "“Investors spent two years debating the theory; in 2026, {K} is showing up directly in operating margins.”",
+      "“What separates winners now is not flashy demos, but running {K} across ten thousand hours of production.”",
+      "“From open-source repositories to freight terminals, {K} has quietly become the connective tissue of modern industry.”",
+      "“Whoever masters packaging yields and power efficiency around {K} will set the pace for the rest of the decade.”",
+      "“Consumers rarely buy specifications for their own sake—they embrace {K} when it saves twenty minutes every morning.”",
+      "“The most surprising thing about {K} is how quickly yesterday's moonshot turned into a standard procurement line item.”",
+      "“Across thirty factory visits on three continents, {K} delivered sharper productivity gains than any spreadsheet predicted.”",
+      "“Good engineering disappears into the craft, and {K} works best when the user barely notices the machinery underneath.”",
+      "“While rivals argued over standards, open interfaces around {K} quietly won over an entire generation of builders.”",
+      "“Capital is rotating from speculative hype toward durable cash-flowing businesses built on {K}.”",
+      "“If industrial modernization is a marathon, {K} has only just cleared the opening mile.”",
+      "“By pairing edge silicon with {K}, designers finally cut the cord to distant server farms.”",
+      "“Every major platform shift invents its own vocabulary, and this cycle centers unmistakably on {K}.”",
+      "“From sketchpad to hundred-thousand-unit manufacturing run, {K} compressed our hardware calendar by half.”",
+      "“In late-night labs and dawn cargo yards alike, {K} is redrawing the boundary of what lean teams can ship.”",
+      "“The strongest moats in 2026 belong to companies treating {K} as an operational discipline rather than a slogan.”",
+      "“Once {K} crossed the latency threshold, workflows that felt impossible last autumn became effortless overnight.”",
+      "“Every balance sheet in the sector now tells two stories: before {K}, and after.”",
+      "“Long-horizon builders kept compounding through the noise, and {K} is their reward.”"
+    ],
+    "decks": [
+      "Interviews with two dozen supply-chain executives reveal how yield improvements turned a bottleneck into a growth engine.",
+      "As inference hardware and energy-efficient silicon mature in tandem, enterprise pilot projects are graduating to full deployment.",
+      "Analysts across London, New York, and Tokyo lift full-year shipment estimates following stronger-than-expected quarterly bookings.",
+      "Behind the headline benchmarks lies an unglamorous triumph of thermal engineering, optical interconnects, and software tooling.",
+      "Chief technology officers say deterministic latency and on-premise privacy now matter more than raw parameter counts.",
+      "Fresh customs and foundry filings point to sustained capital expenditure across semiconductors, grid storage, and robotics.",
+      "Lighter materials and quieter acoustics are helping a new generation of personal hardware win over everyday commuters.",
+      "With open-weight ecosystems flourishing, university labs and midsize manufacturers are building custom workflows in days.",
+      "Box office receipts and festival acquisitions underscore an enduring appetite for original storytelling on the big screen.",
+      "Long-term power purchase agreements pair twenty-four-hour compute campuses with wind, solar, and grid-forming batteries.",
+      "Field engineers report that modular maintenance and standardized connectors have slashed unplanned downtime by forty percent.",
+      "From high-speed rail corridors to automated container berths, physical infrastructure is getting a software-defined upgrade.",
+      "Portfolio managers favor companies with strong free cash flow, disciplined R&D, and pricing power in specialized components.",
+      "Peer-reviewed results from three independent laboratories confirm repeatable performance under real-world operating temperatures.",
+      "Compact teams armed with modern simulation pipelines are iterating through dozens of physical prototypes in a single month.",
+      "Designers are trading maximalist touchscreens for calm typography, tactile controls, and multi-day battery endurance.",
+      "Cross-border rail and green shipping corridors trim transit times while helping exporters meet strict emissions targets.",
+      "Survey data from forty metropolitan markets shows younger buyers prioritizing durability, repairability, and craft.",
+      "A wave of precision instrumentation is bringing laboratory-grade diagnostics onto factory floors and regional clinics.",
+      "Editors and cultural critics note a renaissance in print quarterlies, repertory cinema, and long-form investigative reporting.",
+      "Industry benchmarks suggest compound annual growth above twenty percent through late decade as overseas adoption accelerates.",
+      "Away from conference keynotes, mid-market manufacturers are quietly capturing outsized margins in precision subsystems."
+    ],
+    "bylines": [
+      "By Eleanor Vance · San Francisco Bureau",
+      "By Marcus Thorne in London and Kenji Sato in Tokyo",
+      "By Clara Lin · Semiconductor & Compute Desk",
+      "By Julian Mercer, European Industrial Correspondent",
+      "By Priya Nair and Owen Lindqvist · New York",
+      "By Hannah Sterling, Markets & Capital Editor",
+      "By Mateo Alvarez · Global Supply Chain Unit",
+      "By Rachel O'Connor · Science & Materials Correspondent",
+      "By David K. Morales, Senior Technology Writer",
+      "By Sophie Laurent in Paris and Lukas Weber in Munich",
+      "By Noah Takahashi · Asia Tech Dispatch",
+      "By Tessa Reynolds · Film & Culture Critic",
+      "By Simon Beaumont, Matchday Analytics Desk",
+      "By Gabriel Chen · Hardware & Design Lab",
+      "By Miriam Al-Mansoor · Energy & Grid Briefing",
+      "By Arthur Pendelton · Financial Columnist",
+      "By Chloe Park in Seoul",
+      "By Benjamin Ross, Transit & Urbanism Writer",
+      "By Data Graphics Desk · London & New York",
+      "By Naomi Feldstein · Books & Ideas",
+      "By Viktor Novak, Aerospace & Orbital Beat",
+      "By Staff Reporters · Late City Desk"
+    ],
+    "sentences": [
+      "Supply-chain checks across Taiwan, South Korea, and Japan indicate that wafer fab utilization climbed past eighty-five percent this month.",
+      "Engineers inside the Munich testing hall watched six articulated robotic arms complete their ten-thousandth assembly cycle without a fault.",
+      "Quantized open-weight models now execute locally on standard developer laptops, eliminating round-trip cloud latency for routine tasks.",
+      "Portfolio managers say institutional capital is rotating steadily toward industrial automation, grid equipment, and specialty silicon.",
+      "At the Port of Rotterdam, remotely operated gantry cranes transferred four thousand containers overnight under brisk North Sea winds.",
+      "Quarterly filings show research-intensive manufacturers expanding gross margins even as component pricing normalizes across the sector.",
+      "Commuters boarding the 7:14 express between Zurich and Milan tested gigabit onboard connectivity powered by low-earth-orbit relays.",
+      "Liquid-to-chip cooling loops reduced data-center power usage effectiveness to 1.12 during peak summer workloads in Phoenix.",
+      "Independent cinema chains reported sold-out weekend matinees for 70mm festival restorations alongside new science-fiction releases.",
+      "Battery pack designers pairing silicon-rich anodes with fast thermal management shaved twelve minutes off highway charging stops.",
+      "Open-source maintainers merged more than three thousand pull requests last month, with half of contributions arriving from outside North America.",
+      "Hardcover sales of science history, architecture monographs, and investigative nonfiction rose twelve percent across independent bookshops.",
+      "Cloud providers trimmed per-million-token inference pricing again on Tuesday, sparking a fresh wave of enterprise workflow deployments.",
+      "Cryogenic electron microscopy allowed the Cambridge-Basel team to observe catalyst surface restructuring in real time.",
+      "Midwest machine shops equipped with five-axis milling centers reported backlogs stretching into the first quarter of next year.",
+      "Utility executives signed twenty-year power purchase agreements pairing four-hour lithium-iron-phosphate storage with offshore wind.",
+      "Smart-glasses prototypes weighing thirty-eight grams projected crisp monochrome navigation cues during a rain-soaked walk through Soho.",
+      "Semiconductor equipment bookings beat consensus estimates as memory makers accelerated high-bandwidth stacking lines.",
+      "Architects retrofitting a century-old brick warehouse in Chicago preserved its sawtooth skylights to flood engineering studios with daylight.",
+      "Matchday tracking cameras recorded forty-two high-intensity sprints from the visiting fullback before the seventieth-minute substitution.",
+      "Audio toolmakers unveiled zero-latency stem separation plugins that run natively on neural accelerators inside portable workstations.",
+      "Maritime brokers noted that dual-fuel methanol vessels accounted for nearly forty percent of new container ship tonnage ordered this year.",
+      "A twelve-person studio in Montreal topped global PC download charts three days after launching its hand-animated strategy title.",
+      "Regional hospitals piloting automated radiology triage cut routine scan turnaround times from forty-eight hours to under ninety minutes.",
+      "Precision fermentation vats in Denmark produced kilogram batches of specialty proteins at half the water footprint of legacy processes.",
+      "High-speed rail ridership between Madrid, Barcelona, and Lyon surpassed short-haul air travel for the sixth consecutive quarter.",
+      "Color e-paper monitors found an enthusiastic following among software engineers seeking glare-free outdoor coding setups.",
+      "Venture partners remarked that founders arriving with audited factory quotes and paying pilot customers commanded premium terms.",
+      "Subsea cable engineers completed splice testing on a sixteen-fiber-pair trunk linking Marseille directly to Singapore and Chiba.",
+      "Specialty grocers expanding private-label pantry staples posted resilient same-store traffic despite cautious discretionary spending.",
+      "In Pasadena, mission controllers confirmed nominal solar-array deployment twelve minutes after second-stage orbital insertion.",
+      "Industrial insurers praised automated ultrasonic pipeline crawlers for spotting millimeter-scale weld fatigue weeks before scheduled shutdowns.",
+      "Automotive interior designers restored knurled aluminum volume dials and physical climate toggles after years of driver feedback.",
+      "University fabrication labs running round-the-clock laser sintering helped undergraduate teams take autonomous gliders from CAD to flight.",
+      "European central clearing desks processed record green-bond issuance as utilities refinanced high-voltage transmission upgrades.",
+      "Optical sorting lines inside Colombian and Ethiopian coffee mills lifted specialty cup scores while cutting processing waste.",
+      "At Venice and Toronto market screenings, distributors competed briskly for mid-budget thrillers shot on large-format digital sensors.",
+      "Refurbished electronics marketplaces added automated battery-impedance grading, boosting buyer confidence in pre-owned laptops.",
+      "Synthetic aperture radar microsatellites delivered cloud-free sea-ice charts to research vessels navigating the Barents and Bering seas.",
+      "Enterprise IT buyers favored modular notebooks whose batteries, keyboards, and ports unlock with four standard Torx screws.",
+      "Tribology researchers in Gothenburg extended high-speed spindle bearing lifetimes beyond twenty thousand continuous operating hours.",
+      "Weekend farmers markets inside downtown transit halls connected peri-urban greenhouses directly with city apartment cooks.",
+      "Global semiconductor trade data showed eight straight months of year-over-year revenue expansion led by logic and memory.",
+      "Symphony orchestras staging twilight concerts in botanical gardens drew capacity crowds of first-time ticket buyers under thirty-five.",
+      "Contract biologics plants in Ireland and Singapore reported ninety percent bioreactor utilization across peptide synthesis suites.",
+      "Island microgrids combining rooftop solar, flywheel stabilization, and sodium-ion banks logged one hundred storm-season days without outage.",
+      "Multilingual dubbing pipelines preserved speaker timbre across six languages, halving localization schedules for documentary filmmakers.",
+      "Procurement chiefs agreed that dual-sourced regional supply networks proved far more valuable than chasing the lowest unit quote.",
+      "Perovskite tandem modules mounted on Alpine test racks maintained ninety-six percent output after two winters of freeze-thaw cycling.",
+      "Vector database benchmarks demonstrated sub-five-millisecond recall across billion-scale document indexes on a single NVMe node.",
+      "Urban logistics operators deployed quiet electric cargo quads for dawn bakery and pharmacy deliveries along pedestrianized avenues.",
+      "High-NA EUV lithography calibration runs achieved overlay accuracy measured in fractions of a silicon lattice constant.",
+      "Print magazines printed on uncoated archival stock reported renewal rates above seventy-five percent among paid subscribers.",
+      "Carbon-plated trail shoes and dual-band GPS watches lifted gross margins across specialist outdoor retailers this spring.",
+      "Chief architects at three multinational manufacturers reiterated plans to keep sensitive CAD repositories on hybrid private clouds.",
+      "Automated cold-storage shuttles retrieved grocery totes at minus twenty degrees Celsius with thirty percent lower compressor draw.",
+      "Radio astronomers in Western Australia cataloged polarization signatures from a repeating fast radio burst three billion light-years away.",
+      "Small-batch watchmakers in Geneva and Nagano paired silicon escapements with hand-finished dials, selling out annual allocations.",
+      "Municipal transit agencies rolling out contactless open-loop fare gates trimmed station boarding queues during morning rush hour.",
+      "Materials labs replacing rare-earth magnets with iron-nitride compounds completed durability validation for traction motors.",
+      "Podcast networks investing in investigative science series saw listener completion rates exceed eighty percent on forty-minute episodes.",
+      "Custom ASIC tape-outs among cloud hyperscalers reached a new annual high, keeping design-services partners fully utilized.",
+      "Botanical illustrators and type foundries collaborated on a celebrated specimen book celebrating five centuries of movable press.",
+      "By Friday's closing bell, global industrial and semiconductor benchmarks notched their fourth consecutive week of institutional inflows."
+    ],
+    "briefs": [
+      "[COMPUTE] Optical interconnects trim cross-rack training latency by 38% in latest cluster trials",
+      "[CHIPS] Leading foundries book out 2nm and CoWoS packaging capacity through late next year",
+      "[TRANSIT] Cross-border European sleeper trains add 140,000 seasonal berths ahead of summer",
+      "[OPEN SOURCE] Lightweight edge runtime 3.0 cuts memory footprint by a third on mobile NPUs",
+      "[ENERGY] Grid-scale battery installations top 95 GWh globally as LFP cell prices stabilize",
+      "[SPACE] Reusable medium-lift rocket completes 48-hour pad turnaround at Cape Canaveral",
+      "[BOX OFFICE] Spring theatrical slate lifts global weekend receipts 19% above three-year average",
+      "[ROBOTICS] Tactile dexterous hands pass 15,000-cycle warehouse picking endurance benchmark",
+      "[MARKETS] Global semiconductor index hits fresh 52-week high on robust capex guidance",
+      "[SCIENCE] Tandem perovskite-silicon solar cell certified at 34.2% conversion efficiency",
+      "[SHIPPING] Green methanol container vessels log 200th zero-incident bunkering call in Antwerp",
+      "[HARDWARE] Magnesium-frame smart glasses drop under 39 grams with all-day battery life",
+      "[BIOTECH] Automated cryo-EM workflow halves structure-determination time for membrane proteins",
+      "[PUBLISHING] Independent print quarterlies report 24% jump in international subscriptions",
+      "[AUTOS] 800V fast-charging corridors reach 98% uptime across transcontinental highways",
+      "[CLIMATE] Dynamic line-rating sensors unlock 18% extra wind capacity on existing grid towers",
+      "[AUDIO] Lossless wireless codec ships across studio monitors and portable field recorders",
+      "[DESIGN] Right-to-repair laptops score 9.5/10 teardown rating from enterprise hardware labs",
+      "[SPORTS] Optical player-tracking cameras debut 120Hz offside and workload telemetry",
+      "[MATERIALS] Mass-timber commercial mid-rise completes structural framing in nineteen days",
+      "[TELECOM] Direct-to-handset LEO satellite messaging expands coverage across Pacific shipping lanes",
+      "[FINANCE] Sovereign infrastructure funds commit $18B to clean-power data campuses"
+    ],
+    "classifieds": [
+      "POSITIONS OPEN  Systems Engineer, Rust & CUDA kernels, hybrid SF or Zurich",
+      "STUDIO TO LET  1,400 sq ft daylight loft, freight lift, 4 min to central rail",
+      "FOR SALE  Hasselblad 500C/M kit w/ 80mm Planar, CLA'd, crisp shutter",
+      "FABRICATION  5-axis CNC aluminum & PEEK rapid prototyping, 72-hr turnaround",
+      "BOOKSHOP  Rare type specimens & 20th-c. architecture monographs, Soho",
+      "WANTED  Tektronix mixed-signal oscilloscope, clean calibration, university lab",
+      "EDITORIAL  Senior Semiconductor Correspondent, Tokyo or Taipei bureau",
+      "ROASTERY  Loring S15 Falcon drum roaster, low hours, maintenance logs incl.",
+      "LAB SPACE  ISO-7 cleanroom bench & fume hood share, Cambridge Science Park",
+      "WORKSHOP  Weekend letterpress & wood-type poster printing, ink & paper supplied",
+      "REMOTE  Technical Writer, open-source developer tools, async global team",
+      "OFFICE  Six solid oak standing desks + Herman Miller chairs, studio move",
+      "APARTMENT  Sunny 2BR near canal bike path, hardwood floors, Sept lease",
+      "AUDIO  Reel-to-reel tape baking & 24-bit/192kHz archival transfer service",
+      "FELLOWSHIP  Data Journalism & Cartography Desk, six-month paid residency",
+      "CYCLING  Titanium gravel frame 54cm, carbon fork, dynamo hub, lightly ridden",
+      "CALL FOR ENTRIES  Industrial Heritage Photography Prize, autumn exhibition",
+      "STUDIO  Acoustically treated podcast & voiceover booth, hourly booking"
+    ],
+    "tickers": [
+      [
+        "S&P 500",
+        "5,984.20",
+        "+0.64%"
+      ],
+      [
+        "NASDAQ 100",
+        "21,140.55",
+        "+1.18%"
+      ],
+      [
+        "FTSE 100",
+        "8,492.10",
+        "+0.37%"
+      ],
+      [
+        "NIKKEI 225",
+        "39,680.40",
+        "+0.92%"
+      ],
+      [
+        "STOXX 600",
+        "528.75",
+        "+0.48%"
+      ],
+      [
+        "SOX SEMI",
+        "5,412.80",
+        "+2.24%"
+      ],
+      [
+        "US 10Y YLD",
+        "4.12%",
+        "-0.03"
+      ],
+      [
+        "DE 10Y BUND",
+        "2.28%",
+        "-0.02"
+      ],
+      [
+        "BRENT CRUDE",
+        "74.35",
+        "-0.38%"
+      ],
+      [
+        "SPOT GOLD",
+        "2,684.50",
+        "+0.56%"
+      ],
+      [
+        "COPPER LME",
+        "9,640.00",
+        "+1.05%"
+      ],
+      [
+        "EUR / USD",
+        "1.0865",
+        "+0.19%"
+      ],
+      [
+        "USD / JPY",
+        "149.20",
+        "-0.31%"
+      ],
+      [
+        "GLOBAL CLEAN",
+        "1,418.60",
+        "+0.83%"
+      ],
+      [
+        "ROBO & AI IDX",
+        "2,890.15",
+        "+1.94%"
+      ],
+      [
+        "BALTIC DRY",
+        "1,742",
+        "+1.40%"
+      ],
+      [
+        "LITHIUM CARB",
+        "10,850",
+        "-0.45%"
+      ],
+      [
+        "VIX VOL",
+        "13.85",
+        "-4.10%"
+      ]
+    ],
+    "sports": [
+      "PREMIER LEAGUE  Arsenal 2-1 Liverpool  FT",
+      "CHAMPIONS LEAGUE  Quarterfinal 1st Leg  2-2  FT",
+      "NBA WEST  Denver 114-109 Golden State  OT",
+      "FORMULA 1  Suzuka GP  53 Laps  P1 Pole-to-Flag",
+      "TENNIS MASTERS  QF  7-6(4) 6-3  Centre Court",
+      "LA LIGA  Real Madrid 2-0 Athletic Club  FT",
+      "SERIE A  Inter 1-1 Napoli  90+2' Equalizer",
+      "MLB OPENING  Dodgers 5-3 Padres  Final / 9",
+      "WORLD ATHLETICS  Men's 1500m  3:28.40  WL",
+      "CYCLING CLASSICS  258km Cobbles  Solo Breakaway",
+      "NHL PLAYOFFS  Game 5  3-2  Double OT Winner",
+      "SIX NATIONS  Twickenham  26-23  Full Time",
+      "WNBA TIP-OFF  New York 88-82 Las Vegas  Final",
+      "ROWING REGATTA  Championship Eight  5:54.1",
+      "ENDURANCE WEC  6 Hours of Imola  Hypercar P1"
+    ],
+    "weather": [
+      "NEW YORK  Partly Sunny  58/71F  NW 9 mph",
+      "LONDON  Light Rain  50/61F  SW 12 mph",
+      "TOKYO  Crisp & Clear  55/68F  E 7 mph",
+      "SAN FRANCISCO  Coastal Fog  53/64F  W 14 mph",
+      "CHICAGO  Breezy  49/63F  NNE 16 mph",
+      "MUNICH  High Clouds  48/62F  W 8 mph",
+      "SINGAPORE  Warm Showers  79/89F  SE 6 mph",
+      "ZURICH  Alpine Sun  46/60F  NE 5 mph",
+      "SYDNEY  Mild & Bright  60/73F  ENE 11 mph",
+      "TORONTO  Scattered Clouds  47/59F  NW 10 mph",
+      "SEOUL  Clear Skies  52/66F  W 8 mph",
+      "NORTH SEA  Mod Swell  51/57F  Force 4",
+      "NORTH ATLANTIC  Jet Stream 135 kt  FL360 Smooth",
+      "PACIFIC LANE  Fair Visibility 10 nm  Baro 1018 hPa"
+    ],
+    "captions": [
+      "Engineers inspect wafer-level optical interconnects inside a cleanroom facility in Hsinchu. Photo: Staff / Asia Tech Desk",
+      "Evening commuters cross the concourse beneath restored cast-iron arches at London St Pancras International.",
+      "Visitors test ultra-lightweight waveguide smart glasses on the opening floor of Computex in Taipei.",
+      "Automated zero-emission gantry cranes load a methanol-ready container vessel at the Port of Rotterdam at dusk.",
+      "Researchers monitor tandem perovskite solar modules mounted on high-altitude alpine racks in Graubunden.",
+      "Readers browse independent art quarterlies and letterpress editions at an outdoor book fair along the Seine.",
+      "A two-armed warehouse robot practices delicate parcel sorting during a 72-hour endurance trial in Munich.",
+      "Architects preserved century-old sawtooth skylights while converting a Chicago brick foundry into hardware labs.",
+      "Ground crews complete pre-dawn propellant checks ahead of a commercial rideshare launch at Cape Canaveral.",
+      "Audience members gather for a post-screening discussion following a 70mm archival premiere in Los Angeles.",
+      "Technicians monitor liquid-cooling manifold temperatures inside a wind-powered compute hall in northern Sweden.",
+      "Cyclists ride along a newly opened waterfront greenway during morning rush hour in Copenhagen.",
+      "A materials scientist examines solid-state electrolyte thin films under an inert argon glovebox microscope.",
+      "Baristas calibrate an optical bean-density sorter inside a specialty coffee cooperative roastery.",
+      "Nighttime star trails arc above the wide-field survey telescope dome in the Atacama Desert."
+    ]
+  },
+  "hant": {
+    "publications": [
+      {
+        "id": "ctee-daily",
+        "name": "工商時報",
+        "sub": "COMMERCIAL TIMES · 產經與資本早報",
+        "sectionKickers": [
+          "半導體前線",
+          "金融市場",
+          "科技產業",
+          "全球財經"
+        ],
+        "kind": "finance"
+      },
+      {
+        "id": "edn-daily",
+        "name": "經濟日報",
+        "sub": "ECONOMIC DAILY NEWS · 產業與投資專刊",
+        "sectionKickers": [
+          "晶圓供應鏈",
+          "證券行情",
+          "企業透視",
+          "綠能轉型"
+        ],
+        "kind": "finance"
+      },
+      {
+        "id": "hkej-fin",
+        "name": "信報財經新聞",
+        "sub": "HONG KONG ECONOMIC JOURNAL · 資本與評論",
+        "sectionKickers": [
+          "港股直擊",
+          "投資分析",
+          "創科脈搏",
+          "環球視野"
+        ],
+        "kind": "finance"
+      },
+      {
+        "id": "hket-biz",
+        "name": "香港經濟日報",
+        "sub": "HK ECONOMIC TIMES · 商業與數碼轉型",
+        "sectionKickers": [
+          "商業管理",
+          "數碼經濟",
+          "市場焦點",
+          "財富配置"
+        ],
+        "kind": "business"
+      },
+      {
+        "id": "businesstoday-tw",
+        "name": "今周刊·產經版",
+        "sub": "BUSINESS TODAY · 投資與供應鏈觀察",
+        "sectionKickers": [
+          "產業縱深",
+          "竹科連線",
+          "隱形冠軍",
+          "消費趨勢"
+        ],
+        "kind": "business"
+      },
+      {
+        "id": "cw-weekly",
+        "name": "天下雜誌",
+        "sub": "COMMONWEALTH MAGAZINE · 經濟與永續深度",
+        "sectionKickers": [
+          "封面故事",
+          "企業策略",
+          "永續轉型",
+          "未來城市"
+        ],
+        "kind": "weekly"
+      },
+      {
+        "id": "bw-taiwan",
+        "name": "商業周刊",
+        "sub": "BUSINESS WEEKLY · 全球商業與人物",
+        "sectionKickers": [
+          "封面報導",
+          "國際商情",
+          "科技風雲",
+          "管理現場"
+        ],
+        "kind": "weekly"
+      },
+      {
+        "id": "gvm-biweekly",
+        "name": "遠見雙週刊",
+        "sub": "GLOBAL VIEWS · 產經趨勢與創新特輯",
+        "sectionKickers": [
+          "特別企劃",
+          "智慧製造",
+          "能源新局",
+          "研發前線"
+        ],
+        "kind": "weekly"
+      },
+      {
+        "id": "bnext-tech",
+        "name": "數位時代",
+        "sub": "BUSINESS NEXT · 科技、創業與未來商業",
+        "sectionKickers": [
+          "人工智慧",
+          "開源生態",
+          "雲端運算",
+          "新創現場"
+        ],
+        "kind": "tech"
+      },
+      {
+        "id": "technews-tw",
+        "name": "科技新報·硬體專刊",
+        "sub": "TECHNEWS · 半導體與硬體工程週報",
+        "sectionKickers": [
+          "先進製程",
+          "伺服器架構",
+          "記憶體行情",
+          "車用電子"
+        ],
+        "kind": "tech"
+      },
+      {
+        "id": "ithome-tw",
+        "name": "iThome 電腦報",
+        "sub": "ITHOME WEEKLY · 企業資訊與系統架構",
+        "sectionKickers": [
+          "系統架構",
+          "開發者工具",
+          "開源模型",
+          "資料中心"
+        ],
+        "kind": "tech"
+      },
+      {
+        "id": "unwire-hk",
+        "name": "Unwire 創科生活誌",
+        "sub": "UNWIRE TECH · 消費電子與極客評測",
+        "sectionKickers": [
+          "硬體實測",
+          "穿戴裝置",
+          "智慧家居",
+          "影像工坊"
+        ],
+        "kind": "tech"
+      },
+      {
+        "id": "metro-morning-hk",
+        "name": "都會晨報",
+        "sub": "METRO MORNING POST · 港九通勤與都會生活",
+        "sectionKickers": [
+          "城事速遞",
+          "軌道通勤",
+          "海濱社區",
+          "設計街區"
+        ],
+        "kind": "metro"
+      },
+      {
+        "id": "taipei-metro",
+        "name": "台北都會快報",
+        "sub": "TAIPEI METRO DISPATCH · 雙北生活與文創",
+        "sectionKickers": [
+          "捷運生活圈",
+          "街區新店",
+          "建築散步",
+          "週末提案"
+        ],
+        "kind": "metro"
+      },
+      {
+        "id": "harbour-city-post",
+        "name": "港島生活報",
+        "sub": "HARBOUR LIFE GAZETTE · 城市空間與民生",
+        "sectionKickers": [
+          "中環現場",
+          "老屋活化",
+          "永續社區",
+          "飲食文化"
+        ],
+        "kind": "metro"
+      },
+      {
+        "id": "victoria-evening",
+        "name": "維港晚報",
+        "sub": "VICTORIA EVENING POST · 晚間產經與副刊",
+        "sectionKickers": [
+          "晚間焦點",
+          "收市速覽",
+          "夜讀專欄",
+          "劇場藝訊"
+        ],
+        "kind": "evening"
+      },
+      {
+        "id": "tamsui-evening",
+        "name": "淡水河晚刊",
+        "sub": "TAMSUI EVENING NEWS · 城市夜讀與生活",
+        "sectionKickers": [
+          "暮色現場",
+          "生活實驗室",
+          "獨立書店",
+          "影展手記"
+        ],
+        "kind": "evening"
+      },
+      {
+        "id": "oneday-culture",
+        "name": "小日子·藝文生活誌",
+        "sub": "SIMPLE LIFE & ARTS · 設計、書評與器物",
+        "sectionKickers": [
+          "封面人物",
+          "獨立出版",
+          "工藝美學",
+          "地方風物"
+        ],
+        "kind": "culture"
+      },
+      {
+        "id": "mpweekly-arts",
+        "name": "明周文化特刊",
+        "sub": "CULTURE & CINEMA REVIEW · 影視與當代藝術",
+        "sectionKickers": [
+          "院線觀察",
+          "策展現場",
+          "建築美學",
+          "黑膠與音樂"
+        ],
+        "kind": "culture"
+      },
+      {
+        "id": "sd-design",
+        "name": "設計採買誌",
+        "sub": "DESIGN & TYPOGRAPHY · 視覺、空間與生活美學",
+        "sectionKickers": [
+          "工業設計",
+          "字體排印",
+          "展覽指南",
+          "品牌重塑"
+        ],
+        "kind": "culture"
+      },
+      {
+        "id": "sa-taiwan",
+        "name": "科學人·探索專刊",
+        "sub": "SCIENTIFIC FRONTIERS · 自然、天文與物理",
+        "sectionKickers": [
+          "深空探測",
+          "量子運算",
+          "生醫工程",
+          "材料科學"
+        ],
+        "kind": "science"
+      },
+      {
+        "id": "pansci-weekly",
+        "name": "泛科學週報",
+        "sub": "PANSCI REVIEW · 實驗室連線與科普新知",
+        "sectionKickers": [
+          "論文速遞",
+          "天文觀測",
+          "海洋生態",
+          "氣候科學"
+        ],
+        "kind": "science"
+      },
+      {
+        "id": "sportsv-weekly",
+        "name": "運動視界週報",
+        "sub": "SPORTS VISION · 職業賽事與數據戰術板",
+        "sectionKickers": [
+          "焦點戰報",
+          "數據看台",
+          "棒球專欄",
+          "歐陸聯賽"
+        ],
+        "kind": "sports"
+      },
+      {
+        "id": "sportsroad-hk",
+        "name": "體路競技專刊",
+        "sub": "SPORTSROAD · 田徑、羽球與國際賽事",
+        "sectionKickers": [
+          "全場比分",
+          "戰術復盤",
+          "馬拉松誌",
+          "青訓視野"
+        ],
+        "kind": "sports"
+      },
+      {
+        "id": "cnyes-wire",
+        "name": "鉅亨財訊快線",
+        "sub": "MARKET WIRE · 全天候全球產經電報",
+        "sectionKickers": [
+          "電報直達",
+          "盤前速覽",
+          "美股連線",
+          "匯率債市"
+        ],
+        "kind": "wire"
+      },
+      {
+        "id": "aastocks-wire",
+        "name": "環球產經快訊",
+        "sub": "GLOBAL MARKET DISPATCH · 即時行情與產業電訊",
+        "sectionKickers": [
+          "即時快訊",
+          "業績速遞",
+          "晶片動態",
+          "機構研報"
+        ],
+        "kind": "wire"
+      },
+      {
+        "id": "maritime-classified",
+        "name": "亞太航運工商報",
+        "sub": "MARITIME & TRADE GAZETTE · 航運物流與供求",
+        "sectionKickers": [
+          "貨櫃指數",
+          "跨境物流",
+          "設備讓售",
+          "工商徵才"
+        ],
+        "kind": "classified"
+      },
+      {
+        "id": "city-classified-tc",
+        "name": "都會分類便民報",
+        "sub": "METRO CLASSIFIEDS · 工作室招租與專業徵才",
+        "sectionKickers": [
+          "分類資訊",
+          "研發徵才",
+          "空間招租",
+          "器材交流"
+        ],
+        "kind": "classified"
+      },
+      {
+        "id": "readers-digest-tc",
+        "name": "新知文萃週報",
+        "sub": "WEEKLY DIGEST · 科技、商業與書摘精選",
+        "sectionKickers": [
+          "每週精粹",
+          "書摘專欄",
+          "趨勢拾遺",
+          "觀點集錦"
+        ],
+        "kind": "digest"
+      },
+      {
+        "id": "biz-digest-tc",
+        "name": "商管書摘雙週報",
+        "sub": "EXECUTIVE DIGEST · 全球長文與研報精編",
+        "sectionKickers": [
+          "長文精讀",
+          "研報摘要",
+          "工程筆記",
+          "人物語錄"
+        ],
+        "kind": "digest"
+      }
+    ],
+    "paperNames": [
+      "工商時報",
+      "經濟日報",
+      "信報財經新聞",
+      "香港經濟日報",
+      "今周刊·產經版",
+      "天下雜誌",
+      "商業周刊",
+      "遠見雙週刊",
+      "數位時代",
+      "科技新報·硬體專刊",
+      "iThome 電腦報",
+      "Unwire 創科生活誌",
+      "都會晨報",
+      "台北都會快報",
+      "港島生活報",
+      "維港晚報",
+      "淡水河晚刊",
+      "小日子·藝文生活誌",
+      "明周文化特刊",
+      "設計採買誌",
+      "科學人·探索專刊",
+      "泛科學週報",
+      "運動視界週報",
+      "體路競技專刊",
+      "鉅亨財訊快線",
+      "環球產經快訊",
+      "亞太航運工商報",
+      "都會分類便民報",
+      "新知文萃週報",
+      "商管書摘雙週報"
+    ],
+    "headlineWithKeyword": [
+      "推論運算成本一年再降四成，{K}邁入規模化商用轉折點",
+      "竹科與南科先進封裝產線滿載，{K}成為今年資本支出核心關鍵詞",
+      "邊緣運算晶片出貨量創新高，{K}走入輕薄筆電與穿戴硬體",
+      "全球開發者社群週報出爐：{K}開源專案星標數突破十萬大關",
+      "從無塵室走向智慧工廠產線，{K}啟動千台級實景量產交付",
+      "多家外資券商最新研報聚焦{K}，供應鏈訂單能見度直達年底",
+      "早盤半導體與伺服器族群領漲，{K}概念股成交值放大破百億",
+      "新一代固態電池模組投入量產，{K}改寫電動載具續航力標準",
+      "台北國際電腦展現場直擊：{K}實機體驗區排起百公尺人龍",
+      "春季院線與串流平台雙線回溫，{K}題材紀錄片口碑領跑票房",
+      "都會捷運網路導入智慧排班演算法，{K}讓尖峰轉乘提速三成",
+      "商業太空發射排程緊湊，{K}科學酬載順利進入預定低軌軌道",
+      "全球半導體設備資本支出回升，{K}帶動高頻寬記憶體產能滿載",
+      "青年世代消費趨勢調查：{K}躍居年度十大數位生活熱詞",
+      "長篇特稿：當{K}成為基礎設施，軟體與硬體工程師正在重構什麼",
+      "人形機器人精密減速機減重兩成，{K}控制方案獲多家車廠採用",
+      "開源模型迎來密集版本迭代，{K}推論延遲壓縮至毫秒等級",
+      "週末獨立書店與 Podcast 節目熱議{K}，三本專書同週緊急再刷",
+      "高鐵與跨區通勤快線班次加密，{K}重塑一日都會生活圈",
+      "資料中心綠電直供比例攀升，{K}液冷伺服器叢集能源效率再創紀錄",
+      "年度工業設計大獎揭曉，圍繞{K}打造的模組化硬體奪得金獎",
+      "港股創科指數午後強勢拉升，{K}上下游指標大廠同步走高",
+      "歐亞跨國實驗室聯合發表論文，{K}核心物理指標刷新世界紀錄",
+      "精品咖啡與設計選物店逆勢展店，{K}聯名企劃首日銷售一空",
+      "職業聯賽導入高速光學追蹤螢幕，{K}徹底改寫賽場戰術分析",
+      "獨立開發者年會圓桌紀實：{K}讓三人小團隊打造出跨國軟體產品",
+      "超輕量智慧眼鏡迎來換機潮，{K}成為全天候隨身互動介面",
+      "亞太主要貨櫃港自動化升級，{K}數位報關平台大幅縮短作業週期",
+      "財報季深度解讀：十二家科技大廠在法說會簡報中重點點名{K}",
+      "4K 數位修復經典重映場場爆滿，{K}特別放映單元一票難求",
+      "生醫材料與精密發酵試產線投運，{K}單位製造成本下降近半",
+      "自動駕駛物流車駛入科學園區，{K}打通夜間冷鏈配送最後一哩路",
+      "晶圓代工龍頭上修全年營收展望，{K}客製化晶片投片需求強勁",
+      "建築與老屋活化特輯：百年紅磚倉庫變身{K}跨域創新工坊",
+      "全球軟體開發工具鏈大洗牌，支援{K}的外掛生態系迅速成形",
+      "超導量子運算實驗傳捷報：{K}邏輯量子位元相干時間顯著躍升",
+      "戶外越野與輕量化機能服飾熱銷，{K}專利布料登上春夏訂貨榜首",
+      "專業音訊與數位剪輯軟體大改版，{K}自動化流程節省半數工時",
+      "大專工程競賽湧現新銳設計，{K}原型機完成百公里耐力實測",
+      "年終企業領袖專訪：在降息週期與{K}浪潮中建立長期護城河",
+      "矽光子共同封裝光學邁入試產，{K}突破次世代資料中心頻寬瓶頸",
+      "深空探測與巡天望遠鏡傳回首批影像，{K}演算法立下關鍵功勞"
+    ],
+    "headlineNoKeyword": [
+      "全球晶圓代工廠成熟與先進製程整體稼動率回升至八成五以上",
+      "半固態電池量產車型啟動首批交付，高速快充十分鐘補能三百公里",
+      "都會區軌道交通加密尖峰班距，單日轉乘旅運量再創歷史新高",
+      "開源多模態模型參數效率翻倍，輕薄筆電即可離線流暢執行推論",
+      "可回收商業火箭第一節助推器於海上回收平台完成精準垂直降落",
+      "消費性電子換機週期縮短，摺疊螢幕手機與智慧眼鏡出貨齊揚",
+      "遠洋貨櫃港自動化泊位夜間滿載運轉，亞歐綠色甲醇航線持續加密",
+      "降息週期預期牽動全球債市，長天期公債殖利率趨於平穩區間",
+      "美術館與博物館週末夜間延長開館，跨域聲光特展吸引年輕人潮",
+      "機器人靈巧手觸覺感測器良率提升，單組硬體成本下探親民區間",
+      "企業綠電購售契約簽約量翻倍，大型資料中心鎖定離岸風電長約",
+      "自家烘焙精品咖啡館進駐老街區，結合選書空間帶動街區人流",
+      "春季院線週末票房重返高點，原創科幻與動畫長片貢獻逾半營收",
+      "大型電網級儲能案場併網商轉，尖峰時段電力調度彈性顯著提升",
+      "雲端協作三維工程設計軟體完成大型船舶模組化建造驗證",
+      "跨海離島醫療物資無人機航線展開常態試飛，運送時效縮短七成",
+      "開源桌面作業系統全球活躍裝置數突破新高，硬體驅動相容性大增",
+      "國際貨櫃運價指數溫和回升，東南亞與歐美航線艙位預訂熱絡",
+      "高頻寬記憶體明年產能獲雲端客戶預訂一空，封測廠同步擴充產線",
+      "十人規模獨立遊戲工作室憑藉手繪美術風格登頂全球數位暢銷榜",
+      "高山天文台廣角巡天望遠鏡公布首批高解析度深空探測星雲影像",
+      "河濱自行車道跨橋串聯工程完工，週末單車通勤與休閒人次大增",
+      "碳化矽功率半導體導入主流電動車款，電驅動系統轉換效率破九成",
+      "獨立書店轉型複合式藝文沙龍，講座策展與文創選品營收占比過半",
+      "紡織供應鏈導入數位打樣與小批量快反製程，新品開發縮短至五天",
+      "職業足球與棒球數據復盤：高強度衝刺與投打追蹤改寫訓練課表",
+      "鈣鈦礦矽晶疊層太陽能電池戶外實測轉換效率突破三成四大關",
+      "智慧家居跨品牌連線標準普及，支援本地端加密控制的硬體逾三百款",
+      "百年糕餅老店攜手新銳平面設計師，推出活版印刷限定紀念禮盒",
+      "亞太跨洋海底光纜新幹線完工啟用，金融與雲端資料傳輸延遲再降",
+      "高解析度醫學影像輔助判讀系統導入健檢中心，大幅縮短報告等候期",
+      "航太級碳纖維複合材料擴大應用於次世代商用客機機翼結構件",
+      "交響樂團戶外星空音樂會湧入兩萬名樂迷，三十歲以下觀眾占四成",
+      "次世代資料中心水冷散熱機櫃滲透率逾四成，PUE 能耗指標持續優化",
+      "高速充電站網路完成國道服務區全線佈建，連假長途出行更從容",
+      "智慧農業光譜調控溫室投產，無農藥水耕葉菜單位面積產量翻倍",
+      "週末二手黑膠與底片相機市集進駐文創園區，吸引大批藏家尋寶",
+      "冷凍電子顯微鏡成功捕捉催化劑表面原子級動態重構關鍵瞬間",
+      "跨國鐵道夜行臥鋪列車增開春季觀光班次，訂位率突破九成",
+      "全球主要指數季末成分股調整，高自由現金流與半導體設備股獲加碼",
+      "雙層串聯 OLED 螢幕面板導入專業創作者筆電，峰值亮度與壽命兼顧",
+      "模組化可維修筆電獲企業採購青睞，更換電池與連接埠僅需四顆螺絲"
+    ],
+    "pullquotesWithKeyword": [
+      "「真正改寫產業水位線的從來不是口號，而是{K}把單位運算成本砍掉一半的那一刻。」",
+      "「過去兩年大家還在驗證實驗室原型，今年所有客戶都在問{K}能不能在產線上連續穩定跑滿一萬小時。」",
+      "「當{K}像水電網路一樣融入日常工作流程，五人小團隊第一次擁有了與跨國巨頭同台競技的槓桿。」",
+      "「攤開本季度的晶圓封測與伺服器排程表，幾乎每一條新增產線背後都能看見{K}的身影。」",
+      "「決定勝負的不是發表會上的單點炫技，而是{K}在真實商業場景裡成千上萬次穩定可靠的交付。」",
+      "「從矽谷、新竹到慕尼黑，硬體與軟體工程師在白板上反覆推演的頭號命題依然是{K}。」",
+      "「市場曾以為這只是一波短暫題材，直到{K}開始實質改寫企業的毛利率與資產負債表。」",
+      "「誰能先把{K}的封裝良率與能源效率拉上九成，誰就握住了下一個五年的產業定價權。」",
+      "「年輕世代願意為{K}買單，本質上是在為更直覺、更高品質的生活體驗投票。」",
+      "「這一波技術浪潮最迷人之處，在於{K}把原本高不可攀的門檻變成了人人可用的開源積木。」",
+      "「沒有鋪張的宣傳造勢，{K}就這樣安靜卻深刻地滲透進都會通勤與商業運作的毛細血管。」",
+      "「站在 2026 年的時間點回望，{K}正是串聯半導體硬體底座與日常應用軟體的那枚關鍵齒輪。」",
+      "「資本市場用長線資金給出了答案：圍繞{K}的持續研發投入，正在轉化為紮實的自由現金流。」",
+      "「如果把產業升級比喻成一場馬拉松，{K}其實才剛剛跑出體育場的第一個彎道。」",
+      "「我們實地走訪二十餘家精密製造廠後發現，{K}帶來的品質躍升遠比試算表上的數字更震撼。」",
+      "「當同業還在爭論技術路線時，圍繞{K}建立的開放標準介面早已成為開發者社群的共同語言。」",
+      "「每一次運算世代交替都會催生新的設計語彙，而這一輪聚光燈毫無疑問落在{K}身上。」",
+      "「真正優秀的工具從不喧賓奪主，{K}最理想的狀態就是讓使用者徹底忘記底層技術的存在。」",
+      "「從第一張工程草圖到十萬台量產出貨，{K}將我們的硬體開發週期整整縮短了一半。」",
+      "「無論是深夜燈火通明的研發實驗室，還是清晨繁忙的貨櫃碼頭，{K}都在重新定義效率的邊界。」",
+      "「最耐讀的商業故事，往往始於一群工程師對{K}近乎固執的細節打磨與品質堅持。」",
+      "「當市場雜音退去，真正留下來的正是那些把{K}做深、做透的長期主義團隊。」",
+      "「正如受訪架構師所言：『與其追逐參數規模，不如讓{K}在終端裝置上達到零延遲體驗。』」",
+      "「在降息週期與供應鏈重組的交會點上，{K}成為少數同時具備成長性與現金流韌性的核心賽道。」"
+    ],
+    "decks": [
+      "本報記者實地走訪新竹、台南與東京十餘家關鍵供應商，還原產能爬坡背後的工程細節。",
+      "隨著推論晶片與硬體模組成本同步下探，企業導入專案的財務模型首次跨過損益兩平點。",
+      "多家外資機構在最新季度策略報告中上修全年出貨預測，上下游拉貨動能延續至年底。",
+      "從開源社群的深夜程式碼提交紀錄到無塵室的自動光學檢測線，一場安靜的效率革命正在發生。",
+      "受訪技術長直言，比起單純堆疊參數規模，低延遲、高可靠度與資料隱私才是企業採購關鍵。",
+      "最新法說會與財報數據顯示，研發費用占營收比重逾一成的廠商正率先收穫高毛利訂單。",
+      "硬體輕量化與使用介面自然化雙軌並進，新一代穿戴裝置正式擺脫「早期嚐鮮玩具」標籤。",
+      "在高度競爭的成熟市場中，供應鏈彈性調度與軟硬體整合能力成為拉開差距的勝負手。",
+      "多位新創創辦人在圓桌論壇指出，真實客戶的續訂率與留存度，遠比首日話題熱度更具說服力。",
+      "西部科技走廊緊密的產業聚落內，從晶圓測試、精密模具到整機組裝可在二十四小時內銜接完成。",
+      "產業分析師觀察，市場焦點已從早期比拚算力峰值，轉向每瓦效能比與應用生態系完整度。",
+      "週末藝文場館人潮與付費訂閱數據雙雙回溫，高品質內容與實體空間體驗依然展現強勁韌性。",
+      "跨校聯合研究團隊歷時十八個月突破材料介面瓶頸，完整實驗數據已刊登於國際權威期刊。",
+      "隨著標準化軟體開發套件普及，中小型團隊串接底層演算法的開發週期由數月縮短至數天。",
+      "港股與台股科技族群交投活絡，具備高殖利率與先進製程優勢的標的成為長線資金配置核心。",
+      "市場觀察家指出，新一輪產品設計不再盲目追求繁複功能，而是精準解決高頻率的日常痛點。",
+      "從工業設計手稿到量產開模歷經四十餘次微調，手感配重與螢幕顯示品質決定了最終口碑。",
+      "離岸風電綠電憑證與液冷散熱架構普及，讓大型資料中心的單位運算碳足跡顯著下降。",
+      "高鐵、捷運與共享單車路網無縫串聯，正在悄悄改寫都會區工作者的居住選擇與通勤半徑。",
+      "多位資深總編輯與策展人表示，兼具裝幀美感與深度調查的紙本出版品正重新贏得年輕讀者。",
+      "最新產業白皮書預估，未來三年複合年均成長率可望維持兩成以上，海外訂單貢獻主要增量。",
+      "在喧囂的發表會之外，一批專注精密零組件與特用化學品的隱形冠軍早已完成全球佈局。",
+      "面對全球降息週期與匯率波動，財務穩健的製造業龍頭正透過自動化投資鎖定中長期成本優勢。",
+      "結合高解析度感測器與邊緣端開源模型，第一線工程團隊得以在離線環境即時完成品質檢測。"
+    ],
+    "bylines": [
+      "本報記者 林哲瑋 台北報導",
+      "特約撰稿 陳思穎／編輯 周佩珊",
+      "產經調查組 黃冠宇、吳佳樺",
+      "本報駐新竹記者 張家豪",
+      "科技產業組 劉品言",
+      "本報記者 許文謙／攝影 郭子軒",
+      "資本市場組 鄭雅文 香港連線",
+      "資深主筆 梁敬恒 發自中環",
+      "特派記者 蔡明憲 發自東京",
+      "硬體工程專刊 楊宗翰／數據 蘇郁婷",
+      "本報主筆室 王振宇",
+      "數位生活實驗室 何心怡、林柏宏",
+      "晚間編採中心 謝承恩",
+      "矽谷特約記者 趙庭萱",
+      "智慧製造專題組 潘志明 台南報導",
+      "藝文副刊主編 葉舒涵",
+      "資料新聞組 宋品睿／製圖 簡嘉瑩",
+      "體育專題記者 洪瑞陽",
+      "科學編輯部 嚴家齊",
+      "環球市場組 溫朗東 倫敦—香港連線",
+      "都會建築專欄 秦書雅",
+      "本報駐慕尼黑特約記者 盧子昂",
+      "開源生態觀察員 方奕辰",
+      "航運與貿易組 鍾耀文 高雄報導"
+    ],
+    "sentences": [
+      "多家半導體供應鏈廠商本週法說會確認，第三季先進封裝與測試產線訂單滿載，整體稼動率維持九成以上。",
+      "記者在新竹科學園區的無塵室外透過觀景窗看到，天車系統正沿著軌道高速運送晶圓傳送盒至下一道製程。",
+      "隨著模型量化壓縮與邊緣運算技術成熟，百億參數等級的開源模型已可在一般創作者筆電上離線流暢運作。",
+      "多位受訪外資基金經理人指出，今年選股邏輯已從題材想像轉向檢視企業真實的自由現金流與出貨良率。",
+      "在內湖一間硬體研發實驗室裡，六軸機械手臂正進行連續七十二小時的精密插拔與視覺定位耐久測試。",
+      "最新發表的產業白皮書分析，人工智慧運算架構正由集中式雲端叢集，朝向伺服器與終端裝置協同演進。",
+      "受惠於碳化矽逆變器與高密度電芯普及，今年新上市電動車款的高速公路實測續航達成率普遍提升一成五。",
+      "雙北捷運與高鐵轉乘大廳早尖峰統計顯示，導入感應支付與動線最佳化後，旅客平均步行時間縮短四分鐘。",
+      "全球開源程式碼託管平台過去三十天新增合併請求逾四千筆，來自亞太時區開發者的貢獻比重突破四成。",
+      "獨立書店主理人翻開後台進貨紀錄指出，科普新知、字體排印與建築美學類專書已連續三季蟬聯暢銷榜。",
+      "多家雲端服務商本月初再度調降推論 API 計費單價，中小型軟體團隊的日均呼叫量在兩週內翻倍成長。",
+      "高雄港與葵青貨櫃碼頭夜間燈火通明，遠端操控橋式起重機每小時貨櫃裝卸效率再創開港以來新高。",
+      "受惠於年終消費電子備貨旺季啟動，軟性 OLED 螢幕面板與微型光學鏡頭模組出貨量連兩季季增。",
+      "研究團隊結合冷凍電子顯微鏡與分子模擬演算法，成功將新型工業酵素的篩選週期由兩年大幅壓縮至六週。",
+      "在台北南港的數位影像工作坊內，二十人規模的動畫團隊運用即時光線追蹤管線打造出影展級視覺特效。",
+      "大型商業銀行企金部門透露，針對精密機械與綠能設備更新的中長期專案融資需求自第二季起明顯升溫。",
+      "水冷散熱伺服器機櫃在新建資料中心的採用率快速攀升，單一機櫃功率密度正式突破四十千瓦門檻。",
+      "週末午後的河濱單車道與海濱長廊人潮絡繹不絕，鈦合金摺疊單車與輕量化露營裝備買氣持續暢旺。",
+      "國際光學工程期刊最新一期封面論文，刊載了跨國團隊在超穎介面平面透鏡領域的重大實驗突破。",
+      "連鎖影城營運長表示，配備雷射巨幕與杜比全景聲的特殊影廳滿座率顯著領先，觀眾愈發重視極致影音品質。",
+      "跨境電商物流平台數據顯示，搭配區域自動化發貨中心，亞太主要城市包裹配達時效已縮短至四十八小時內。",
+      "台中精密機械園區多家五軸加工機大廠指出，航太與半導體設備零組件訂單能見度已排至明年第一季。",
+      "在創投媒合日現場，十餘組聚焦工業視覺檢測與智慧醫療軟體的新創團隊吸引逾三十家企業創投深度洽談。",
+      "隨著太陽能光電與電網級儲能建置成本下降，南部多個工業園區已達成日間尖峰時段高比例綠電自給。",
+      "個人音訊硬體品牌今年密集推出開放式耳夾耳機，配戴舒適度與低漏音定向聲學演算法成為評測焦點。",
+      "證券投顧機構統計發現，研發人力占比超過三成的上市櫃科技公司，上半年海外市場營收成長率表現最為亮眼。",
+      "歷史悠久的舊紡織廠經建築師修舊如舊改造後，保留鋸齒狀採光天窗，吸引工業設計工作室與金工品牌進駐。",
+      "低軌寬頻通訊衛星完成海上漫遊實測，遠洋研究船與高山氣象站皆能穩定回傳高畫質即時觀測影像。",
+      "在慕尼黑與東京國際電子展上，台灣與香港工程團隊展出的車用雷達、伺服馬達與儲能轉換器備受買家青睞。",
+      "多位獨立桌面軟體開發者分享，透明的一次性買斷或輕量訂閱制，更容易贏得專業設計師與剪輯師長期支持。",
+      "新一代高速列車空氣動力學風洞實驗取得進展，列車進出長隧道時的微氣壓波噪音大幅降低。",
+      "博物館設計團隊將館藏古典紋樣轉化為現代陶瓷器皿與鋼筆墨水系列，春季首發限量款三日內全數完售。",
+      "先進封裝測試新廠本月完成上樑典禮，預計明年投產後每月可新增三萬片十二吋晶圓級封裝產能。",
+      "都會夜間文化調查顯示，週五夜間美術館、黑膠聆聽室與深夜獨立書店正成為上班族下班後的充電據點。",
+      "多家車廠於本季韌體無線更新中推送新一代輔助駕駛系統，都會區複雜路口與環島匯入流暢度顯著提升。",
+      "國際航運研究機構報告指出，可使用綠色甲醇雙燃料的新造貨櫃船訂單占比已逼近全球總噸位的四成。",
+      "紡織科技展現場，支援少量多樣快速打樣的數位直噴印花機與自動排版裁剪系統詢問度居冠。",
+      "電波天文學家透過地面陣列望遠鏡協同觀測，成功記錄到一組具週期性特徵的快速電波爆發偏振訊號。",
+      "大學創客空間全天候開放雷射切割機與金屬 3D 列印設備，多組學生硬體專案已順利完成群眾募資並進入量產。",
+      "連鎖超市積極升級自有品牌生鮮與日用品，公開透明的產地溯源機制帶動單店客單價與回購率同步成長。",
+      "開源向量資料庫迎來核心引擎重大更新，單一伺服器節點即可在毫秒內完成十億筆文件語意檢索。",
+      "職業球團教練團在關鍵季後賽中，依據穿戴式感測器即時回傳的跑動熱區與疲勞指數精準調度牛棚與替補陣容。",
+      "特用化學材料新創將試產工廠設於科學園區周邊，大幅縮短從實驗室公克級樣品放大至噸級量產的驗證時程。",
+      "出版通路觀察發現，版面留白舒適、採用輕塗紙印刷的口袋型非虛構文庫本特別受到捷運通勤族喜愛。",
+      "虛擬電廠平台成功整合商業大樓冰水主機與地下停車場充電樁負載，於夏日用電尖峰平穩完成需量反應調度。",
+      "國產高速線掃描工業相機在鋰電池極片微米級瑕疵檢測中達成零漏檢紀錄，正式打入國際一線電池廠供應鏈。",
+      "春季城市馬拉松與山徑越野賽報名秒殺，碳纖維板跑鞋與雙頻衛星定位運動錶帶動運動用品營收創新高。",
+      "多位企業資訊長受訪時強調，混合雲架構搭配本地端私有模型部署，仍是金融與醫療產業未來五年的主流方案。",
+      "精品咖啡烘豆廠導入光學色澤與密度分選儀，確保每一批次單一莊園咖啡豆的烘焙曲線維持高度一致。",
+      "在釜山與鹿特丹影展市場展單元，新銳華語導演執導的中小成本類型片獲得多國院線發行商熱烈競價。",
+      "工業巡檢無人機搭載光學氣體成像儀執行管線日常巡查，單日涵蓋里程相當於傳統人工徒步巡檢的十倍。",
+      "二手數位產品交易平台導入自動化螢幕烙印與電池健康度檢測報告，買賣雙方售後爭議率下降逾三成。",
+      "商業合成孔徑雷達微衛星穿透雲層傳回高解析度海冰分布圖，為北極圈與北太平洋遠洋航線提供即時導航支援。",
+      "資深人機介面設計師觀察，具備明確段落感的實體金屬旋鈕與機械按鍵，正在車載中控台與專業器材上強勢回歸。",
+      "精密軸承大廠與大學機械系共建摩擦學實驗室，成功將高速工具機主軸軸承連續運轉壽命推升至兩萬小時以上。",
+      "週末農夫市集將有機農場當日現採蔬果搬進商業大樓中庭，消費者掃描條碼即可查看栽種日誌與土壤檢驗紀錄。",
+      "全球半導體貿易統計組織月度數據顯示，亞太區晶片銷售額已連續八個月繳出年增正成長佳績。",
+      "最新一代彩色電子紙閱讀器翻頁殘影大幅減輕，搭配低延遲電磁筆手寫批註，書寫體驗逼近真實紙張。",
+      "由港畔歷史倉庫改建而成的當代視覺文化中心，週末舉辦建築聲學裝置展，吸引眾多設計與樂迷專程造訪。",
+      "生技委託開發暨製造服務大廠公布半年報，單株抗體與核酸藥物純化產線產能利用率維持高檔水準。",
+      "離島微電網結合屋頂型光電、飛輪穩壓與鈉離子儲能系統，在颱風季節創下連續百日穩定供電零中斷紀錄。",
+      "透過神經網路語音合成與口型同步工具，紀錄片團隊製作六國語言國際版的後製時程縮短至過去的五分之一。",
+      "資深供應鏈副總裁總結指出，過去企業採購只看單一零件最低報價，如今更重視雙產地備援與長期交期可靠度。",
+      "隨著全球主要央行邁入降息週期，基礎建設基金與長線機構法人持續加碼資料中心與潔淨能源資產。",
+      "截至週五收盤，台股與港股半導體及高股息相關 ETF 單週淨申購金額雙雙寫下本季以來新高紀錄。"
+    ],
+    "briefs": [
+      "【運算】三大區域資料中心完成矽光子高速光網直連，跨區叢集延遲壓低至 2 毫秒內",
+      "【晶片】先進封裝 CoWoS 與 HBM 記憶體產能滿載，設備大廠同步上修全年出貨展望",
+      "【載具】新一代 800V 高壓架構電動車市占突破三成，快充十分鐘即可補充三百公里續航",
+      "【開源】輕量級邊緣端推論框架釋出 3.0 正式版，行動裝置記憶體占用大幅減少 35%",
+      "【航運】亞太樞紐港單月貨櫃吞吐量穩健成長，綠色甲醇雙燃料船加注作業邁入常態化",
+      "【太空】深空探測與低軌遙測星系完成一箭八星發射，地表重訪週期縮短至四小時",
+      "【院線】週末都會區電影票房顯著回溫，IMAX 與雷射巨幕特殊影廳票房占比逾兩成五",
+      "【綠能】離岸風場搭配百兆瓦級電網儲能案場正式商轉，大幅強化夜尖峰電力調度韌性",
+      "【機器人】雙臂協作工業機器人導入電子組裝線實測，精密排線與鎖附節拍再度提速",
+      "【消費】戶外越野與智慧穿戴裝置領跑零售成長，航太級鈦合金輕量化錶款熱銷",
+      "【科研】超冷原子量子模擬實驗獲重大突破，研究成果榮登國際物理學頂尖期刊封面",
+      "【通勤】都會捷運與輕軌系統全面支援感應式信用卡過閘，跨區通勤旅次月增 18%",
+      "【螢幕】雙層串聯 OLED 面板擴大導入高階筆電，峰值亮度與電池續航力同步躍升",
+      "【生醫】人工智慧輔助蛋白質結構預測平台，將候選新藥前導化合物篩選週期縮短近半",
+      "【出版】國際書展非虛構寫作與科學繪本買氣旺盛，多語種版權與有聲書同步授出",
+      "【製造】國產五軸聯動工具機自製率持續攀升，航太結構件與醫療植入物訂單充沛",
+      "【物流】跨海離島冷鏈無人機航線完成百趟試飛，生鮮漁獲抵港至餐廳最快僅需兩小時",
+      "【設計】模組化易維修工業設計風潮再起，使用者自行更換筆電電池僅需三分鐘",
+      "【通訊】萬兆光纖網路與 Wi-Fi 7 於科學園區普及，產線高畫質工業相機無線回傳零掉包",
+      "【農業】智慧溫室導入動態光譜演算法調控，水耕草莓與生菜單位面積產量倍增",
+      "【遊戲】獨立開發團隊買斷制解謎新作全球銷量破兩百萬套，繁簡英日多語在地化獲盛讚",
+      "【金融】降息週期帶動企業設備升級融資需求，半導體與綠能資本支出貸款穩健成長",
+      "【軟體】開源模型本地端知識庫工具大改版，支援萬頁技術文件毫秒級精準檢索",
+      "【建築】循環建材與木構造商業大樓通過耐震驗證，主體結構工期較傳統工法縮短三成"
+    ],
+    "classifieds": [
+      "誠徵 嵌入式系統工程師 熟悉 RTOS 與馬達控制 內湖科技園區 週休二日優於勞基法",
+      "招租 文創園區挑高工作室 55 坪 雙面採光附貨梯 近捷運站步行四分鐘 隨時起租",
+      "讓售 九成五新全片幅無反相機機身含 24-70mm 恆定光圈鏡 快門數極低 雙北面交驗機",
+      "合作 工業設計事務所承接消費電子機構設計與 CNC 鋁合金小批量快速打樣",
+      "店面 港島海濱設計街區轉角地舖 900 平方呎 適合精品咖啡館或獨立選物書店",
+      "徵求 二手高頻寬數位示波器與邏輯分析儀 功能校準正常 大學實驗室教學研究自用",
+      "徵才 科技與半導體產業記者 具兩年以上財經採訪經驗 熟悉晶圓供應鏈與伺服器生態",
+      "頂讓 歐式酸種麵包工坊全套進口蒸汽層爐與發酵箱 保養極佳 市區可協助搬運定位",
+      "廠辦 科學園區周邊標準無塵實驗空間 180 坪 附設獨立空調與三相電力 歡迎生醫新創",
+      "課程 週末黑白底片暗房沖洗與手工銀鹽放相工作坊 六人小班制 含藥水與光面相紙",
+      "遠端 開源軟體專案技術文件工程師 中英文讀寫流利 支援跨時區彈性非同步工作",
+      "出清 實木電動升降辦公桌六張含人體工學網椅 設計團隊擴編搬遷 整批帶走優惠",
+      "雅房 民生社區靜巷公寓兩房一廳 採光通風佳保留磨石子地 近河濱公園 一年起租",
+      "服務 經典黑膠唱盤精密調校與老式盤帶 24-bit 高解析度數位化轉錄 保存珍貴聲音檔案",
+      "實習 職業運動數據分析助理 熟悉 Python 與視覺化圖表製作 可配合週末賽程者佳",
+      "讓售 輕量化鈦合金公路車架組 54cm 含碳纖維前叉與電子變速走線 僅騎乘兩次",
+      "徵件 都會工業遺產與港灣建築紀實攝影聯展 即日起向獨立攝影師公開徵集黑白與彩色作品",
+      "空間 專業聲學裝修 Podcast 錄音室開放單時段租借 配備廣播級動圈麥克風與混音介面",
+      "誠徵 前端與 Canvas 視覺互動工程師 熟悉 WebGL 與字體排印 台北或香港混合辦公",
+      "工坊 活版印刷與凸版名片週末體驗班 親手操作百年鑄字排版機 贈棉紙紀念藏書票"
+    ],
+    "tickers": [
+      [
+        "加權指數",
+        "23,486.50",
+        "+1.12%"
+      ],
+      [
+        "恒生指數",
+        "20,642.80",
+        "+0.86%"
+      ],
+      [
+        "恒生科技",
+        "4,826.50",
+        "+1.85%"
+      ],
+      [
+        "櫃買指數",
+        "268.45",
+        "+0.94%"
+      ],
+      [
+        "台灣半導體",
+        "618.20",
+        "+2.15%"
+      ],
+      [
+        "費城半導體",
+        "5,412.80",
+        "+2.24%"
+      ],
+      [
+        "伺服器指數",
+        "1,945.60",
+        "+1.96%"
+      ],
+      [
+        "高股息 ETF",
+        "42.68",
+        "+0.54%"
+      ],
+      [
+        "十年美債殖利",
+        "4.12%",
+        "-0.03"
+      ],
+      [
+        "布蘭特原油",
+        "74.35",
+        "-0.38%"
+      ],
+      [
+        "現貨黃金",
+        "2,684.50",
+        "+0.56%"
+      ],
+      [
+        "美元兌港元",
+        "7.7745",
+        "-0.04%"
+      ],
+      [
+        "美元兌台幣",
+        "31.860",
+        "-0.18%"
+      ],
+      [
+        "高頻寬記憶",
+        "1,328.00",
+        "+2.74%"
+      ],
+      [
+        "綠能永續指",
+        "1,186.40",
+        "+0.62%"
+      ],
+      [
+        "貨櫃航運指",
+        "2,640.0",
+        "+1.42%"
+      ],
+      [
+        "機器人概念",
+        "1,562.40",
+        "+2.31%"
+      ],
+      [
+        "日經 225",
+        "39,680.40",
+        "+0.92%"
+      ],
+      [
+        "那斯達克",
+        "21,140.55",
+        "+1.18%"
+      ],
+      [
+        "標普 500",
+        "5,984.20",
+        "+0.64%"
+      ]
+    ],
+    "sports": [
+      "中華職棒 台北大巨蛋 5-2 滿場完封勝",
+      "歐冠八強 首回合焦點戰 2-2 傷停補時追平",
+      "BWF 公開賽 混雙決賽 21-18 / 21-16 奪冠",
+      "英超第 30 輪 北倫敦德比 2-1 全場戰報",
+      "F1 鈴鹿站 正賽 53 圈 桿位起跑奪冠",
+      "台北馬拉松 男子組 2:09:18 刷新場地紀錄",
+      "渣打港馬 半程菁英組 晨間維港鳴槍完賽",
+      "網球大師賽 男單八強 7-6 / 6-4 直落二晉級",
+      "職籃季後賽 第五戰 108-103 延長賽險勝",
+      "世界桌球賽 女單決賽 4-2 逆轉衛冕封后",
+      "大聯盟連線 道奇主場 5-3 雙響砲收下系列賽",
+      "全英羽球賽 女單四強 21-19 / 21-17 挺進決賽",
+      "西甲夜場 皇家馬德里 2-0 穩居積分榜首",
+      "世界泳聯 男子 100 公尺自由式 46 秒 80 奪金",
+      "亞冠聯賽 東亞區四強戰 2-1 客場奏捷",
+      "環法單車賽 阿爾卑斯山站 單飛突圍披黃衫"
+    ],
+    "weather": [],
+    "captions": [
+      "圖為新竹科學園區晶圓廠無塵室內，設備工程師正在校準極紫外光微影檢測機台。本報記者 郭子軒／攝",
+      "週末傍晚的台北赤峰街與中山站線型公園人潮聚集，讀者在獨立出版市集攤位前翻閱新書。",
+      "在台北國際電腦展開幕現場，參觀民眾配戴僅三十八公克重的超輕量智慧眼鏡體驗即時翻譯字幕。",
+      "高雄港第七貨櫃中心夜間燈火通明，遠端自動化橋式起重機正精準裝卸開往鹿特丹的遠洋貨櫃輪。",
+      "研究團隊於高海拔觀測站測試新一代鈣鈦礦矽晶疊層太陽能電池模組的全日發電曲線。",
+      "晨間通勤尖峰時段的港鐵金鐘站轉乘大堂秩序井然，上班族感應手機快速通過閘機。",
+      "新創研發團隊在內湖機器人實驗室調校雙臂協作夾爪演算法，工作桌擺滿歷代精密減速機樣品。",
+      "活化後的百年紅磚海港倉庫轉型為當代視覺與工業設計館，鋸齒狀天窗引入柔和自然採光。",
+      "週末清晨的淡水河濱單車道迎來騎乘熱潮，圖為車友結伴沿水岸綠廊迎著晨光騎行。",
+      "商業低軌衛星運載火箭於發射台完成垂直吊裝，地面工程團隊進行發射前最後氣密檢測。",
+      "在南港硬體加速器空間內，三位年輕工程師展示僅名片大小、可離線執行開源模型的邊緣運算開發板。",
+      "春季國際影展經典修復單元映後座談現場，修復師與影迷深入交流 4K 數位掃描調光細節。",
+      "自動化低溫冷鏈物流中心內，穿梭車機器人正依照訂單波次將生鮮包裹精準送入分揀滑道。",
+      "高山天文台圓頂在晴朗夜空中緩緩開啟，廣角巡天望遠鏡對準獵戶座深空探測天區展開長曝光。",
+      "次世代資料中心水冷機房長廊內，數位儀表板即時顯示伺服器冷卻液進出水溫與 PUE 能源效率指標。",
+      "活版印刷工坊老師傅在鑄字架前挑選鉛字，與年輕平面設計師合作印製年度限量詩集扉頁。",
+      "離岸風電運維母港碼頭邊，工程人員登上雙體作業船準備出海執行風機葉片例行巡檢。",
+      "大學跨領域學生團隊在風洞實驗室內，記錄太陽能無人機機翼於不同攻角下的升阻比數據。"
+    ]
+  }
+}
