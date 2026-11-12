@@ -2,7 +2,7 @@
 
 > TypePin (钉字 / 釘字) is a free, browser-only newspaper text match-cut studio at typepin.com: pin a word in the frame, export a 1080p MP4 or WebM with no watermark, no account, and no upload for rendering.
 
-TypePin runs entirely in the visitor’s browser. Layout, sound, and encoding stay on the device. You can paste up to 4,000 characters of copy, load a local .ttf / .otf / .woff / .woff2 font, choose 9:16, 1:1, or 16:9, and cut at 2–30 cuts per second for a 2–12 second clip (capped at 360 cuts; 60 fps when the peak rate is above 15). Built-in pages are typographic stand-ins, not real newspapers. Switch the UI with `?lang=en`, `?lang=zh`, or `?lang=hant`.
+TypePin runs entirely in the visitor’s browser. Layout, sound, and encoding stay on the device. You can paste up to 4,000 characters of copy, load a local .ttf / .otf / .woff / .woff2 font, choose 9:16, 1:1, or 16:9, and cut at 2–30 cuts per second for a 2–12 second clip (capped at 360 cuts; 60 fps when the peak rate is above 15). Built-in pages are typographic stand-ins, not real newspapers. Switch the UI with `?lang=en`, `?lang=zh`, or `?lang=hant`. The site uses Google Analytics to understand how it is used.
 
 钉字是免费的浏览器端文字跳切工具：词钉在画面中间，成片无水印，不登录，不为渲染上传内容。
 
