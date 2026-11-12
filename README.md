@@ -1,5 +1,6 @@
-# 文字跳切 (TextMatchCut)
+﻿# TypePin
 
-Browser-only newspaper text match-cut studio. Pin a focal word in the center of the frame while surrounding editorial layouts cut around it, then export 1080p video. Nothing is uploaded; generation runs entirely in your browser.
+Free text match cut generator: type a line, get a newspaper-style word-pin video (MP4/WebM) right in your browser. No sign-up, no watermark.
 
-Live: https://fubject.github.io/textmatchcut/
+Live site: https://typepin.com
+

@@ -2583,6 +2583,9 @@ if (typeof document !== "undefined") (function () {
   let ctaStepIdx = 0;
 
   function syncDocumentTitle() {
+    if (typeof window.__syncFaqJsonLd === "function") {
+      window.__syncFaqJsonLd(uiLang);
+    }
     if (inLegalView && $("legalView")) {
       const h = $(`${legalPage}Title`);
       const brand = uiLang === "hant" ? "釘字" : uiLang === "zh" ? "钉字" : "TypePin";
@@ -2597,10 +2600,10 @@ if (typeof document !== "undefined") (function () {
         : "data-en-title";
     const customTitle = docEl.getAttribute(titleAttr);
     document.title = customTitle || (uiLang === "hant"
-      ? "釘字 — 免費報刊剪報高亮快切影片產生器"
+      ? "文字跳切（Text Match Cut）免費線上產生器 | 釘字"
       : uiLang === "zh"
-        ? "钉字 — 免费报刊剪报高亮快切视频生成器"
-        : "TypePin — Free Newspaper Highlight Match Cut Video Generator");
+        ? "文字跳切（Text Match Cut）免费在线生成器 | 钉字"
+        : "Text Match Cut Generator: Free Newspaper Effect Maker | TypePin");
   }
 
   const previewCache = {

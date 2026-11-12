@@ -1,0 +1,31 @@
+# TypePin
+
+> TypePin (钉字 / 釘字) is a free, browser-only newspaper text match-cut studio at typepin.com: pin a word in the frame, export a 1080p MP4 or WebM with no watermark, no account, and no upload for rendering.
+
+TypePin runs entirely in the visitor’s browser. Layout, sound, and encoding stay on the device. You can paste up to 4,000 characters of copy, load a local .ttf / .otf / .woff / .woff2 font, choose 9:16, 1:1, or 16:9, and cut at 2–30 cuts per second for a 2–12 second clip (capped at 360 cuts; 60 fps when the peak rate is above 15). Built-in pages are typographic stand-ins, not real newspapers. Switch the UI with `?lang=en`, `?lang=zh`, or `?lang=hant`.
+
+钉字是免费的浏览器端文字跳切工具：词钉在画面中间，成片无水印，不登录，不为渲染上传内容。
+
+About, privacy, terms, cookies, and the disclaimer currently live as hash sections on the homepage. `about.html` and `legal.html` redirect to those hashes. There is no standalone `/privacy` or `/contact` page yet; if those clean URLs ship later, this file should be updated to match.
+
+## Pages
+
+- [TypePin studio](https://typepin.com/): the editor; canonical home
+- [Studio](https://typepin.com/#studio): jump straight to the editor section
+- [English](https://typepin.com/?lang=en): English UI
+- [简体中文](https://typepin.com/?lang=zh): Simplified Chinese UI
+- [繁體中文](https://typepin.com/?lang=hant): Traditional Chinese UI
+- [FAQ](https://typepin.com/#faq): usage, export, privacy, and commercial-use questions
+- [How to use](https://typepin.com/#how): in-page six-step walkthrough
+- [About](https://typepin.com/#about): project and contact (hi@typepin.com)
+- [About (file)](https://typepin.com/about.html): stub that redirects to `#about`
+- [Privacy](https://typepin.com/#privacy): privacy policy
+- [Terms](https://typepin.com/#terms): terms of use
+- [Cookies](https://typepin.com/#cookies): cookie notice
+- [Disclaimer](https://typepin.com/#disclaimer): fictional mastheads and usage limits
+- [Legal (file)](https://typepin.com/legal.html): stub that redirects to the legal hashes
+
+## Optional
+
+- [robots.txt](https://typepin.com/robots.txt): allows crawlers; points to the sitemap
+- [sitemap.xml](https://typepin.com/sitemap.xml): indexable URLs (currently includes the hash routes above)
