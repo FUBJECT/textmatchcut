@@ -5052,6 +5052,10 @@ if (typeof document !== "undefined") (function () {
       if (formatBtn) formatBtn.disabled = true;
       updateGenerateBtnUi();
       setTimelineState({ kind: "exporting", pct: 0 });
+      window.gtag && gtag("event", "export_start", {
+        format: (formatSelect.value || "").includes("webm") ? "webm" : "mp4",
+        lang: uiLang
+      });
 
       try {
         const opts = currentOpts();
@@ -5090,6 +5094,7 @@ if (typeof document !== "undefined") (function () {
           downloadBtn.download = `typepin.${ext}`;
           downloadBtn.click();
         }
+        window.gtag && gtag("event", "export_video", { format: ext, lang: uiLang });
         setTimelineState({ kind: "exported", pct: 100 });
       } catch (err) {
         console.error(err);
