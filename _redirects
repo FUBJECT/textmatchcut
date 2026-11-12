@@ -1,0 +1,3 @@
+# Cloudflare Pages: send www to the canonical apex.
+# Put this file in the published site root (same folder as index.html).
+https://www.typepin.com/* https://typepin.com/:splat 301

@@ -2,9 +2,9 @@
   "zh": {
     "publications": [
       {
-        "id": "cbn-daily",
-        "name": "第一财经日报",
-        "sub": "CHINA BUSINESS NEWS · 产经与资本早报",
+        "id": "pacific-fin-daily",
+        "name": "太平洋财经日报",
+        "sub": "PACIFIC FINANCIAL DAILY · 产经与资本早报",
         "sectionKickers": [
           "市场观察",
           "公司深读",
@@ -14,9 +14,9 @@
         "kind": "finance"
       },
       {
-        "id": "21jingji",
-        "name": "21世纪经济报道",
-        "sub": "21ST CENTURY BUSINESS HERALD",
+        "id": "new-era-econ",
+        "name": "新纪元经济导报",
+        "sub": "NEW ERA ECONOMIC HERALD",
         "sectionKickers": [
           "产业一线",
           "硬科技周刊",
@@ -26,9 +26,9 @@
         "kind": "finance"
       },
       {
-        "id": "caixin-weekly",
-        "name": "财新周刊",
-        "sub": "CAIXIN WEEKLY · 商业与经济深度",
+        "id": "commerce-weekly",
+        "name": "新商业周刊",
+        "sub": "COMMERCE WEEKLY · 商业与经济深度",
         "sectionKickers": [
           "封面报道",
           "商业科技",
@@ -38,9 +38,9 @@
         "kind": "weekly"
       },
       {
-        "id": "nbd-press",
-        "name": "每日经济新闻",
-        "sub": "NATIONAL BUSINESS DAILY",
+        "id": "daily-ind-press",
+        "name": "每日产经快报",
+        "sub": "DAILY INDUSTRIAL PRESS",
         "sectionKickers": [
           "公司调查",
           "行情速递",
@@ -50,9 +50,9 @@
         "kind": "business"
       },
       {
-        "id": "stcn-times",
-        "name": "证券时报",
-        "sub": "SECURITIES TIMES · 资本市场专刊",
+        "id": "cap-market-times",
+        "name": "资本市场早报",
+        "sub": "CAPITAL MARKET TIMES · 资本市场专刊",
         "sectionKickers": [
           "行情看板",
           "机构视点",
@@ -62,9 +62,9 @@
         "kind": "finance"
       },
       {
-        "id": "eeo-observer",
-        "name": "经济观察报",
-        "sub": "THE ECONOMIC OBSERVER",
+        "id": "fe-econ-observer",
+        "name": "远东经济观察报",
+        "sub": "FAR EAST ECONOMIC OBSERVER",
         "sectionKickers": [
           "商业评论",
           "公司研究院",
@@ -74,9 +74,9 @@
         "kind": "business"
       },
       {
-        "id": "bjnews",
-        "name": "新京报",
-        "sub": "THE BEIJING NEWS · 城市与时代记录",
+        "id": "north-metro-post",
+        "name": "北方都会晨报",
+        "sub": "METRO MORNING CHRONICLE · 城市与时代记录",
         "sectionKickers": [
           "城市商业",
           "新知探索",
@@ -86,9 +86,9 @@
         "kind": "metro"
       },
       {
-        "id": "infzm",
-        "name": "南方周末",
-        "sub": "SOUTHERN WEEKLY · 深度特稿",
+        "id": "weekend-feature",
+        "name": "周末特稿周报",
+        "sub": "WEEKEND FEATURE WEEKLY · 深度特稿",
         "sectionKickers": [
           "特稿专版",
           "科技之魅",
@@ -98,9 +98,9 @@
         "kind": "weekly"
       },
       {
-        "id": "thepaper-special",
-        "name": "澎湃特刊",
-        "sub": "THE PAPER · 城市与产业增刊",
+        "id": "tidal-city-special",
+        "name": "潮汐城市特刊",
+        "sub": "TIDAL CITY SPECIAL · 城市与产业增刊",
         "sectionKickers": [
           "未来科技",
           "城市漫步",
@@ -110,9 +110,9 @@
         "kind": "metro"
       },
       {
-        "id": "jiemian-news",
-        "name": "界面新闻",
-        "sub": "JIEMIAN DISPATCH · 商业快讯",
+        "id": "prism-dispatch",
+        "name": "棱镜商业快讯",
+        "sub": "PRISM DISPATCH · 商业快讯",
         "sectionKickers": [
           "快讯直击",
           "科技早报",
@@ -122,8 +122,8 @@
         "kind": "wire"
       },
       {
-        "id": "dskb-metro",
-        "name": "都市快报",
+        "id": "jiangnan-metro",
+        "name": "江南都市晨报",
         "sub": "METRO EXPRESS · 长三角晨刊",
         "sectionKickers": [
           "城事速递",
@@ -134,11 +134,11 @@
         "kind": "metro"
       },
       {
-        "id": "xmwb-evening",
-        "name": "新民晚报",
-        "sub": "XINMIN EVENING NEWS · 夜光杯",
+        "id": "pujiang-evening",
+        "name": "浦江夜读晚报",
+        "sub": "RIVERSIDE EVENING POST · 晚间副刊",
         "sectionKickers": [
-          "夜光杯",
+          "夜读轩",
           "浦江商业",
           "街区温度",
           "晚间博览"
@@ -146,9 +146,9 @@
         "kind": "evening"
       },
       {
-        "id": "qjwb-evening",
-        "name": "钱江晚报",
-        "sub": "QIANJIANG EVENING NEWS",
+        "id": "zhijiang-evening",
+        "name": "之江都市晚刊",
+        "sub": "ZHIJIANG EVENING POST",
         "sectionKickers": [
           "之江潮声",
           "生活实验室",
@@ -158,9 +158,9 @@
         "kind": "evening"
       },
       {
-        "id": "cdsb-daily",
-        "name": "成都商报",
-        "sub": "CHENGDU ECONOMIC DAILY · 西南商业",
+        "id": "brocade-daily",
+        "name": "锦城商业日报",
+        "sub": "BROCADE CITY BUSINESS DAILY · 西南商业",
         "sectionKickers": [
           "西南产经",
           "城市样本",
@@ -170,9 +170,9 @@
         "kind": "business"
       },
       {
-        "id": "sanlian-life",
-        "name": "三联生活周刊",
-        "sub": "SANLIAN LIFEWEEK · 生活与新知",
+        "id": "life-ideas-weekly",
+        "name": "生活与新知周刊",
+        "sub": "LIFE & IDEAS WEEKLY · 生活与新知",
         "sectionKickers": [
           "封面故事",
           "城市生活",
@@ -182,9 +182,9 @@
         "kind": "culture"
       },
       {
-        "id": "stdaily-ind",
-        "name": "科技日报·产业周刊",
-        "sub": "TECH & INDUSTRY WEEKLY",
+        "id": "frontier-tech-ind",
+        "name": "前沿科技·产业周刊",
+        "sub": "FRONTIER TECH & INDUSTRY WEEKLY",
         "sectionKickers": [
           "算力底座",
           "半导体前沿",
@@ -194,9 +194,9 @@
         "kind": "tech"
       },
       {
-        "id": "cpcw-weekly",
-        "name": "电脑报",
-        "sub": "COMPUTER NEWSPAPER · 硬件与极客",
+        "id": "compute-hw-weekly",
+        "name": "硬核计算周报",
+        "sub": "COMPUTE & HARDWARE WEEKLY · 硬件与极客",
         "sectionKickers": [
           "硬件评测",
           "端侧模型",
@@ -218,9 +218,9 @@
         "kind": "tech"
       },
       {
-        "id": "titan-sports",
-        "name": "体坛周报",
-        "sub": "TITAN SPORTS · 赛事与竞技专刊",
+        "id": "arena-sports",
+        "name": "赛场竞技周报",
+        "sub": "ARENA SPORTS WEEKLY · 赛事与竞技专刊",
         "sectionKickers": [
           "焦点战报",
           "数据看台",
@@ -230,9 +230,9 @@
         "kind": "sports"
       },
       {
-        "id": "football-weekly",
-        "name": "足球周刊",
-        "sub": "FOOTBALL WEEKLY · 绿茵战术板",
+        "id": "pitch-tactics",
+        "name": "绿茵战术周刊",
+        "sub": "PITCH TACTICS WEEKLY · 绿茵战术板",
         "sectionKickers": [
           "全场比分",
           "战术复盘",
@@ -242,9 +242,9 @@
         "kind": "sports"
       },
       {
-        "id": "businessweek-zh",
-        "name": "商业周刊中文版",
-        "sub": "BUSINESSWEEK EDITION · 全球商业",
+        "id": "global-commerce-zh",
+        "name": "环球商界周刊",
+        "sub": "GLOBAL COMMERCE WEEKLY · 全球商业",
         "sectionKickers": [
           "全球市场",
           "公司战略",
@@ -254,9 +254,9 @@
         "kind": "weekly"
       },
       {
-        "id": "science-world",
-        "name": "科学世界",
-        "sub": "NEWTON SCIENCE · 自然与探索",
+        "id": "nat-sci-illus",
+        "name": "自然科学画报",
+        "sub": "NATURAL SCIENCE ILLUSTRATED · 自然与探索",
         "sectionKickers": [
           "深空探测",
           "前沿物理",
@@ -266,8 +266,8 @@
         "kind": "science"
       },
       {
-        "id": "huanqiu-sci",
-        "name": "环球科学",
+        "id": "sci-frontiers-zh",
+        "name": "前沿科学简报",
         "sub": "SCIENTIFIC FRONTIERS · 科研简报",
         "sectionKickers": [
           "实验室连线",
@@ -291,7 +291,7 @@
       },
       {
         "id": "cinema-arts",
-        "name": "看电影·艺文志",
+        "name": "银幕与艺文志",
         "sub": "CINEMA & ARTS REVIEW",
         "sectionKickers": [
           "院线观察",
@@ -304,7 +304,7 @@
       {
         "id": "xinzhi-digest",
         "name": "新知文摘报",
-        "sub": "READER'S DIGEST · 每周精编文萃",
+        "sub": "WEEKLY DIGEST · 每周精编文萃",
         "sectionKickers": [
           "每周精粹",
           "书摘专栏",
@@ -339,31 +339,31 @@
       }
     ],
     "paperNames": [
-      "第一财经日报",
-      "21世纪经济报道",
-      "财新周刊",
-      "每日经济新闻",
-      "证券时报",
-      "经济观察报",
-      "新京报",
-      "南方周末",
-      "澎湃特刊",
-      "界面新闻",
-      "都市快报",
-      "新民晚报",
-      "钱江晚报",
-      "成都商报",
-      "三联生活周刊",
-      "科技日报·产业周刊",
-      "电脑报",
+      "太平洋财经日报",
+      "新纪元经济导报",
+      "新商业周刊",
+      "每日产经快报",
+      "资本市场早报",
+      "远东经济观察报",
+      "北方都会晨报",
+      "周末特稿周报",
+      "潮汐城市特刊",
+      "棱镜商业快讯",
+      "江南都市晨报",
+      "浦江夜读晚报",
+      "之江都市晚刊",
+      "锦城商业日报",
+      "生活与新知周刊",
+      "前沿科技·产业周刊",
+      "硬核计算周报",
       "极客前沿",
-      "体坛周报",
-      "足球周刊",
-      "商业周刊中文版",
-      "科学世界",
-      "环球科学",
+      "赛场竞技周报",
+      "绿茵战术周刊",
+      "环球商界周刊",
+      "自然科学画报",
+      "前沿科学简报",
       "港航商报",
-      "看电影·艺文志",
+      "银幕与艺文志",
       "新知文摘报",
       "财讯电报早参",
       "申城生活便民报"
@@ -765,32 +765,32 @@
   "en": {
     "publications": [
       {
-        "id": "nytimes",
-        "name": "The New York Times",
+        "id": "metro-chronicle",
+        "name": "The Metropolitan Chronicle",
         "sub": "LATE EDITION · NATIONAL, BUSINESS & SCIENCE",
         "sectionKickers": [
           "TECHNOLOGY",
           "BUSINESS DAY",
-          "SCIENCE TIMES",
+          "SCIENCE DESK",
           "ARTS & LEISURE"
         ],
         "kind": "broadsheet"
       },
       {
-        "id": "ft-global",
-        "name": "Financial Times",
+        "id": "sovereign-ledger",
+        "name": "The Sovereign Ledger",
         "sub": "GLOBAL ECONOMY, MARKETS & COMPANIES",
         "sectionKickers": [
           "COMPANIES & MARKETS",
-          "LEX COLUMN",
+          "MARKET LEDGER",
           "BIG READ",
           "CAPITAL MARKETS"
         ],
         "kind": "ft_pink"
       },
       {
-        "id": "guardian-intl",
-        "name": "The Guardian",
+        "id": "civic-observer",
+        "name": "The Civic Observer",
         "sub": "INTERNATIONAL EDITION · JOURNALISM & IDEAS",
         "sectionKickers": [
           "LONG READ",
@@ -801,20 +801,20 @@
         "kind": "guardian"
       },
       {
-        "id": "wsj-eastern",
-        "name": "The Wall Street Journal",
+        "id": "exchange-gazette",
+        "name": "The Exchange Gazette",
         "sub": "WHAT'S NEWS · MARKETS, TECH & INDUSTRY",
         "sectionKickers": [
           "WHAT'S NEWS",
-          "HEARD ON THE STREET",
-          "CIO JOURNAL",
+          "FLOOR NOTES",
+          "SYSTEMS DESK",
           "AUTOS & INDUSTRY"
         ],
         "kind": "wsj"
       },
       {
-        "id": "washpost",
-        "name": "The Washington Post",
+        "id": "capitol-morning-post",
+        "name": "The Capitol Morning Post",
         "sub": "MORNING EDITION · ECONOMY & INNOVATION",
         "sectionKickers": [
           "ECONOMY",
@@ -825,23 +825,23 @@
         "kind": "broadsheet"
       },
       {
-        "id": "economist-wkly",
-        "name": "The Economist",
+        "id": "meridian-review",
+        "name": "The Meridian Review",
         "sub": "WEEKLY EDITION · FINANCE, SCIENCE & BRIEFING",
         "sectionKickers": [
           "LEADERS",
           "BRIEFING",
-          "SCHUMPETER",
+          "INDUSTRIALIST",
           "SCIENCE & TECHNOLOGY"
         ],
         "kind": "economist"
       },
       {
-        "id": "businessweek",
-        "name": "Bloomberg Businessweek",
+        "id": "continental-bizweek",
+        "name": "Continental Businessweekly",
         "sub": "GLOBAL DEALMAKING, CHIPS & GREEN POWER",
         "sectionKickers": [
-          "THE BIG TAKE",
+          "DEEP DIVE",
           "HYPERDRIVE",
           "GREEN",
           "MARKETS"
@@ -849,8 +849,8 @@
         "kind": "wsj"
       },
       {
-        "id": "wired-mag",
-        "name": "WIRED",
+        "id": "circuitry-mag",
+        "name": "CIRCUITRY",
         "sub": "COMPUTE, OPEN SYSTEMS & DIGITAL CULTURE",
         "sectionKickers": [
           "GEAR",
@@ -861,9 +861,9 @@
         "kind": "tech"
       },
       {
-        "id": "mit-tech-rev",
-        "name": "MIT Technology Review",
-        "sub": "CAMBRIDGE · ARTIFICIAL INTELLIGENCE & COMPUTING",
+        "id": "foundry-tech-rev",
+        "name": "Foundry Technology Review",
+        "sub": "ENGINEERING · ARTIFICIAL INTELLIGENCE & COMPUTING",
         "sectionKickers": [
           "10 BREAKTHROUGHS",
           "COMPUTING",
@@ -873,8 +873,8 @@
         "kind": "tech"
       },
       {
-        "id": "nature-brief",
-        "name": "Nature Briefing",
+        "id": "principia-brief",
+        "name": "Principia Science Briefing",
         "sub": "INTERNATIONAL WEEKLY JOURNAL OF SCIENCE",
         "sectionKickers": [
           "RESEARCH HIGHLIGHT",
@@ -885,21 +885,21 @@
         "kind": "science"
       },
       {
-        "id": "latimes",
-        "name": "Los Angeles Times",
-        "sub": "CALIFORNIA, ENTERTAINMENT & PACIFIC RIM TRADE",
+        "id": "pacific-coast-herald",
+        "name": "Pacific Coast Herald",
+        "sub": "WEST COAST, ENTERTAINMENT & PACIFIC RIM TRADE",
         "sectionKickers": [
-          "COMPANY TOWN",
+          "STUDIO DESK",
           "PACIFIC RIM",
-          "CALIFORNIA",
+          "WEST COAST",
           "DESIGN"
         ],
         "kind": "broadsheet"
       },
       {
-        "id": "the-times-uk",
-        "name": "The Times",
-        "sub": "LONDON · ESTABLISHED 1785 · CITY & WORLD",
+        "id": "albion-standard",
+        "name": "The Albion Standard",
+        "sub": "MORNING EDITION · CITY, TRADE & WORLD",
         "sectionKickers": [
           "CITY & FINANCE",
           "LEADING ARTICLES",
@@ -909,8 +909,8 @@
         "kind": "broadsheet"
       },
       {
-        "id": "nikkei-asia",
-        "name": "Nikkei Asia",
+        "id": "east-asia-market-post",
+        "name": "East Asia Market Post",
         "sub": "ASIA SEMICONDUCTORS, SUPPLY CHAINS & MARKETS",
         "sectionKickers": [
           "TECH ASIA",
@@ -921,20 +921,20 @@
         "kind": "ft_pink"
       },
       {
-        "id": "barrons-weekly",
-        "name": "Barron's",
-        "sub": "THE DOW JONES BUSINESS AND FINANCIAL WEEKLY",
+        "id": "street-quarterly",
+        "name": "The Street Quarterly",
+        "sub": "EQUITIES, FUNDS & INDUSTRIAL WEEKLY",
         "sectionKickers": [
-          "UP & DOWN WALL STREET",
+          "EQUITY DESK",
           "TECH TRADER",
-          "STREETWISE",
+          "MARKETWISE",
           "FUNDS"
         ],
         "kind": "ft_pink"
       },
       {
-        "id": "the-atlantic",
-        "name": "The Atlantic",
+        "id": "harbor-monthly",
+        "name": "The Harbor Monthly",
         "sub": "IDEAS, TECHNOLOGY, BOOKS & MODERN LIFE",
         "sectionKickers": [
           "IDEAS",
@@ -945,21 +945,21 @@
         "kind": "culture"
       },
       {
-        "id": "reuters-dispatch",
-        "name": "Reuters Dispatch",
+        "id": "continental-wire",
+        "name": "Continental Wire Dispatch",
         "sub": "GLOBAL MARKETS, COMMODITIES & TECH WIRE",
         "sectionKickers": [
           "MARKETS WIRE",
-          "BREAKINGVIEWS",
+          "MARKET VIEWS",
           "ENERGY",
           "SEMICONDUCTORS"
         ],
         "kind": "wire"
       },
       {
-        "id": "ap-newswire",
-        "name": "AP Newswire",
-        "sub": "ASSOCIATED PRESS · CONTINUOUS GLOBAL BULLETIN",
+        "id": "global-press-wire",
+        "name": "Global Press Newswire",
+        "sub": "INTERNATIONAL TELEGRAPH · CONTINUOUS BULLETIN",
         "sectionKickers": [
           "NEWSWIRE",
           "SCI-TECH",
@@ -969,20 +969,20 @@
         "kind": "wire"
       },
       {
-        "id": "the-verge",
-        "name": "The Verge",
+        "id": "silicon-signal",
+        "name": "The Silicon Signal",
         "sub": "HARDWARE, CONSUMER TECH & CREATOR TOOLS",
         "sectionKickers": [
           "REVIEWS",
-          "DECODER",
+          "TEARDOWN",
           "AI & SILICON",
           "DESIGN"
         ],
         "kind": "tech"
       },
       {
-        "id": "new-scientist",
-        "name": "New Scientist",
+        "id": "horizon-sci-weekly",
+        "name": "Horizon Science Weekly",
         "sub": "SPACE, FUSION, ROBOTICS & EARTH SYSTEMS",
         "sectionKickers": [
           "SPACE",
@@ -993,8 +993,8 @@
         "kind": "science"
       },
       {
-        "id": "the-athletic",
-        "name": "The Athletic",
+        "id": "matchday-standard",
+        "name": "The Matchday Standard",
         "sub": "MATCHWEEK TACTICS, ANALYTICS & CHAMPIONSHIP DESK",
         "sectionKickers": [
           "MATCHDAY",
@@ -1005,8 +1005,8 @@
         "kind": "sports"
       },
       {
-        "id": "variety-daily",
-        "name": "Variety",
+        "id": "marquee-screen-daily",
+        "name": "Marquee & Screen Daily",
         "sub": "GLOBAL BOX OFFICE, FESTIVALS & STREAMING",
         "sectionKickers": [
           "BOX OFFICE",
@@ -1017,8 +1017,8 @@
         "kind": "culture"
       },
       {
-        "id": "chicago-tribune",
-        "name": "Chicago Tribune",
+        "id": "great-lakes-tribune",
+        "name": "Great Lakes Industrial Tribune",
         "sub": "MIDWEST INDUSTRY, ARCHITECTURE & RAIL",
         "sectionKickers": [
           "METRO",
@@ -1029,11 +1029,11 @@
         "kind": "broadsheet"
       },
       {
-        "id": "evening-standard",
-        "name": "Evening Standard",
-        "sub": "CITY FINAL · LONDON COMMUTER & TECH EDITION",
+        "id": "thames-evening-post",
+        "name": "The Thames Evening Post",
+        "sub": "CITY FINAL · COMMUTER & TECH EDITION",
         "sectionKickers": [
-          "CITY SPY",
+          "CITY DESK",
           "WEST END",
           "COMMUTER",
           "HEADLINES"
@@ -1066,29 +1066,29 @@
       }
     ],
     "paperNames": [
-      "The New York Times",
-      "Financial Times",
-      "The Guardian",
-      "The Wall Street Journal",
-      "The Washington Post",
-      "The Economist",
-      "Bloomberg Businessweek",
-      "WIRED",
-      "MIT Technology Review",
-      "Nature Briefing",
-      "Los Angeles Times",
-      "The Times",
-      "Nikkei Asia",
-      "Barron's",
-      "The Atlantic",
-      "Reuters Dispatch",
-      "AP Newswire",
-      "The Verge",
-      "New Scientist",
-      "The Athletic",
-      "Variety",
-      "Chicago Tribune",
-      "Evening Standard",
+      "The Metropolitan Chronicle",
+      "The Sovereign Ledger",
+      "The Civic Observer",
+      "The Exchange Gazette",
+      "The Capitol Morning Post",
+      "The Meridian Review",
+      "Continental Businessweekly",
+      "CIRCUITRY",
+      "Foundry Technology Review",
+      "Principia Science Briefing",
+      "Pacific Coast Herald",
+      "The Albion Standard",
+      "East Asia Market Post",
+      "The Street Quarterly",
+      "The Harbor Monthly",
+      "Continental Wire Dispatch",
+      "Global Press Newswire",
+      "The Silicon Signal",
+      "Horizon Science Weekly",
+      "The Matchday Standard",
+      "Marquee & Screen Daily",
+      "Great Lakes Industrial Tribune",
+      "The Thames Evening Post",
       "Metro Exchange Gazette",
       "Met Maritime & Sky Almanac"
     ],
@@ -1504,9 +1504,9 @@
   "hant": {
     "publications": [
       {
-        "id": "ctee-daily",
-        "name": "工商時報",
-        "sub": "COMMERCIAL TIMES · 產經與資本早報",
+        "id": "ind-comm-post",
+        "name": "工商觀察早報",
+        "sub": "INDUSTRIAL & COMMERCIAL POST · 產經與資本早報",
         "sectionKickers": [
           "半導體前線",
           "金融市場",
@@ -1516,9 +1516,9 @@
         "kind": "finance"
       },
       {
-        "id": "edn-daily",
-        "name": "經濟日報",
-        "sub": "ECONOMIC DAILY NEWS · 產業與投資專刊",
+        "id": "ap-econ-daily",
+        "name": "亞太經濟日報",
+        "sub": "ASIA-PACIFIC ECONOMIC DAILY · 產業與投資專刊",
         "sectionKickers": [
           "晶圓供應鏈",
           "證券行情",
@@ -1528,9 +1528,9 @@
         "kind": "finance"
       },
       {
-        "id": "hkej-fin",
-        "name": "信報財經新聞",
-        "sub": "HONG KONG ECONOMIC JOURNAL · 資本與評論",
+        "id": "harbour-fin-chronicle",
+        "name": "香江財經紀事報",
+        "sub": "HARBOUR FINANCIAL CHRONICLE · 資本與評論",
         "sectionKickers": [
           "港股直擊",
           "投資分析",
@@ -1540,9 +1540,9 @@
         "kind": "finance"
       },
       {
-        "id": "hket-biz",
-        "name": "香港經濟日報",
-        "sub": "HK ECONOMIC TIMES · 商業與數碼轉型",
+        "id": "harbour-biz-daily",
+        "name": "海港商界日報",
+        "sub": "HARBOUR BUSINESS DAILY · 商業與數碼轉型",
         "sectionKickers": [
           "商業管理",
           "數碼經濟",
@@ -1552,9 +1552,9 @@
         "kind": "business"
       },
       {
-        "id": "businesstoday-tw",
-        "name": "今周刊·產經版",
-        "sub": "BUSINESS TODAY · 投資與供應鏈觀察",
+        "id": "nextgen-ind-weekly",
+        "name": "新世代產經週刊",
+        "sub": "NEXTGEN INDUSTRY WEEKLY · 投資與供應鏈觀察",
         "sectionKickers": [
           "產業縱深",
           "竹科連線",
@@ -1564,9 +1564,9 @@
         "kind": "business"
       },
       {
-        "id": "cw-weekly",
-        "name": "天下雜誌",
-        "sub": "COMMONWEALTH MAGAZINE · 經濟與永續深度",
+        "id": "horizon-econ-review",
+        "name": "縱橫政經雙週報",
+        "sub": "HORIZON ECONOMIC REVIEW · 經濟與永續深度",
         "sectionKickers": [
           "封面故事",
           "企業策略",
@@ -1576,9 +1576,9 @@
         "kind": "weekly"
       },
       {
-        "id": "bw-taiwan",
-        "name": "商業周刊",
-        "sub": "BUSINESS WEEKLY · 全球商業與人物",
+        "id": "global-commerce-tc",
+        "name": "環球商業週刊",
+        "sub": "GLOBAL COMMERCE WEEKLY · 全球商業與人物",
         "sectionKickers": [
           "封面報導",
           "國際商情",
@@ -1588,9 +1588,9 @@
         "kind": "weekly"
       },
       {
-        "id": "gvm-biweekly",
-        "name": "遠見雙週刊",
-        "sub": "GLOBAL VIEWS · 產經趨勢與創新特輯",
+        "id": "foresight-biweekly",
+        "name": "前瞻產經雙週刊",
+        "sub": "FORESIGHT BIWEEKLY · 產經趨勢與創新特輯",
         "sectionKickers": [
           "特別企劃",
           "智慧製造",
@@ -1600,9 +1600,9 @@
         "kind": "weekly"
       },
       {
-        "id": "bnext-tech",
-        "name": "數位時代",
-        "sub": "BUSINESS NEXT · 科技、創業與未來商業",
+        "id": "digital-frontier-tc",
+        "name": "數碼新創月刊",
+        "sub": "DIGITAL FRONTIER · 科技、創業與未來商業",
         "sectionKickers": [
           "人工智慧",
           "開源生態",
@@ -1612,9 +1612,9 @@
         "kind": "tech"
       },
       {
-        "id": "technews-tw",
-        "name": "科技新報·硬體專刊",
-        "sub": "TECHNEWS · 半導體與硬體工程週報",
+        "id": "silicon-island-tech",
+        "name": "矽島科技·硬體專刊",
+        "sub": "SILICON ISLAND TECH · 半導體與硬體工程週報",
         "sectionKickers": [
           "先進製程",
           "伺服器架構",
@@ -1624,9 +1624,9 @@
         "kind": "tech"
       },
       {
-        "id": "ithome-tw",
-        "name": "iThome 電腦報",
-        "sub": "ITHOME WEEKLY · 企業資訊與系統架構",
+        "id": "ent-compute-weekly",
+        "name": "企業運算週報",
+        "sub": "ENTERPRISE COMPUTE WEEKLY · 企業資訊與系統架構",
         "sectionKickers": [
           "系統架構",
           "開發者工具",
@@ -1636,9 +1636,9 @@
         "kind": "tech"
       },
       {
-        "id": "unwire-hk",
-        "name": "Unwire 創科生活誌",
-        "sub": "UNWIRE TECH · 消費電子與極客評測",
+        "id": "geek-life-journal",
+        "name": "極客創科生活誌",
+        "sub": "GEEK LIFE JOURNAL · 消費電子與極客評測",
         "sectionKickers": [
           "硬體實測",
           "穿戴裝置",
@@ -1708,9 +1708,9 @@
         "kind": "evening"
       },
       {
-        "id": "oneday-culture",
-        "name": "小日子·藝文生活誌",
-        "sub": "SIMPLE LIFE & ARTS · 設計、書評與器物",
+        "id": "everyday-craft-culture",
+        "name": "日常器物·藝文生活誌",
+        "sub": "EVERYDAY CRAFT & ARTS · 設計、書評與器物",
         "sectionKickers": [
           "封面人物",
           "獨立出版",
@@ -1720,8 +1720,8 @@
         "kind": "culture"
       },
       {
-        "id": "mpweekly-arts",
-        "name": "明周文化特刊",
+        "id": "southwind-arts",
+        "name": "南風文化特刊",
         "sub": "CULTURE & CINEMA REVIEW · 影視與當代藝術",
         "sectionKickers": [
           "院線觀察",
@@ -1732,8 +1732,8 @@
         "kind": "culture"
       },
       {
-        "id": "sd-design",
-        "name": "設計採買誌",
+        "id": "zaowu-design",
+        "name": "造物設計誌",
         "sub": "DESIGN & TYPOGRAPHY · 視覺、空間與生活美學",
         "sectionKickers": [
           "工業設計",
@@ -1744,8 +1744,8 @@
         "kind": "culture"
       },
       {
-        "id": "sa-taiwan",
-        "name": "科學人·探索專刊",
+        "id": "nat-discovery-tc",
+        "name": "自然探索·科學專刊",
         "sub": "SCIENTIFIC FRONTIERS · 自然、天文與物理",
         "sectionKickers": [
           "深空探測",
@@ -1756,9 +1756,9 @@
         "kind": "science"
       },
       {
-        "id": "pansci-weekly",
-        "name": "泛科學週報",
-        "sub": "PANSCI REVIEW · 實驗室連線與科普新知",
+        "id": "sci-discovery-weekly",
+        "name": "新知科學週報",
+        "sub": "SCIENCE DISCOVERY WEEKLY · 實驗室連線與科普新知",
         "sectionKickers": [
           "論文速遞",
           "天文觀測",
@@ -1768,8 +1768,8 @@
         "kind": "science"
       },
       {
-        "id": "sportsv-weekly",
-        "name": "運動視界週報",
+        "id": "arena-vision-weekly",
+        "name": "賽場視界週報",
         "sub": "SPORTS VISION · 職業賽事與數據戰術板",
         "sectionKickers": [
           "焦點戰報",
@@ -1780,9 +1780,9 @@
         "kind": "sports"
       },
       {
-        "id": "sportsroad-hk",
-        "name": "體路競技專刊",
-        "sub": "SPORTSROAD · 田徑、羽球與國際賽事",
+        "id": "summit-athletic-hk",
+        "name": "巔峰競技專刊",
+        "sub": "ATHLETIC ARENA · 田徑、羽球與國際賽事",
         "sectionKickers": [
           "全場比分",
           "戰術復盤",
@@ -1792,8 +1792,8 @@
         "kind": "sports"
       },
       {
-        "id": "cnyes-wire",
-        "name": "鉅亨財訊快線",
+        "id": "global-fin-wire",
+        "name": "環球財訊電報",
         "sub": "MARKET WIRE · 全天候全球產經電報",
         "sectionKickers": [
           "電報直達",
@@ -1865,31 +1865,31 @@
       }
     ],
     "paperNames": [
-      "工商時報",
-      "經濟日報",
-      "信報財經新聞",
-      "香港經濟日報",
-      "今周刊·產經版",
-      "天下雜誌",
-      "商業周刊",
-      "遠見雙週刊",
-      "數位時代",
-      "科技新報·硬體專刊",
-      "iThome 電腦報",
-      "Unwire 創科生活誌",
+      "工商觀察早報",
+      "亞太經濟日報",
+      "香江財經紀事報",
+      "海港商界日報",
+      "新世代產經週刊",
+      "縱橫政經雙週報",
+      "環球商業週刊",
+      "前瞻產經雙週刊",
+      "數碼新創月刊",
+      "矽島科技·硬體專刊",
+      "企業運算週報",
+      "極客創科生活誌",
       "都會晨報",
       "台北都會快報",
       "港島生活報",
       "維港晚報",
       "淡水河晚刊",
-      "小日子·藝文生活誌",
-      "明周文化特刊",
-      "設計採買誌",
-      "科學人·探索專刊",
-      "泛科學週報",
-      "運動視界週報",
-      "體路競技專刊",
-      "鉅亨財訊快線",
+      "日常器物·藝文生活誌",
+      "南風文化特刊",
+      "造物設計誌",
+      "自然探索·科學專刊",
+      "新知科學週報",
+      "賽場視界週報",
+      "巔峰競技專刊",
+      "環球財訊電報",
       "環球產經快訊",
       "亞太航運工商報",
       "都會分類便民報",

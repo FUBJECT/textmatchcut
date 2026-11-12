@@ -119,7 +119,7 @@ const MAST_FAMILY = {
 const PAPER_KINDS = {
   zh: [
     { id: "metro", kicker: "城事聚焦", fonts: ["song", "noto-serif"], mast: "noto-sans", hue: [38, 48], sat: [10, 20], light: [92, 96], fmts: [0, 2, 3], layouts: ["headline", "columns", "photo", "pullquote"] },
-    { id: "finance", kicker: "市场观察", fonts: ["noto-serif", "song", "hei"], mast: "noto-serif", hue: [20, 32], sat: [24, 40], light: [89, 93], fmts: [5, 0, 1], layouts: ["table", "headline", "columns", "wire"] },
+    { id: "finance", kicker: "市场观察", fonts: ["noto-serif", "song", "hei"], mast: "noto-serif", hue: [28, 38], sat: [18, 30], light: [90, 94], fmts: [5, 0, 1], layouts: ["table", "headline", "columns", "wire"] },
     { id: "business", kicker: "产业纵深", fonts: ["noto-serif", "yahei", "song"], mast: "hei", hue: [36, 46], sat: [12, 22], light: [91, 95], fmts: [0, 1, 4], layouts: ["headline", "columns", "pullquote", "table"] },
     { id: "weekly", kicker: "封面报道", fonts: ["noto-serif", "kai", "song"], mast: "noto-serif", hue: [34, 44], sat: [10, 18], light: [92, 96], fmts: [1, 4, 7], layouts: ["pullquote", "headline", "columns", "photo"] },
     { id: "evening", kicker: "晚间博览", fonts: ["song", "kai", "noto-serif"], mast: "song", hue: [30, 42], sat: [14, 26], light: [90, 94], fmts: [0, 3, 4], layouts: ["photo", "columns", "headline"] },
@@ -133,7 +133,7 @@ const PAPER_KINDS = {
   ],
   hant: [
     { id: "metro", kicker: "都會焦點", fonts: ["ming", "noto-serif-tc"], mast: "noto-sans-tc", hue: [38, 48], sat: [10, 20], light: [92, 96], fmts: [0, 2, 3], layouts: ["headline", "columns", "photo", "pullquote"] },
-    { id: "finance", kicker: "市場觀察", fonts: ["noto-serif-tc", "ming", "jhenghei"], mast: "noto-serif-tc", hue: [20, 32], sat: [24, 40], light: [89, 93], fmts: [5, 0, 1], layouts: ["table", "headline", "columns", "wire"] },
+    { id: "finance", kicker: "市場觀察", fonts: ["noto-serif-tc", "ming", "jhenghei"], mast: "noto-serif-tc", hue: [28, 38], sat: [18, 30], light: [90, 94], fmts: [5, 0, 1], layouts: ["table", "headline", "columns", "wire"] },
     { id: "business", kicker: "產業縱深", fonts: ["noto-serif-tc", "jhenghei", "ming"], mast: "jhenghei", hue: [36, 46], sat: [12, 22], light: [91, 95], fmts: [0, 1, 4], layouts: ["headline", "columns", "pullquote", "table"] },
     { id: "weekly", kicker: "封面報導", fonts: ["noto-serif-tc", "kai-tc", "ming"], mast: "noto-serif-tc", hue: [34, 44], sat: [10, 18], light: [92, 96], fmts: [1, 4, 7], layouts: ["pullquote", "headline", "columns", "photo"] },
     { id: "evening", kicker: "晚間博覽", fonts: ["ming", "kai-tc", "noto-serif-tc"], mast: "ming", hue: [30, 42], sat: [14, 26], light: [90, 94], fmts: [0, 3, 4], layouts: ["photo", "columns", "headline"] },
@@ -147,7 +147,7 @@ const PAPER_KINDS = {
   ],
   en: [
     { id: "broadsheet", kicker: "NATIONAL DESK", fonts: ["playfair", "times", "baskerville"], mast: "playfair", hue: [38, 48], sat: [10, 20], light: [92, 96], fmts: [0, 4], layouts: ["headline", "columns", "photo", "pullquote"] },
-    { id: "ft_pink", kicker: "COMPANIES & MARKETS", fonts: ["times", "baskerville", "newsreader"], mast: "playfair", hue: [19, 29], sat: [34, 50], light: [88, 92], fmts: [5, 0], layouts: ["table", "columns", "headline", "pullquote"] },
+    { id: "ft_pink", kicker: "COMPANIES & MARKETS", fonts: ["times", "baskerville", "newsreader"], mast: "playfair", hue: [28, 38], sat: [18, 30], light: [90, 94], fmts: [5, 0], layouts: ["table", "columns", "headline", "pullquote"] },
     { id: "guardian", kicker: "THE LONG READ", fonts: ["playfair", "georgia", "newsreader"], mast: "inter", hue: [40, 50], sat: [8, 16], light: [93, 97], fmts: [2, 6], layouts: ["headline", "pullquote", "photo", "columns"] },
     { id: "economist", kicker: "BRIEFING", fonts: ["baskerville", "newsreader", "georgia"], mast: "inter", hue: [38, 46], sat: [8, 16], light: [93, 97], fmts: [1, 7], layouts: ["pullquote", "columns", "headline", "table"] },
     { id: "wsj", kicker: "WHAT'S NEWS", fonts: ["times", "baskerville", "georgia"], mast: "times", hue: [36, 45], sat: [10, 18], light: [92, 96], fmts: [0, 4, 5], layouts: ["columns", "wire", "table", "headline"] },
@@ -352,12 +352,38 @@ function injectKeyword(sentence, keyword, r, locale) {
   return glue(s.slice(0, mid), s.slice(mid));
 }
 
+// Largest k in [1, n] with fits(k); k = 1 is always taken. Gallops from `hint` (the previous line's length), then
+// bisects, so a line costs a few measures instead of one per token.
+// shortcut: assumes a longer prefix is never narrower than a shorter one (holds for the fonts here); upgrade if a font kerns narrower.
+function fitCount(n, hint, fits) {
+  let lo = 1, hi = n + 1, q = Math.min(n, Math.max(2, hint)), up = 1, down = 1;
+  while (hi - lo > 1) {
+    if (fits(q)) lo = q; else hi = q;
+    if (hi - lo <= 1) break;
+    if (hi > n) q = Math.min(n, lo + up), up *= 2;
+    else if (lo === 1) q = Math.max(2, hi - down), down *= 2;
+    else q = (lo + hi) >> 1;
+  }
+  return lo;
+}
+
+// A word's width on its own, per context and font: the same words recur across the paragraphs of one bake.
+const wordWidths = new WeakMap();
+function wordWidth(ctx, w) {
+  let byFont = wordWidths.get(ctx);
+  if (!byFont) wordWidths.set(ctx, byFont = new Map());
+  const key = `${ctx.font}|${w}`;
+  let width = byFont.get(key);
+  if (width === undefined) byFont.set(key, width = ctx.measureText(w).width);
+  return width;
+}
+
 function wrapEn(ctx, text, maxW) {
   const out = [];
   const words = String(text).split(" ");
   let line = "";
   const take = (w) => {
-    if (ctx.measureText(w).width <= maxW) {
+    if (wordWidth(ctx, w) <= maxW) {
       const t = line ? `${line} ${w}` : w;
       if (line && ctx.measureText(t).width > maxW) {
         out.push(line);
@@ -394,17 +420,13 @@ function wrap(ctx, text, maxW, keyword, locale) {
     tokens.push(tok);
   }
   const out = [];
-  let line = "";
-  for (const tok of tokens) {
-    const t = line + tok;
-    if (line && ctx.measureText(t).width > maxW) {
-      out.push(line);
-      line = tok;
-    } else {
-      line = t;
-    }
+  let hint = 16;
+  for (let s = 0; s < tokens.length;) {
+    const k = fitCount(tokens.length - s, hint, k => !(ctx.measureText(tokens.slice(s, s + k).join("")).width > maxW));
+    out.push(tokens.slice(s, s + k).join(""));
+    s += k;
+    hint = k;
   }
-  if (line) out.push(line);
   for (let i = 1; i < out.length; i++) {
     while (out[i] && PUNCT_NO_START.includes(out[i][0])) {
       out[i - 1] += out[i][0];
@@ -499,7 +521,9 @@ function createMeasureCtx() {
   };
 }
 
-function buildDescs(n, keyword, W, H, zoomLevel, copy, locale, fontId, extras) {
+// One layout descriptor per cut index, built on demand: each depends only on its index, so a cut can be
+// baked as soon as it is built instead of after all of them.
+function descBuilder(keyword, W, H, zoomLevel, copy, locale, fontId, extras) {
   const loc = normalizeLocale(locale);
   const isHant = loc === "hant";
   const mCtx = createMeasureCtx();
@@ -572,7 +596,7 @@ function buildDescs(n, keyword, W, H, zoomLevel, copy, locale, fontId, extras) {
     ? copy.bylines
     : [loc === "en" ? "By Staff Correspondent" : isHant ? "本報記者 綜合報導" : "本报记者 综合报道"];
 
-  return Array.from({ length: n }, (_, i) => {
+  return i => {
     const seed = (i * 7919 + Math.imul(kwHash, 31) + seedW + Math.imul(seedOffset, 104729)) >>> 0;
     const r = prng(seed);
 
@@ -608,7 +632,9 @@ function buildDescs(n, keyword, W, H, zoomLevel, copy, locale, fontId, extras) {
     const hlSize = (layout === "headline" || layout === "photo")
       ? Math.round(hlSizeBase * 0.56)
       : hlSizeBase;
-    const bodySize = Math.round(hlSize * rr(r, nCh <= 3 ? 0.48 : 0.38, nCh <= 3 ? 0.58 : 0.44));
+    const rawBodySize = Math.round(hlSize * rr(r, nCh <= 3 ? 0.48 : 0.38, nCh <= 3 ? 0.58 : 0.44));
+    const maxBodySize = Math.max(22, Math.round(colW * (loc === "en" ? 0.074 : 0.086)));
+    const bodySize = Math.min(rawBodySize, maxBodySize);
     const hlLineH = Math.round(hlSize * 1.22);
     const bodyLineH = Math.round(bodySize * 1.66);
     const hlSpec = cssFont(hlWeight, hlSize, entry.family, italic);
@@ -620,19 +646,27 @@ function buildDescs(n, keyword, W, H, zoomLevel, copy, locale, fontId, extras) {
     const mhSize = Math.max(12, Math.round(H * 0.0135));
     const bylineSpec = cssFont(400, Math.max(11, Math.round(mhSize * 0.94)), mastFamily, loc === "en");
 
-    const bgFillW = W - Math.round(W * 0.04);
+    const bgFillW = colW;
+    const sideColW = Math.max(
+      Math.round(bodySize * (loc === "en" ? 5.6 : 4.2)),
+      Math.round((colW || 900) * 0.34)
+    );
     mCtx.font = bodySpec;
     const bgPool = safeSents.length >= 16
       ? shuffle(r, safeSents).slice(0, 24)
       : shuffle(r, [...safeSents, ...safeSents, ...safeSents, ...safeSents]);
-    const bgLines = wrap(mCtx, bgPool.join(joinBody), bgFillW, kToken, loc);
+    const bgJoined = bgPool.join(joinBody);
+    const bgLines = wrap(mCtx, bgJoined, bgFillW, kToken, loc);
+    const sideLines = wrap(mCtx, bgJoined, sideColW, kToken, loc);
 
     const hasDeck = fmt === 0 || fmt === 1 || fmt === 5 || fmt === 7;
     const topInk = (layout === "headline" || layout === "photo")
       ? Math.round(hlSize * 1.08)
-      : (layout === "classified" || layout === "sports" || layout === "weather" || layout === "wire")
-        ? Math.round(hlLineH * 0.88)
-        : Math.round(mhSize * 2.2);
+      : (layout === "columns" || layout === "pullquote" || layout === "body")
+        ? Math.round(hlSize * 0.68)
+        : (layout === "classified" || layout === "sports" || layout === "weather" || layout === "wire")
+          ? Math.round(hlLineH * 0.88)
+          : Math.max(Math.round(mhSize * 2.2), Math.round(bodyLineH * 0.95));
     const kickerRelY = -topInk - Math.round(mhSize * 1.85);
     let kwX, kwW, kwH, kwRelY, met;
     let kwLineH = bodyLineH;
@@ -702,8 +736,9 @@ function buildDescs(n, keyword, W, H, zoomLevel, copy, locale, fontId, extras) {
       const afterHead = hasDeck ? deckRelY + deckLines.length * deckLineH : headEnd;
       const bylineRelY = afterHead + Math.round(hlSize * (hasDeck ? 0.28 : 0.40));
       const ruleRelY = bylineRelY + Math.round(mhSize * 2.3);
-      const nCols = r() < 0.35 ? 3 : 2;
       const gap = Math.round(colW * 0.03);
+      const minColW = bodySize * (loc === "en" ? 5.2 : 4.2);
+      const nCols = (r() < 0.35 && Math.round((colW - gap * 2) / 3) >= minColW) ? 3 : 2;
       const inner = Math.round((colW - gap * (nCols - 1)) / nCols);
       const bodyRelY = ruleRelY + Math.round(bodySize * 1.4);
       mCtx.font = bodySpec;
@@ -725,8 +760,10 @@ function buildDescs(n, keyword, W, H, zoomLevel, copy, locale, fontId, extras) {
       const headEnd = hlLines.length * subHlLineH;
       const bylineRelY = headEnd + Math.round(subHlSize * 0.3);
       const ruleRelY = bylineRelY + Math.round(mhSize * 2.1);
-      const nCols = (kind.id === "wsj" || r() < 0.45) ? 3 : 2;
       const gap = Math.round(colW * 0.028);
+      const minColW = Math.max(bodySize * (loc === "en" ? 5.2 : 4.2), (nCh + 1.5) * bodySize);
+      const want3 = kind.id === "wsj" || r() < 0.45;
+      const nCols = (want3 && Math.round((colW - gap * 2) / 3) >= minColW) ? 3 : 2;
       const inner = Math.round((colW - gap * (nCols - 1)) / nCols);
       const bodyRelY = ruleRelY + Math.round(bodySize * 1.35);
       const sents = shuffle(r, safeSents).slice(0, 14);
@@ -802,7 +839,10 @@ function buildDescs(n, keyword, W, H, zoomLevel, copy, locale, fontId, extras) {
         ? String(pick(r, copy.customHl)).split(keyword).join(kToken)
         : injectKeyword(briefsPool[hitItem], kToken, r, loc);
 
-      const wireGutter = Math.round(colW * 0.16);
+      const wireGutter = Math.min(
+        Math.round(colW * 0.28),
+        Math.max(Math.round(colW * 0.16), Math.round(bodySize * (kind.id === "digest" ? 3.1 : 2.35)))
+      );
       const wireTextW = colW - wireGutter;
       mCtx.font = bodySpec;
       const wireRows = [];
@@ -905,11 +945,44 @@ function buildDescs(n, keyword, W, H, zoomLevel, copy, locale, fontId, extras) {
       const rows = tickers.slice(0, 9).map(row => row.slice());
       const kwRow = ri(r, 1, rows.length - 2);
       rows[kwRow][0] = kToken;
-      const rowH = Math.round(bodyLineH * 1.18);
-      const tableRelY = Math.round(hlSize * 0.2);
       const cellPadX = Math.max(8, Math.round(colW * 0.022));
+      const measureTableCols = (rowSpec, headSpec) => {
+        mCtx.font = headSpec;
+        let maxW0 = mCtx.measureText(String(heads[0] || "")).width;
+        let maxW1 = mCtx.measureText(String(heads[1] || "")).width;
+        let maxW2 = mCtx.measureText(String(heads[2] || "")).width;
+        mCtx.font = rowSpec;
+        rows.forEach(row => {
+          maxW0 = Math.max(maxW0, mCtx.measureText(String(row[0] || "")).width);
+          maxW1 = Math.max(maxW1, mCtx.measureText(String(row[1] || "")).width);
+          maxW2 = Math.max(maxW2, mCtx.measureText(String(row[2] || "")).width + 14);
+        });
+        return { maxW0, maxW1, maxW2 };
+      };
+      let tableSize = bodySize;
+      let tableSpec = bodySpec;
+      let tableHeadSpec = `700 ${Math.round(tableSize * 0.88)}px ${mastFamily}`;
+      let { maxW0, maxW1, maxW2 } = measureTableCols(tableSpec, tableHeadSpec);
+      const minGap = Math.max(18, Math.round(tableSize * 0.65));
+      const needW = cellPadX * 2 + maxW0 + maxW1 + maxW2 + minGap * 2;
+      if (needW > colW * 0.92) {
+        tableSize = Math.max(16, Math.floor(bodySize * (colW * 0.90) / needW));
+        tableSpec = cssFont(400, tableSize, entry.family, false);
+        tableHeadSpec = `700 ${Math.round(tableSize * 0.88)}px ${mastFamily}`;
+        ({ maxW0, maxW1, maxW2 } = measureTableCols(tableSpec, tableHeadSpec));
+      }
+      const gap1 = Math.max(14, Math.round(tableSize * 0.55));
+      const gap2 = Math.max(16, Math.round(tableSize * 0.65));
+      const chgRightX = colX + colW - cellPadX;
+      const maxLastRightX = chgRightX - Math.ceil(maxW2) - gap2;
+      const minLastRightX = colX + cellPadX + Math.ceil(maxW0) + gap1 + Math.ceil(maxW1);
+      const lastRightX = minLastRightX <= maxLastRightX
+        ? Math.min(maxLastRightX, Math.max(minLastRightX, colX + Math.round(colW * 0.68)))
+        : Math.round((minLastRightX + maxLastRightX) / 2);
+      const rowH = Math.round(Math.max(tableSize * 1.66, bodyLineH * (tableSize / Math.max(1, bodySize))) * 1.18);
+      const tableRelY = Math.round(hlSize * 0.2);
       kwX = colX + cellPadX;
-      const found = measureKeyword(mCtx, bodySpec, kToken);
+      const found = measureKeyword(mCtx, tableSpec, kToken);
       kwW = found.w;
       kwH = found.h;
       met = found;
@@ -917,6 +990,7 @@ function buildDescs(n, keyword, W, H, zoomLevel, copy, locale, fontId, extras) {
       kwLineH = rowH;
       desc = {
         layout, tableHeads: heads, tableRows: rows, tableRelY, rowH, cellPadX,
+        tableSize, tableSpec, tableHeadSpec, lastRightX,
         kicker, kickerRelY, contentBottomRelY: tableRelY + (rows.length + 1) * rowH,
       };
     } else if (layout === "sports") {
@@ -931,7 +1005,8 @@ function buildDescs(n, keyword, W, H, zoomLevel, copy, locale, fontId, extras) {
       mCtx.font = hlSpec;
       const longest = games.reduce((w, g) => Math.max(w, mCtx.measureText(g).width), 1);
       const fit = Math.min(1, (colW - innerPad * 2) / longest);
-      const scoreSize = Math.max(bodySize, Math.round(hlSize * 0.68 * fit));
+      const maxFitSize = Math.max(18, Math.floor(hlSize * fit * 0.96));
+      const scoreSize = Math.min(maxFitSize, Math.max(bodySize, Math.round(hlSize * 0.68 * fit)));
       const scoreSpec = cssFont(hlWeight, scoreSize, entry.family, false);
       const boxH = Math.round(scoreSize * 1.56);
       const found = measureKeyword(mCtx, scoreSpec, kToken);
@@ -951,18 +1026,23 @@ function buildDescs(n, keyword, W, H, zoomLevel, copy, locale, fontId, extras) {
       const rows = ((copy && copy.weather && copy.weather.length) ? shuffle(r, copy.weather) : []).slice(0, 8);
       const kwRow = `Advisory · ${kToken} Corridor  58 / 72 F  Clear`;
       rows.splice(ri(r, 1, Math.min(4, rows.length || 1)), 0, kwRow);
-      const rowH = Math.round(bodyLineH * 1.26);
       const weatherPad = Math.max(6, Math.round(colW * 0.018));
-      const found = measureKeyword(mCtx, bodySpec, kToken);
+      mCtx.font = bodySpec;
+      const longestW = rows.reduce((w, g) => Math.max(w, mCtx.measureText(g).width), 1);
+      const fitW = Math.min(1, (colW - weatherPad * 2) / longestW);
+      const weatherSize = Math.max(16, Math.floor(bodySize * fitW));
+      const weatherSpec = weatherSize === bodySize ? bodySpec : cssFont(400, weatherSize, entry.family, false);
+      const rowH = Math.round(bodyLineH * 1.26);
+      const found = measureKeyword(mCtx, weatherSpec, kToken);
       kwW = found.w;
       kwH = found.h;
       met = found;
       const hit = Math.max(0, rows.findIndex(g => g.includes(kToken)));
-      kwX = colX + weatherPad + linePrefixWidth(mCtx, bodySpec, rows[hit] || kwRow, kToken);
+      kwX = colX + weatherPad + linePrefixWidth(mCtx, weatherSpec, rows[hit] || kwRow, kToken);
       kwRelY = (hit + 0.74) * rowH;
       kwLineH = rowH;
       desc = {
-        layout: "weather", weatherRows: rows, rowH, weatherPad,
+        layout: "weather", weatherRows: rows, rowH, weatherPad, weatherSpec,
         kicker, kickerRelY, contentBottomRelY: rows.length * rowH,
       };
     } else {
@@ -1042,6 +1122,7 @@ function buildDescs(n, keyword, W, H, zoomLevel, copy, locale, fontId, extras) {
     return {
       ...desc,
       locale: loc, kindId: kind.id, nCh, colW, colX, bodySpec, bodySize, bodyLineH, bgLines,
+      sideColW, sideLines,
       mhSize, mastFamily, bylineSpec, offsetY, xShift, zoomScale, hlRect, hlBoxH: hlRect.h,
       hlSize: desc.hlSize || hlSize, kwX, kwW, kwH,
       focalCx: W, focalCy: H, focalR, fmt,
@@ -1053,12 +1134,17 @@ function buildDescs(n, keyword, W, H, zoomLevel, copy, locale, fontId, extras) {
       grainSeed: Math.floor(r() * 1e9),
       hlHex, hlFill, hlStyle,
     };
-  });
+  };
+}
+
+function buildDescs(n, ...args) {
+  const build = descBuilder(...args);
+  return Array.from({ length: n }, (_, i) => build(i));
 }
 
 function drawHighlight(ctx, d) {
   const r = d.hlRect;
-  if (!r) return;
+  if (!r || d.hlStyle === "none") return;
   const hex = d.hlHex || "#ffe72e";
   if (d.hlStyle === "box") {
     ctx.fillStyle = hexToRgba(hex, 0.82);
@@ -1176,35 +1262,43 @@ function drawMasthead(ctx, d, W, y, mhRelY, dlRelY, topRuleRelY, kickerY) {
   const metaLine = d.folio ? `${d.dateline}   ·   ${d.folio}` : d.dateline;
 
   if (fmt === 1) {
-    // Economist / Caixin red top-accent bar + crisp left nameplate
-    ctx.fillStyle = "#c41e24";
-    ctx.fillRect(colX, y(mhRelY - mhSize * 2.1), colW, Math.max(4, Math.round(mhSize * 0.36)));
-    const badgeSize = Math.round(mhSize * 1.28);
+    // Editorial review masthead: twin top rule + left accent mark + ink nameplate
+    ctx.fillStyle = "#7a2e22";
+    ctx.fillRect(colX, y(mhRelY - mhSize * 2.05), colW, Math.max(3, Math.round(mhSize * 0.24)));
+    ctx.fillStyle = "#1a1816";
+    ctx.fillRect(colX, y(mhRelY - mhSize * 1.65), colW, 1);
+    const badgeSize = Math.round(mhSize * 1.34);
     ctx.font = `700 ${badgeSize}px ${mast}`;
+    const markW = Math.max(8, Math.round(mhSize * 0.48));
     const nw = ctx.measureText(d.paperName).width;
-    ctx.fillStyle = "#c41e24";
-    ctx.fillRect(colX, y(mhRelY) - badgeSize * 0.92, nw + 18, badgeSize * 1.24);
-    ctx.fillStyle = "#fbf8f1";
-    ctx.fillText(d.paperName, colX + 9, y(mhRelY));
+    ctx.fillStyle = "#7a2e22";
+    ctx.fillRect(colX, y(mhRelY) - Math.round(badgeSize * 0.78), markW, Math.round(badgeSize * 0.82));
+    ctx.fillStyle = "#161412";
+    ctx.fillText(d.paperName, colX + markW + 10, y(mhRelY));
     ctx.font = `400 ${Math.round(mhSize * 0.80)}px ${mast}`;
     ctx.fillStyle = "#5a554c";
     const mw = ctx.measureText(metaLine).width;
-    ctx.fillText(metaLine, colX + colW - mw, y(mhRelY));
+    if (markW + 10 + nw + 18 + mw <= colW) {
+      ctx.fillText(metaLine, colX + colW - mw, y(mhRelY));
+    } else {
+      ctx.fillText(metaLine, colX, y(dlRelY));
+    }
     ctx.strokeStyle = "#1a1816";
-    ctx.lineWidth = 1;
+    ctx.lineWidth = 1.2;
     ctx.beginPath(); ctx.moveTo(colX, y(topRuleRelY)); ctx.lineTo(colX + colW, y(topRuleRelY)); ctx.stroke();
   } else if (fmt === 2) {
-    // Guardian / Paper deep-navy header band
-    const bandH = Math.round(mhSize * 2.6);
-    const bandTop = y(mhRelY) - Math.round(mhSize * 1.65);
-    ctx.fillStyle = "#0d2542";
+    // Civic chronicle framed header band (warm stone tint + ink frame)
+    const bandH = Math.round(mhSize * 2.45);
+    const bandTop = y(mhRelY) - Math.round(mhSize * 1.58);
+    ctx.fillStyle = "#eae2d3";
     ctx.fillRect(colX, bandTop, colW, bandH);
-    ctx.fillStyle = "#e0b84c";
-    ctx.fillRect(colX, bandTop + bandH - 3, colW, 3);
-    const nameSize = Math.round(mhSize * 1.42);
+    ctx.strokeStyle = "#1c1916";
+    ctx.lineWidth = 1.6;
+    ctx.strokeRect(colX, bandTop, colW, bandH);
+    const nameSize = Math.round(mhSize * 1.38);
     ctx.font = `700 ${nameSize}px ${mast}`;
-    ctx.fillStyle = "#f6f2e9";
-    ctx.fillText(d.paperName, colX + 12, y(mhRelY));
+    ctx.fillStyle = "#161412";
+    ctx.fillText(d.paperName, colX + 14, y(mhRelY));
     ctx.font = `400 ${Math.round(mhSize * 0.78)}px ${mast}`;
     ctx.fillStyle = "#5c564d";
     ctx.fillText(metaLine, colX, y(topRuleRelY - 4));
@@ -1240,26 +1334,30 @@ function drawMasthead(ctx, d, W, y, mhRelY, dlRelY, topRuleRelY, kickerY) {
     ctx.lineWidth = 1.4;
     ctx.beginPath(); ctx.moveTo(colX, y(topRuleRelY)); ctx.lineTo(colX + colW, y(topRuleRelY)); ctx.stroke();
   } else if (fmt === 5) {
-    // Financial Times / CBN classic serif masthead + double market rule
-    const nameSize = Math.round(mhSize * 1.56);
+    // Financial ledger split masthead: top rule + left serif title + right folio/dateline
+    ctx.strokeStyle = "#2b221e";
+    ctx.lineWidth = 1.4;
+    ctx.beginPath(); ctx.moveTo(colX, y(mhRelY - mhSize * 1.85)); ctx.lineTo(colX + colW, y(mhRelY - mhSize * 1.85)); ctx.stroke();
+    const nameSize = Math.round(mhSize * 1.46);
     ctx.font = `700 ${nameSize}px ${mast}`;
-    ctx.fillStyle = "#181512";
     const nw = ctx.measureText(d.paperName).width;
-    ctx.fillText(d.paperName, Math.round(centerX - nw / 2), y(mhRelY));
+    ctx.fillStyle = "#181512";
+    ctx.fillText(d.paperName, colX, y(mhRelY));
     if (d.paperSub) {
       ctx.font = `400 ${Math.round(mhSize * 0.72)}px ${mast}`;
       ctx.fillStyle = "#6e5d53";
       const sw = ctx.measureText(d.paperSub).width;
-      ctx.fillText(d.paperSub, Math.round(centerX - sw / 2), y(mhRelY - nameSize * 0.98));
+      if (nw + 18 + sw <= colW) {
+        ctx.fillText(d.paperSub, colX + colW - sw, y(mhRelY));
+      }
     }
     ctx.font = `400 ${Math.round(mhSize * 0.80)}px ${mast}`;
     ctx.fillStyle = "#544840";
-    const mw = ctx.measureText(metaLine).width;
-    ctx.fillText(metaLine, Math.round(centerX - mw / 2), y(dlRelY));
+    ctx.fillText(metaLine, colX, y(dlRelY));
     ctx.strokeStyle = "#2b221e";
-    ctx.lineWidth = 1.8;
+    ctx.lineWidth = 0.8;
     ctx.beginPath(); ctx.moveTo(colX, y(topRuleRelY)); ctx.lineTo(colX + colW, y(topRuleRelY)); ctx.stroke();
-    ctx.lineWidth = 0.7;
+    ctx.lineWidth = 1.8;
     ctx.beginPath(); ctx.moveTo(colX, y(topRuleRelY + 4)); ctx.lineTo(colX + colW, y(topRuleRelY + 4)); ctx.stroke();
   } else if (fmt === 6) {
     // Modern tech / wire dispatch header with left vertical bar
@@ -1282,14 +1380,19 @@ function drawMasthead(ctx, d, W, y, mhRelY, dlRelY, topRuleRelY, kickerY) {
     ctx.beginPath(); ctx.moveTo(colX, y(mhRelY - mhSize * 1.65)); ctx.lineTo(colX + colW, y(mhRelY - mhSize * 1.65)); ctx.stroke();
     const nameSize = Math.round(mhSize * 1.38);
     ctx.font = `700 ${nameSize}px ${mast}`;
+    const nw = ctx.measureText(d.paperName).width;
     ctx.fillStyle = "#161412";
     ctx.fillText(d.paperName, colX, y(mhRelY));
     ctx.font = `400 ${Math.round(mhSize * 0.78)}px ${mast}`;
     ctx.fillStyle = "#5f5950";
     const mw = ctx.measureText(d.dateline).width;
-    ctx.fillText(d.dateline, colX + colW - mw, y(mhRelY));
+    if (nw + 18 + mw <= colW) {
+      ctx.fillText(d.dateline, colX + colW - mw, y(mhRelY));
+    }
     if (d.paperSub) {
       ctx.fillText(d.paperSub, colX, y(dlRelY));
+    } else if (nw + 18 + mw > colW) {
+      ctx.fillText(d.dateline, colX, y(dlRelY));
     }
     ctx.lineWidth = 0.8;
     ctx.beginPath(); ctx.moveTo(colX, y(topRuleRelY)); ctx.lineTo(colX + colW, y(topRuleRelY)); ctx.stroke();
@@ -1430,10 +1533,12 @@ function renderCut(ctx, d, W, H, viewOpts) {
     }
   }
 
+  // k is 1 at export size. Below 1 the same layout (laid out for W x H) is rasterized smaller, for the preview.
+  const k = hasView ? outW / (W / 2) : 1;
   if (hasView) {
     ctx.translate(outW / 2, outH / 2);
-    ctx.scale(zoom, zoom);
-    ctx.translate(-outW, -outH);
+    ctx.scale(zoom * k, zoom * k);
+    ctx.translate(-W / 2, -H / 2);
   }
   ctx.translate(xShift, 0);
   ctx.textBaseline = "alphabetic";
@@ -1454,13 +1559,15 @@ function renderCut(ctx, d, W, H, viewOpts) {
     const rows = d.tableRows || [];
     const rowH = d.rowH;
     const pad = d.cellPadX || 8;
-    const lastRightX = colX + Math.round(colW * 0.71);
+    const tSize = d.tableSize || d.bodySize;
+    const tSpec = d.tableSpec || d.bodySpec;
+    const lastRightX = d.lastRightX || (colX + Math.round(colW * 0.68));
     const chgRightX = colX + colW - pad;
 
     ctx.fillStyle = "#181614";
     ctx.fillRect(colX, y(d.tableRelY) - rowH * 0.74, colW, rowH);
     ctx.fillStyle = "#f5f0e6";
-    ctx.font = `700 ${Math.round(d.bodySize * 0.88)}px ${mast}`;
+    ctx.font = d.tableHeadSpec || `700 ${Math.round(tSize * 0.88)}px ${mast}`;
     if (heads[0]) ctx.fillText(heads[0], colX + pad, y(d.tableRelY));
     if (heads[1]) {
       const w1 = ctx.measureText(heads[1]).width;
@@ -1487,7 +1594,7 @@ function renderCut(ctx, d, W, H, viewOpts) {
 
     drawHighlight(ctx, d);
 
-    ctx.font = d.bodySpec;
+    ctx.font = tSpec;
     rows.forEach((row, riIdx) => {
       const ry = d.tableRelY + (riIdx + 1) * rowH;
       ctx.fillStyle = "#181614";
@@ -1531,7 +1638,7 @@ function renderCut(ctx, d, W, H, viewOpts) {
   } else if (d.layout === "weather") {
     drawHighlight(ctx, d);
     const wPad = d.weatherPad || 8;
-    ctx.font = d.bodySpec;
+    ctx.font = d.weatherSpec || d.bodySpec;
     (d.weatherRows || []).forEach((g, i) => {
       const ry = (i + 0.74) * d.rowH;
       if (i % 2 === 0) {
@@ -1562,7 +1669,14 @@ function renderCut(ctx, d, W, H, viewOpts) {
         ctx.stroke();
       }
       if (row.tag) {
-        ctx.font = `700 ${Math.max(11, Math.round(d.bodySize * 0.80))}px ${mast}`;
+        let tagPx = Math.max(11, Math.round(d.bodySize * 0.74));
+        ctx.font = `700 ${tagPx}px ${mast}`;
+        const maxTagW = Math.max(24, d.wireGutter * 0.76);
+        const tw = ctx.measureText(row.tag).width;
+        if (tw > maxTagW) {
+          tagPx = Math.max(10, Math.floor(tagPx * maxTagW / tw));
+          ctx.font = `700 ${tagPx}px ${mast}`;
+        }
         ctx.fillStyle = "#8f1d1d";
         ctx.fillText(row.tag, colX, y(row.relY));
       }
@@ -1645,10 +1759,10 @@ function renderCut(ctx, d, W, H, viewOpts) {
 
   if (d.bgLines && d.bgLines.length && d.bodyLineH > 0) {
     const bgLen = d.bgLines.length;
-    const vTop = hasView ? Math.floor(outH - outH / (2 * zoom) - 48) : 0;
-    const vBot = hasView ? Math.ceil(outH + outH / (2 * zoom) + 48) : H;
-    const vLeft = (hasView ? Math.floor(outW - outW / (2 * zoom) - 48) : 0) - xShift;
-    const vRight = (hasView ? Math.ceil(outW + outW / (2 * zoom) + 48) : W) - xShift;
+    const vTop = hasView ? Math.floor(H / 2 - H / (4 * zoom) - 48) : 0;
+    const vBot = hasView ? Math.ceil(H / 2 + H / (4 * zoom) + 48) : H;
+    const vLeft = (hasView ? Math.floor(W / 2 - W / (4 * zoom) - 48) : 0) - xShift;
+    const vRight = (hasView ? Math.ceil(W / 2 + W / (4 * zoom) + 48) : W) - xShift;
 
     ctx.font = d.bodySpec;
     ctx.fillStyle = "#22201c";
@@ -1670,8 +1784,11 @@ function renderCut(ctx, d, W, H, viewOpts) {
     }
 
     const sideGap = Math.max(12, Math.round(d.bodySize * 1.35));
-    const sideColW = Math.max(80, Math.round((colW || 900) * 0.34));
-    const sideSubSpec = `700 ${Math.round(d.bodySize * 1.06)}px ${mast}`;
+    const sideColW = d.sideColW || Math.max(80, Math.round((colW || 900) * 0.34));
+    const sidePool = (d.sideLines && d.sideLines.length) ? d.sideLines : d.bgLines;
+    const sideLen = sidePool.length;
+    const sideClipSlack = Math.max(4, Math.floor(sideGap * 0.42));
+    const sideSubSpec = d.bodySpec ? d.bodySpec.replace(/^400\b/, "700") : `700 ${d.bodySize}px ${mast}`;
     const startRow = Math.min(0, Math.floor((vTop - d.bodyLineH * 0.9) / d.bodyLineH));
     const drawSideCol = (sx, ruleX, seedIdx) => {
       ctx.strokeStyle = "#c6bfb2";
@@ -1683,14 +1800,14 @@ function renderCut(ctx, d, W, H, viewOpts) {
 
       ctx.save();
       ctx.beginPath();
-      ctx.rect(sx, vTop, sideColW, Math.max(1, vBot - vTop));
+      ctx.rect(sx - 2, vTop, sideColW + sideClipSlack + 2, Math.max(1, vBot - vTop));
       ctx.clip();
       for (let row = startRow; ; row++) {
         const ly = d.bodyLineH * 0.9 + row * d.bodyLineH;
         if (ly > vBot + d.bodyLineH) break;
         if (ly < vTop - d.bodyLineH) continue;
-        const lineIdx = (((seedIdx * 19 + row) % bgLen) + bgLen) % bgLen;
-        const lineText = d.bgLines[lineIdx];
+        const lineIdx = (((seedIdx * 19 + row) % sideLen) + sideLen) % sideLen;
+        const lineText = sidePool[lineIdx];
         const mod14 = (((row + seedIdx * 5) % 14) + 14) % 14;
         if (mod14 === 3) {
           ctx.strokeStyle = "rgba(22,20,18,0.18)";
@@ -1773,7 +1890,8 @@ function ensureBlurPool(bW, bH, pW, pH) {
   }
 }
 
-function lensBlur(dst, src, cx, cy, R, W, H, blurFactor, innerPlateauR) {
+// scale shrinks the fixed pixel constants (blur sigmas, minimum radii) with a smaller canvas; 1 is the export size
+function lensBlur(dst, src, cx, cy, R, W, H, blurFactor, innerPlateauR, scale = 1) {
   if (blurFactor <= 0 || typeof document === "undefined") {
     dst.drawImage(src, 0, 0);
     return;
@@ -1781,10 +1899,10 @@ function lensBlur(dst, src, cx, cy, R, W, H, blurFactor, innerPlateauR) {
   const S = 0.5, bW = Math.max(1, W * S | 0), bH = Math.max(1, H * S | 0);
   cx = finite(cx, W / 2);
   cy = finite(cy, H / 2);
-  R = Math.max(8, finite(R, Math.min(W, H) * 0.08));
+  R = Math.max(8 * scale, finite(R, Math.min(W, H) * 0.08));
 
-  const rad = Math.max(16, R * 1.4);
-  const solidR = Math.max(12, Math.min(rad * 0.78, finite(innerPlateauR, R * 0.52)));
+  const rad = Math.max(16 * scale, R * 1.4);
+  const solidR = Math.max(12 * scale, Math.min(rad * 0.78, finite(innerPlateauR, R * 0.52)));
   const px0 = Math.max(0, Math.floor(cx - rad - 2));
   const py0 = Math.max(0, Math.floor(cy - rad - 2));
   const px1 = Math.min(W, Math.ceil(cx + rad + 2));
@@ -1800,7 +1918,7 @@ function lensBlur(dst, src, cx, cy, R, W, H, blurFactor, innerPlateauR) {
   const blurInto = (c, x, sigma) => {
     x.globalCompositeOperation = "source-over";
     x.clearRect(0, 0, bW, bH);
-    x.filter = `blur(${sigma * blurFactor}px)`;
+    x.filter = `blur(${sigma * blurFactor * scale}px)`;
     x.drawImage(blurPool.small, 0, 0);
     x.filter = "none";
     return c;
@@ -1978,7 +2096,7 @@ async function loadFonts(locale) {
   if (!fontLoadCache[loc]) {
     const specs = FONT_LOAD_SPECS[loc] || FONT_LOAD_SPECS.zh;
     const sample = loc === "en"
-      ? "TextMatchCut 0123456789"
+      ? "TypePin 0123456789"
       : loc === "hant"
         ? "人工智慧繁體報刊Aa0123"
         : "人工智能中文报刊Aa0123";
@@ -1995,18 +2113,22 @@ function releaseCanvases(list) {
   }
 }
 
-function renderBakedFrame(d, W, H, flat, fCtx, blurFactor, vignette, targetCanvas) {
-  if (flat.width !== W) flat.width = W;
-  if (flat.height !== H) flat.height = H;
+// W x H is the layout (export) size. scale < 1 rasterizes the same layout into a smaller canvas, for the preview.
+function renderBakedFrame(d, W, H, flat, fCtx, blurFactor, vignette, targetCanvas, scale = 1) {
+  const cw = Math.round(W * scale);
+  const ch = Math.round(H * scale);
+  const s = cw / W;
+  if (flat.width !== cw) flat.width = cw;
+  if (flat.height !== ch) flat.height = ch;
   const zoom = Math.max(0.1, Number(d.zoomScale) || 1);
-  renderCut(fCtx, d, 2 * W, 2 * H, { outW: W, outH: H, zoom });
+  renderCut(fCtx, d, 2 * W, 2 * H, { outW: cw, outH: ch, zoom });
 
   const frame = targetCanvas || document.createElement("canvas");
-  if (frame.width !== W) frame.width = W;
-  if (frame.height !== H) frame.height = H;
+  if (frame.width !== cw) frame.width = cw;
+  if (frame.height !== ch) frame.height = ch;
   const fx = frame.getContext("2d");
   fx.setTransform(1, 0, 0, 1, 0, 0);
-  fx.clearRect(0, 0, W, H);
+  fx.clearRect(0, 0, cw, ch);
 
   const kwScreenW = (d.kwW || W * 0.18) * zoom;
   const kwScreenH = (d.hlBoxH || (d.hlRect && d.hlRect.h) || d.hlSize || H * 0.06) * zoom;
@@ -2014,16 +2136,35 @@ function renderBakedFrame(d, W, H, flat, fCtx, blurFactor, vignette, targetCanva
   const screenR = Math.max(innerPlateauR * 1.35, (d.focalR || W * 0.16) * zoom);
   const blurAmt = (Number(blurFactor) || 0) * (d.nCh <= 3 ? 0.6 : 1);
 
-  lensBlur(fx, flat, W / 2, H / 2, screenR, W, H, blurAmt, innerPlateauR);
-  if (vignette !== false) drawVignette(fx, W, H);
+  lensBlur(fx, flat, cw / 2, ch / 2, screenR * s, cw, ch, blurAmt, innerPlateauR * s, s);
+  if (vignette !== false) drawVignette(fx, cw, ch);
   return frame;
 }
 
+// A MessageChannel hop lets rendering and input run without setTimeout's 4 ms clamp. Created on first use so
+// requiring this file from node does not keep the process alive.
+let yieldChannel = null;
+const yieldWaiting = [];
+function yieldToMain() {
+  if (typeof MessageChannel === "undefined") return new Promise(r => setTimeout(r, 0));
+  if (!yieldChannel) {
+    yieldChannel = new MessageChannel();
+    yieldChannel.port1.onmessage = () => yieldWaiting.shift()();
+  }
+  return new Promise(r => {
+    yieldWaiting.push(r);
+    yieldChannel.port2.postMessage(0);
+  });
+}
+
+// renderScale < 1 rasterizes the same layout smaller (the preview); W x H in the result is the canvas size.
+// into: a caller-owned array that receives the frames and keeps them when the bake is aborted.
 async function bakeFrames(keyword, ratio, opts, onProgress, copy, locale, fontId) {
   const baseSize = SIZES[ratio] || SIZES["1:1"];
   const scale = opts && opts.renderScale ? opts.renderScale : 1;
   const shouldAbort = opts && typeof opts.shouldAbort === "function" ? opts.shouldAbort : null;
   const cooperative = Boolean(opts && opts.cooperative);
+  const into = opts && opts.into;
   const W = Math.round(baseSize.w * scale);
   const H = Math.round(baseSize.h * scale);
   const sched = planCutSchedule({
@@ -2037,7 +2178,7 @@ async function bakeFrames(keyword, ratio, opts, onProgress, copy, locale, fontId
   await loadFonts(locale);
   if (shouldAbort && shouldAbort()) return { aborted: true, baked: [], sched, W, H };
 
-  const descs = buildDescs(sched.nCuts, keyword, W, H, opts.zoomVariance, copy, locale, fontId, {
+  const build = descBuilder(keyword, baseSize.w, baseSize.h, opts.zoomVariance, copy, locale, fontId, {
     hlColor: opts.hlColor,
     hlStyle: opts.hlStyle,
     seedOffset: opts.seedOffset,
@@ -2045,23 +2186,23 @@ async function bakeFrames(keyword, ratio, opts, onProgress, copy, locale, fontId
   });
   const flat = document.createElement("canvas"); flat.width = W; flat.height = H;
   const fCtx = flat.getContext("2d");
-  const baked = [];
+  const baked = into || [];
   let sliceStart = typeof performance !== "undefined" ? performance.now() : 0;
 
   for (let ci = 0; ci < sched.nCuts; ci++) {
     if (shouldAbort && shouldAbort()) {
       flat.width = 0; flat.height = 0;
-      releaseCanvases(baked);
+      if (!into) releaseCanvases(baked);
       return { aborted: true, baked: [], sched, W, H };
     }
     const frame = renderBakedFrame(
-      descs[ci], W, H, flat, fCtx,
-      opts.blurFactor, opts.vignette !== false
+      build(ci), baseSize.w, baseSize.h, flat, fCtx,
+      opts.blurFactor, opts.vignette !== false, undefined, scale
     );
     baked.push(frame);
     if (onProgress) onProgress(ci + 1, sched.nCuts, "渲染", frame, sched);
     if (cooperative && ci + 1 < sched.nCuts && typeof performance !== "undefined" && (performance.now() - sliceStart >= 12 || ci === 0)) {
-      await new Promise(r => setTimeout(r, 0));
+      await yieldToMain();
       sliceStart = performance.now();
     }
   }
@@ -2209,8 +2350,108 @@ function ensureVideoMetadata(vid, url) {
   });
 }
 
+// ---- Landing demos: one registry, one player (Demos, inside the page IIFE) ----
+// id / canvas   entry id and the id of the <canvas> it paints
+// group         at most one demo per group plays at a time; DEMO_GROUPS says who gets picked
+// kind          "loop" (default) | "hero"
+// ratio         studio frame when a clip or frame is opened
+// parts         baked back to back; loc defaults to the UI language; word / fontId / custom may be {en, zh, hant}
+// play          cut schedule (planCutSchedule options); the canvas element's own width / height is the bake size
+// ui            feat only, the scripted mock panel (see mockAt): click [{ cut | at, k, text }], type [from, to], drag [from, to]
+const DEMO_GROUPS = {
+  hero: { pick: "solo" },
+  cta: { pick: "solo" },
+  feat: { pick: "select" },
+  wall: { pick: "hover" },
+  platform: { pick: "hover", rotateMs: 0 },
+};
+
+const FEAT_COPY = {
+  en: "Our team ships on Friday. The Launch moves the whole roadmap forward. Every Launch needs one honest headline.",
+  zh: "团队周五完成发布。这次发布把整张路线图往前推了一步。每次发布都需要一句老实的标题。",
+  hant: "團隊週五完成發佈。這次發佈把整張路線圖往前推了一步。每次發佈都需要一句老實的標題。",
+};
+
+const DEMOS = [
+  { id: "hero", canvas: "gateCanvas", group: "hero", kind: "hero" },
+
+  { id: "w1", canvas: "demo-w1", group: "wall", ratio: "9:16", parts: [{ loc: "en", word: "Bitcoin" }], play: { cps0: 9 } },
+  { id: "w2", canvas: "demo-w2", group: "wall", ratio: "1:1", parts: [{ loc: "zh", word: "降息", hlColor: "#ff9eb5" }], play: { cps0: 6, cps1: 16, curve: "in" } },
+  { id: "w3", canvas: "demo-w3", group: "wall", ratio: "16:9", parts: [{ loc: "hant", word: "輝達", hlStyle: "box" }], play: { cps0: 10 } },
+  { id: "w4", canvas: "demo-w4", group: "wall", ratio: "16:9", parts: [{ loc: "en", word: "TRUMP", hlColor: "#ffad66" }], play: { cps0: 11 } },
+  { id: "w5", canvas: "demo-w5", group: "wall", ratio: "1:1", parts: [{ loc: "hant", word: "人工智慧", hlColor: "#9ee6b8" }], play: { cps0: 8 } },
+  { id: "w6", canvas: "demo-w6", group: "wall", ratio: "9:16", parts: [{ loc: "zh", word: "特朗普", hlStyle: "box", hlColor: "#9cc8ff" }], play: { cps0: 12 } },
+
+  { id: "p1", canvas: "demo-p1", group: "platform", ratio: "9:16", parts: [{ word: { en: "Go viral", zh: "爆款", hant: "爆款" } }], play: { cps0: 9 } },
+  { id: "p2", canvas: "demo-p2", group: "platform", ratio: "1:1", parts: [{ word: { en: "Save it", zh: "种草", hant: "種草" } }], play: { cps0: 9 } },
+  { id: "p3", canvas: "demo-p3", group: "platform", ratio: "16:9", parts: [{ word: { en: "Subscribe", zh: "三连", hant: "三連" } }], play: { cps0: 9 } },
+
+  // f1-f6: the paper changes right after each scripted click of the mock studio panel (see mockAt).
+  // Every part holds as many cuts as its duration needs, so duration = total cuts / cps0.
+  {
+    id: "f1", canvas: "featCanvas", group: "feat",
+    parts: [{ loc: "hant", word: "人工智慧", cuts: 4 }, { loc: "en", word: "AI", cuts: 4 }, { loc: "zh", word: "人工智能", cuts: 4 }, { loc: "hant", word: "人工智慧", cuts: 4 }],
+    play: { cps0: 3, duration: 16 / 3 },
+    ui: { click: [{ cut: 4, k: "lang.en" }, { cut: 8, k: "lang.zh" }, { cut: 12, k: "lang.hant" }] },
+  },
+  {
+    id: "f2", canvas: "featCanvas", group: "feat",
+    parts: [{ word: { en: "Launch", zh: "发布", hant: "發佈" }, cuts: 10 }, { word: { en: "Launch", zh: "发布", hant: "發佈" }, custom: FEAT_COPY, cuts: 6 }],
+    play: { cps0: 3, duration: 16 / 3 },
+    ui: { click: [{ at: 0.9, k: "ta.box" }], type: [1.15, 3.1] },
+  },
+  {
+    id: "f3", canvas: "featCanvas", group: "feat",
+    parts: [
+      { word: { en: "Exclusive", zh: "独家", hant: "獨家" }, cuts: 3 },
+      { word: { en: "Exclusive", zh: "独家", hant: "獨家" }, cuts: 3, hlStyle: "box" },
+      { word: { en: "Exclusive", zh: "独家", hant: "獨家" }, cuts: 3, hlStyle: "box", hlColor: "#ff9eb5" },
+      { word: { en: "Exclusive", zh: "独家", hant: "獨家" }, cuts: 3, hlColor: "#ff9eb5" },
+      { word: { en: "Exclusive", zh: "独家", hant: "獨家" }, cuts: 6, hlColor: "#9ee6b8" },
+    ],
+    play: { cps0: 3, duration: 6 },
+    ui: { click: [{ cut: 3, k: "hl.box" }, { cut: 6, k: "col.p" }, { cut: 9, k: "hl.marker" }, { cut: 12, k: "col.m" }] },
+  },
+  {
+    id: "f4", canvas: "featCanvas", group: "feat",
+    parts: [{ word: { en: "Faster", zh: "提速", hant: "提速" }, cuts: 14 }],
+    play: { cps0: 3, cps1: 26, curve: "in", duration: 6.5 },
+    ui: { click: [{ at: 0.8, k: "curve.in" }, { at: 1.5, k: "cps.thumb" }], drag: [1.5, 6.2] },
+  },
+  {
+    id: "f5", canvas: "featCanvas", group: "feat",
+    parts: [
+      { word: { en: "Typeset", zh: "排版", hant: "排版" }, cuts: 4 },
+      { word: { en: "Typeset", zh: "排版", hant: "排版" }, cuts: 4, fontId: { en: "oswald", zh: "hei", hant: "jhenghei" } },
+      { word: { en: "Typeset", zh: "排版", hant: "排版" }, cuts: 4, fontId: { en: "roboto-blackitalic", zh: "kai", hant: "kai-tc" } },
+    ],
+    play: { cps0: 3, duration: 4 },
+    ui: { click: [{ cut: 4, k: "font.up", text: "MyFont.ttf" }, { cut: 8, k: "font.up", text: "Poster-Black.otf" }] },
+  },
+  {
+    id: "f6", canvas: "featCanvas", group: "feat",
+    parts: [{ word: { en: "Landed", zh: "落地", hant: "落地" }, cuts: 12 }],
+    play: { cps0: 10, duration: 4, hold: true },
+    ui: { click: [{ at: 1, k: "hold.sw" }] },
+  },
+
+  // the closing band's backdrop: slow, drawn small (CSS blurs and dims it)
+  { id: "cta", canvas: "ctaCanvas", group: "cta", parts: [{ word: { en: "Pin", zh: "钉字", hant: "釘字" }, cuts: 8, zoom: 2.2 }], play: { cps0: 2, duration: 4 } },
+];
+
+function normalizeDemo(spec) {
+  const play = Object.assign({ cps0: 8, curve: "lin", duration: 3, hold: false }, spec.play);
+  play.cps1 = play.cps1 || play.cps0;
+  const parts = (spec.parts || [{}]).map(p => Object.assign({ cuts: 8, hlStyle: "marker", hlColor: "#ffe72e", fontId: "random", zoom: 1.6 }, p));
+  return Object.assign({ kind: "loop" }, spec, { play, parts });
+}
+
+const demoByLang = (v, lang) => (v && typeof v === "object" ? v[lang] : v);
+const HERO_WORD = { en: "AI", zh: "人工智能", hant: "人工智慧" };
+
 if (typeof document !== "undefined") (function () {
-  const PREVIEW_SCALE = 1.0;
+  // cuts baked before the preview starts to play; the loop covers the baked prefix while the rest bake
+  const PREFIX_CUTS = 6;
   const $ = id => document.getElementById(id);
   const kw = $("keyword");
   if (!kw) return;
@@ -2231,6 +2472,7 @@ if (typeof document !== "undefined") (function () {
   const timeReadout = $("timeReadout");
   const stageProgressTrack = $("stageProgressTrack");
   const stageProgressFill = $("stageProgressFill");
+  const stageFrame = document.querySelector(".stage-frame");
   const errorEl = $("error");
   const formats = probeFormats();
 
@@ -2278,7 +2520,19 @@ if (typeof document !== "undefined") (function () {
   let isPlaying = false;
   let isExporting = false;
   let exportPct = 0;
-  let previewToken = 0;
+  // Preview pipeline phase, the one place that says where the bake is:
+  //   idle            no batch baking
+  //   baking          a batch is baking and none of it plays yet (the previous loop may keep playing)
+  //   playing-prefix  the first PREFIX_CUTS cuts loop while the rest keep baking
+  //   complete        every cut of the batch is baked
+  let previewPhase = "idle";
+  function setPhase(next) {
+    previewPhase = next;
+    if (stageCanvas) stageCanvas.dataset.phase = next;
+  }
+  let previewToken = 0; // bake generation: bumping it aborts the bake in flight
+  let loopToken = 0; // loop generation: bumping it stops the loop on screen
+  let pendingEl = null; // the control that asked for the bake in flight, shown busy until its loop plays
   let previewRafId = 0;
   let sharedAc = null;
   let previewMasterGain = null;
@@ -2292,7 +2546,7 @@ if (typeof document !== "undefined") (function () {
   let activeLoopControl = null;
   let activeErrorKey = "";
 
-  const LEGAL_HASHES = new Set(["#legal", "#placeholders", "#privacy", "#terms", "#cookies", "#disclaimer"]);
+  const LEGAL_HASHES = new Set(["#about", "#legal", "#privacy", "#terms", "#cookies", "#disclaimer"]);
   const CTA_FONTS = {
     en: [
       { family: '"Playfair Display", serif', style: "normal", weight: "700" },
@@ -2322,28 +2576,17 @@ if (typeof document !== "undefined") (function () {
   const CTA_TILTS = ["-0.9deg", "0.7deg", "-0.4deg", "0.9deg", "0deg", "-0.6deg"];
 
   let inLegalView = false;
+  let legalPage = "privacy";
   let wasPlayingBeforeLegal = false;
-  let tocLockUntil = 0;
-  let legalTocBound = false;
-  let exBakeToken = 0;
-  let lastExampleBakeLang = "";
-  let exampleCards = [];
-  let examplesInView = false;
-  let hoveredExampleIdx = -1;
-  let exHoverStartCut = 0;
-  let exRafId = 0;
-  let exLoopOrigin = 0;
   let finalCtaInView = false;
   let ctaTimerId = 0;
   let ctaStepIdx = 0;
 
   function syncDocumentTitle() {
     if (inLegalView && $("legalView")) {
-      document.title = uiLang === "hant"
-        ? "隱私政策與使用條款 — 文字對切"
-        : uiLang === "zh"
-          ? "隐私政策与使用条款 — 文字对切"
-          : "Legal, Privacy & Terms — TextMatchCut";
+      const h = $(`${legalPage}Title`);
+      const brand = uiLang === "hant" ? "釘字" : uiLang === "zh" ? "钉字" : "TypePin";
+      document.title = `${h ? h.innerText.trim() : ""} — ${brand}`;
       return;
     }
     const docEl = document.documentElement;
@@ -2354,10 +2597,10 @@ if (typeof document !== "undefined") (function () {
         : "data-en-title";
     const customTitle = docEl.getAttribute(titleAttr);
     document.title = customTitle || (uiLang === "hant"
-      ? "文字對切 — 免費報刊剪報高亮快切影片產生器"
+      ? "釘字 — 免費報刊剪報高亮快切影片產生器"
       : uiLang === "zh"
-        ? "文字对切 — 免费报刊剪报高亮快切视频生成器"
-        : "TextMatchCut — Free Newspaper Highlight Match Cut Video Generator");
+        ? "钉字 — 免费报刊剪报高亮快切视频生成器"
+        : "TypePin — Free Newspaper Highlight Match Cut Video Generator");
   }
 
   const previewCache = {
@@ -2365,7 +2608,26 @@ if (typeof document !== "undefined") (function () {
     baked: null,
     sched: null,
     ratio: "",
+    scale: 0,
   };
+  const cacheComplete = () => Boolean(previewCache.baked && previewCache.sched && previewCache.baked.length >= previewCache.sched.nCuts);
+
+  // Bake the preview at the size it is shown (CSS px x device pixels), never above the export size.
+  // Steps of 1/16 keep the scale, and with it the cache, stable under small resizes.
+  function previewScale() {
+    const full = SIZES[ratio] || SIZES["1:1"];
+    const box = stageFrame && stageFrame.getBoundingClientRect();
+    if (!box || !box.width || !box.height) return 1;
+    const fit = Math.min(box.width / full.w, box.height / full.h);
+    return Math.min(1, Math.max(1 / 16, Math.ceil(fit * Math.max(1, window.devicePixelRatio || 1) * 16) / 16));
+  }
+
+  function setPending(el) {
+    if (pendingEl && pendingEl !== el) pendingEl.removeAttribute("aria-busy");
+    pendingEl = el;
+    if (el) el.setAttribute("aria-busy", "true");
+  }
+  const clearPending = () => setPending(null);
 
   const ERROR_MESSAGES = {
     fontRead: { en: "Could not read font file", zh: "字体文件无法读取", hant: "無法讀取字體檔案" },
@@ -2689,6 +2951,65 @@ if (typeof document !== "undefined") (function () {
     }
   }
 
+  function closeSelectMenus(exceptMenu) {
+    [
+      [$("audioBtn"), $("audioMenu")],
+      [$("fontBtn"), $("fontMenu")],
+    ].forEach(([btn, menu]) => {
+      if (!menu || menu === exceptMenu || menu.hidden) return;
+      menu.hidden = true;
+      if (btn) btn.setAttribute("aria-expanded", "false");
+    });
+  }
+
+  function syncSelectPopover(selectEl, btnEl, labelEl, menuEl) {
+    if (!selectEl || !btnEl || !menuEl) return;
+    const curVal = selectEl.value;
+    const opts = [...selectEl.options];
+    const activeOpt = opts.find(o => o.value === curVal) || opts[0];
+    if (labelEl && activeOpt) {
+      labelEl.textContent = activeOpt.textContent;
+    }
+    menuEl.innerHTML = "";
+    opts.forEach(opt => {
+      const isSel = opt === activeOpt;
+      const item = document.createElement("button");
+      item.type = "button";
+      item.className = "fmt-opt" + (isSel ? " on" : "");
+      item.setAttribute("role", "option");
+      item.setAttribute("aria-selected", isSel ? "true" : "false");
+      item.dataset.value = opt.value;
+
+      const textSpan = document.createElement("span");
+      textSpan.textContent = opt.textContent;
+      const checkSpan = document.createElement("span");
+      checkSpan.className = "ico fmt-check";
+      checkSpan.setAttribute("aria-hidden", "true");
+      checkSpan.innerHTML = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.2 8.3l3.1 3.1 6.5-6.8"/></svg>';
+
+      item.appendChild(textSpan);
+      item.appendChild(checkSpan);
+      item.addEventListener("click", e => {
+        e.stopPropagation();
+        const changed = selectEl.value !== opt.value;
+        selectEl.value = opt.value;
+        if (labelEl) labelEl.textContent = opt.textContent;
+        menuEl.querySelectorAll(".fmt-opt").forEach(b => {
+          const on = b === item;
+          b.classList.toggle("on", on);
+          b.setAttribute("aria-selected", on ? "true" : "false");
+        });
+        closeSelectMenus();
+        if (changed) {
+          selectEl.dispatchEvent(new Event("change", { bubbles: true }));
+        } else if (selectEl.id === "audioSelect" && opt.value !== "none") {
+          auditionSfx(opt.value);
+        }
+      });
+      menuEl.appendChild(item);
+    });
+  }
+
   function fillFonts() {
     if (!fontSelect) return;
     const keep = fontSelect.value;
@@ -2711,6 +3032,7 @@ if (typeof document !== "undefined") (function () {
     add("custom", uiLang === "hant" ? "自訂字體" : uiLang === "zh" ? "自定义字体" : "Custom Font");
     if ([...fontSelect.options].some(o => o.value === keep)) fontSelect.value = keep;
     else fontSelect.value = "random";
+    syncSelectPopover(fontSelect, $("fontBtn"), $("fontBtnLabel"), $("fontMenu"));
   }
 
   const AUDIO_LABELS_FALLBACK = {
@@ -2747,7 +3069,7 @@ if (typeof document !== "undefined") (function () {
     document.querySelectorAll("#uiLangBtns button[data-ui-lang], [data-ui-lang-btn]").forEach(btn => {
       const active = btn.dataset.uiLang === uiLang;
       btn.classList.toggle("on", active);
-      btn.setAttribute("aria-pressed", active ? "true" : "false");
+      btn.setAttribute("aria-checked", active ? "true" : "false");
     });
 
     document.querySelectorAll("[data-en-text], [data-zh-text], [data-hant-text]").forEach(el => {
@@ -2782,6 +3104,7 @@ if (typeof document !== "undefined") (function () {
           opt.textContent = AUDIO_LABELS_FALLBACK[opt.value][uiLang] || AUDIO_LABELS_FALLBACK[opt.value].en;
         }
       });
+      syncSelectPopover($("audioSelect"), $("audioBtn"), $("audioBtnLabel"), $("audioMenu"));
     }
 
     if (formatSelect && formats.length === 0) {
@@ -2819,27 +3142,22 @@ if (typeof document !== "undefined") (function () {
     updateCustomBadge();
     if (activeErrorKey) showError(activeErrorKey);
     setTimelineState({});
-    if (copyPack && lastExampleBakeLang !== uiLang) {
-      bakeExampleCanvases();
-    }
+    if (copyPack) Demos.langChanged();
   }
 
   function drawPreviewFrameToStage(frameCanvas) {
     if (!stageCanvas || !frameCanvas) return;
-    const fullSize = SIZES[ratio] || SIZES["1:1"];
-    if (stageCanvas.width !== fullSize.w) stageCanvas.width = fullSize.w;
-    if (stageCanvas.height !== fullSize.h) stageCanvas.height = fullSize.h;
+    if (stageCanvas.width !== frameCanvas.width) stageCanvas.width = frameCanvas.width;
+    if (stageCanvas.height !== frameCanvas.height) stageCanvas.height = frameCanvas.height;
     if (stageCanvas.hidden) stageCanvas.hidden = false;
     if (vid && !vid.hidden) vid.hidden = true;
     const sCtx = stageCanvas.getContext("2d");
-    sCtx.imageSmoothingEnabled = true;
-    sCtx.imageSmoothingQuality = "high";
-    sCtx.clearRect(0, 0, fullSize.w, fullSize.h);
-    sCtx.drawImage(frameCanvas, 0, 0, fullSize.w, fullSize.h);
+    sCtx.clearRect(0, 0, frameCanvas.width, frameCanvas.height);
+    sCtx.drawImage(frameCanvas, 0, 0);
   }
 
   async function renderStaticHero() {
-    if (!stageCanvas || isExporting) return;
+    if (!stageCanvas || isExporting || !studioOpen) return;
     const copy = copyForLocale();
     if (!copy) return;
     const myLoc = locale;
@@ -2852,8 +3170,9 @@ if (typeof document !== "undefined") (function () {
     const mixBg = Boolean($("mixCustomBg") && $("mixCustomBg").checked);
     const mixed = withCustomCopy(copy, keyword, customVal, mixBg, myLoc);
     const baseSize = SIZES[ratio] || SIZES["1:1"];
-    const W = Math.round(baseSize.w * PREVIEW_SCALE);
-    const H = Math.round(baseSize.h * PREVIEW_SCALE);
+    const scale = previewScale();
+    const W = Math.round(baseSize.w * scale);
+    const H = Math.round(baseSize.h * scale);
 
     if (!heroScratch || heroScratch.w !== W || heroScratch.h !== H) {
       if (heroScratch) {
@@ -2866,17 +3185,17 @@ if (typeof document !== "undefined") (function () {
     }
 
     const fontVal = fontSelect ? fontSelect.value : "random";
-    const descs = buildDescs(1, keyword, W, H, opts.zoomVariance, mixed, myLoc, fontVal, {
+    const descs = buildDescs(1, keyword, baseSize.w, baseSize.h, opts.zoomVariance, mixed, myLoc, fontVal, {
       hlColor: opts.hlColor,
       hlStyle: opts.hlStyle,
       seedOffset: opts.seedOffset,
       seedW: baseSize.w,
     });
     renderBakedFrame(
-      descs[0], W, H,
+      descs[0], baseSize.w, baseSize.h,
       heroScratch.flat, heroScratch.fCtx,
       opts.blurFactor, opts.vignette,
-      heroScratch.out
+      heroScratch.out, scale
     );
     drawPreviewFrameToStage(heroScratch.out);
 
@@ -2897,19 +3216,22 @@ if (typeof document !== "undefined") (function () {
 
   function stopPreviewPlayback(drawHero) {
     previewToken += 1;
+    loopToken += 1;
     activeLoopControl = null;
     if (previewRafId) {
       cancelAnimationFrame(previewRafId);
       previewRafId = 0;
     }
     updatePlayUi(false);
+    setPhase(cacheComplete() ? "complete" : "idle");
     if (drawHero) {
+      clearPending();
       if (previewCache.baked && previewCache.baked.length && previewCache.sched) {
         const sched = previewCache.sched;
         const fps = sched.fps || FPS;
         const total = sched.totalFrames;
         const lf = Math.min(Math.max(0, Math.floor(pausedRatio * total)), total - 1);
-        const ci = sched.cutAt[lf];
+        const ci = Math.min(sched.cutAt[lf], previewCache.baked.length - 1);
         drawPreviewFrameToStage(previewCache.baked[ci]);
         const totSec = total / fps;
         const curSec = pausedRatio * totSec;
@@ -2937,31 +3259,37 @@ if (typeof document !== "undefined") (function () {
     }
   }
 
-  function startContinuousLoop(token, baked, sched, initialRatio) {
-    const fullSize = SIZES[ratio] || SIZES["1:1"];
-    if (stageCanvas.width !== fullSize.w) stageCanvas.width = fullSize.w;
-    if (stageCanvas.height !== fullSize.h) stageCanvas.height = fullSize.h;
-    if (stageCanvas.hidden) stageCanvas.hidden = false;
-    if (vid && !vid.hidden) vid.hidden = true;
+  // Plays `baked` in schedule order. While the bake is still filling the array the loop wraps where the baked
+  // cuts end and stretches as more arrive, so the switch to the full schedule continues from the same cut.
+  function startContinuousLoop(baked, sched, initialRatio) {
+    const token = ++loopToken;
+    drawPreviewFrameToStage(baked[0]);
 
     const sCtx = stageCanvas.getContext("2d");
-    sCtx.imageSmoothingEnabled = true;
-    sCtx.imageSmoothingQuality = "high";
-
     const fps = sched.fps || FPS;
     const fi = 1000 / fps;
     const total = Math.max(1, sched.totalFrames);
     const loopMs = total * fi;
     const totSec = total / fps;
-    const startOffsetMs = Math.max(0, Math.min(0.999, Number(initialRatio) || 0)) * loopMs;
-    let originNow = performance.now() - startOffsetMs;
+    let readyCuts = 0;
+    let limitMs = loopMs;
+    const syncLimit = () => {
+      if (baked.length === readyCuts) return;
+      readyCuts = baked.length;
+      const f = readyCuts >= sched.nCuts ? -1 : sched.cutAt.findIndex(c => c >= readyCuts);
+      limitMs = f < 0 ? loopMs : f * fi;
+    };
+    syncLimit();
+    let posMs = Math.min(Math.max(0, Math.min(0.999, Number(initialRatio) || 0)) * loopMs, limitMs - 1);
+    let prevNow = performance.now();
     let lastCut = -1;
-    let lastCycle = -1;
+    let cycle = 0;
+    stageCanvas.dataset.loopCycle = "0";
 
     activeLoopControl = {
       seek(r) {
-        const clamped = Math.max(0, Math.min(0.999, r));
-        originNow = performance.now() - clamped * loopMs;
+        syncLimit();
+        posMs = Math.min(Math.max(0, Math.min(0.999, r)) * loopMs, limitMs - 1);
         lastCut = -1;
       },
     };
@@ -2969,24 +3297,25 @@ if (typeof document !== "undefined") (function () {
     updatePlayUi(true);
 
     const step = now => {
-      if (token !== previewToken || isExporting) return;
-      const rawElapsed = Math.max(0, now - originNow);
-      const cycle = Math.floor(rawElapsed / loopMs);
-      const el = rawElapsed - cycle * loopMs;
-      const ratioNow = el / loopMs;
-      pausedRatio = ratioNow;
-
-      if (cycle !== lastCycle) {
-        lastCycle = cycle;
-        stageCanvas.dataset.loopCycle = String(cycle);
+      if (token !== loopToken || isExporting) return;
+      syncLimit();
+      posMs += Math.max(0, now - prevNow);
+      prevNow = now;
+      if (posMs >= limitMs) {
+        if (limitMs === loopMs) {
+          cycle += Math.floor(posMs / loopMs);
+          stageCanvas.dataset.loopCycle = String(cycle);
+        }
+        posMs %= limitMs;
         lastCut = -1;
       }
+      pausedRatio = posMs / loopMs;
 
-      const lf = Math.min(Math.max(0, (el / fi) | 0), total - 1);
+      const lf = Math.min(Math.max(0, (posMs / fi) | 0), total - 1);
       const ci = sched.cutAt[lf];
       if (ci !== lastCut) {
         lastCut = ci;
-        sCtx.drawImage(baked[ci], 0, 0, fullSize.w, fullSize.h);
+        sCtx.drawImage(baked[ci], 0, 0);
         if (audioUnlocked && sharedAc && sharedAc.state === "running" && previewMasterGain) {
           const curSound = ($("audioSelect") && $("audioSelect").value) || "none";
           if (curSound !== "none") {
@@ -2996,31 +3325,37 @@ if (typeof document !== "undefined") (function () {
         }
       }
 
-      const curSec = lf / fps;
-      setTimelineState({
-        kind: "playing",
-        pct: ratioNow * 100,
-        ci,
-        nCuts: sched.nCuts,
-        curSec,
-        totSec,
-        totalFrames: total,
-      });
+      // while the bake still runs, the timeline keeps showing its progress
+      if (readyCuts >= sched.nCuts) {
+        setTimelineState({
+          kind: "playing",
+          pct: pausedRatio * 100,
+          ci,
+          nCuts: sched.nCuts,
+          curSec: lf / fps,
+          totSec,
+          totalFrames: total,
+        });
+      }
 
       previewRafId = requestAnimationFrame(step);
     };
 
-    previewRafId = requestAnimationFrame(step);
+    step(prevNow);
   }
 
   async function startPreviewPass(playOpts) {
-    if (!stageCanvas || isExporting) return;
+    if (!stageCanvas || isExporting || !studioOpen) { clearPending(); return; }
+    // the opening morph runs: its end starts the one bake, so an earlier request must not start a second
+    if (studioOpening) return;
     const copy = copyForLocale();
-    if (!copy) return;
+    if (!copy) { clearPending(); return; }
 
     if (playOpts && playOpts.fromUserGesture) unlockPreviewAudio();
 
-    stopPreviewPlayback(false);
+    // keepPlaying: the loop on screen stays until the new batch can play
+    const keep = Boolean(playOpts && playOpts.keepPlaying) && isPlaying;
+    if (!keep) stopPreviewPlayback(false);
     const token = ++previewToken;
     const opts = currentOpts();
     const keyword = activeKeyword();
@@ -3029,59 +3364,83 @@ if (typeof document !== "undefined") (function () {
     const mixBg = Boolean($("mixCustomBg") && $("mixCustomBg").checked);
     const fontVal = fontSelect ? fontSelect.value : "random";
     const key = buildPreviewKey(opts, keyword, myLoc, fontVal, customVal, mixBg);
+    const scale = previewScale();
 
-    if (previewCache.key === key && previewCache.baked && previewCache.sched) {
-      const startAt = playOpts && playOpts.resume ? pausedRatio : 0;
-      startContinuousLoop(token, previewCache.baked, previewCache.sched, startAt);
+    if (previewCache.key === key && previewCache.scale >= scale && cacheComplete()) {
+      setPhase("complete");
+      clearPending();
+      if (!keep) startContinuousLoop(previewCache.baked, previewCache.sched, playOpts && playOpts.resume ? pausedRatio : 0);
       return;
     }
 
+    setPhase("baking");
     pausedRatio = 0;
     const estCuts = Math.max(1, Math.min(360, Math.round(opts.duration * ((opts.cps0 + opts.cps1) / 2))));
-    setTimelineState({ kind: "baking", pct: 2, done: 0, total: estCuts });
+    if (!keep) setTimelineState({ kind: "baking", pct: 2, done: 0, total: estCuts });
 
+    const frames = [];
     const mixed = withCustomCopy(copy, keyword, customVal, mixBg, myLoc);
-    const res = await bakeFrames(
-      keyword,
-      ratio,
-      Object.assign({}, opts, {
-        renderScale: PREVIEW_SCALE,
-        cooperative: true,
-        shouldAbort: () => token !== previewToken || isExporting,
-      }),
-      (done, total, _phase, frame) => {
-        if (token !== previewToken || isExporting) return;
-        if (done === 1 && frame) drawPreviewFrameToStage(frame);
-        const pct = (done / Math.max(1, total)) * 100;
-        setTimelineState({ kind: "baking", pct, done, total });
-      },
-      mixed,
-      myLoc,
-      fontVal
-    );
+    try {
+      const res = await bakeFrames(
+        keyword,
+        ratio,
+        Object.assign({}, opts, {
+          renderScale: scale,
+          cooperative: true,
+          into: frames,
+          shouldAbort: () => token !== previewToken || isExporting,
+        }),
+        (done, total, _phase, frame, sched) => {
+          if (token !== previewToken || isExporting) return;
+          if (done === 1 && !isPlaying) drawPreviewFrameToStage(frame);
+          if (done === Math.min(PREFIX_CUTS, total)) {
+            // enough cuts to play: this batch takes over from the previous one
+            const previous = previewCache.baked;
+            Object.assign(previewCache, { key, baked: frames, sched, ratio, scale });
+            setPhase(done >= total ? "complete" : "playing-prefix");
+            startContinuousLoop(frames, sched, 0);
+            if (previous && previous !== frames) releaseCanvases(previous);
+            clearPending();
+          }
+          // while this batch is still baking behind a loop kept from before, that loop owns the timeline
+          if (previewPhase !== "baking" || !isPlaying) {
+            setTimelineState({ kind: "baking", pct: (done / Math.max(1, total)) * 100, done, total });
+          }
+        },
+        mixed,
+        myLoc,
+        fontVal
+      );
 
-    if (res.aborted || token !== previewToken || isExporting) return;
-
-    if (previewCache.baked && previewCache.baked !== res.baked) {
-      releaseCanvases(previewCache.baked);
+      if (res.aborted || token !== previewToken || isExporting) {
+        if (previewCache.baked !== frames) releaseCanvases(frames);
+        return;
+      }
+      setPhase("complete");
+    } finally {
+      if (token === previewToken) clearPending();
     }
-    previewCache.key = key;
-    previewCache.baked = res.baked;
-    previewCache.sched = res.sched;
-    previewCache.ratio = ratio;
-
-    startContinuousLoop(token, res.baked, res.sched, 0);
   }
 
-  function handleMotionEdit(fromUserAudioGesture, delayMs = 150) {
+  function handleMotionEdit(fromUserAudioGesture, delayMs = 150, edit = {}) {
     clearTimeout(inputDebounceTimer);
     if (fromUserAudioGesture) unlockPreviewAudio();
-    stopPreviewPlayback(false);
-    scheduleStaticHero(0);
-    if (!livePreview || inLegalView) return;
+    // edit.keepPlaying: leave the loop on screen until the rebuilt one can play; edit.pending: the control to show busy
+    const keep = Boolean(edit.keepPlaying) && isPlaying;
+    if (!keep) {
+      stopPreviewPlayback(false);
+      scheduleStaticHero(0);
+    }
+    if (edit.pending) setPending(edit.pending);
+    if (!livePreview || inLegalView) {
+      clearPending();
+      return;
+    }
     inputDebounceTimer = setTimeout(() => {
       if (livePreview && !isExporting && !inLegalView) {
-        startPreviewPass({ fromUserGesture: false, resume: false });
+        startPreviewPass({ fromUserGesture: false, resume: false, keepPlaying: keep });
+      } else {
+        clearPending();
       }
     }, delayMs);
   }
@@ -3137,6 +3496,7 @@ if (typeof document !== "undefined") (function () {
 
   if ($("randomKwBtn")) {
     $("randomKwBtn").addEventListener("click", () => {
+      if ($("randomKwBtn").getAttribute("aria-busy") === "true") return;
       const pool = RANDOM_KEYWORDS[locale] || RANDOM_KEYWORDS.en;
       const choices = pool.filter(w => w !== kw.value.trim());
       kw.value = choices[Math.floor(Math.random() * choices.length)] || pool[0];
@@ -3144,7 +3504,7 @@ if (typeof document !== "undefined") (function () {
       showError("");
       updateCharCount();
       updateCustomBadge();
-      handleMotionEdit(true);
+      handleMotionEdit(true, 150, { pending: $("randomKwBtn") });
     });
   }
 
@@ -3246,6 +3606,7 @@ if (typeof document !== "undefined") (function () {
 
   if ($("audioSelect")) {
     $("audioSelect").addEventListener("change", () => {
+      syncSelectPopover($("audioSelect"), $("audioBtn"), $("audioBtnLabel"), $("audioMenu"));
       const v = $("audioSelect").value;
       if (v !== "none") auditionSfx(v);
     });
@@ -3256,7 +3617,10 @@ if (typeof document !== "undefined") (function () {
   }
 
   if (fontSelect) {
-    fontSelect.addEventListener("change", () => handleMotionEdit(false));
+    fontSelect.addEventListener("change", () => {
+      syncSelectPopover(fontSelect, $("fontBtn"), $("fontBtnLabel"), $("fontMenu"));
+      handleMotionEdit(false);
+    });
   }
 
   if ($("fontFileBtn") && $("fontFile")) {
@@ -3270,7 +3634,10 @@ if (typeof document !== "undefined") (function () {
         const face = new FontFace(CUSTOM_FAMILY, buf);
         await face.load();
         document.fonts.add(face);
-        if (fontSelect) fontSelect.value = "custom";
+        if (fontSelect) {
+          fontSelect.value = "custom";
+          syncSelectPopover(fontSelect, $("fontBtn"), $("fontBtnLabel"), $("fontMenu"));
+        }
         previewCache.key = "";
         handleMotionEdit(false);
       } catch (err) {
@@ -3279,6 +3646,22 @@ if (typeof document !== "undefined") (function () {
       }
     });
   }
+
+  [
+    [$("audioBtn"), $("audioMenu")],
+    [$("fontBtn"), $("fontMenu")],
+  ].forEach(([btn, menu]) => {
+    if (!btn || !menu) return;
+    btn.addEventListener("click", e => {
+      e.stopPropagation();
+      if (isExporting || btn.disabled) return;
+      closeFormatMenu();
+      closeSelectMenus(menu);
+      const willOpen = menu.hidden;
+      menu.hidden = !willOpen;
+      btn.setAttribute("aria-expanded", willOpen ? "true" : "false");
+    });
+  });
 
   if ($("zoomRange")) {
     $("zoomRange").addEventListener("input", () => {
@@ -3340,7 +3723,7 @@ if (typeof document !== "undefined") (function () {
         const fps = sched.fps || FPS;
         const total = sched.totalFrames;
         const lf = Math.min(Math.max(0, Math.floor(r * total)), total - 1);
-        const ci = sched.cutAt[lf];
+        const ci = Math.min(sched.cutAt[lf], previewCache.baked.length - 1);
         drawPreviewFrameToStage(previewCache.baked[ci]);
         const totSec = total / fps;
         setTimelineState({
@@ -3373,10 +3756,23 @@ if (typeof document !== "undefined") (function () {
 
   if ($("rerollBtn")) {
     $("rerollBtn").addEventListener("click", () => {
+      if ($("rerollBtn").getAttribute("aria-busy") === "true") return;
       seedOffset += 1;
-      handleMotionEdit(true, 90);
+      handleMotionEdit(true, 90, { keepPlaying: true, pending: $("rerollBtn") });
     });
   }
+
+  // a window that grows needs sharper frames: rebake behind the loop that is playing, only when the stage
+  // needs a larger step than the batch has (shrinking keeps the batch; a paused preview rebakes on Play)
+  let resizeTimer = 0;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      if (studioOpen && isPlaying && livePreview && !isExporting && !inLegalView && previewScale() > previewCache.scale) {
+        startPreviewPass({ fromUserGesture: false, resume: false, keepPlaying: true });
+      }
+    }, 300);
+  });
 
   if (downloadBtn) {
     downloadBtn.addEventListener("click", async e => {
@@ -3463,32 +3859,758 @@ if (typeof document !== "undefined") (function () {
     }
   }
 
-  function scrollToStudio(focusInput) {
-    const studioEl = $("studio") || document.querySelector(".studio-grid, .panel");
-    if (studioEl && typeof studioEl.scrollIntoView === "function") {
-      studioEl.scrollIntoView({ behavior: "smooth", block: "start" });
+  // —— Landing: the studio replaces the hero in place once the visitor pins a word, and stays open ——
+  let studioOpen = false;
+  let studioOpening = null;
+  const gateInputs = [...document.querySelectorAll(".gate-input")];
+  const CJK_RE = /[㐀-鿿豈-﫿]/;
+  const REDUCE_MOTION = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const COARSE_POINTER = window.matchMedia("(hover: none)");
+
+  const gateWord = () => (gateInputs[0] ? gateInputs[0].value : "").trim().slice(0, MAX_CHARS);
+  const cjkLocale = () => (uiLang === "hant" ? "hant" : "zh");
+
+  // One registry (DEMOS), one scheduler. Frames are baked lazily when a canvas comes into view and
+  // cached by key; each group plays at most one demo, picked by DEMO_GROUPS[group].pick.
+  const Demos = (() => {
+    const BUDGET = 112 * 1024 * 1024;
+    const HERO_RATIOS = ["9:16", "1:1", "16:9"];
+    const HERO_SIZE = { "9:16": [450, 800], "1:1": [560, 560], "16:9": [800, 450] };
+    const HERO_PHASE_MS = 3200;
+    const HERO_CPS = 9;
+    const clamp01 = n => Math.max(0, Math.min(1, n));
+    // rAF timestamps can predate the performance.now() a demo started with
+    const since = (now, t0) => Math.max(0, now - t0);
+
+    const rts = DEMOS.map(d => {
+      const spec = normalizeDemo(d);
+      const el = $(spec.canvas);
+      return { spec, el, ctx: el ? el.getContext("2d") : null, entry: null, t0: 0, last: -1 };
+    }).filter(rt => rt.el);
+    const byId = new Map(rts.map(rt => [rt.spec.id, rt]));
+    const members = group => rts.filter(rt => rt.spec.group === group);
+    const heroRt = byId.get("hero");
+    const state = Object.fromEntries(Object.keys(DEMO_GROUPS).map(g => [g, { pointer: "", rot: "", rotAt: 0 }]));
+    const playing = new Map();
+    const near = new Set();
+    const shown = new Set();
+    const cache = new Map();
+    const inflight = new Map();
+    const queue = [];
+    const hero = { i: 0, since: 0, lock: "", shown: "", word: "", loc: "", entries: {}, timer: 0 };
+    let raf = 0;
+    let pumping = false;
+
+    const langDep = spec => spec.kind === "hero" || spec.parts.some(p => !p.loc || [p.word, p.fontId, p.custom].some(v => v && typeof v === "object"));
+    const landingActive = () => !inLegalView && !document.hidden;
+    const visible = rt => near.has(rt.el);
+    const onScreen = rt => shown.has(rt.el);
+    const selected = group => byId.get(state[group].pointer) || members(group)[0];
+    const heroEntry = () => hero.entries[HERO_RATIOS[hero.i]];
+    const wanted = rt => landingActive() && visible(rt) && (DEMO_GROUPS[rt.spec.group].pick !== "select" || selected(rt.spec.group) === rt);
+    const ready = rt => onScreen(rt) && wanted(rt) && Boolean(rt.spec.kind === "hero" ? heroEntry() : rt.entry);
+    const draw = (rt, frame) => rt.ctx.drawImage(frame, 0, 0, rt.el.width, rt.el.height);
+
+    function turnMs(group) {
+      const g = DEMO_GROUPS[group];
+      return g.rotateMs || (g.pick === "hover" && COARSE_POINTER.matches ? 3600 : 0);
     }
-    if (focusInput && kw) {
-      setTimeout(() => {
+
+    // ---- cache + serial bake queue ----
+    function release(e) {
+      releaseCanvases(e.frames);
+    }
+
+    function inUse(e, keep) {
+      return e === keep
+        || Object.values(hero.entries).includes(e)
+        || rts.some(rt => rt.entry === e && (playing.get(rt.spec.group) === rt || wanted(rt)));
+    }
+
+    // soft budget: entries a visible demo still needs are never dropped; the rest go oldest first
+    function evict(keep) {
+      let total = 0;
+      cache.forEach(e => { total += e.bytes; });
+      for (const [k, e] of cache) {
+        if (total <= BUDGET) break;
+        if (inUse(e, keep)) continue;
+        rts.forEach(rt => { if (rt.entry === e) rt.entry = null; });
+        release(e);
+        cache.delete(k);
+        total -= e.bytes;
+      }
+    }
+
+    async function pump() {
+      if (pumping) return;
+      pumping = true;
+      while (queue.length) {
+        const job = queue.shift();
+        let entry = null;
         try {
-          kw.focus({ preventScroll: true });
-          kw.select();
-        } catch {
-          kw.focus();
+          if (!job.skip()) {
+            entry = await job.build();
+            entry.bytes = entry.frames.reduce((n, c) => n + c.width * c.height * 4, 0);
+            if (entry.lang && entry.lang !== uiLang) {
+              release(entry);
+              entry = null;
+            } else {
+              cache.set(job.key, entry);
+              evict(entry);
+            }
+          }
+        } catch (err) {
+          console.error(err);
+          entry = null;
         }
-      }, 150);
+        inflight.delete(job.key);
+        job.resolve(entry);
+      }
+      pumping = false;
+    }
+
+    function fetchEntry(key, build, front, skip) {
+      const hit = cache.get(key);
+      if (hit) {
+        cache.delete(key);
+        cache.set(key, hit);
+        return Promise.resolve(hit);
+      }
+      if (inflight.has(key)) return inflight.get(key);
+      const p = new Promise(resolve => {
+        const job = { key, build, skip, resolve };
+        if (front) queue.unshift(job);
+        else queue.push(job);
+      });
+      inflight.set(key, p);
+      pump();
+      return p;
+    }
+
+    // ---- baking ----
+    function resolveParts(spec, lang) {
+      return spec.parts.map(p => {
+        const loc = p.loc || lang;
+        return Object.assign({}, p, {
+          loc,
+          word: String(demoByLang(p.word, lang) || defaults[loc]).slice(0, MAX_CHARS),
+          fontId: demoByLang(p.fontId, lang),
+          custom: demoByLang(p.custom, lang),
+        });
+      });
+    }
+
+    async function descsFor(p, w, h, seed) {
+      await loadFonts(p.loc);
+      let copy = copyPack[p.loc] || copyPack.en;
+      if (p.custom) copy = withCustomCopy(copy, p.word, p.custom, true, p.loc);
+      return descBuilder(p.word, w, h, p.zoom, copy, p.loc, p.fontId, { hlColor: p.hlColor, hlStyle: p.hlStyle, seedOffset: seed, seedW: 960 });
+    }
+
+    async function renderDescs(build, n, w, h) {
+      const flat = document.createElement("canvas");
+      const fCtx = flat.getContext("2d");
+      const out = [];
+      for (let i = 0; i < n; i++) {
+        out.push(renderBakedFrame(build(i), w, h, flat, fCtx, 0.9, true));
+        await yieldToMain();
+      }
+      flat.width = 0;
+      flat.height = 0;
+      return out;
+    }
+
+    async function bakeParts(parts, w, h, seed) {
+      const frames = [];
+      for (const [i, p] of parts.entries()) {
+        frames.push(...await renderDescs(await descsFor(p, w, h, seed + i * 5), p.cuts, w, h));
+      }
+      return frames;
+    }
+
+    async function bakeLoop(rt, lang) {
+      const w = rt.el.width;
+      const h = rt.el.height;
+      const frames = await bakeParts(resolveParts(rt.spec, lang), w, h, hashString(rt.spec.id) % 97);
+      const sched = planCutSchedule(Object.assign({}, rt.spec.play, { fps: FPS }));
+      return { frames, sched, w, h, lang: langDep(rt.spec) ? lang : "" };
+    }
+
+    // ---- hero: the frame morphs 9:16 -> 1:1 -> 16:9, each ratio baked once ----
+    const heroKey = ratio => ["hero", hero.loc, hero.word, ...HERO_SIZE[ratio]].join("|");
+
+    function heroResolve() {
+      hero.word = gateWord() || HERO_WORD[uiLang];
+      hero.loc = CJK_RE.test(hero.word) ? cjkLocale() : uiLang;
+    }
+
+    function heroSetRatio(now) {
+      const ratio = HERO_RATIOS[hero.i];
+      const e = hero.entries[ratio];
+      if (heroRt.el.width !== e.w || heroRt.el.height !== e.h) {
+        heroRt.el.width = e.w;
+        heroRt.el.height = e.h;
+      }
+      $("heroFrame").dataset.ratio = ratio;
+      $("heroRatioTag").textContent = ratio;
+      hero.shown = ratio;
+      hero.since = now;
+      heroRt.last = -1;
+      draw(heroRt, e.frames[0]);
+    }
+
+    function heroEnsure(ratio, front) {
+      if (!hero.word) heroResolve();
+      const key = heroKey(ratio);
+      const [w, h] = HERO_SIZE[ratio];
+      const lang = uiLang;
+      const part = { loc: hero.loc, word: hero.word, cuts: 6, hlStyle: "marker", hlColor: "#ffe72e", fontId: "random", zoom: 2.2 };
+      const build = async () => ({ frames: await bakeParts([part], w, h, 11), w, h, lang });
+      return fetchEntry(key, build, front, () => !landingActive() || !visible(heroRt)).then(e => {
+        if (!e) return e;
+        if (key !== heroKey(ratio)) {
+          if (!inUse(e)) {
+            release(e);
+            cache.delete(key);
+          }
+          return e;
+        }
+        hero.entries[ratio] = e;
+        if (ratio === HERO_RATIOS[hero.i] && hero.shown !== ratio) heroSetRatio(performance.now());
+        sync();
+        return e;
+      });
+    }
+
+    function heroPrefetch() {
+      if (!hero.lock) heroEnsure(HERO_RATIOS[(hero.i + 1) % HERO_RATIOS.length], false);
+    }
+
+    function heroRefresh() {
+      if (!copyPack) return;
+      heroResolve();
+      hero.entries = {};
+      hero.shown = "";
+      sync();
+      for (const [k, e] of cache) {
+        if (k.startsWith("hero|") && !inUse(e)) {
+          release(e);
+          cache.delete(k);
+        }
+      }
+      heroEnsure(HERO_RATIOS[hero.i], true);
+    }
+
+    function lockHero(ratio) {
+      const i = HERO_RATIOS.indexOf(ratio);
+      if (i < 0) return;
+      hero.lock = ratio;
+      hero.i = i;
+      if (hero.entries[ratio]) heroSetRatio(performance.now());
+      else heroEnsure(ratio, true);
+      sync();
+    }
+
+    function wordTyped() {
+      clearTimeout(hero.timer);
+      hero.timer = setTimeout(heroRefresh, 260);
+    }
+
+    // ---- feat mock: a fake studio panel clicked by a fake cursor, stateless in the demo clock `sec` ----
+    // A click lands MOCK.lead before the cut that shows its result; the cursor starts MOCK.travel earlier.
+    const MOCK = { lead: 0.14, press: 0.2, travel: 0.5, linger: 0.7 };
+    const groupOf = k => k.split(".")[0];
+
+    function mockOf(rt) {
+      if (!rt.mock) {
+        const pane = document.querySelector(`.feat-pane[data-pane="${rt.spec.id}"]`);
+        const root = pane.closest(".feat-mock");
+        const q = s => pane.querySelector(s);
+        const els = new Map([...pane.querySelectorAll("[data-k]")].map(el => [el.dataset.k, el]));
+        const init = {};
+        els.forEach((el, k) => { if (el.classList.contains("on")) init[groupOf(k)] = k; });
+        pane.style.setProperty("--h", 1 / rt.spec.play.duration);
+        rt.mock = { pane, root, els, init, cursor: root.querySelector(".feat-cursor"), typed: q(".feat-typed"), chip: q(".feat-file"), pick: q("select"), range: q("input[type=range]"), num: q(".num"), entry: undefined, clicks: [] };
+      }
+      return rt.mock;
+    }
+
+    function mockPoint(m, el) {
+      const a = m.root.getBoundingClientRect();
+      if (!el) return [a.width * 0.72, a.height * 0.8];
+      const b = el.getBoundingClientRect();
+      const x = el.type === "range" ? 8 + ((el.value - el.min) / (el.max - el.min)) * (b.width - 16) : b.width / 2;
+      return [b.left - a.left + x, b.top - a.top + Math.min(b.height / 2, 18)];
+    }
+
+    function mockAt(rt, sec) {
+      const m = mockOf(rt);
+      const { ui, play } = rt.spec;
+      const e = rt.entry;
+      if (m.entry !== e) {
+        m.entry = e;
+        m.clicks = ui.click.map(c => ({ ...c, t: c.at ?? (e ? e.sched.changeAt[c.cut] / e.sched.fps - MOCK.lead : Infinity) }));
+      }
+      const ck = m.clicks;
+      const sel = { ...m.init };
+      let file = "";
+      ck.forEach(c => {
+        if (c.t > sec) return;
+        sel[groupOf(c.k)] = c.k;
+        if (c.text) file = c.text;
+      });
+      m.els.forEach((el, k) => {
+        const on = sel[groupOf(k)] === k;
+        el.classList.toggle("on", on);
+        if (el.type === "checkbox") el.checked = on;
+      });
+      if (m.typed) {
+        const copy = FEAT_COPY[uiLang];
+        const text = copy.slice(0, Math.floor(copy.length * clamp01((sec - ui.type[0]) / (ui.type[1] - ui.type[0]))));
+        if (m.typed.textContent !== text) m.typed.textContent = text;
+      }
+      if (m.chip && m.chip.textContent !== file) m.chip.textContent = file;
+      if (m.pick) m.pick.selectedIndex = file ? 1 : 0;
+      const dragging = Boolean(ui.drag) && sec >= ui.drag[0] && sec < ui.drag[1];
+      if (m.range) {
+        // the thumb follows the speed the canvas actually cuts at
+        const t = Math.min(Math.max(sec, ui.drag[0]), ui.drag[1]);
+        const cps = play.cps0 + (play.cps1 - play.cps0) * easeCurve(play.curve, t / play.duration);
+        m.range.value = cps;
+        m.range.classList.toggle("is-drag", dragging);
+        m.num.textContent = Math.round(cps);
+      }
+      m.pane.style.setProperty("--p", Math.min(0.995, sec / play.duration));
+      m.pane.classList.toggle("is-hold", Boolean(play.hold) && sec >= play.duration - 1);
+
+      let i = -1;
+      ck.forEach((c, j) => { if (c.t - MOCK.travel <= sec) i = j; });
+      const last = Math.max(ck[ck.length - 1].t, ui.drag ? ui.drag[1] : 0);
+      const [x, y] = mockPoint(m, i < 0 ? null : m.els.get(ck[i].k));
+      m.cursor.style.transform = `translate(${x.toFixed(1)}px, ${y.toFixed(1)}px)`;
+      m.cursor.classList.toggle("is-on", i >= 0 && sec < Math.min(last + MOCK.linger, play.duration - 0.25));
+      m.cursor.classList.toggle("is-drag", dragging);
+      m.cursor.classList.toggle("is-press", ck.some(c => c.t <= sec && sec < c.t + MOCK.press));
+    }
+
+    // ---- per-kind behaviour: poster (still picture) and render (one animation frame) ----
+    const KIND = {
+      loop: {
+        bake: bakeLoop,
+        // a feat demo rests on its end state: the last cut and the finished mock
+        poster(rt) {
+          const f = rt.entry.frames;
+          draw(rt, f[rt.spec.ui ? f.length - 1 : 0]);
+          if (rt.spec.ui) mockAt(rt, Infinity);
+        },
+        render(rt, now) {
+          const e = rt.entry;
+          const play = rt.spec.play;
+          const sec = (since(now, rt.t0) / 1000) % play.duration;
+          const ci = e.sched.cutAt[Math.min(e.sched.totalFrames - 1, Math.floor(sec * FPS))] % e.frames.length;
+          if (ci !== rt.last) {
+            rt.last = ci;
+            draw(rt, e.frames[ci]);
+          }
+          if (play.hold) {
+            const hold = sec >= play.duration - 1 ? "1" : "";
+            if (rt.el.dataset.hold !== hold) rt.el.dataset.hold = hold;
+          }
+          if (rt.spec.ui) mockAt(rt, sec);
+        },
+      },
+      hero: {
+        render(rt, now) {
+          if (!hero.lock && since(now, hero.since) >= HERO_PHASE_MS) {
+            const next = (hero.i + 1) % HERO_RATIOS.length;
+            if (hero.entries[HERO_RATIOS[next]]) {
+              hero.i = next;
+              heroSetRatio(now);
+              heroPrefetch();
+            }
+          }
+          const e = heroEntry();
+          const ci = Math.floor((since(now, hero.since) / 1000) * HERO_CPS) % e.frames.length;
+          if (ci !== rt.last) {
+            rt.last = ci;
+            draw(rt, e.frames[ci]);
+          }
+        },
+      },
+    };
+
+    // ---- scheduler ----
+    function pick(group) {
+      const g = DEMO_GROUPS[group];
+      const list = members(group);
+      const st = state[group];
+      if (!list.length) return null;
+      if (g.pick === "solo") return ready(list[0]) ? list[0] : null;
+      if (g.pick === "select") {
+        const rt = selected(group);
+        return ready(rt) ? rt : null;
+      }
+      const ptr = byId.get(st.pointer);
+      if (ptr && ready(ptr)) return ptr;
+      if (!turnMs(group)) return null;
+      const cand = list.filter(ready);
+      if (!cand.length) return null;
+      let cur = cand.find(rt => rt.spec.id === st.rot);
+      if (!cur) {
+        cur = cand[0];
+        st.rot = cur.spec.id;
+        st.rotAt = performance.now();
+      }
+      return cur;
+    }
+
+    function start(rt, now) {
+      playing.set(rt.spec.group, rt);
+      rt.t0 = now;
+      rt.last = -1;
+      rt.el.dataset.playing = "1";
+      rt.el.dataset.demo = rt.spec.id;
+      if (rt.spec.kind === "hero") {
+        hero.since = now;
+        heroPrefetch();
+      }
+    }
+
+    function stop(rt) {
+      playing.delete(rt.spec.group);
+      delete rt.el.dataset.playing;
+      delete rt.el.dataset.hold;
+    }
+
+    function sync() {
+      const run = landingActive() && !REDUCE_MOTION.matches;
+      for (const group of Object.keys(DEMO_GROUPS)) {
+        const next = run ? pick(group) : null;
+        const cur = playing.get(group);
+        if (next === cur) continue;
+        if (cur) stop(cur);
+        if (next) start(next, performance.now());
+      }
+      if (playing.size && !raf) raf = requestAnimationFrame(tick);
+    }
+
+    function rotate(now) {
+      for (const group of Object.keys(DEMO_GROUPS)) {
+        const turn = turnMs(group);
+        const st = state[group];
+        if (!turn || st.pointer || now - st.rotAt < turn) continue;
+        const cand = members(group).filter(ready);
+        if (cand.length < 2) continue;
+        const at = cand.findIndex(rt => rt.spec.id === st.rot);
+        st.rot = cand[(at + 1) % cand.length].spec.id;
+        st.rotAt = now;
+        sync();
+      }
+    }
+
+    function tick(now) {
+      raf = 0;
+      if (!playing.size) return;
+      rotate(now);
+      playing.forEach(rt => KIND[rt.spec.kind].render(rt, now));
+      if (playing.size && !raf) raf = requestAnimationFrame(tick);
+    }
+
+    // ---- entry points ----
+    function ensure(rt, front) {
+      const spec = rt.spec;
+      if (spec.kind === "hero") return heroEnsure(HERO_RATIOS[hero.i], front);
+      const lang = uiLang;
+      const key = [spec.id, langDep(spec) ? lang : "", rt.el.width, rt.el.height].join("|");
+      return fetchEntry(key, () => KIND[spec.kind].bake(rt, lang), front, () => !wanted(rt)).then(e => {
+        if (!e || (e.lang && e.lang !== uiLang)) return e;
+        rt.entry = e;
+        const shared = members(spec.group).some(o => o !== rt && o.el === rt.el);
+        if (playing.get(spec.group) !== rt && (!shared || selected(spec.group) === rt)) KIND[spec.kind].poster(rt);
+        sync();
+        return e;
+      });
+    }
+
+    function refresh() {
+      if (!copyPack) return;
+      // a chip or clip pinned a different word while the landing was hidden
+      if (heroRt && hero.word && wanted(heroRt) && (gateWord() || HERO_WORD[uiLang]) !== hero.word) heroRefresh();
+      // the hero first: pump() starts the first queued job at once, so a wall job queued ahead of it would run first
+      if (heroRt && wanted(heroRt) && !heroEntry()) heroEnsure(HERO_RATIOS[hero.i], true);
+      rts.forEach(rt => {
+        if (rt.spec.kind !== "hero" && wanted(rt) && !rt.entry) ensure(rt, false);
+      });
+      sync();
+    }
+
+    function langChanged() {
+      rts.forEach(rt => {
+        if (rt.entry && rt.entry.lang && rt.entry.lang !== uiLang) rt.entry = null;
+      });
+      hero.entries = {};
+      sync();
+      for (const [k, e] of cache) {
+        if (e.lang && e.lang !== uiLang) {
+          release(e);
+          cache.delete(k);
+        }
+      }
+      if (heroRt) heroRefresh();
+      refresh();
+    }
+
+    // what "make this" carries into the studio; the hover bar lists exactly these numbers
+    const wallPreset = rt => {
+      const p = rt.spec.parts[0];
+      const play = rt.spec.play;
+      return { word: p.word, loc: p.loc, ratio: rt.spec.ratio, hlColor: p.hlColor, hlStyle: p.hlStyle, zoom: p.zoom, cps0: play.cps0, cps1: play.cps1, curve: play.curve };
+    };
+
+    const CLICK = {
+      wall(rt) {
+        const preset = wallPreset(rt);
+        pinWord(preset.word, preset);
+      },
+      platform(rt) {
+        chooseFrame(rt.spec.ratio);
+      },
+      feat(rt) {
+        state.feat.pointer = rt.spec.id;
+        document.querySelectorAll(".feat-item").forEach(li => {
+          const on = li.dataset.demoId === rt.spec.id;
+          li.classList.toggle("is-on", on);
+          li.querySelector("button").setAttribute("aria-pressed", String(on));
+        });
+        document.querySelectorAll(".feat-pane").forEach(p => p.classList.toggle("is-on", p.dataset.pane === rt.spec.id));
+        mockAt(rt, 0);
+        ensure(rt, true);
+        sync();
+      },
+    };
+
+    function activate(id) {
+      const rt = byId.get(id);
+      if (rt && CLICK[rt.spec.group]) CLICK[rt.spec.group](rt);
+    }
+
+    const trilingual = (en, zh, hant) => `<span class="lang-en">${en}</span><span class="lang-zh">${zh}</span><span class="lang-hant">${hant}</span>`;
+
+    document.querySelectorAll(".clip[data-demo-id]").forEach(host => {
+      const rt = byId.get(host.dataset.demoId);
+      const media = host.querySelector(".clip-media");
+      if (!rt || !media) return;
+      const { cps0, cps1, zoom } = wallPreset(rt);
+      const speed = cps0 === cps1 ? `${cps0}` : `${cps0}→${cps1}`;
+      media.insertAdjacentHTML("beforeend", `<span class="clip-cta" aria-hidden="true">
+        <span class="clip-go">${trilingual("Make this", "一键做同款", "一鍵做同款")}</span>
+        <span class="clip-chips">
+          <span class="clip-chip">${trilingual(`${speed} cuts/s`, `刀速 ${speed}/s`, `刀速 ${speed}/s`)}</span>
+          <span class="clip-chip">${trilingual(`Zoom ×${zoom}`, `缩放 ×${zoom}`, `縮放 ×${zoom}`)}</span>
+        </span>
+      </span>`);
+    });
+
+    document.querySelectorAll("[data-demo-id]").forEach(host => {
+      const rt = byId.get(host.dataset.demoId);
+      if (!rt || DEMO_GROUPS[rt.spec.group].pick !== "hover") return;
+      const st = state[rt.spec.group];
+      const on = e => {
+        if (e.pointerType === "touch") return;
+        st.pointer = rt.spec.id;
+        sync();
+      };
+      const off = () => {
+        if (st.pointer !== rt.spec.id) return;
+        st.pointer = "";
+        sync();
+      };
+      host.addEventListener("pointerenter", on);
+      host.addEventListener("pointerleave", off);
+      host.addEventListener("focusin", e => { if (e.target.matches(":focus-visible")) on(e); });
+      host.addEventListener("focusout", off);
+    });
+
+    // near the viewport: bake; actually on screen: play
+    const track = (set, options) => new IntersectionObserver(entries => {
+      entries.forEach(en => (en.isIntersecting ? set.add(en.target) : set.delete(en.target)));
+      refresh();
+    }, options);
+    const nearIO = track(near, { rootMargin: "160px 0px" });
+    const shownIO = track(shown, { threshold: 0.1 });
+    new Set(rts.map(rt => rt.el)).forEach(el => {
+      nearIO.observe(el);
+      shownIO.observe(el);
+    });
+    REDUCE_MOTION.addEventListener("change", sync);
+
+    return { sync, refresh, langChanged, wordTyped, lockHero, activate };
+  })();
+
+  // The hero frame wears the #frames chrome: copy each card's pieces once and tag them with their ratio.
+  // CSS shows the set that matches heroFrame's data-ratio, and picks the 抖音/小红书/B站 variant by UI language.
+  function wearPlatformChrome() {
+    const frame = $("heroFrame");
+    const slot = { head: frame.querySelector(".hero-head"), foot: frame.querySelector(".hero-foot"), over: frame.querySelector(".hero-ui") };
+    document.querySelectorAll(".plat[data-demo-id]").forEach(card => {
+      const r = DEMOS.find(d => d.id === card.dataset.demoId).ratio;
+      card.querySelectorAll(".plat-ui").forEach(piece => {
+        const copy = piece.cloneNode(true);
+        copy.dataset.r = r;
+        (piece.closest(".plat-shot") ? slot.over : piece.classList.contains("plat-head") ? slot.head : slot.foot).append(copy);
+      });
+    });
+  }
+
+  function scrollToTop() {
+    if (window.scrollY < 2) return Promise.resolve();
+    if (REDUCE_MOTION.matches) {
+      window.scrollTo({ top: 0, behavior: "instant" });
+      return Promise.resolve();
+    }
+    return new Promise(resolve => {
+      const done = () => {
+        clearTimeout(timer);
+        window.removeEventListener("scrollend", done);
+        resolve();
+      };
+      const timer = setTimeout(done, 1200);
+      window.addEventListener("scrollend", done);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
+  function openStudio() {
+    if (studioOpen || studioOpening) return;
+    const root = document.documentElement;
+    const swap = () => {
+      studioOpen = true;
+      document.body.classList.add("is-studio");
+      Demos.sync();
+    };
+    if (REDUCE_MOTION.matches) {
+      swap();
+      handleMotionEdit(false, 0);
+      return;
+    }
+    if (!document.startViewTransition) {
+      const el = $("studio");
+      swap();
+      el.classList.add("studio-enter");
+      el.addEventListener("animationend", () => el.classList.remove("studio-enter"), { once: true });
+      handleMotionEdit(false, 0);
+      return;
+    }
+    root.classList.add("vt-pin");
+    const vt = document.startViewTransition(async () => {
+      swap();
+      // one still frame so the video morphs onto the pinned word; the live loop starts after the morph
+      await Promise.race([renderStaticHero().catch(() => {}), new Promise(r => setTimeout(r, 250))]);
+    });
+    studioOpening = vt.finished.catch(() => {}).then(() => {
+      root.classList.remove("vt-pin");
+      studioOpening = null;
+      handleMotionEdit(false, 0);
+    });
+  }
+
+  function applyStudioPreset(p) {
+    if (p.ratio) applyRatioSelection(p.ratio);
+    if (p.zoom && $("zoomRange")) {
+      $("zoomRange").value = String(Math.round(p.zoom * 10));
+      if ($("zoomVal")) $("zoomVal").textContent = (Number($("zoomRange").value) / 10).toFixed(1) + "×";
+    }
+    if (p.hlColor) {
+      hlColor = p.hlColor;
+      document.querySelectorAll("#hlColors button[data-hl]").forEach(b => b.classList.toggle("on", b.dataset.hl.toLowerCase() === p.hlColor.toLowerCase()));
+    }
+    if (p.hlStyle) {
+      hlStyle = p.hlStyle;
+      document.querySelectorAll("#hlStyleBtns button[data-hl-style]").forEach(b => b.classList.toggle("on", b.dataset.hlStyle === hlStyle));
+    }
+    if (p.cps0 && $("cpsRange")) {
+      speedMode = p.cps1 && p.cps1 !== p.cps0 ? "ramp" : "const";
+      document.querySelectorAll("#speedModeBtns button[data-speed-mode]").forEach(b => b.classList.toggle("on", b.dataset.speedMode === speedMode));
+      if ($("rampGroup")) $("rampGroup").hidden = speedMode !== "ramp";
+      $("cpsRange").value = String(p.cps0);
+      if ($("cpsVal")) $("cpsVal").textContent = $("cpsRange").value;
+      if (speedMode === "ramp" && $("cps2Range")) {
+        $("cps2Range").value = String(p.cps1);
+        if ($("cps2Val")) $("cps2Val").textContent = $("cps2Range").value;
+      }
+      if (p.curve) {
+        curve = p.curve;
+        document.querySelectorAll("#curveBtns button[data-curve]").forEach(b => b.classList.toggle("on", b.dataset.curve === curve));
+      }
+      updateCpsLabelUi();
     }
   }
+
+  function pinWord(word, preset) {
+    unlockPreviewAudio();
+    const want = (preset && preset.loc) || (CJK_RE.test(word) && locale === "en" ? cjkLocale() : "");
+    if (want && want !== locale) {
+      const btn = document.querySelector(`#localeBtns button[data-locale="${want}"]`);
+      if (btn) btn.click();
+    }
+    if (preset) applyStudioPreset(preset);
+    kw.value = word;
+    seedOffset += 1;
+    updateCharCount();
+    updateCustomBadge();
+    if (studioOpen) handleMotionEdit(false, 0);
+    scrollToTop().then(openStudio);
+  }
+
+  function chooseFrame(nextRatio) {
+    applyRatioSelection(nextRatio);
+    Demos.lockHero(nextRatio);
+    if (studioOpen) {
+      handleMotionEdit(false, 0);
+      scrollToTop();
+      return;
+    }
+    const top = $("top");
+    if (top) top.scrollIntoView({ behavior: REDUCE_MOTION.matches ? "auto" : "smooth", block: "start" });
+    if (gateInputs[0]) gateInputs[0].focus({ preventScroll: true });
+  }
+
+  gateInputs.forEach(inp => {
+    inp.maxLength = MAX_CHARS;
+    inp.addEventListener("input", e => {
+      gateInputs.forEach(o => { if (o !== inp) o.value = inp.value; });
+      if (!e.isComposing) Demos.wordTyped();
+    });
+    inp.addEventListener("compositionend", () => Demos.wordTyped());
+  });
+
+  document.querySelectorAll("[data-gate-word]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const w = (btn.dataset[uiLang] || btn.dataset.en || "").slice(0, MAX_CHARS);
+      gateInputs.forEach(o => { o.value = w; });
+      pinWord(w);
+    });
+  });
+
+  document.querySelectorAll(".gate-form").forEach(form => {
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      const inp = form.querySelector(".gate-input");
+      const word = inp ? inp.value.trim().slice(0, MAX_CHARS) : "";
+      if (!word) {
+        if (inp) inp.focus();
+        form.classList.remove("is-shake");
+        void form.offsetWidth;
+        form.classList.add("is-shake");
+        return;
+      }
+      pinWord(word);
+    });
+  });
 
   function syncRatioButtonsUi() {
     document.querySelectorAll("#ratios button[data-ratio]").forEach(b => {
       b.classList.toggle("on", b.dataset.ratio === ratio);
-    });
-    document.querySelectorAll("[data-use-ratio]").forEach(b => {
-      const active = b.dataset.useRatio === ratio;
-      b.classList.toggle("is-active", active);
-      b.classList.toggle("on", active);
-      b.setAttribute("aria-pressed", active ? "true" : "false");
     });
   }
 
@@ -3498,59 +4620,50 @@ if (typeof document !== "undefined") (function () {
     syncRatioButtonsUi();
   }
 
-  function setActiveLegalToc(activeId) {
-    const rail = document.querySelector("#legalView .toc-rail, .toc-rail");
-    if (!rail) return;
-    rail.querySelectorAll("a").forEach(link => {
-      const target = link.getAttribute("data-toc-link") || (link.getAttribute("href") || "").replace(/^#/, "");
-      const active = Boolean(activeId) && target === activeId;
-      link.classList.toggle("is-active", active);
-      link.classList.toggle("on", active);
-      if (active) link.setAttribute("aria-current", "location");
-      else link.removeAttribute("aria-current");
+  // legal view: each document lists its h3 sections in a sticky rail; the current section follows the scroll
+  const legalToc = $("legalToc");
+  const legalTocList = $("legalTocList");
+  const legalHeads = () => [...$(legalPage).querySelectorAll(":scope > h3")];
+  document.querySelectorAll("#legalView .legal-card").forEach(card => {
+    card.querySelectorAll(":scope > h3").forEach((h, i) => { h.id = `${card.id}-s${i + 1}`; });
+  });
+
+  function renderLegalToc() {
+    const heads = legalHeads();
+    legalToc.hidden = heads.length === 0;
+    legalTocList.replaceChildren(...heads.map(h => {
+      const li = document.createElement("li");
+      const m = h.textContent.trim().match(/^[\d.]+/);
+      li.innerHTML = `<a href="#${h.id}" data-toc="${h.id}"><span class="legal-toc-no">${m ? m[0] : ""}</span><span class="lang-en">${h.dataset.tocEn}</span><span class="lang-zh">${h.dataset.tocZh}</span><span class="lang-hant">${h.dataset.tocHant}</span></a>`;
+      return li;
+    }));
+  }
+
+  function syncLegalSpy() {
+    const heads = inLegalView ? legalHeads() : [];
+    if (!heads.length) return;
+    const atEnd = window.scrollY > 0 && window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+    const cur = atEnd ? heads[heads.length - 1] : heads.filter(h => h.getBoundingClientRect().top <= 140).pop() || heads[0];
+    legalTocList.querySelectorAll("a").forEach(a => {
+      if (a.dataset.toc === cur.id) a.setAttribute("aria-current", "location");
+      else a.removeAttribute("aria-current");
     });
   }
 
-  function ensureLegalTocObserver() {
-    if (legalTocBound) return;
-    const rail = document.querySelector("#legalView .toc-rail, .toc-rail");
-    if (!rail) return;
-    const secIds = ["placeholders", "privacy", "terms", "cookies", "disclaimer"];
-    const sections = secIds.map(id => $(id)).filter(Boolean);
-    if (!sections.length) return;
-    legalTocBound = true;
+  let legalSpyRaf = 0;
+  window.addEventListener("scroll", () => {
+    if (!inLegalView || legalSpyRaf) return;
+    legalSpyRaf = requestAnimationFrame(() => { legalSpyRaf = 0; syncLegalSpy(); });
+  }, { passive: true });
 
-    if ("IntersectionObserver" in window) {
-      const obs = new IntersectionObserver(entries => {
-        if (!inLegalView || performance.now() < tocLockUntil) return;
-        for (let i = 0; i < entries.length; i++) {
-          if (entries[i].isIntersecting) {
-            setActiveLegalToc(entries[i].target.id);
-            break;
-          }
-        }
-      }, { rootMargin: "-16% 0px -68% 0px", threshold: 0 });
-      sections.forEach(sec => obs.observe(sec));
-    }
-
-    let scrollTicking = false;
-    window.addEventListener("scroll", () => {
-      if (!inLegalView || scrollTicking) return;
-      scrollTicking = true;
-      requestAnimationFrame(() => {
-        scrollTicking = false;
-        if (!inLegalView || performance.now() < tocLockUntil) return;
-        let activeId = sections[0].id;
-        for (let i = 0; i < sections.length; i++) {
-          if (sections[i].getBoundingClientRect().top <= 136) activeId = sections[i].id;
-        }
-        if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 20) {
-          activeId = sections[sections.length - 1].id;
-        }
-        setActiveLegalToc(activeId);
-      });
-    }, { passive: true });
-  }
+  // stopPropagation keeps the document-level #hash router from treating a section anchor as a page change
+  legalTocList.addEventListener("click", e => {
+    const a = e.target.closest("a[data-toc]");
+    if (!a) return;
+    e.preventDefault();
+    e.stopPropagation();
+    $(a.dataset.toc).scrollIntoView({ behavior: REDUCE_MOTION.matches ? "auto" : "smooth", block: "start" });
+  });
 
   function syncRouteFromHash({ smooth = false } = {}) {
     const rawHash = window.location.hash || "";
@@ -3558,54 +4671,42 @@ if (typeof document !== "undefined") (function () {
     const mainView = $("mainView");
     const legalView = $("legalView");
     const legalBackBtn = $("legalBackBtn");
-    const navLegalLink = $("navLegalLink");
 
     if (LEGAL_HASHES.has(hash) && legalView) {
       const enteringLegal = !inLegalView;
       inLegalView = true;
+      legalPage = hash === "#legal" ? "privacy" : hash.slice(1);
       if (enteringLegal) {
         wasPlayingBeforeLegal = isPlaying;
         clearTimeout(inputDebounceTimer);
         if (isPlaying) stopPreviewPlayback(true);
         else previewToken += 1;
       }
+      legalView.querySelectorAll(".legal-card").forEach(card => { card.hidden = card.id !== legalPage; });
+      legalView.querySelectorAll("[data-legal-tab]").forEach(a => {
+        if (a.dataset.legalTab === legalPage) a.setAttribute("aria-current", "page");
+        else a.removeAttribute("aria-current");
+      });
+      renderLegalToc();
+      document.body.classList.add("is-legal");
       if (mainView) mainView.hidden = true;
       legalView.hidden = false;
       if (legalBackBtn) legalBackBtn.hidden = false;
-      if (navLegalLink) navLegalLink.classList.add("on");
       syncDocumentTitle();
-      ensureLegalTocObserver();
-      stopExampleLoop();
       stopCtaWordCycle();
-
-      const behavior = smooth && !enteringLegal ? "smooth" : "auto";
-      if (hash === "#legal") {
-        window.scrollTo({ top: 0, behavior });
-        const firstToc = $("placeholders") || $("privacy");
-        if (firstToc) {
-          tocLockUntil = performance.now() + 120;
-          setActiveLegalToc(firstToc.id);
-        }
-      } else {
-        const targetEl = $(hash.slice(1));
-        if (targetEl) {
-          tocLockUntil = performance.now() + (behavior === "smooth" ? 480 : 120);
-          setActiveLegalToc(targetEl.id);
-          targetEl.scrollIntoView({ behavior, block: "start" });
-        } else {
-          window.scrollTo({ top: 0, behavior });
-        }
-      }
+      Demos.sync();
+      window.scrollTo({ top: 0, behavior: "auto" });
+      syncLegalSpy();
       return;
     }
 
     const wasLegal = inLegalView || Boolean(legalView && !legalView.hidden);
     inLegalView = false;
+    document.body.classList.remove("is-legal");
+    if (legalBackBtn) legalBackBtn.hidden = true;
     if (wasLegal) {
       if (legalView) legalView.hidden = true;
       if (mainView) mainView.hidden = false;
-      if (legalBackBtn) legalBackBtn.hidden = true;
-      if (navLegalLink) navLegalLink.classList.remove("on");
       syncDocumentTitle();
       window.scrollTo({ top: 0, behavior: "auto" });
       const shouldResume = livePreview || wasPlayingBeforeLegal;
@@ -3615,229 +4716,19 @@ if (typeof document !== "undefined") (function () {
       } else if (copyPack && !isExporting) {
         scheduleStaticHero(0);
       }
-      syncExampleLoopState();
       syncCtaWordCycleState();
-    } else {
-      if (legalBackBtn) legalBackBtn.hidden = true;
-      if (navLegalLink) navLegalLink.classList.remove("on");
     }
+
+    Demos.sync();
 
     if (rawHash && rawHash.length > 1) {
       let targetEl = null;
       try { targetEl = $(decodeURIComponent(rawHash.slice(1))); } catch { targetEl = $(rawHash.slice(1)); }
       if (targetEl && (!mainView || mainView.contains(targetEl))) {
-        targetEl.scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "start" });
+        // #top is display:none while the studio stands in for the hero
+        if (targetEl.id === "top") window.scrollTo({ top: 0, behavior: smooth ? "smooth" : "auto" });
+        else targetEl.scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "start" });
       }
-    }
-  }
-
-  function drawExampleCut(card, cutIdx) {
-    const frame = card && card.frames && card.frames[cutIdx];
-    if (!frame || !card.canvas) return;
-    if (card.canvas.width !== 560) card.canvas.width = 560;
-    if (card.canvas.height !== 350) card.canvas.height = 350;
-    if (!card.ctx) card.ctx = card.canvas.getContext("2d");
-    if (!card.ctx) return;
-    card.ctx.clearRect(0, 0, 560, 350);
-    card.ctx.drawImage(frame, 0, 0, 560, 350);
-  }
-
-  function stopExampleLoop() {
-    if (exRafId) {
-      cancelAnimationFrame(exRafId);
-      exRafId = 0;
-    }
-  }
-
-  function syncExampleLoopState() {
-    const mainHidden = Boolean($("mainView") && $("mainView").hidden);
-    const activeIdx = hoveredExampleIdx;
-    const activeCard = activeIdx >= 0 ? exampleCards[activeIdx] : null;
-    const hasAnim = Boolean(activeCard && activeCard.frames && activeCard.frames.length > 1);
-    const shouldRun = activeIdx >= 0 && examplesInView && !mainHidden && !inLegalView && !isExporting && !document.hidden && hasAnim;
-    if (!shouldRun) {
-      stopExampleLoop();
-      return;
-    }
-    if (exRafId) return;
-    exLoopOrigin = performance.now();
-    exHoverStartCut = (activeCard.lastCut + 1) % activeCard.frames.length;
-    const stepExamples = now => {
-      const idx = hoveredExampleIdx;
-      const card = idx >= 0 ? exampleCards[idx] : null;
-      if (
-        idx < 0 ||
-        !card ||
-        !card.frames ||
-        card.frames.length < 2 ||
-        !examplesInView ||
-        ($("mainView") && $("mainView").hidden) ||
-        inLegalView ||
-        isExporting ||
-        document.hidden
-      ) {
-        exRafId = 0;
-        return;
-      }
-      const elapsedSec = Math.max(0, (now - exLoopOrigin) / 1000);
-      const len = card.frames.length;
-      let cutSeq = 0;
-      if (card.mode === "ramp") {
-        const loopDur = 3.2;
-        const cyc = Math.floor(elapsedSec / loopDur);
-        const u = (elapsedSec - cyc * loopDur) / loopDur;
-        const perCycle = Math.max(1, Math.round(loopDur * 0.5 * (card.cps0 + card.cps1)));
-        const inCycle = Math.min(perCycle - 1, Math.floor(loopDur * (card.cps0 * u + 0.5 * (card.cps1 - card.cps0) * u * u)));
-        cutSeq = cyc * perCycle + inCycle;
-      } else {
-        cutSeq = Math.floor(elapsedSec * card.cps0);
-      }
-      const cutIdx = (((exHoverStartCut + cutSeq) % len) + len) % len;
-      if (cutIdx !== card.lastCut) {
-        card.lastCut = cutIdx;
-        drawExampleCut(card, cutIdx);
-        const nextStep = (Number(card.canvas.dataset.animStep) || 0) + 1;
-        card.canvas.dataset.animStep = String(nextStep);
-      }
-      exRafId = requestAnimationFrame(stepExamples);
-    };
-    exRafId = requestAnimationFrame(stepExamples);
-  }
-
-  async function bakeExampleCanvases() {
-    const canvases = [...document.querySelectorAll("canvas[data-example-canvas]")];
-    if (!canvases.length || !copyPack) return;
-    const myToken = ++exBakeToken;
-    const bakeLang = uiLang === "hant" ? "hant" : uiLang === "zh" ? "zh" : "en";
-    lastExampleBakeLang = bakeLang;
-    await loadFonts(bakeLang);
-    if (myToken !== exBakeToken) return;
-
-    stopExampleLoop();
-    exampleCards.forEach(c => releaseCanvases(c.frames));
-
-    const nCuts = 10;
-    const exW = 560;
-    const exH = 350;
-    const copyData = copyPack[bakeLang] || copyPack.zh || copyPack.en;
-    const nextCards = canvases.map((canvas, idx) => {
-      canvas.dataset.baked = "0";
-      canvas.dataset.animStep = "0";
-      const kwText = (bakeLang === "hant"
-        ? (canvas.dataset.exHant || canvas.dataset.exZh)
-        : bakeLang === "zh"
-          ? canvas.dataset.exZh
-          : canvas.dataset.exEn)
-        || canvas.dataset.exEn
-        || defaults[bakeLang];
-      const cardHl = canvas.dataset.exHl || "#ffe72e";
-      const cardStyle = canvas.dataset.exStyle === "box" ? "box" : "marker";
-      const mode = canvas.dataset.exMode === "ramp" ? "ramp" : "const";
-      const cps0 = Math.max(2, Number(canvas.dataset.exCps) || 10);
-      const cps1 = mode === "ramp" ? Math.max(2, Number(canvas.dataset.exCps2) || 22) : cps0;
-      const descs = buildDescs(nCuts, kwText, exW, exH, 1.45, copyData, bakeLang, "random", {
-        hlColor: cardHl,
-        hlStyle: cardStyle,
-        seedOffset: idx * 7 + 3,
-        seedW: 960,
-      });
-      return { canvas, ctx: canvas.getContext("2d"), mode, cps0, cps1, descs, frames: [], lastCut: 0 };
-    });
-    exampleCards = nextCards;
-
-    const exFlat = document.createElement("canvas");
-    exFlat.width = exW;
-    exFlat.height = exH;
-    const exFCtx = exFlat.getContext("2d");
-
-    for (let ci = 0; ci < nCuts; ci++) {
-      for (let idx = 0; idx < nextCards.length; idx++) {
-        if (myToken !== exBakeToken) {
-          exFlat.width = 0; exFlat.height = 0;
-          nextCards.forEach(c => releaseCanvases(c.frames));
-          return;
-        }
-        const card = nextCards[idx];
-        const frame = renderBakedFrame(card.descs[ci], exW, exH, exFlat, exFCtx, 0.9, true);
-        card.frames.push(frame);
-        if (ci === 0) {
-          card.lastCut = 0;
-          drawExampleCut(card, 0);
-          card.canvas.dataset.animStep = "0";
-        }
-        if (ci === nCuts - 1) {
-          card.canvas.dataset.baked = "1";
-          card.canvas.dataset.bakedCuts = String(card.frames.length);
-        }
-        await new Promise(r => setTimeout(r, 0));
-      }
-      if (ci === 1 && hoveredExampleIdx >= 0) syncExampleLoopState();
-    }
-    exFlat.width = 0;
-    exFlat.height = 0;
-    syncExampleLoopState();
-  }
-
-  function initExampleObserver() {
-    let lastTouchTs = 0;
-    const canvases = [...document.querySelectorAll("canvas[data-example-canvas]")];
-    canvases.forEach((c, idx) => {
-      c.style.cursor = "pointer";
-      const cardEl = c.closest(".example-card") || c;
-      cardEl.addEventListener("pointerdown", e => {
-        if (e && e.pointerType === "touch") lastTouchTs = performance.now();
-      }, { passive: true });
-      const onEnter = e => {
-        if (e && e.pointerType === "touch") return;
-        if (e && e.type === "mouseenter" && performance.now() - lastTouchTs < 800) return;
-        if (hoveredExampleIdx === idx) return;
-        stopExampleLoop();
-        hoveredExampleIdx = idx;
-        syncExampleLoopState();
-      };
-      const onLeave = e => {
-        if (e && e.pointerType === "touch") return;
-        if (hoveredExampleIdx !== idx) return;
-        hoveredExampleIdx = -1;
-        stopExampleLoop();
-      };
-      cardEl.addEventListener("pointerenter", onEnter);
-      cardEl.addEventListener("mouseenter", onEnter);
-      cardEl.addEventListener("pointerleave", onLeave);
-      cardEl.addEventListener("mouseleave", onLeave);
-      cardEl.addEventListener("focusin", e => {
-        if (e.target && typeof e.target.matches === "function" && e.target.matches(":focus-visible")) {
-          if (hoveredExampleIdx !== idx) {
-            stopExampleLoop();
-            hoveredExampleIdx = idx;
-            syncExampleLoopState();
-          }
-        }
-      });
-      cardEl.addEventListener("focusout", e => {
-        if (!cardEl.contains(e.relatedTarget) && !cardEl.matches(":hover")) {
-          if (hoveredExampleIdx === idx) {
-            hoveredExampleIdx = -1;
-            stopExampleLoop();
-          }
-        }
-      });
-    });
-    const exSec = $("examples");
-    if (!exSec) return;
-    if ("IntersectionObserver" in window) {
-      const obs = new IntersectionObserver(entries => {
-        examplesInView = entries.some(en => en.isIntersecting);
-        if (!examplesInView) {
-          hoveredExampleIdx = -1;
-          stopExampleLoop();
-          return;
-        }
-        syncExampleLoopState();
-      }, { rootMargin: "80px 0px", threshold: 0.02 });
-      obs.observe(exSec);
-    } else {
-      examplesInView = true;
     }
   }
 
@@ -3928,22 +4819,36 @@ if (typeof document !== "undefined") (function () {
   }
 
   function syncCtaWordCycleState() {
-    const mainHidden = Boolean($("mainView") && $("mainView").hidden);
-    const hasWords = document.querySelectorAll("[data-cta-word]").length > 0;
-    const shouldRun = finalCtaInView && !mainHidden && !inLegalView && !isExporting && !document.hidden && hasWords;
+    const shouldRun = finalCtaInView && !inLegalView && !document.hidden && !REDUCE_MOTION.matches;
     if (!shouldRun) {
       stopCtaWordCycle();
       return;
     }
     if (ctaTimerId) return;
     ctaTimerId = setInterval(() => {
-      if (!finalCtaInView || ($("mainView") && $("mainView").hidden) || inLegalView || isExporting || document.hidden) {
-        stopCtaWordCycle();
-        return;
-      }
       ctaStepIdx += 1;
       applyCtaWordStep(ctaStepIdx);
     }, 170);
+  }
+
+  // bars fill once the comparison is mostly on screen and replay on the next visit. isIntersecting is true from the first
+  // visible pixel, so the ratio gates the start; the reset waits until it has fully left, so a small scroll never rewinds it.
+  function initCompareBars() {
+    const cmp = $("cmp");
+    if (!cmp) return;
+    new IntersectionObserver(entries => {
+      const en = entries[entries.length - 1];
+      if (en.intersectionRatio >= 0.6) cmp.classList.add("is-in");
+      else if (!en.isIntersecting) cmp.classList.remove("is-in");
+    }, { threshold: [0, 0.6] }).observe(cmp);
+  }
+
+  // the hero's scroll hint fades out once the page moves and comes back at the top
+  function initHeroHint() {
+    const hint = $("heroHint");
+    const sync = () => hint.classList.toggle("is-away", window.scrollY > 24);
+    window.addEventListener("scroll", sync, { passive: true });
+    sync();
   }
 
   function initCtaWordCycle() {
@@ -3966,118 +4871,24 @@ if (typeof document !== "undefined") (function () {
     if (formatMenu && !formatMenu.hidden && exportSplit && !exportSplit.contains(e.target)) {
       closeFormatMenu();
     }
+    if (!e.target.closest(".select-pop")) {
+      closeSelectMenus();
+    }
+
+    if (langMenu && !langMenu.hidden && !e.target.closest(".lang-pick")) setLangMenu(false);
 
     const langBtn = e.target.closest("#uiLangBtns button[data-ui-lang], [data-ui-lang-btn]");
     if (langBtn && langBtn.dataset.uiLang) {
       if (langBtn.dataset.uiLang !== uiLang) {
         applyUiLang(langBtn.dataset.uiLang, { syncClipLocale: true, persist: true });
       }
+      setLangMenu(false, true);
       return;
     }
 
-    const exCanvas = e.target.closest("canvas[data-example-canvas]");
-    if (exCanvas) {
-      const cardBtn = exCanvas.closest(".example-card")?.querySelector("[data-try-prompt]");
-      if (cardBtn) cardBtn.click();
-      return;
-    }
-
-    const tryBtn = e.target.closest("[data-try-prompt], [data-try-en], [data-try-zh], [data-try-hant]");
-    if (tryBtn && !isExporting) {
-      e.preventDefault();
-      clearTimeout(inputDebounceTimer);
-      showError("");
-
-      const promptStr = locale === "hant"
-        ? (tryBtn.dataset.tryHant || tryBtn.dataset.tryZh || tryBtn.dataset.tryPrompt || tryBtn.dataset.tryEn)
-        : locale === "zh"
-          ? (tryBtn.dataset.tryZh || tryBtn.dataset.tryPrompt || tryBtn.dataset.tryEn)
-          : (tryBtn.dataset.tryEn || tryBtn.dataset.tryPrompt || tryBtn.dataset.tryZh);
-      if (promptStr) {
-        kw.value = promptStr.slice(0, MAX_CHARS);
-      }
-
-      if (tryBtn.dataset.tryRatio) {
-        applyRatioSelection(tryBtn.dataset.tryRatio);
-      }
-
-      if (tryBtn.dataset.tryHl) {
-        const targetHl = tryBtn.dataset.tryHl.trim();
-        hlColor = targetHl;
-        document.querySelectorAll("#hlColors button[data-hl]").forEach(b => {
-          const bh = (b.dataset.hl || "").toLowerCase();
-          const th = targetHl.toLowerCase();
-          const isYellowAlias = (th === "#ffe600" || th === "#ffe72e") && (bh === "#ffe600" || bh === "#ffe72e");
-          const match = bh === th || isYellowAlias;
-          if (match) hlColor = b.dataset.hl;
-          b.classList.toggle("on", match);
-        });
-      }
-
-      if (tryBtn.dataset.tryStyle === "box" || tryBtn.dataset.tryStyle === "marker") {
-        hlStyle = tryBtn.dataset.tryStyle;
-        document.querySelectorAll("#hlStyleBtns button[data-hl-style]").forEach(b => {
-          b.classList.toggle("on", b.dataset.hlStyle === hlStyle);
-        });
-      }
-
-      if (tryBtn.dataset.tryMode || tryBtn.dataset.tryCps2 || tryBtn.dataset.tryCps) {
-        const nextMode = (tryBtn.dataset.tryMode === "ramp" || (!tryBtn.dataset.tryMode && tryBtn.dataset.tryCps2))
-          ? "ramp"
-          : "const";
-        speedMode = nextMode;
-        document.querySelectorAll("#speedModeBtns button[data-speed-mode]").forEach(b => {
-          b.classList.toggle("on", b.dataset.speedMode === speedMode);
-        });
-        if ($("rampGroup")) $("rampGroup").hidden = speedMode !== "ramp";
-        updateCpsLabelUi();
-      }
-
-      if (tryBtn.dataset.tryCps && $("cpsRange")) {
-        $("cpsRange").value = String(tryBtn.dataset.tryCps);
-        if ($("cpsVal")) $("cpsVal").textContent = $("cpsRange").value;
-      }
-
-      if (tryBtn.dataset.tryCps2 && $("cps2Range")) {
-        $("cps2Range").value = String(tryBtn.dataset.tryCps2);
-        if ($("cps2Val")) $("cps2Val").textContent = $("cps2Range").value;
-      }
-
-      if (tryBtn.dataset.tryCurve) {
-        curve = tryBtn.dataset.tryCurve;
-        document.querySelectorAll("#curveBtns button[data-curve]").forEach(b => {
-          b.classList.toggle("on", b.dataset.curve === curve);
-        });
-      }
-
-      if (tryBtn.dataset.tryDur && $("durRange")) {
-        $("durRange").value = String(tryBtn.dataset.tryDur);
-        updateDurUi();
-      }
-
-      seedOffset += 1;
-      updateCharCount();
-      updateCustomBadge();
-      scrollToStudio(false);
-      startPreviewPass({ fromUserGesture: true, resume: false });
-      return;
-    }
-
-    const useRatioBtn = e.target.closest("[data-use-ratio]");
-    if (useRatioBtn && !isExporting) {
-      e.preventDefault();
-      clearTimeout(inputDebounceTimer);
-      showError("");
-      applyRatioSelection(useRatioBtn.dataset.useRatio);
-      scrollToStudio(false);
-      startPreviewPass({ fromUserGesture: true, resume: false });
-      return;
-    }
-
-    const scrollBtn = e.target.closest("[data-scroll-studio]");
-    if (scrollBtn) {
-      e.preventDefault();
-      scrollToStudio(true);
+    const demoHost = e.target.closest("[data-demo-id]");
+    if (demoHost) {
+      Demos.activate(demoHost.dataset.demoId);
       return;
     }
 
@@ -4098,10 +4909,46 @@ if (typeof document !== "undefined") (function () {
     }
   });
 
+  const langTrigger = $("uiLangTrigger");
+  const langMenu = $("uiLangBtns");
+  const langItems = () => [...langMenu.querySelectorAll("button[data-ui-lang]")];
+
+  function setLangMenu(open, refocus) {
+    if (!langMenu) return;
+    langMenu.hidden = !open;
+    langTrigger.setAttribute("aria-expanded", String(open));
+    if (open) (langItems().find(b => b.dataset.uiLang === uiLang) || langItems()[0]).focus();
+    else if (refocus) langTrigger.focus();
+  }
+
+  if (langTrigger && langMenu) {
+    langTrigger.addEventListener("click", () => setLangMenu(langMenu.hidden));
+    langTrigger.addEventListener("keydown", e => {
+      if (e.key !== "ArrowDown" && e.key !== "ArrowUp") return;
+      e.preventDefault();
+      setLangMenu(true);
+    });
+    langMenu.addEventListener("keydown", e => {
+      const items = langItems();
+      const at = items.indexOf(document.activeElement);
+      const to = { ArrowDown: (at + 1) % items.length, ArrowUp: (at + items.length - 1) % items.length, Home: 0, End: items.length - 1 }[e.key];
+      if (to !== undefined) {
+        e.preventDefault();
+        items[to].focus();
+      } else if (e.key === "Escape") {
+        e.stopPropagation();
+        setLangMenu(false, true);
+      } else if (e.key === "Tab") {
+        setLangMenu(false, true);
+      }
+    });
+  }
+
   if (formatBtn && formatMenu) {
     formatBtn.addEventListener("click", e => {
       e.stopPropagation();
       if (isExporting || formatBtn.disabled) return;
+      closeSelectMenus();
       const willOpen = formatMenu.hidden;
       formatMenu.hidden = !willOpen;
       formatBtn.setAttribute("aria-expanded", willOpen ? "true" : "false");
@@ -4111,6 +4958,7 @@ if (typeof document !== "undefined") (function () {
   document.addEventListener("keydown", e => {
     if (e.key === "Escape") {
       closeFormatMenu();
+      closeSelectMenus();
       return;
     }
     if (e.key === "/" && !e.ctrlKey && !e.metaKey && !e.altKey) {
@@ -4121,18 +4969,20 @@ if (typeof document !== "undefined") (function () {
         t.tagName === "SELECT" ||
         t.isContentEditable
       );
-      if (!isEditable && kw && !inLegalView) {
+      const input = studioOpen ? kw : gateInputs[0];
+      if (!isEditable && input && !inLegalView) {
         e.preventDefault();
-        scrollToStudio(false);
-        kw.focus();
-        kw.select();
+        input.focus();
+        input.select();
       }
     }
   });
 
+  wearPlatformChrome();
   syncRatioButtonsUi();
   initFaqAccordion();
-  initExampleObserver();
+  initCompareBars();
+  initHeroHint();
   initCtaWordCycle();
   applyUiLang(uiLang, { syncClipLocale: true, persist: false });
   syncRouteFromHash({ smooth: false });
@@ -4140,7 +4990,7 @@ if (typeof document !== "undefined") (function () {
   window.addEventListener("hashchange", () => syncRouteFromHash({ smooth: false }));
   window.addEventListener("popstate", () => syncRouteFromHash({ smooth: false }));
   document.addEventListener("visibilitychange", () => {
-    syncExampleLoopState();
+    Demos.sync();
     syncCtaWordCycleState();
   });
 
@@ -4151,11 +5001,13 @@ if (typeof document !== "undefined") (function () {
     })
     .then(async j => {
       copyPack = j;
-      await renderStaticHero();
-      if (livePreview && !isExporting && !inLegalView) {
-        startPreviewPass({ fromUserGesture: false, resume: false });
+      Demos.refresh();
+      if (studioOpen) {
+        await renderStaticHero();
+        if (livePreview && !isExporting && !inLegalView) {
+          startPreviewPass({ fromUserGesture: false, resume: false });
+        }
       }
-      bakeExampleCanvases();
     })
     .catch(err => {
       showError("copyLoad");
@@ -4188,9 +5040,9 @@ if (typeof document !== "undefined") (function () {
 
       clearTimeout(inputDebounceTimer);
       stopPreviewPlayback(false);
+      clearPending();
       isExporting = true;
       exportPct = 0;
-      stopExampleLoop();
       stopCtaWordCycle();
       const genBtn = $("generateBtn");
       genBtn.disabled = true;
@@ -4232,10 +5084,8 @@ if (typeof document !== "undefined") (function () {
 
         if (downloadBtn) {
           downloadBtn.href = lastUrl;
-          downloadBtn.download = `text-match-cut.${ext}`;
-          updateDownloadBtnUi();
-          downloadBtn.hidden = false;
-          downloadBtn.style.display = "inline-flex";
+          downloadBtn.download = `typepin.${ext}`;
+          downloadBtn.click();
         }
         setTimelineState({ kind: "exported", pct: 100 });
       } catch (err) {
@@ -4253,7 +5103,6 @@ if (typeof document !== "undefined") (function () {
         } else {
           renderStaticHero();
         }
-        syncExampleLoopState();
         syncCtaWordCycleState();
       }
     });
@@ -4275,6 +5124,7 @@ if (typeof module !== "undefined" && module.exports) {
     tokenize,
     measureKeyword,
     buildDescs,
+    descBuilder,
     renderCut,
     lensBlur,
     RANDOM_KEYWORDS,
