@@ -2583,6 +2583,7 @@ if (typeof document !== "undefined") (function () {
   let ctaStepIdx = 0;
 
   function syncDocumentTitle() {
+    window.__syncDescription(uiLang);
     if (typeof window.__syncFaqJsonLd === "function") {
       window.__syncFaqJsonLd(uiLang);
     }
